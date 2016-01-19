@@ -1,0 +1,19 @@
+name = BADCamp
+description = Install with minimal configuration.
+version = 0.1
+core = 7.x
+exclusive = true
+dependencies[] = dblog
+dependencies[] = file
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = update
+; Contrib.
+dependencies[] = master
+dependencies[] = ctools
+dependencies[] = metatag
+dependencies[] = token

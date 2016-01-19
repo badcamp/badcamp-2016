@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Support for processing entity reference fields in Migrate.
+ */
+
+// If Migrate is not enabled, don't provide support.
+if (!class_exists('MigrateSimpleFieldHandler')) {
+  return;
+}
+
+/**
+ * Implement hook_migrate_api().
+ */
+function entityreference_migrate_api() {
+  return array(
+    'api' => 2,
+    'field handlers' => array('MigrateEntityReferenceFieldHandler'),
+  );
+}
+
+class MigrateEntityReferenceFieldHandler extends MigrateSimpleFieldHandler {
+  public function __construct() {
+    parent::__construct(array(
+      'value_key' => 'target_id',
+      'skip_empty' => TRUE,
+    ));
+
+    $this->registerTypes(array('entityreference'));
+  }
+}
