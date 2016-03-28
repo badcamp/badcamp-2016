@@ -40,6 +40,7 @@ $conf['master_modules']['base'] = array(
   'field_group',
   'globalredirect',
   'inline_entity_form',
+  'libraries',
   'link',
   'master',
   'metatag',
@@ -48,16 +49,46 @@ $conf['master_modules']['base'] = array(
   'panels_node',
   'pathauto',
   'realname',
+  'r4032login',
   'strongarm',
   'token',
+  'user_pages',
   'views',
   'views_bulk_operations',
   'views_content',
 
   // BADCamp features.
+  'badcamp_basic_page',
+  'badcamp_basic_page',
+  'badcamp_blog_post',
+  'badcamp_code_of_conduct_page',
+  'badcamp_community_page',
+  'badcamp_contact_form',
+  'badcamp_environment',
+  'badcamp_events',
+  'badcamp_food_and_drink_page',
+  'badcamp_homepage',
+  'badcamp_job_opportunitiies',
+  'badcamp_jobs_board_page',
+  'badcamp_location_page',
+  'badcamp_mailchimp',
+  'badcamp_my_schedule',
+  'badcamp_my_votes',
+  'badcamp_news_feature',
+  'badcamp_registration_page',
+  'badcamp_scholarship_application',
+  'badcamp_sessions',
+  'badcamp_sessions_page',
+  'badcamp_site_config',
+  'badcamp_sponsors',
+  'badcamp_sponsors_page',
+  'badcamp_summit_contact_form',
+  'badcamp_summits_page',
+  'badcamp_trainings_page',
+  'badcamp_user_profile',
   'feature_badcamp_homepage',
   'feature_badcamp_reports',
-  'feature_badcamp_users',
+  'training_reg_feature',
   // BADCamp custom modules.
 );
 $conf['master_modules']['local'] = array(
@@ -102,6 +133,7 @@ $conf['views_ui_show_master_display'] = 1;
 
 // Regional settings.
 $conf['date_default_timezone'] = 'America/Los_Angeles';
+$conf['configurable_timezones'] = 0;
 
 // Disable Drupal's "poor man's cron".
 $conf['cron_safe_threshold'] = 0;
@@ -113,7 +145,7 @@ $conf['user_register'] = 1;
 $conf['site_name'] = 'BADCamp 2016';
 $conf['site_slogan'] = 'Bay Area Drupal Camp';
 $conf['site_mail'] = 'info@badcamp.net';
-$conf['site_frontpage'] = 'homepage';
+$conf['site_frontpage'] = 'home';
 
 // Local configuration; should remain at the bottom of this file.
 if (file_exists(DRUPAL_ROOT . '/sites/default/settings.local.php')) {

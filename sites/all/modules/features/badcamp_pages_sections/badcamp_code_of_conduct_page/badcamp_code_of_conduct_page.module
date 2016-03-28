@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Code of Conduct Page feature.
+ */
+
+include_once 'badcamp_code_of_conduct_page.features.inc';

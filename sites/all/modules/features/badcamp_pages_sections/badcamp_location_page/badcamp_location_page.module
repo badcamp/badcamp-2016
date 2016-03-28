@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Location page feature.
+ */
+
+include_once 'badcamp_location_page.features.inc';

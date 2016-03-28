@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Ctools User Pages allows you to manage user, user/login, user/register,
+ * user/password via panel.
+ */
+
+/**
+ * Implementation of hook_ctools_plugin_directory() to let the system know
+ * we implement task and task_handler plugins.
+ */
+function user_pages_ctools_plugin_directory($module, $plugin) {
+  return 'plugins/' . $plugin;
+}

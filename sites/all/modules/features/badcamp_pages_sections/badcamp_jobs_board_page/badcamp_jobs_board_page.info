@@ -1,0 +1,12 @@
+name = BADCamp Jobs Board page
+description = This sets the panel page for the sites "Jobs Board" page
+core = 7.x
+package = BADCamp Pages/Sections
+version = 7.x-2.0-beta1
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_pages][] = jobs
+features[user_role][] = job posting editor

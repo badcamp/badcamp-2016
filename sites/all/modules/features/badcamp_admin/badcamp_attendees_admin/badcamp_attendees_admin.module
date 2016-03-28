@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Attendees Admin feature.
+ */
+
+include_once 'badcamp_attendees_admin.features.inc';

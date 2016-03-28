@@ -1,0 +1,15 @@
+name = BADCamp Community
+description = Configuration related to things like attendees
+core = 7.x
+package = BADCamp Config
+version = 7.x-1.4
+dependencies[] = ctools
+dependencies[] = image
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[image][] = headshot
+features[image][] = headshot_thumbnail
+features[views_view][] = attendees
+project path = sites/all/modules/features/badcamp_config

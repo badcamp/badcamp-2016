@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Training Registration Feature feature.
+ */
+
+include_once 'training_reg_feature.features.inc';

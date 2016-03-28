@@ -1,0 +1,12 @@
+name = BADCamp News
+description = Configuration for news
+core = 7.x
+package = BADCamp Pages/Sections
+version = 7.x-10.0
+dependencies[] = badcamp_blog_post
+dependencies[] = ctools
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = badcamp_news
+project path = sites/all/modules/features/badcamp_pages_sections

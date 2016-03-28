@@ -1,0 +1,60 @@
+GENERAL USAGE
+-------------
+
+The Stripe module uses Libraries API to integrate Stripe's PHP API into Drupal.
+
+To load the Stripe PHP API from inside your module, simply do:
+
+<?php
+libraries_load('stripe');
+?>
+
+When the library is loaded, the configured (secret) site-wide API key is
+automatically set using Stripe::setApiKey(). If needed, the API key can be
+changed by calling Stripe::setApiKey() with another value or passing the
+alternative kay as argument of the various Stripe statics methods.
+
+See https://drupal.org/node/1342238 for more information.
+
+The module define a new Form API element type to input a Stripe token. This form
+element will be rendered as a field set containing the elements required to
+collect the information needed to create a token. On submit, the information
+will used to created a new token which will be send to the server. AJAX form
+submission is supported too. A failed token creation will prevent a normal form
+submission but not an AJAX submission.
+
+This input form element support the following properties:
+ - #cardholder_name: Can either be a boolean or an array. If TRUE, the field set
+   will include an element to input the card holder's name. If an array is used,
+   in must contains the identifier (ie. like the #parents property) of an
+   existing form element to be used to input the card holder's name. In all
+   other cases, the field set will not include a card holder's input element.
+ - #address: Can either be a boolean or an array. If TRUE, the field set
+   will include elements to input the card holder's address. If an array is
+   used, in must contains the identifier (ie. like the #parents property) of an
+   existing form container with the input elements to use for the the card
+   holder's address. In all other cases, the field set will not include card
+   holder's address input element.
+ - #cvc: If TRUE, the field set will include a CVC input element.
+ - #publishable_key: The publishable key to use to create the token. If empty,
+   the currently active site-wide publishable key will be used.
+
+The address field set uses a structure similar the one provided by the Address
+Field module (https://drupal.org/project/addressfield):
+ - 'thoroughfare' as 'address_line1'
+ - 'premise' as 'address_line2'
+ - 'locality' as 'address_city'
+ - 'administrative_area' as 'address_state'
+ - 'postal_code' as 'address_zip'
+ - 'country'  as 'address_country
+
+CONFIGURATION
+-------------
+
+The Stripe module store site-wide API keys in 4 configuration variables:
+'stripe_test_secret', 'stripe_test_publishable', 'stripe_live_secret' and
+'stripe_publishable_secret'. A fifth variable is used to configure the active
+environment: 'stripe_key_status'. Its value should be one of 'test' or 'live'.
+
+The stripe_get_key() function is the recommended way to retrieve the value of
+these variables.

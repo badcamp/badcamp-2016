@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Scholarship Application feature.
+ */
+
+include_once 'badcamp_scholarship_application.features.inc';

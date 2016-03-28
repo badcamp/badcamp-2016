@@ -1,0 +1,49 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the Stripe module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function stripe_requirements($phase) {
+  $requirements = array();
+  if ($phase == 'runtime') {
+    $requirements['stripe'] = _stripe_requirement_check();
+  }
+  return $requirements;
+}
+
+/**
+ * Helper function to hook_requirements.
+ */
+function _stripe_requirement_check() {
+  $t = get_t();
+  if (($library = libraries_detect('stripe')) && !empty($library['installed'])) {
+    return array(
+      'title' => $t('Stripe Payment API PHP Library'),
+      'value' => $t('Stripe PHP Library is in place. Version @version', array('@version' => $library['version'])),
+      'severity' => REQUIREMENT_OK,
+    );
+  }
+  else {
+    return array(
+      'title' => $t('Stripe Payment API PHP Library'),
+      'value' => $t('The Stripe PHP Library is not in place. <a href="https://code.stripe.com/stripe-php-latest.zip">Download the and unzip the library</a> then place the contents of that directory in sites/all/libraries/stripe'),
+      'severity' => REQUIREMENT_ERROR,
+    );
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function stripe_uninstall() {
+  variable_del('stripe_key_status');
+  variable_del('stripe_test_secret');
+  variable_del('stripe_test_publishable');
+  variable_del('stripe_live_secret');
+  variable_del('stripe_live_publishable');
+  variable_del('stripe_log_webhooks');
+}

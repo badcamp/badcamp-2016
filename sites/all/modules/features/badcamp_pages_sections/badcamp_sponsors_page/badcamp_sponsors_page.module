@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Sponsors page feature.
+ */
+
+include_once 'badcamp_sponsors_page.features.inc';

@@ -1,0 +1,60 @@
+<?php
+/**
+ * @file
+ * Access for schedules.
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function badcamp_views_user_and_role_perm_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
+ * Implements hook_views_plugins().
+ */
+function badcamp_views_user_and_role_perm_views_plugins() {
+  $plugins = array(
+    'access' => array(
+      'user_and_role' => array(
+        'title' => t('User and Role'),
+        'help' => t('Access will be granted to the contextualy filter matching current user, specific user ids and users with any of the specified roles.'),
+        'handler' => 'BadcampViewsUserAndRolePermPluginAccessUserAndRole',
+        'uses options' => TRUE,
+        'help topic' => 'access-user-role',
+      ),
+    ),
+  );
+
+  return $plugins;
+}
+
+/**
+ * Access callback for the my schedule access plugin.
+ *
+ * Determine if the specified user has access to a view on the basis of any of
+ * the requested roles. If the $account argument is omitted, the current user
+ * is used.
+ */
+function badcamp_views_user_and_role_perm_check_roles($options, $account = NULL) {
+  global $user;
+  $rids = $options['rids'];
+  $contextual_match = $options['contextual_match'];
+  $uid = $user->uid;
+  $arg0 = arg(0);
+  $arg1 = arg(1);
+
+  // If matching contextual user is allowed, check if user id is set and that
+  // it is the user page.
+  if (($contextual_match == TRUE) && isset($arg1) && is_numeric($arg1) && ($arg1 == $uid) && ($arg0 == 'user')) {
+    return TRUE;
+  }
+
+  // If current user has permission to access all views, allow access.
+  // If current user has a role that matches allowed roles, allow access.
+  $account = isset($account) ? $account : $user;
+  $roles = isset($account->roles) ? array_keys($account->roles) : array_keys($account);
+  $roles[] = $account->uid ? DRUPAL_AUTHENTICATED_RID : DRUPAL_ANONYMOUS_RID;
+  return user_access('access all views', $account) || array_intersect(array_filter($rids), $roles);
+}

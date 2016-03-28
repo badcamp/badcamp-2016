@@ -1,0 +1,8 @@
+name = BADCamp views user and role permission
+description = Allows for current user, listed users, and roles to be applied as the permission to access a view display.
+core = 7.x
+package = BADCamp Config
+version = 7.x-1.0
+
+dependencies[] = views
+files[] = badcamp_views_user_and_role_perm_plugin_access_user_and_role.inc

@@ -1,0 +1,14 @@
+name = BADCamp Food and Drink Page
+description = It's got a map and a blurb....
+core = 7.x
+package = BADCamp Pages/Sections
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = ctools_custom_content
+dependencies[] = page_manager
+features[ctools][] = ctools_custom_content:ctools_content:1
+features[ctools][] = page_manager:pages_default:1
+features[ctools_custom_content][] = food_and_drink
+features[features_api][] = api:2
+features[page_manager_pages][] = food_and_drink
+project path = sites/all/modules/features/badcamp_pages_sections

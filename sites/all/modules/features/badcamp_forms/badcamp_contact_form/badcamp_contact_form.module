@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Contact Form feature.
+ */
+
+include_once 'badcamp_contact_form.features.inc';

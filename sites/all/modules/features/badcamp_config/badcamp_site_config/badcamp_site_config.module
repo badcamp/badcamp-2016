@@ -1,0 +1,46 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp site config feature.
+ */
+
+include_once 'badcamp_site_config.features.inc';
+
+/**
+ * Implements hook_admin_paths().
+ */
+function badcamp_site_config_menu() {
+  $items['admin/badcamp'] = array(
+    'title' => 'BADCamp',
+    'description' => 'Administration section for all things BADCamp.',
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('access administration pages'),
+    'weight' => -9999,
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_admin_paths().
+ */
+function badcamp_site_config_admin_paths() {
+  if (module_exists('panels_node')) {
+    return array(
+      'node/*/panel_layout' => TRUE,
+      'node/*/panel_content' => TRUE,
+    );
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function badcamp_site_config_form_node_form_alter(&$form, &$form_state, $form_id) {
+  // Rather then create a new flag, Use the core "promote to front page"
+  // setting as the way to flag something as a feature item.
+  $form['options']['promote']['#title'] = 'Promote as featured item';
+}

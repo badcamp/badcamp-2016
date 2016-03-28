@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Sessions Admin feature.
+ */
+
+include_once 'badcamp_sessions_admin.features.inc';

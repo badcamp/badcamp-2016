@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Jobs Admin feature.
+ */
+
+include_once 'badcamp_jobs_admin.features.inc';

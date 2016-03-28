@@ -1,0 +1,13 @@
+name = Drupal Commerce Stripe Payment method
+description = Provides a payment method for the Stripe payment gateway.
+package = Stripe
+dependencies[] = commerce
+dependencies[] = commerce_payment
+dependencies[] = stripe_commerce
+core = 7.x
+
+
+; Information added by drush on 2016-03-14
+version = "7.x-1.x-dev"
+project = "stripe"
+datestamp = "1457971588"

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Basic Page feature.
+ */
+
+include_once 'badcamp_basic_page.features.inc';

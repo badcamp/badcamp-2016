@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Sessions page feature.
+ */
+
+include_once 'badcamp_sessions_page.features.inc';

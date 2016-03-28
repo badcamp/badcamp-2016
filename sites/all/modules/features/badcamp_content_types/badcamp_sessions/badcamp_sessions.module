@@ -1,0 +1,23 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Sessions feature.
+ */
+
+include_once 'badcamp_sessions.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ */
+function badcamp_sessions_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == "session_node_form") {
+    $lang = $form['language']['#value'];
+    // If the value is not already set, set the default value of the first
+    // speaker to the currently logged in user.
+    if (empty($form['field_session_speaker'][$lang][0]['target_id']['#default_value'])
+      && !isset($form_state['node']->field_session_speaker[$lang][0]['target_id'])) {
+      global $user;
+      $form['field_session_speaker'][$lang][0]['target_id']['#default_value'] = "$user->name ($user->uid)";
+    }
+  }
+}

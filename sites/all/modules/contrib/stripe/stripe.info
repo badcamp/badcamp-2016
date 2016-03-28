@@ -1,0 +1,13 @@
+name = Stripe
+description = Integration with the Stripe payment Gateway. https://stripe.com/
+package = Stripe
+version = VERSION
+core = 7.x
+configure = admin/config/stripe
+
+dependencies[] = libraries
+
+; Information added by drush on 2016-03-14
+version = "7.x-1.x-dev"
+project = "stripe"
+datestamp = "1457971588"

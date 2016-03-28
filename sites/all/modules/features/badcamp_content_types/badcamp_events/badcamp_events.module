@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Events feature.
+ */
+
+include_once 'badcamp_events.features.inc';

@@ -1,0 +1,130 @@
+<?php
+/**
+ * @file
+ * Take donations through Stripe payment processing.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function stripe_donation_menu() {
+  $items = array();
+
+  $items['donation/payment/%'] = array(
+    'title' => 'Donation Payment',
+    'access callback' => 'user_access',
+    'access arguments' => array('make a stripe donation'),
+    'file' => 'stripe_donation.pages.inc',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('stripe_donation_payment_form', 2),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function stripe_donation_permission() {
+  return array(
+    'administer stripe donations' => array(
+      'title' => t('Administer stripe donations'),
+      'description' => t('Perform administration tasks related to stripe donations.'),
+    ),
+    'make a stripe donation' => array(
+      'title' => t('Make a donation'),
+      'description' => t('Allows user to make a donation using Stripe.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function stripe_donation_ctools_plugin_api($module, $api) {
+  if ($module == 'page_manager' && $api == 'pages_default') {
+    return array('version' => 1);
+  }
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function stripe_donation_ctools_plugin_directory($module, $plugin) {
+  // Safety: go away if CTools is not at an appropriate version.
+  if (!module_invoke('ctools', 'api_version', PANELS_REQUIRED_CTOOLS_API)) {
+    return;
+  }
+  if (in_array($module, array('page_manager', 'panels', 'ctools', 'stylizer'))) {
+    return 'plugins/' . $plugin;
+  }
+}
+
+/**
+ * Check to see if this user already has a donation that has been made.
+ *
+ * @param object $user
+ *   Drupal User object.
+ *
+ * @return bool
+ *   TRUE if there is an existing donation.
+ */
+function _donation_options_check_existing_donation($user) {
+  if (!isset($user->uid)) {
+    return FALSE;
+  }
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'donation');
+  $query->entityCondition('bundle', 'donation');
+  $query->fieldCondition('field_donation_user', 'target_id', $user->uid, '=');
+  $result = $query->execute();
+
+  if (!empty($result)) {
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
+/**
+ * Retrieve donation type dollar amount.
+ *
+ * @param int $eid
+ *   The EID of a donation type.
+ *
+ * @return mixed
+ *   FALSE if invalid amount, else the dollar amount.
+ */
+function _donation_options_get_amount($eid) {
+  $donation_type = _donation_options_get_donation_type($eid);
+  if (!$donation_type) {
+    return;
+  }
+  return $donation_type->field_donation_type_amount->value();
+}
+
+/**
+ * Retrieve wrapped donation type entity.
+ *
+ * @param int $eid
+ *   The EID of a donation type.
+ *
+ * @return mixed
+ *   FALSE if failed to load, else entity metadata wrapper of donation type.
+ */
+function _donation_options_get_donation_type($eid) {
+  if (!is_numeric($eid)) {
+    return FALSE;
+  }
+
+  $entity = entity_load('donation_type', array($eid));
+  if (empty($entity)) {
+    return FALSE;
+  }
+
+  $wrapped_entity = entity_metadata_wrapper('donation_type', $entity[$eid]);
+
+  return $wrapped_entity;
+}

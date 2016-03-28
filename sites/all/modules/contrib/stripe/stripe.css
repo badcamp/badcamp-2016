@@ -1,0 +1,15 @@
+#stripe-admin-test label {
+  display: inline;
+}
+
+#stripe-admin-test .form-item-card-expiry-month {
+  float: left;
+}
+
+#stripe-admin-test #edit-amount {
+  text-align: right;
+}
+
+#stripe-admin-keys .form-item {
+  display: inline;
+}

@@ -1,0 +1,14 @@
+<?php
+/**
+ * @file
+ * Training Registration installation.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function training_reg_uninstall() {
+  variable_del('training_reg_price');
+  variable_del('training_reg_message');
+  variable_del('training_payment_message');
+}

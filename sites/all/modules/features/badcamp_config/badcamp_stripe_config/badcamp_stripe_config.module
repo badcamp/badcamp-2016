@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Stripe Config feature.
+ */
+
+include_once 'badcamp_stripe_config.features.inc';

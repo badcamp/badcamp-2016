@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Mailchimp feature.
+ */
+
+include_once 'badcamp_mailchimp.features.inc';

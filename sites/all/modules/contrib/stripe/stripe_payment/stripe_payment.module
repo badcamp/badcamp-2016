@@ -1,0 +1,398 @@
+<?php
+/**
+ * @file
+ * Stripe Payment module.
+ *
+ * TODO: Handle capture.
+ * TODO: Handle refund.
+ *
+ */
+
+/**
+ * A payment with a failed charge because of an incorrect card number.
+ */
+define('STRIPE_PAYMENT_STATUS_INCORRECT_NUMBER', 'STRIPE_PAYMENT_STATUS_INCORRECT_NUMBER');
+
+/**
+ * A payment with a failed charge because of an invalid card number.
+ */
+define('STRIPE_PAYMENT_STATUS_INVALID_NUMBER', 'STRIPE_PAYMENT_STATUS_INVALID_NUMBER');
+
+/**
+ * A payment with a failed charge because of an invalid expiry month.
+ */
+define('STRIPE_PAYMENT_STATUS_INVALID_EXPIRY_MONTH', 'STRIPE_PAYMENT_STATUS_INVALID_EXPIRY_MONTH');
+
+/**
+ * A payment with a failed charge because of an invalid expiry year.
+ */
+define('STRIPE_PAYMENT_STATUS_INVALID_EXPIRY_YEAR', 'STRIPE_PAYMENT_STATUS_INVALID_EXPIRY_YEAR');
+
+/**
+ * A payment with a failed charge because of an invalid security code.
+ */
+define('STRIPE_PAYMENT_STATUS_INVALID_CVC', 'STRIPE_PAYMENT_STATUS_INVALID_CVC');
+
+/**
+ * A payment with a failed charge because the card has expired.
+ */
+define('STRIPE_PAYMENT_STATUS_EXPIRED_CARD', 'STRIPE_PAYMENT_STATUS_EXPIRED_CARD');
+
+/**
+ * A payment with a failed charge because of an incorrect security code.
+ */
+define('STRIPE_PAYMENT_STATUS_INCORRECT_CVC', 'STRIPE_PAYMENT_STATUS_INCORRECT_CVC');
+
+/**
+ * A payment with a failed charge because the card was declined.
+ */
+define('STRIPE_PAYMENT_STATUS_CARD_DECLINED', 'STRIPE_PAYMENT_STATUS_CARD_DECLINED');
+
+/**
+ * A payment with a failed charge because there is no card on the charged customer.
+ */
+define('STRIPE_PAYMENT_STATUS_MISSING', 'STRIPE_PAYMENT_STATUS_MISSING');
+
+/**
+ * A payment with a failed charge because an error occurred while processing the card.
+ */
+define('STRIPE_PAYMENT_STATUS_PROCESSING_ERROR', 'STRIPE_PAYMENT_STATUS_PROCESSING_ERROR');
+
+/**
+ * A payment with a failed charge because an API error occurred at execution.
+ */
+define('STRIPE_PAYMENT_STATUS_API_ERROR', 'STRIPE_PAYMENT_STATUS_API_ERROR');
+
+/**
+ * A payment with a failed charge because an invalid request was used at execution.
+ */
+define('STRIPE_PAYMENT_STATUS_INVALID_REQUEST', 'STRIPE_PAYMENT_STATUS_INVALID_REQUEST');
+
+/**
+ * A payment with a failed charge because an authentication error occurred at execution.
+ */
+define('STRIPE_PAYMENT_STATUS_AUTHENTICATION_ERROR', 'STRIPE_PAYMENT_STATUS_AUTHENTICATION_ERROR');
+
+/**
+ * A payment with a failed charge because an unknown error occurred at execution.
+ */
+define('STRIPE_PAYMENT_STATUS_UNKNOWN_ERROR', 'STRIPE_PAYMENT_STATUS_UNKNOWN_ERROR');
+
+/**
+ * A payment with a paid charge.
+ */
+define('STRIPE_PAYMENT_STATUS_PAID', 'STRIPE_PAYMENT_STATUS_PAID');
+
+/**
+ * A payment with a charge created without capturing and still un-captured.
+ */
+define('STRIPE_PAYMENT_STATUS_UNCAPTURED', 'STRIPE_PAYMENT_STATUS_UNCAPTURED');
+
+/**
+ * Implements hook_payment_status_info().
+ */
+function stripe_payment_payment_status_info() {
+  return array(
+    new PaymentStatusInfo(array(
+      'description' => t('The card number is incorrect.'),
+      'status' => STRIPE_PAYMENT_STATUS_INCORRECT_NUMBER,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (incorrect card number)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t('The card number is not a valid credit card number.'),
+      'status' => STRIPE_PAYMENT_STATUS_INVALID_NUMBER,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (invalid card number)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t("The card's expiration month is invalid."),
+      'status' => STRIPE_PAYMENT_STATUS_INVALID_EXPIRY_MONTH,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (invalid expiry month)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t("The card's expiration year is invalid."),
+      'status' => STRIPE_PAYMENT_STATUS_INVALID_EXPIRY_YEAR,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (invalid expiry month)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t("The card's security code is invalid."),
+      'status' => STRIPE_PAYMENT_STATUS_INVALID_CVC,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (invalid CVC)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t('The card has expired.'),
+      'status' => STRIPE_PAYMENT_STATUS_EXPIRED_CARD,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (expired card)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t("The card's security code is incorrect."),
+      'status' => STRIPE_PAYMENT_STATUS_INCORRECT_CVC,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (incorrect CVC)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t('The card was declined.'),
+      'status' => STRIPE_PAYMENT_STATUS_CARD_DECLINED,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (card declined)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t('There is no card on a customer that is being charged.'),
+      'status' => STRIPE_PAYMENT_STATUS_MISSING,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (missing)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t('An error occurred while processing the card.'),
+      'status' => STRIPE_PAYMENT_STATUS_PROCESSING_ERROR,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (processing error)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t('An error occurred while processing the card.'),
+      'status' => STRIPE_PAYMENT_STATUS_API_ERROR,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (API error)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t('An error occurred while processing the card.'),
+      'status' => STRIPE_PAYMENT_STATUS_INVALID_REQUEST,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (invalid request)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t('An error occurred while processing the card.'),
+      'status' => STRIPE_PAYMENT_STATUS_AUTHENTICATION_ERROR,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (authentication_error)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t('An error occurred while processing the card.'),
+      'status' => STRIPE_PAYMENT_STATUS_UNKNOWN_ERROR,
+      'parent' => PAYMENT_STATUS_FAILED,
+      'title' => t('Failed (unknown error)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t('Payment completed.'),
+      'status' => STRIPE_PAYMENT_STATUS_PAID,
+      'parent' => PAYMENT_STATUS_SUCCESS,
+      'title' => t('Success (paid)'),
+    )),
+    new PaymentStatusInfo(array(
+      'description' => t('Charge is still un-captured.'),
+      'status' => STRIPE_PAYMENT_STATUS_UNCAPTURED,
+      'parent' => PAYMENT_STATUS_PENDING,
+      'title' => t('Pending (un-captured)'),
+    )),
+  );
+}
+
+
+/**
+ * Implements hook_payment_method_controller_info().
+ */
+function stripe_payment_payment_method_controller_info() {
+  $controller = array();
+  if (($library = libraries_detect('stripe')) && !empty($library['installed'])) {
+    // The library is installed. Awesome!
+    $controller[] = 'StripePaymentMethodController';
+  }
+  return $controller;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_ACTION().
+ */
+function stripe_payment_payment_method_load($payment_methods) {
+  // Discard non-Stripe payment methods.
+  $payment_methods = array_filter($payment_methods, function(PaymentMethod $payment_method) {
+    return $payment_method->controller->name === 'StripePaymentMethodController';
+  });
+  if ($payment_methods) {
+    // Collect pmids.
+    $pmids = array_map(function(PaymentMethod $payment_method) {
+      return $payment_method->pmid;
+    }, $payment_methods);
+    // Load keys (all payment methods at once).
+    $keys = db_select('stripe_payment_keys', 'spk')
+      ->fields('spk', array('pmid', 'secret', 'publishable'))
+      ->condition('pmid', $pmids)
+      ->execute()
+      ->fetchAllAssoc('pmid', PDO::FETCH_ASSOC);
+    // Set controller data for all payment methods.
+    foreach ($payment_methods as $payment_method) {
+      $payment_method->controller_data += $payment_method->controller->controller_data_defaults;
+      if (isset($keys[$payment_method->pmid])) {
+        // Keys found for this payment method.
+        $payment_method->controller_data['keys']['mode'] = 1;
+        $payment_method->controller_data['keys']['secret'] = $keys[$payment_method->pmid]['secret'];
+        $payment_method->controller_data['keys']['publishable'] = $keys[$payment_method->pmid]['publishable'];
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_ACTION().
+ */
+function stripe_payment_payment_method_insert(PaymentMethod $payment_method) {
+  if ($payment_method->controller->name === 'StripePaymentMethodController') {
+    stripe_payment_payment_method_update($payment_method);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_ACTION().
+ */
+function stripe_payment_payment_method_update(PaymentMethod $payment_method) {
+  if ($payment_method->controller->name === 'StripePaymentMethodController') {
+    $payment_method->controller_data += $payment_method->controller->controller_data_defaults;
+    if ($payment_method->controller_data['keys']['mode']) {
+      // Insert/Update stored Payment Method's keys.
+      db_merge('stripe_payment_keys')
+        ->key(array('pmid' => $payment_method->pmid))
+        ->fields(array(
+            'secret' => $payment_method->controller_data['keys']['secret'],
+            'publishable' => $payment_method->controller_data['keys']['publishable'],
+          ))
+        ->execute();
+    }
+    else {
+      // Delete stored keys (if any).
+      db_delete('stripe_payment_keys')
+        ->condition('pmid', $payment_method->pmid)
+        ->execute();
+    }
+    // Clear cached data related to this Payment Method.
+    drupal_static_reset('StripePaymentMethodController::retrieveAccount');
+    cache_clear_all("stripe_payment_method:$payment_method->pmid:", 'cache', TRUE);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_ACTION().
+ */
+function stripe_payment_payment_method_delete(PaymentMethod $payment_method) {
+  if ($payment_method->controller->name === 'StripePaymentMethodController') {
+    // Delete stored keys (if any).
+    db_delete('stripe_payment_keys')
+      ->condition('pmid', $payment_method->pmid)
+      ->execute();
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_ACTION().
+ */
+function stripe_payment_payment_load($payments) {
+  // Discard non-Stripe payments.
+  $payments = array_filter($payments, function(Payment $payment) {
+    return $payment->method->controller->name === 'StripePaymentMethodController';
+  });
+  if ($payments) {
+    // Collect pids.
+    $pids = array_map(function(Payment $payment) {
+      return $payment->pid;
+    }, $payments);
+    // Load stored data (all payments at once).
+    $method_data = db_select('stripe_payment_data', 'spd')
+      ->fields('spd', array('pid', 'type', 'id'))
+      ->condition('pid', $pids)
+      ->execute()
+      ->fetchAllAssoc('pid', PDO::FETCH_ASSOC);
+    foreach ($payments as $payment) {
+      if (isset($method_data[$payment->pid])) {
+        $payment->method_data[$method_data[$payment->pid]['type']] = $method_data[$payment->pid]['id'];
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_ACTION().
+ */
+function stripe_payment_payment_insert(Payment $payment) {
+  if ($payment->method->controller->name === 'StripePaymentMethodController') {
+    stripe_payment_payment_update($payment);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_ACTION().
+ */
+function stripe_payment_payment_update(Payment $payment) {
+  if ($payment->method->controller->name === 'StripePaymentMethodController') {
+    $record = array();
+    foreach (array('charge', 'customer', 'token') as $type) {
+      if (isset($payment->method_data[$type])) {
+        $record = array(
+          'type' => $type,
+          'id' => $payment->method_data[$type],
+        );
+        break;
+      }
+    }
+    if ($record) {
+      // Insert/Update stored data.
+      db_merge('stripe_payment_data')
+        ->key(array('pid' => $payment->pid))
+        ->fields($record)
+        ->execute();
+    }
+    else {
+      // Delete stored data (if any).
+      db_delete('stripe_payment_data')
+        ->condition('pid', $payment->pid)
+        ->execute();
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_ACTION().
+ */
+function stripe_payment_payment_delete(Payment $payment) {
+  if ($payment->method->controller->name == 'StripePaymentMethodController') {
+    // Delete stored data (if any).
+    db_delete('stripe_payment_data')
+      ->condition('pid', $payment->pid)
+      ->execute();
+  }
+}
+
+/**
+ * Implements PaymentMethodController::payment_method_configuration_form_elements_callback.
+ */
+function stripe_payment_method_configuration_form_elements(array $form, array &$form_state) {
+  return $form_state['payment_method']->controller
+    ->payment_method_configuration_form_elements($form, $form_state);
+}
+
+/**
+ * Implements validation for PaymentMethodController::payment_method_configuration_form_elements_callback.
+ */
+function stripe_payment_method_configuration_form_elements_validate(array $form, array &$form_state) {
+  return $form_state['payment_method']->controller
+    ->payment_method_configuration_form_elements_validate($form, $form_state);
+}
+
+/**
+ * Implements PaymentMethodController::payment_configuration_form_elements_callback.
+ */
+function stripe_payment_configuration_form_elements(array $form, array &$form_state) {
+  return $form_state['payment']->method->controller
+    ->payment_configuration_form_elements($form, $form_state);
+}
+
+/**
+ * Implements validation for PaymentMethodController::payment_configuration_form_elements_callback.
+ */
+function stripe_payment_configuration_form_elements_validate(array $form, array &$form_state) {
+  return $form_state['payment']->method->controller
+    ->payment_configuration_form_elements_validate($form, $form_state);
+}

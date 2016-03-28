@@ -1,0 +1,14 @@
+name = User Pages
+description = User Pages allows you to manage user, user/login, user/register, user/password via panel.
+package = "Chaos tool suite"
+core = 7.x
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = panels
+
+; Information added by Drupal.org packaging script on 2014-09-15
+version = "7.x-1.0"
+core = "7.x"
+project = "user_pages"
+datestamp = "1410813529"
+

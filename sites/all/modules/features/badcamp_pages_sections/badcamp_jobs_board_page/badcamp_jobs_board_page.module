@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Jobs Board page feature.
+ */
+
+include_once 'badcamp_jobs_board_page.features.inc';

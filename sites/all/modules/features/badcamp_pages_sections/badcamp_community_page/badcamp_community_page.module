@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Community page feature.
+ */
+
+include_once 'badcamp_community_page.features.inc';

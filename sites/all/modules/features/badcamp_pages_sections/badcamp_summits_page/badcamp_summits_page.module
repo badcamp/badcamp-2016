@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Summits page feature.
+ */
+
+include_once 'badcamp_summits_page.features.inc';

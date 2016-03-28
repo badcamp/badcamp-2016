@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp News feature.
+ */
+
+include_once 'badcamp_news_feature.features.inc';

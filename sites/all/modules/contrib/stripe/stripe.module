@@ -1,0 +1,433 @@
+<?php
+
+/**
+ * @file stripe.module
+ * Drupal hooks used for integrating the Stripe service.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function stripe_help($path, $arg) {
+  if ($path == 'admin/config/stripe/admin/keys') {
+    $output = '<ol>';
+    $output .= '<li>' . t('Enter the API keys you get from your <a href="@url">Stripe account page</a>.', array('@url' => 'https://manage.stripe.com/account')) . '</li>';
+    $output .= '<li>' . t('Use the radio buttons to choose which API Key should be used with this site.') . '</li>';
+    $output .= '<li>' . t('After designating an API Key, you might want to try out <a href="@url">the test form</a>.', array('@url' => '/admin/config/stripe/test')) . '</li>';
+    $output .= '</ol>';
+    return $output;
+  }
+  if ($path == 'admin/config/stripe/admin/test') {
+    return '<p>' . t('This form is to test responses from Stripe. The default values are accepted by Stripe for testing purposes. Before you can use this form, you should <a href="@url">designate an active API Key</a>.', array('@url' => '/admin/config/stripe/keys')) . '</p>';
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function stripe_permission() {
+  return array(
+    'administer stripe' => array(
+      'title' => t('Administer the Stripe module'),
+      'description' => t('Allows access to configure API Keys and to the test form.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function stripe_menu() {
+  $items['admin/config/stripe'] = array(
+    'title' => 'Stripe Payment Gateway',
+    'description' => 'Configuration, and testing',
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('administer stripe'),
+    'position' => 'right',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+  $items['admin/config/stripe/settings'] = array(
+    'title' => 'Stripe Settings',
+    'description' => 'API keys and other general Stripe settings.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('stripe_admin_keys'),
+    'access arguments' => array('administer stripe'),
+    'file' => 'stripe.admin.inc',
+  );
+  $items['admin/config/stripe/test'] = array(
+    'title' => 'Test form',
+    'description' => 'A form for testing Stripe responses.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('stripe_admin_test'),
+    'access arguments' => array('administer stripe'),
+    'file' => 'stripe.test.inc',
+  );
+  $items['stripe/webhooks'] = array(
+    'title' => 'Stripe Webhooks',
+    'description' => 'Handler for incoming Stripe Webhook requests.',
+    'page callback' => 'stripe_webhooks_callback',
+    //'delivery callback' => 'stripe_webhook_response_output',
+    'access callback' => TRUE,
+    'file' => 'stripe.pages.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_element_info().
+ */
+function stripe_element_info() {
+  return array(
+    'stripe_payment' => array(
+      '#process' => array('stripe_element_process'),
+      '#cardholder_name' => TRUE,
+      '#address' => FALSE,
+      '#cvc' => TRUE,
+      '#publishable_key' => NULL,
+    ),
+  );
+}
+
+/**
+ * Process callback for this module elements.
+ *
+ * TODO: Attach JS through a library defined via hook_library() implementation.
+ * TODO: Support form WITHOUT Stripe.js.
+ *       This would require an configuration variable to be set to TRUE. This
+ *       will have serious security implications. No UI should be provided to
+ *       enable this, requiring either a clear and informed user action or usage
+ *       of third party code.
+ *
+ * @param array $element
+ *   The processed element.
+ * @param array $form_state
+ *   The form state.
+ * @param array $complete_form
+ *   The complete form.
+ */
+function stripe_element_process($element, $form_state, $complete_form) {
+  $live = variable_get('stripe_key_status', 'test') === 'live';
+  $element['#type'] = 'fieldset';
+  $element += element_info('fieldset');
+  $element['#tree'] = TRUE;
+  $element['stripe_token'] = array(
+    '#type' => 'hidden',
+    '#element_validate' => array('stripe_token_element_validate'),
+    '#attributes' => array('data-stripe' => 'token'),
+  );
+
+  if ($element['#cardholder_name']) {
+    if (is_bool($element['#cardholder_name'])) {
+      // Embed our own cardholder name element.
+      $element['name'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Cardholder Name'),
+        '#description' => t('Name of the cardholder as displayed on the card.'),
+        '#attributes' => array('data-stripe' => 'name'),
+        '#disabled' => TRUE,
+        '#element_validate' => array('stripe_element_validate_empty'),
+        '#pre_render' => array('stripe_element_remove_name'),
+      );
+    }
+    elseif (is_array($element['#cardholder_name'])) {
+      // Use existing cardholder name element.
+      $cardholder_name_element = &drupal_array_get_nested_value($form, $element['#cardholder_name']);
+      if ($cardholder_name_element) {
+        $cardholder_name_element['#attributes']['data-stripe'] = 'name';
+        $cardholder_name_element['#disabled'] = TRUE;
+        $cardholder_name_element['#element_validate'][] = 'stripe_element_validate_empty';
+        $cardholder_name_element['#pre_render'][] = 'stripe_element_remove_name';
+      }
+    }
+  }
+
+  if ($element['#address']) {
+    require_once 'includes/locale.inc';
+    if (is_bool($element['#address'])) {
+      // Embed our own billign address elements.
+      $element['address'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Billing address'),
+        'thoroughfare' => array(
+          '#type' => 'textfield',
+          '#title' => t('Address 1'),
+          '#attributes' => array('data-stripe' => 'address_line1'),
+          '#disabled' => TRUE,
+          '#element_validate' => array('stripe_element_validate_empty'),
+          '#pre_render' => array('stripe_element_remove_name'),
+        ),
+        'premise' => array(
+          '#type' => 'textfield',
+          '#title' => t('Address 2'),
+          '#attributes' => array('data-stripe' => 'address_line2'),
+          '#disabled' => TRUE,
+          '#element_validate' => array('stripe_element_validate_empty'),
+          '#pre_render' => array('stripe_element_remove_name'),
+        ),
+        'locality' => array(
+          '#type' => 'textfield',
+          '#title' => t('City'),
+          '#attributes' => array('data-stripe' => 'address_city'),
+          '#disabled' => TRUE,
+          '#element_validate' => array('stripe_element_validate_empty'),
+          '#pre_render' => array('stripe_element_remove_name'),
+        ),
+        'administrative_area' => array(
+          '#type' => 'textfield',
+          '#title' => t('State'),
+          '#attributes' => array('data-stripe' => 'address_state'),
+          '#disabled' => TRUE,
+          '#element_validate' => array('stripe_element_validate_empty'),
+          '#pre_render' => array('stripe_element_remove_name'),
+        ),
+        'postal_code' => array(
+          '#type' => 'textfield',
+          '#title' => t('Postal code'),
+          '#attributes' => array('data-stripe' => 'address_zip'),
+          '#disabled' => TRUE,
+          '#element_validate' => array('stripe_element_validate_empty'),
+          '#pre_render' => array('stripe_element_remove_name'),
+        ),
+        'country' => array(
+          '#type' => 'select',
+          '#title' => t('Country'),
+          '#attributes' => array('data-stripe' => 'address_country'),
+          '#options' => country_get_list(),
+          '#disabled' => TRUE,
+          '#element_validate' => array('stripe_element_validate_empty'),
+          '#pre_render' => array('stripe_element_remove_name'),
+        ),
+      );
+    }
+    elseif (is_array($element['#address'])) {
+      // Use existing billing address elements.
+      $address_element = &drupal_array_get_nested_value($form, $element['#address']);
+      if ($address_element) {
+        $sub_elements = array(
+          'thoroughfare' => 'address_line1',
+          'premise' => 'address_line2',
+          'locality' => 'address_city',
+          'administrative_area' => 'address_state',
+          'postal_code' => 'address_zip',
+          'country' => 'address_country',
+        );
+        foreach ($sub_elements as $name => $data_stripe) {
+          if (isset($address_element[$name])) {
+            $address_element[$name]['#attributes']['data-stripe'] = $data_stripe;
+            $address_element[$name]['#disabled'] = TRUE;
+            $address_element[$name]['#element_validate'][] = 'stripe_element_validate_empty';
+            $address_element[$name]['#pre_render'][] = 'stripe_element_remove_name';
+          }
+        }
+      }
+    }
+  }
+
+  $element['number'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Card Number'),
+    '#description' => !$live ? t('Test Mode: Use 4242424242424242 ') : '',
+    '#maxlength' => 16,
+    '#attributes' => array(
+      'data-stripe' => 'number',
+      'autocomplete' => 'off',
+    ),
+    '#disabled' => TRUE,
+    '#element_validate' => array('stripe_element_validate_empty'),
+    '#pre_render' => array('stripe_element_remove_name'),
+  );
+  $month_options = array();
+  for ($i = 1; $i < 13; $i++) {
+    $month_options[sprintf('%02d', $i)] = format_date(strtotime(sprintf('%02d/01', $i)), 'custom', 'm (M)');
+  }
+  $element['expiry_month'] = array(
+    '#type' => 'select',
+    '#title' => t('Expiration Month'),
+    '#attributes' => array('data-stripe' => 'exp_month'),
+    '#multiple' => FALSE,
+    '#options' => $month_options,
+    '#disabled' => TRUE,
+    '#element_validate' => array('stripe_element_validate_empty'),
+    '#pre_render' => array('stripe_element_remove_name'),
+  );
+
+  $current_year = date('Y');
+  $years = range($current_year, $current_year + 15);
+  $year_options = array_combine($years, $years);
+
+  $element['expiry_year'] = array(
+    '#type' => 'select',
+    '#title' => t('Expiration Year'),
+    '#attributes' => array('data-stripe' => 'exp_year'),
+    '#options' => $year_options,
+    '#disabled' => TRUE,
+    '#element_validate' => array('stripe_element_validate_empty'),
+    '#pre_render' => array('stripe_element_remove_name'),
+  );
+
+  if ($element['#cvc']) {
+    $element['cvc'] = array(
+      '#type' => 'textfield',
+      '#title' => t('CVC'),
+      '#description' => !$live ? t('Test Mode: Use 123') : '',
+      '#size' => 5,
+      '#maxlength' => 4,
+      '#attributes' => array(
+        'autocomplete' => 'off',
+        'data-stripe' => 'cvc',
+      ),
+      '#disabled' => TRUE,
+      '#element_validate' => array('stripe_element_validate_empty'),
+      '#pre_render' => array('stripe_element_remove_name'),
+    );
+  }
+
+  // Attach the javascript from Stripe.
+  $element['#attached']['js']['https://js.stripe.com/v1/'] = array('type' => 'external');
+  // Attach our javascript.
+  $element['#attached']['js'][] = drupal_get_path('module', 'stripe') . '/stripe.js';
+  // Attach the publishable key to the form element.
+  $element['#attributes']['data-stripe-key'] = !empty($element['#publishable_key']) ? $element['#publishable_key'] : stripe_get_key('publishable');
+  return $element;
+}
+
+/**
+ * Validate the stripe token to be sure that it was set by the javascript.
+ */
+function stripe_token_element_validate($element, $form_state, $form) {
+  if (empty($element['#value']) && isset($element['#access']) && $element['#access']) {
+    form_error($element, t('There was a problem processing your payment.'));
+  }
+}
+
+/**
+ * Element validate function to ensure that the posted value for an element is
+ * empty. We do this just to double check that credit card numbers are not
+ * getting posted to the server, as this would create PCI implications. If they
+ * are making it back to the server, we stop the form from processing, and log a
+ * watchdog alert.
+ */
+function stripe_element_validate_empty($element, $form_state, $form) {
+  static $logged = FALSE;
+  // Log a watchdog message the first time only. No need to log two messages.
+  if (!empty($element['#value']) && !$logged) {
+    // Set an error on the first element this happened on.
+    form_error($element, t('There was a problem processing your payment.
+      For your own protection, it is recommended you do NOT attempt to re-enter
+      your payment information.'));
+    // Now log a watchdog alert.
+    $message = 'Credit Card information is being posted to your server. '      .
+      'Please disable Stripe module immediately and submit a bug '    .
+      'report at http://drupal.org/node/add/project-issue/stripe.';
+    watchdog('stripe', $message, NULL, WATCHDOG_ALERT);
+    $logged = TRUE;
+  }
+}
+
+/**
+ * Pre render callback for Stripe elements with sensitive information, to remove
+ * the 'name' attribute. This ensures that the browser doesn't post the values
+ * back to the server.
+ */
+function stripe_element_remove_name($element) {
+  unset($element['#name']);
+  return $element;
+}
+
+/**
+ * Returns TRUE if Stripe is in live mode.
+ */
+function tg_stripe_live() {
+  $status = variable_get('stripe_key_status', 'test');
+  return $status == 'live' ? TRUE : FALSE;
+}
+
+/**
+ * Get the Stripe publishable key.
+ */
+function stripe_get_publishable_key() {
+  $status = variable_get('stripe_key_status', 'test');
+  $pub_key_name = 'stripe_' . $status . '_publishable';
+  $pub_key = variable_get($pub_key_name, '');
+  return $pub_key;
+}
+
+/**
+ * Implements hook_libraries_info().
+ */
+function stripe_libraries_info() {
+  $libraries['stripe'] = array(
+    'name' => 'Stripe Payment API PHP Library',
+    'vendor url' => 'https://stripe.com/docs/libraries',
+    'download url' => 'https://stripe.com/docs/libraries#php-library',
+    'version arguments' => array(
+      'file' => 'VERSION',
+      'pattern' => '/([0-9a-zA-Z\.-]+)/',
+      'lines' => 1,
+    ),
+    'files' => array('php' => array('init.php')),
+    'callbacks' => array('post-load' => array('stripe_libraries_postload_callback')),
+  );
+  return $libraries;
+}
+
+/**
+ * Post-load callback for the Stripe PHP Library.
+ *
+ * @param array $library
+ *   An array of library information.
+ * @param string $version
+ *   If the $library array belongs to a certain version, a string containing the
+ *   version.
+ * @param string $variant
+ *   If the $library array belongs to a certain variant, a string containing the
+ *   variant name.
+ */
+function stripe_libraries_postload_callback($library, $version = NULL, $variant = NULL) {
+  if (!empty($library['loaded'])) {
+    $status = variable_get('stripe_key_status', 'test');
+    $secret_key_name = 'stripe_' . $status . '_secret';
+    $secret_key = variable_get($secret_key_name, '');
+    empty($secret_key) ? NULL : \Stripe\Stripe::setApiKey($secret_key);
+  }
+}
+
+/**
+ * Get the stripe key(s).
+ *
+ * @param string $type
+ *   The type of the key to retrieve, either 'secret' or 'publishable'
+ *   (optional).
+ * @param string $set
+ *   The keys set to use, either 'test' or 'live'. Defaults to the value of the
+ *   'stripe_key_status' variable.
+ *
+ * @return array|string
+ *   If $type is NULL, an array containing both the secret and publishable keys.
+ *   Otherwise, the request keys.
+ */
+function stripe_get_key($type = NULL, $set = NULL) {
+  $keys = drupal_static(__FUNCTION__, array());
+  if ($set === NULL) {
+    $set = variable_get('stripe_key_status', 'test');
+  }
+  if (empty($keys[$set])) {
+    $keys[$set] = array(
+      'secret' => variable_get("stripe_{$set}_secret", ''),
+      'publishable' => variable_get("stripe_{$set}_publishable", ''),
+    );
+  }
+  return ($type === NULL) ? $keys[$set] : (isset($keys[$set][$type]) ? $keys[$set][$type] : NULL);
+}
+
+/**
+ * Returns data in plain text.
+ */
+function stripe_webhook_response_output($var = NULL) {
+  drupal_add_http_header('Content-Type', 'text/plain');
+  if (isset($var)) {
+    print $var;
+  }
+}

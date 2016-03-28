@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp My Schedule feature.
+ */
+
+include_once 'badcamp_my_schedule.features.inc';

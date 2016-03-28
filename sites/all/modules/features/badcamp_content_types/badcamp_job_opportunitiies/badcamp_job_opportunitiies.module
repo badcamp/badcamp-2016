@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Job Opportunitiies feature.
+ */
+
+include_once 'badcamp_job_opportunitiies.features.inc';

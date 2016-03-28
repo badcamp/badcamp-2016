@@ -1,0 +1,11 @@
+name = BADCamp Code of Conduct Page
+description = The code of conduct
+core = 7.x
+package = BADCamp Pages/Sections
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_pages][] = code_of_conduct
+project path = sites/all/modules/features/badcamp_pages_sections

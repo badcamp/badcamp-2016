@@ -1,0 +1,112 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp user profile feature.
+ */
+
+include_once 'badcamp_user_profile.features.inc';
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function badcamp_user_profile_field_formatter_info() {
+  return array(
+    'boolean' => array(
+      'label' => t('Hide if Boolean FALSE'),
+      'field types' => array('list_boolean'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function badcamp_user_profile_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+  $settings = $display['settings'];
+  if ($display['type'] == 'boolean') {
+    $allowed_values = list_allowed_values($field, $instance, $entity_type, $entity);
+    foreach ($items as $delta => $item) {
+      if ($item['value']) {
+        if (isset($allowed_values[$item['value']])) {
+          $output = field_filter_xss($allowed_values[$item['value']]);
+        }
+        else {
+          // If no match was found in allowed values, fall back to the key.
+          $output = field_filter_xss($item['value']);
+        }
+        $element[$delta] = array('#markup' => $output);
+      }
+    }
+  }
+  return $element;
+}
+
+/**
+ * Implements hook_field_extra_fields().
+ */
+function badcamp_user_profile_field_extra_fields() {
+  return array(
+    'user' => array(
+      'sponsor_badge' => array(
+        'display' => array(
+          'sponsor_badge' => array(
+            'label' => t('Sponsor Badge'),
+            'description' => t('Display a Sponsor Badge based on their level of sponsorship'),
+            'weight' => 0,
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function badcamp_user_profile_entity_view($entity, $type, $view_mode, $langcode) {
+  if ($type == 'user') {
+    $entity->content['sponsor_badge'] = array(
+      '#markup' => badcamp_user_profile_sponsor_badge_callback($entity),
+    );
+  }
+}
+
+/**
+ * Render a sponsor badge.
+ */
+function badcamp_user_profile_sponsor_badge_callback($entity) {
+  // ROFL badge.
+  if (in_array($entity->uid, array(1))) {
+    return '<img class="sponsor badge" src="/sites/all/modules/features/badcamp_config/badcamp_user_profile/images/sponsorbadges-ROFL.png"/>';
+  }
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'donation')
+    ->entityCondition('bundle', 'donation')
+    ->propertyCondition('uid', $entity->uid, '=');
+  $result = $query->execute();
+
+  if (isset($result['donation'])) {
+    $donation = array_pop($result['donation']);
+    $donation_wrapper = entity_metadata_wrapper('donation', $donation->id);
+    if (isset($donation_wrapper->field_donation_type->id)) {
+      switch ($donation_wrapper->field_donation_type->id->value()) {
+        // Supporting.
+        case 2:
+          return '<img class="sponsor badge" src="/sites/all/modules/features/badcamp_config/badcamp_user_profile/images/sponsorbadges-supporting.png"/>';
+
+        // Contrib.
+        case 3:
+          return '<img class="sponsor badge" src="/sites/all/modules/features/badcamp_config/badcamp_user_profile/images/sponsorbadges-contributing2.png"/>';
+
+        // Core.
+        case 4:
+          return '<img class="sponsor badge" src="/sites/all/modules/features/badcamp_config/badcamp_user_profile/images/sponsorbadges-core.png"/>';
+
+        default:
+          return;
+      }
+    }
+  }
+}

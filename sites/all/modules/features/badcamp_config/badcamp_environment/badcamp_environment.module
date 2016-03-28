@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Environment feature.
+ */
+
+include_once 'badcamp_environment.features.inc';

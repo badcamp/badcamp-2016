@@ -1,0 +1,9 @@
+name = BADCamp Training Registration
+description = Training Registration forms with payments using Stripe
+package = BADCamp
+core = 7.x
+version = 7.x-1.1
+configure = admin/config/training_reg
+
+dependencies[] = stripe
+dependencies[] = training_reg_feature
