@@ -66,6 +66,17 @@ function badcamp_user_profile_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'view style guides'.
+  $permissions['view style guides'] = array(
+    'name' => 'view style guides',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'styleguide',
+  );
+
   // Exported permission: 'view the administration theme'.
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',

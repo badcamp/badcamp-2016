@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function badcamp_user_profile_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -38,7 +38,7 @@ function badcamp_user_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_administration_settings|user|user|form'] = $field_group;
+  $field_groups['group_administration_settings|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -70,7 +70,7 @@ function badcamp_user_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_camper_information|user|user|form'] = $field_group;
+  $field_groups['group_camper_information|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -99,7 +99,7 @@ function badcamp_user_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_contact|user|user|default'] = $field_group;
+  $field_groups['group_contact|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -131,7 +131,7 @@ function badcamp_user_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_participation|user|user|default'] = $field_group;
+  $field_groups['group_participation|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -159,7 +159,7 @@ function badcamp_user_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_personal_settings|user|user|form'] = $field_group;
+  $field_groups['group_personal_settings|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -188,7 +188,7 @@ function badcamp_user_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_social_media|user|user|form'] = $field_group;
+  $field_groups['group_social_media|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -215,7 +215,17 @@ function badcamp_user_profile_field_group_info() {
       ),
     ),
   );
-  $export['group_user_information|user|user|form'] = $field_group;
+  $field_groups['group_user_information|user|user|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Administration settings');
+  t('Camper information');
+  t('Contact');
+  t('Participation');
+  t('Personal settings');
+  t('Social media');
+  t('User information');
+
+  return $field_groups;
 }
