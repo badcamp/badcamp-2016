@@ -1,0 +1,73 @@
+machine:
+  php:
+    version: 5.6.14
+  node:
+    version: 0.12.7
+  hosts:
+    badcamp2016.dev: 127.0.0.1
+
+dependencies:
+  cache_directories:
+    - vendor
+    - node_modules
+    - ~/.drush
+    - ~/.composer
+
+  override:
+    - npm install
+    - composer install --prefer-source --no-interaction
+
+  pre:
+    # Configure Drush.
+    - sudo mkdir -p ~/.drush
+    - sudo chown -R ubuntu:ubuntu ~/.drush
+    - cp ./circle/badcamp2016.aliases.drushrc.php ~/.drush
+    - drush cc drush
+
+    # Drupal settings.
+    - cp ./circle/settings.secret.php ./settings
+
+    # Set alias.
+    - drush site-set @badcamp2016.circle
+
+    # Install and start Selenium.
+    - wget http://selenium-release.storage.googleapis.com/2.48/selenium-server-standalone-2.48.2.jar
+    - java -jar selenium-server-standalone-2.48.2.jar:
+            background: true
+
+    # Configure Apache.
+    - cp ./circle/badcamp2016 /etc/apache2/sites-available
+    - sudo a2ensite badcamp2016
+    - sudo a2enmod rewrite
+    - sudo service apache2 restart
+
+  post:
+    # Install Drupal and disable sendmail.
+    - /usr/bin/env PHP_OPTIONS="-d sendmail_path=`which true`" drush si --account-pass=admin -y
+
+    # Post build configuration.
+    - drush cc drush
+    - drush master-set-current-scope local
+    - drush master-execute -y
+    - drush cc all
+
+test:
+  override:
+    # Reports.
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+
+    # PHP Lint.
+    - ./node_modules/.bin/gulp phplint
+
+    # Drupal Coding Standards.
+    - ./node_modules/.bin/gulp drupalcs --report=junit --reportfile=$CIRCLE_TEST_REPORTS/junit/
+
+    # ESLint.
+    - ./node_modules/.bin/gulp eslint --outputfile=$CIRCLE_TEST_REPORTS/junit/
+    - sudo BUILD="$HOME" su -c "PATH=$PATH:/home/ubuntu/.composer/vendor/bin/ && drush site-set www-data@localhost$BUILD#badcamp2016.dev && /home/ubuntu/.phpenv/shims/php ./vendor/bin/behat -p circle" www-data
+
+    # Overridden features.
+    - drush @badcamp2016.circle fl | grep -qi 'overridden' && (echo 'Overridden Features - FAIL' && exit 1) || (echo 'Overridden Features - PASS' && exit 0)
+
+    # Available updates.
+    - drush @badcamp2016.circle ups | grep -qi "update available" && (echo 'Updates available - FAIL' && exit 1) || (echo 'No updates available - PASS' && exit 0)

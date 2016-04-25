@@ -30,7 +30,8 @@
 ######################
 .DS_Store*
 ehthumbs.db
-Icon
+Icon
+
 Thumbs.db
 ._*
 
@@ -41,3 +42,16 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
+
+# General ignores
+.idea
+*.iml
+node_modules
+
+# Composer
+vendor
+
+# Settings
+settings.secret.php
+settings.local.php
+!circle/settings.secret.php
