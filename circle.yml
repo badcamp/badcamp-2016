@@ -51,6 +51,9 @@ dependencies:
 
 test:
   override:
+    # Drush configuration.
+    - drush site-set @badcamp2016.circle
+
     # Reports.
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
 
@@ -64,10 +67,10 @@ test:
     - ./node_modules/.bin/gulp eslint --outputfile=$CIRCLE_TEST_REPORTS/junit/
 
     # Behat.
-    - su -c "drush site-set www-data@localhost$BUILD#badcamp2016.dev && /home/ubuntu/.phpenv/shims/php ./vendor/bin/behat -p circle" www-data
+    - ./vendor/bin/behat -p circle
 
     # Overridden features.
-    - drush @badcamp2016.circle fl | grep -qi 'overridden' && (echo 'Overridden Features - FAIL' && exit 1) || (echo 'Overridden Features - PASS' && exit 0)
+    - drush fl | grep -qi 'overridden' && (echo 'Overridden Features - FAIL' && exit 1) || (echo 'Overridden Features - PASS' && exit 0)
 
     # Available updates.
-    - drush @badcamp2016.circle ups | grep -qi "update available" && (echo 'Updates available - FAIL' && exit 1) || (echo 'No updates available - PASS' && exit 0)
+    - drush ups | grep -qi "update available" && (echo 'Updates available - FAIL' && exit 1) || (echo 'No updates available - PASS' && exit 0)
