@@ -1,5 +1,5 @@
 {
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "require-dev": {
     "drush/drush": "7.1.0",
     "squizlabs/php_codesniffer": "2.3.4",
