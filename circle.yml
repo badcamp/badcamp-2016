@@ -1,6 +1,6 @@
 machine:
   php:
-    version: 5.6.14
+    version: 5.5.11
   node:
     version: 0.12.7
   hosts:
@@ -20,7 +20,7 @@ dependencies:
     - cp ./drush/badcamp2016.aliases.drushrc.php ~/.drush
 
     # Drupal settings.
-    - cp ./circle/settings.secret.php ./settings
+    - cp ./circle/settings.secret.php ./sites/default
 
     # Install and start Selenium.
     - wget http://selenium-release.storage.googleapis.com/2.48/selenium-server-standalone-2.48.2.jar
