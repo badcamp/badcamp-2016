@@ -8,10 +8,10 @@
 $databases = array(
   'default' => array(
     'default' => array(
-      'database' => 'circle_test',
-      'username' => 'ubuntu',
-      'password' => '',
-      'host' => '127.0.0.1',
+      'database' => 'drupal',
+      'username' => 'drupal',
+      'password' => 'drupal',
+      'host' => 'localhost',
       'driver' => 'mysql',
     ),
   ),

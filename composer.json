@@ -1,7 +1,7 @@
 {
   "minimum-stability": "stable",
   "require-dev": {
-    "drush/drush": "7.1.0",
+    "drush/drush": "7.2.0",
     "squizlabs/php_codesniffer": "2.3.4",
     "drupal/coder": "~8.2",
     "drupal/drupal-extension": "3.1.2",

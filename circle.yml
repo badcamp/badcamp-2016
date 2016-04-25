@@ -17,7 +17,7 @@ dependencies:
     # Configure Drush.
     - sudo mkdir -p ~/.drush
     - sudo chown -R ubuntu:ubuntu ~/.drush
-    - cp ./circle/badcamp2016.aliases.drushrc.php ~/.drush
+    - cp ./drush/badcamp2016.aliases.drushrc.php ~/.drush
 
     # Drupal settings.
     - cp ./circle/settings.secret.php ./settings

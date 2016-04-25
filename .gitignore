@@ -52,6 +52,10 @@ node_modules
 vendor
 
 # Settings
-settings.secret.php
 settings.local.php
 !circle/settings.secret.php
+
+# Drupal VM
+config.yml
+.vagrant
+/dashboard

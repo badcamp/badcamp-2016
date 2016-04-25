@@ -20,7 +20,7 @@ gulp.task('phplint', function (cb) {
     'settings/**/*.' + extensions,
     'tests/**/*.' + extensions,
     '!node_modules/**/*.*',
-    '!vendor/**/*.*',
+    '!vendor/**/*.*'
   ];
   var phpLintOptions = {
     limit: 50
