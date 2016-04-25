@@ -25,7 +25,7 @@ dependencies:
     # Install and start Selenium.
     - wget http://selenium-release.storage.googleapis.com/2.48/selenium-server-standalone-2.48.2.jar
     - java -jar selenium-server-standalone-2.48.2.jar:
-      background: true
+            background: true
 
     # Configure Apache.
     - cp ./circle/badcamp2016 /etc/apache2/sites-available
