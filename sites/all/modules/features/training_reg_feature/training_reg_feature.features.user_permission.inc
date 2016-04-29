@@ -15,7 +15,6 @@ function training_reg_feature_user_default_permissions() {
     'name' => 'administer training registration',
     'roles' => array(
       'administrator' => 'administrator',
-      'site editor' => 'site editor',
     ),
     'module' => 'training_reg',
   );
@@ -25,7 +24,6 @@ function training_reg_feature_user_default_permissions() {
     'name' => 'register for training',
     'roles' => array(
       'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'training_reg',
   );

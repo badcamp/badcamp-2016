@@ -47,6 +47,7 @@ $conf['master_modules']['base'] = array(
   'metatag',
   'module_filter',
   'panels',
+  'panels_everywhere',
   'panels_node',
   'pathauto',
   'realname',

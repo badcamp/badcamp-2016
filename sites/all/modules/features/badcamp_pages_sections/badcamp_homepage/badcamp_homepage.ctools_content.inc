@@ -35,15 +35,16 @@ function badcamp_homepage_default_ctools_custom_content() {
   $content->disabled = FALSE; /* Edit this to true to make a default content disabled initially */
   $content->api_version = 1;
   $content->name = 'badcamp_main_title_callout';
-  $content->admin_title = 'BADCamp main title callout';
-  $content->admin_description = 'This is the name, date, location title callout for BADCamp';
+  $content->admin_title = 'Main Title Callout';
+  $content->admin_description = 'Name, location and date.';
   $content->category = 'BADCamp';
   $content->settings = array(
     'admin_title' => 'Main Title callout',
     'title' => 'Bay Area Drupal Camp 2016',
-    'body' => '<p>Location: Planet Earth, Berkeley, CA, 37°52\'18.8358"N, -122°15\'38.6388"W</p>
+    'body' => '<p><strong>Location</strong>&nbsp;Planet Earth, Berkeley, CA<br />
+37°52\'18.8358"N, -122°15\'38.6388"W</p>
 
-<p>Date: 2016.10.20 - 2016.10.23</p>
+<p><strong>Date</strong>&nbsp;2016.10.20 - 2016.10.23</p>
 ',
     'format' => 'full_html',
     'substitute' => 0,
