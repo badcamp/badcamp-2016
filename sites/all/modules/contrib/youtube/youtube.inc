@@ -27,7 +27,10 @@ function youtube_get_video_id($input) {
 }
 
 /**
- * Returns a list of standard YouTube video sizes.
+ * Returns a list of YouTube video size options.
+ *
+ * @return array
+ *   An array of options, keyed by machine name with human readable values.
  */
 function youtube_size_options() {
   return array(
@@ -42,6 +45,9 @@ function youtube_size_options() {
 
 /**
  * Returns a list of thumbnail link types.
+ *
+ * @return array
+ *   An array of link types, keyed by machine name with human readable values.
  */
 function youtube_thumbnail_link_types() {
   $link_types = array(
@@ -49,15 +55,25 @@ function youtube_thumbnail_link_types() {
     'youtube' => t('YouTube'),
   );
 
-  if (module_exists('youtube_colorbox')) {
-    $link_types['colorbox'] = t('Colorbox');
-  }
+  // Allow other modules to add link types.
+  drupal_alter('youtube_thumbnail_link_types', $link_types);
 
   return $link_types;
 }
 
 /**
- * Splits height and width when given size, as from youtube_size_options.
+ * Determines the height and width when given a player size.
+ *
+ * @param string $size
+ *   (optional) The machine name of the size from youtube_size_options().
+ * @param string $width
+ *   (optional) The width input for custom dimensions.
+ * @param string $height
+ *   (optional) The height input for custom dimensions.
+ *
+ * @return array
+ *   An array keyed by 'width' and 'height' with the values to use when theming
+ *   the video player.
  */
 function youtube_get_dimensions($size = NULL, $width = NULL, $height = NULL) {
   $dimensions = array();
@@ -82,62 +98,93 @@ function youtube_get_dimensions($size = NULL, $width = NULL, $height = NULL) {
 }
 
 /**
- * Retreve youtube thumbnail image via YouTube API.
+ * Builds the URI to a given thumbnail or the module's thumbnail directory.
  *
- * TODO add error messaging if something goes wrong, and return FALSE.
+ * @param string $video_id
+ *   (optional) The video ID to build the thumbnail URI for.
  *
- * @param $id
- *   The video_id of the particular YouTube video.
- * @param $force_small
- *   When TRUE, this function should return the standard size image regardless
- *   of what the youtube_thumb_hires variable is set to. This is used should
- *   the high resolution image be found to not exist for a particular video.
+ * @return string
+ *   If a $video_id was supplied, the URI to that video's thumbnail. Otherwise
+ *   the URI to the module's thumbnail directory.
  */
-function youtube_get_remote_image($id = NULL, $force_small = FALSE) {
-  // This variable is TRUE when higher resolution thumnbails should be saved.
-  // The only thumbnail resolution higher than the standard 480 is
-  // 'maxresdefault'. This resolution image is not guaranteed to exist. After
-  // saving the file, we check to ensure that it does.
-  $youtube_thumb_hires = variable_get('youtube_thumb_hires', FALSE);
+function youtube_build_thumbnail_uri($video_id = NULL) {
+  $scheme = file_default_scheme();
+  $youtube_thumb_dir = variable_get('youtube_thumb_dir', 'youtube');
+  $youtube_thumb_uri = $scheme . '://' . $youtube_thumb_dir;
 
-  if ($youtube_thumb_hires && !$force_small) {
-    $src = youtube_build_remote_image_path($id, 'maxresdefault');
+  if ($video_id) {
+    return $youtube_thumb_uri . '/' . $video_id . '.jpg';
+  }
+
+  return $youtube_thumb_uri;
+}
+
+/**
+ * Retrieves the thumbnail image for a given video from YouTube.
+ *
+ * @param integer $video_id
+ *   The video ID of the particular YouTube video.
+ * @param bool $force_small
+ *   (optional) When TRUE, this function should return the standard size image
+ *   regardless of what the youtube_thumb_hires variable is set to. This is used
+ *   should the high resolution image be found to not exist for a particular
+ *   video.
+ *
+ * @return bool|stdClass
+ *   Either the Drupal $file object of saved image, or FALSE if the save failed.
+ */
+function youtube_get_remote_image($video_id = NULL, $force_small = FALSE) {
+  // This variable is TRUE when higher resolution thumbnails should be saved.
+  // The only thumbnail resolution higher than the standard 480 is
+  // 'maxresdefault'. This resolution image is not guaranteed to exist. If
+  // there's an error retrieving the hi-res image, we try again for small.
+  $youtube_thumb_hires = variable_get('youtube_thumb_hires', FALSE);
+  // This boolean is TRUE if we're obtaining a hi-res thumbnail.
+  $get_hires = ($youtube_thumb_hires && !$force_small);
+
+  if ($get_hires) {
+    $src = youtube_build_remote_image_path($video_id, 'maxresdefault');
   }
   else {
-    $src = youtube_build_remote_image_path($id);
+    $src = youtube_build_remote_image_path($video_id);
   }
 
-  // Make the actual request to download the file.
-  $image_result = drupal_http_request($src);
-
-  // Assure the youtube thumbnail directory exists.
-  $files = variable_get('file_public_path', conf_path() . '/files');
-  $youtube_dir = variable_get('youtube_thumb_dir', 'youtube');
-  $youtube_path = $files . '/' . $youtube_dir;
-  if (!file_prepare_directory($youtube_path, FILE_CREATE_DIRECTORY) && !mkdir($youtube_path, 0775, TRUE)) {
-    watchdog('youtube', 'Failed to create YouTube thumbnail directory: %dir', array('%dir' => $youtube_path), WATCHDOG_ERROR);
-  }
-
-  // Save the file.
-  $dest = $files . '/' . $youtube_dir . '/' . $id . '.png';
-  file_put_contents($dest, $image_result->data);
-
-  // If the high resolution image was saved but didn't actually exist, a very
-  // small placeholder image from YouTube will have been saved. By checking the
-  // dimensions of this image, we can determine if we saved the placeholder.
-  if ($youtube_thumb_hires && !$force_small) {
-    $image_path = $files . '/' . $youtube_dir . '/' . $id . '.png';
-    if (file_exists($image_path)) {
-      $image_size = getimagesize($image_path);
-      if (empty($image_size[0]) || $image_size[0] < 480) {
-        // We saved the placeholder. Re-run this function with $force_small
-        // set to TRUE. This will give us the standard, guaranteed, thumbnail.
-        youtube_get_remote_image($id, TRUE);
-      }
+  // Download file and save it as managed Drupal file.
+  $image = drupal_http_request($src);
+  if ($image->code != 200) {
+    // Silently retry for small image if hi-res did not exist, otherwise log an
+    // error and return FALSE.
+    if ($get_hires) {
+      return youtube_get_remote_image($video_id, TRUE);
     }
+    watchdog('youtube',
+      'HTTP request for video ID %id failed (error code: %err).',
+      array('%id', $video_id, '%err', $image->code),
+      WATCHDOG_ERROR);
+    return FALSE;
   }
 
-  return TRUE;
+  // Set the path to thumbnails, and make sure it's usable.
+  $youtube_thumb_uri = youtube_build_thumbnail_uri();
+  if (!file_prepare_directory($youtube_thumb_uri, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS)) {
+    watchdog('youtube',
+      'Failed to create YouTube thumbnail directory: %dir',
+      array('%dir' => $youtube_thumb_uri),
+      WATCHDOG_ERROR);
+    return FALSE;
+  }
+  $destination = youtube_build_thumbnail_uri($video_id);
+  // Save the thumbnail and add to Drupal managed files.
+  $file = file_save_data($image->data, $destination, FILE_EXISTS_REPLACE);
+
+  if (!$file) {
+    watchdog('youtube',
+      'Unable to save youtube thumbnail to filesystem for video %id',
+      array('%id' => $video_id),
+      WATCHDOG_ERROR);
+  }
+
+  return $file;
 }
 
 /**
@@ -146,22 +193,41 @@ function youtube_get_remote_image($id = NULL, $force_small = FALSE) {
  * @see youtube_settings_form()
  */
 function youtube_thumb_delete_all($form, &$form_state) {
-  $files = variable_get('file_public_path', conf_path() . '/files');
-  $youtube_dir = variable_get('youtube_thumb_dir', 'youtube');
-  $youtube_path = $files . '/' . $youtube_dir;
+  $youtube_thumb_uri = youtube_build_thumbnail_uri();
 
-  $imagestyleflush = t('Derivatives generated with image styles were not
-    deleted. <a href="@imagestyleflush">Image style flush</a> may help with that.',
-    array('@imagestyleflush' => 'https://www.drupal.org/project/imagestyleflush'));
-
-  if (file_prepare_directory($youtube_path) && file_unmanaged_delete_recursive($youtube_path)) {
-    drupal_set_message(t('All YouTube Field thumbnail image files have been
-      deleted and will be redownloaded upon the next page load.'));
-    drupal_set_message($imagestyleflush);
+  if (!file_prepare_directory($youtube_thumb_uri)) {
+    return drupal_set_message(t('No files deleted.'));
   }
-  else {
-    drupal_set_message(t('There were no thumbnails to delete.'), 'warning');
-    drupal_set_message($imagestyleflush, 'warning');
+
+  $files = file_scan_directory($youtube_thumb_uri, '/^.*\.(jpg|png)$/');
+
+  $legacy_files = FALSE;
+  foreach ($files as $raw_file) {
+    // Check if file is being managed by Drupal.
+    $uri = $youtube_thumb_uri . '/' . $raw_file->filename;
+    $managed_file = db_select('file_managed', 'fm')
+      ->fields('fm')
+      ->condition('uri', '%' . $uri, 'LIKE')
+      ->execute()
+      ->fetchAssoc();
+    if (!$managed_file) {
+      // Old files exist before module used managed files, notify user.
+      $legacy_files = file_unmanaged_delete($raw_file->uri);
+    }
+    else {
+      $file = file_load($managed_file['fid']);
+      // file_delete() invokes hooks to refresh associated image files.
+      file_delete($file);
+    }
+  }
+
+  if ($legacy_files) {
+    drupal_set_message(t('Note: Some unmanaged files from an older version of
+      the module were deleted. Their associated image style derivatives were not
+      deleted. <a href="@imagestyleflush">Image style flush</a> or
+      `drush image-flush` can be used for that. New thumbnails will be managed
+      files and will not have this issue.',
+      array('@imagestyleflush' => 'https://www.drupal.org/project/imagestyleflush')));
   }
 }
 
@@ -169,9 +235,10 @@ function youtube_thumb_delete_all($form, &$form_state) {
  * Get YouTube image path by building correctly formed URL.
  *
  * @param $video_id
- *   The ID of the video to grab the thumbnail from.
- * @param  $version
- *   Which version of the thumbnail to grab.
+ *   (optional) The ID of the video to grab the thumbnail from.
+ * @param $version
+ *   (optional) Which version of the thumbnail to grab.
+ *
  * @return string
  *   The youtube.com image path to the specified version/video.
  */
@@ -201,15 +268,6 @@ function youtube_build_remote_image_path($video_id = NULL, $version = '0') {
  * Implements hook_feeds_processor_targets_alter().
  *
  * Adds a target option for YouTube fields to Feeds mapping options.
- *
- * @param &$targets
- *   Array containing the targets to be offered to the user. Add to this array
- *   to expose additional options. Remove from this array to suppress options.
- *   Remove with caution.
- * @param $entity_type
- *   The entity type of the target, for instance a 'node' entity.
- * @param $bundle_name
- *   The bundle name for which to alter targets.
  */
 function youtube_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_name) {
   foreach (field_info_instances($entity_type, $bundle_name) as $name => $instance) {
@@ -281,9 +339,6 @@ function youtube_set_target($source, $entity, $target, $value, $mapping) {
  * Implements hook_token_info_alter().
  *
  * Alters and adds tokens for each youtube field.
- *
- * @param $data
- *   The associative array of token definitions from hook_token_info().
  */
 function youtube_token_info_alter(&$data) {
   // Get all youtube fields. Gather entity_type and bundle information.
@@ -326,32 +381,14 @@ function youtube_token_info_alter(&$data) {
 }
 
 /**
- * Provide replacement values for placeholder tokens.
- *
- * Replaces youtube_video_url and youtube_image_url tokens.
- *
- * @param $type
- *   The machine-readable name of the type (group) of token being replaced, such
- *   as 'node', 'user', or another type defined by a hook_token_info()
- *   implementation.
- * @param $tokens
- *   An array of tokens to be replaced. The keys are the machine-readable token
- *   names, and the values are the raw [type:token] strings that appeared in the
- *   original text.
- * @param $data
- *   (optional) An associative array of data objects to be used when generating
- *   replacement values, as supplied in the $data parameter to token_replace().
- * @param $options
- *   (optional) An associative array of options for token replacement; see
- *   token_replace() for possible values.
- *
- * @return
- *   An associative array of replacement values, keyed by the raw [type:token]
- *   strings from the original text.
+ * Implements hook_tokens().
  *
  * @see youtube_tokens_info_alter()
  */
 function youtube_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  global $base_url;
+  global $base_path;
+
   $url_options = array('absolute' => TRUE);
   if (isset($options['language'])) {
     $url_options['language'] = $options['language'];
@@ -369,7 +406,7 @@ function youtube_tokens($type, $tokens, array $data = array(), array $options = 
 
     foreach ($tokens as $name => $original) {
       if (!strpos($name, '__youtube_')) {
-        // This isn't a youtube token!
+        // This isn't a YouTube Field token!
         continue;
       }
 
@@ -383,24 +420,33 @@ function youtube_tokens($type, $tokens, array $data = array(), array $options = 
 
       switch ($token_name) {
         case 'youtube_video_url':
-          $field = $node->$field_name;
-          $video_id = $field[LANGUAGE_NONE][0]['video_id'];
-          $replacements[$original] = 'http://www.youtube.com/watch?v=' . $video_id;
+          $replacements[$original] = '';
+
+          if ($field_value = field_get_items('node', $node, $field_name)) {
+            $replacements[$original] = 'http://www.youtube.com/watch?v=' . $field_value[0]['video_id'];
+          }
           break;
 
         case 'youtube_image_url':
-          global $base_url;
-          global $base_path;
-          $field = $node->$field_name;
-          $video_id = $field[LANGUAGE_NONE][0]['video_id'];
-          $file_path = variable_get('file_public_path', conf_path() . '/files') . '/';
-          $file_path .= variable_get('youtube_thumb_dir', 'youtube');
-          $file_path .= '/' . $video_id . '.png';
-          $full_path = $base_url . $base_path . $file_path;
-          if (!file_exists($full_path)) {
-            youtube_get_remote_image($video_id);
+          $replacements[$original] = '';
+
+          if ($field_value = field_get_items('node', $node, $field_name)) {
+            $video_id = $field_value[0]['video_id'];
+            $file_uri = youtube_build_thumbnail_uri($video_id);
+            $file_url = file_create_url($file_uri);
+            if (file_exists($file_url) || youtube_get_remote_image($video_id)) {
+              $replacements[$original] = $file_url;
+
+              if ($style_name = variable_get('youtube_thumb_token_image_style', NULL)) {
+                $derivative_uri = image_style_path($style_name, $file_uri);
+                if (!file_exists($derivative_uri)) {
+                  $image_style = image_style_load($style_name);
+                  image_style_create_derivative($image_style, $file_uri, $derivative_uri);
+                }
+                $replacements[$original] = file_create_url($derivative_uri);
+              }
+            }
           }
-          $replacements[$original] = $full_path;
           break;
       }
     }

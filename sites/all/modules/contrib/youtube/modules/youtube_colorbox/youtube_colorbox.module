@@ -6,14 +6,27 @@
  */
 
 /**
+ * The machine name for the YouTube Colorbox link type used by display settings.
+ */
+define('YOUTUBE_COLORBOX_LINK_TYPE', 'colorbox');
+
+/**
  * Implements hook_field_formatter_info_alter().
  */
 function youtube_colorbox_field_formatter_info_alter(&$info) {
-  $info['youtube_thumbnail']['settings']['colorbox']['parameters'] = array(
+  $info['youtube_thumbnail']['settings'][YOUTUBE_COLORBOX_LINK_TYPE]['parameters'] = array(
     'width' => 640,
     'height' => 480,
     'autoplay' => '1',
   );
+}
+
+/**
+ * Implements hook_youtube_thumbnail_link_types_alter().
+ */
+function youtube_colorbox_youtube_thumbnail_link_types_alter(&$link_types) {
+  // Add the "Colorbox" link type to YouTube Field's thumbnail display settings.
+  $link_types[YOUTUBE_COLORBOX_LINK_TYPE] = t('Colorbox');
 }
 
 /**
@@ -31,21 +44,10 @@ function youtube_colorbox_form_youtube_settings_form_alter(&$form, &$form_state)
 }
 
 /**
- * Adds Colorbox settings to the 'youtube_thumbnail'
- *
- * @param array $element
- *   The field formatter form to add settings to.
- * @param array $instance
- *   The instance of the field being formatted.
- * @param array $settings
- *   Existing form settings.
- * @param string $field_name
- *   The machine name of the field.
- *
- * @see youtube_field_formatter_settings_form()
+ * Implements hook_youtube_thumbnail_field_formatter_settings_alter().
  */
-function youtube_colorbox_thumbnail_field_formatter_settings(&$element, $instance, $settings, $field_name) {
-  $colorbox = $settings['colorbox'];
+function youtube_colorbox_youtube_thumbnail_field_formatter_settings_alter(&$element, $instance, $settings, $field_name) {
+  $colorbox = $settings[YOUTUBE_COLORBOX_LINK_TYPE];
 
   // Set the states input name variable. JS states functionality will otherwise
   // break in Panels if the entity type is 'ctools'.
@@ -53,23 +55,23 @@ function youtube_colorbox_thumbnail_field_formatter_settings(&$element, $instanc
   $input_name = ($instance['entity_type'] != 'ctools') ? $input_name : 'image_link';
 
   // Setting elements.
-  $element['colorbox'] = array(
+  $element[YOUTUBE_COLORBOX_LINK_TYPE] = array(
     '#type' => 'fieldset',
     '#title' => t('Colorbox Settings'),
     '#states' => array(
      'visible' => array(
-        ':input[name="' . $input_name . '"]' => array('value' => 'colorbox'),
+        ':input[name="' . $input_name . '"]' => array('value' => YOUTUBE_COLORBOX_LINK_TYPE),
       ),
     ),
     '#tree' => TRUE,
   );
-  $element['colorbox']['parameters'] = array(
+  $element[YOUTUBE_COLORBOX_LINK_TYPE]['parameters'] = array(
     '#type' => 'fieldset',
     '#title' => t('Parameters'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   );
-  $element['colorbox']['parameters']['width'] = array(
+  $element[YOUTUBE_COLORBOX_LINK_TYPE]['parameters']['width'] = array(
     '#type' => 'textfield',
     '#title' => t('Width'),
     '#size' => 5,
@@ -78,7 +80,7 @@ function youtube_colorbox_thumbnail_field_formatter_settings(&$element, $instanc
     '#default_value' => $colorbox['parameters']['width'],
     '#element_validate' => array('youtube_colorbox_element_is_int'),
   );
-  $element['colorbox']['parameters']['height'] = array(
+  $element[YOUTUBE_COLORBOX_LINK_TYPE]['parameters']['height'] = array(
     '#type' => 'textfield',
     '#title' => t('Height'),
     '#size' => 5,
@@ -87,43 +89,43 @@ function youtube_colorbox_thumbnail_field_formatter_settings(&$element, $instanc
     '#default_value' => $colorbox['parameters']['height'],
     '#element_validate' => array('youtube_colorbox_element_is_int'),
   );
-  $element['colorbox']['parameters']['autoplay'] = array(
+  $element[YOUTUBE_COLORBOX_LINK_TYPE]['parameters']['autoplay'] = array(
     '#type' => 'checkbox',
     '#title' => t('Play video automatically when loaded (autoplay).'),
     '#default_value' => $colorbox['parameters']['autoplay'],
     '#return_value' => 1,
   );
-  $element['colorbox']['parameters']['loop'] = array(
+  $element[YOUTUBE_COLORBOX_LINK_TYPE]['parameters']['loop'] = array(
     '#type' => 'checkbox',
     '#title' => t('Loop the playback of the video (loop).'),
     '#default_value' => $colorbox['parameters']['loop'],
     '#return_value' => 1,
   );
-  $element['colorbox']['parameters']['showinfo'] = array(
+  $element[YOUTUBE_COLORBOX_LINK_TYPE]['parameters']['showinfo'] = array(
     '#type' => 'checkbox',
     '#title' => t('Hide video title and uploader info (showinfo).'),
     '#default_value' => $colorbox['parameters']['showinfo'],
     '#return_value' => 1,
   );
-  $element['colorbox']['parameters']['controls'] = array(
+  $element[YOUTUBE_COLORBOX_LINK_TYPE]['parameters']['controls'] = array(
     '#type' => 'checkbox',
     '#title' => t('Always hide video controls (controls).'),
     '#default_value' => $colorbox['parameters']['controls'],
     '#return_value' => 1,
   );
-  $element['colorbox']['parameters']['autohide'] = array(
+  $element[YOUTUBE_COLORBOX_LINK_TYPE]['parameters']['autohide'] = array(
     '#type' => 'checkbox',
     '#title' => t('Hide video controls after play begins (autohide).'),
     '#default_value' => $colorbox['parameters']['autohide'],
     '#return_value' => 1,
   );
-  $element['colorbox']['parameters']['iv_load_policy'] = array(
+  $element[YOUTUBE_COLORBOX_LINK_TYPE]['parameters']['iv_load_policy'] = array(
     '#type' => 'checkbox',
     '#title' => t('Hide video annotations by default (iv_load_policy).'),
     '#default_value' => $colorbox['parameters']['iv_load_policy'],
     '#return_value' => 3,
   );
-  $element['colorbox']['gallery'] = array(
+  $element[YOUTUBE_COLORBOX_LINK_TYPE]['gallery'] = array(
     '#type' => 'checkbox',
     '#title' => t('Group all videos on the page into a gallery'),
     '#default_value' => $colorbox['gallery'],
@@ -141,16 +143,18 @@ function youtube_colorbox_element_is_int($element, $form_state, $form) {
 }
 
 /**
- * Provides the linked thumbnail's URI that will open a Colorbox.
- *
- * @param array $item
- *   The field item to provide a link for.
- * @param array $settings
- *   The field item's display settings.
+ * Implements hook_youtube_thumbnail_link_uri_alter().
  */
-function youtube_colorbox_field_item_uri($item, $settings) {
+function youtube_colorbox_youtube_thumbnail_link_uri_alter(&$uri, &$settings, $item) {
+  if ($settings['image_link'] != YOUTUBE_COLORBOX_LINK_TYPE) {
+    return;
+  }
+
+  // Always open in an iframe for proper origin access.
+  $settings[YOUTUBE_COLORBOX_LINK_TYPE]['parameters']['iframe'] = TRUE;
+
   // Field display settings.
-  $parameters = $settings['colorbox']['parameters'];
+  $parameters = $settings[YOUTUBE_COLORBOX_LINK_TYPE]['parameters'];
 
   // Invert parameters that should be 0 when their options are selected.
   $invert_parameters = array('showinfo', 'controls');
@@ -185,7 +189,7 @@ function youtube_colorbox_field_item_uri($item, $settings) {
   }
 
   $uri = array(
-    'path' => 'https://' . $domain . '/embed/' . $item['video_id'],
+    'path' => 'https://www.' . $domain . '/embed/' . $item['video_id'],
     'options' => array(
       'attributes' => array(
         'class' => array('colorbox-load', $player_class),
@@ -197,9 +201,7 @@ function youtube_colorbox_field_item_uri($item, $settings) {
     ),
   );
 
-  if (!empty($settings['colorbox']['gallery'])) {
+  if (!empty($settings[YOUTUBE_COLORBOX_LINK_TYPE]['gallery'])) {
     $uri['options']['attributes']['rel'] = 'youtube-gallery';
   }
-
-  return $uri;
 }

@@ -34,15 +34,16 @@ function youtube_field_schema($field) {
  */
 function youtube_uninstall() {
   // Delete youtube variables when module is removed.
-  variable_del('youtube_suggest');
-  variable_del('youtube_modestbranding');
-  variable_del('youtube_theme');
   variable_del('youtube_color');
   variable_del('youtube_enablejsapi');
+  variable_del('youtube_modestbranding');
   variable_del('youtube_player_class');
   variable_del('youtube_privacy');
+  variable_del('youtube_suggest');
+  variable_del('youtube_theme');
   variable_del('youtube_thumb_dir');
   variable_del('youtube_thumb_hires');
+  variable_del('youtube_thumb_token_image_style');
   variable_del('youtube_wmode');
 }
 

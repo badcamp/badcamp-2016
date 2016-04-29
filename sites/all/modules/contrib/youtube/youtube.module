@@ -35,15 +35,15 @@ function youtube_permission() {
 }
 
 /**
- * Settings form for YouTube field module.
+ * Settings form for the YouTube Field module's configuration page.
  */
 function youtube_settings_form($form) {
   $form = array();
   $form['text'] = array(
     '#type' => 'markup',
-    '#markup' => '<p>' . t('The following settings will be used as default values
-      on all YouTube video fields.  More settings can be altered in the display
-      settings of individual fields.') . '</p>',
+    '#markup' => '<p>' . t('The following settings will be used as default
+      values on all YouTube video fields.  More settings can be altered in the
+      display settings of individual fields.') . '</p>',
   );
   $form['youtube_global'] = array(
     '#type' => 'fieldset',
@@ -61,26 +61,34 @@ function youtube_settings_form($form) {
   );
   $form['youtube_global']['youtube_theme'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Use a light colored control bar for video player controls (theme).'),
+    '#title' => t('Use a light colored control bar for video player controls
+      (theme).'),
     '#default_value' => variable_get('youtube_theme', FALSE),
   );
   $form['youtube_global']['youtube_color'] = array(
     '#type' => 'checkbox',
     '#title' => t('Use a white colored video progress bar (color).'),
     '#default_value' => variable_get('youtube_color', FALSE),
-    '#description' => 'Note: the modestbranding parameter will be ignored when this is in use.',
+    '#description' => t('Note: the modestbranding parameter will be ignored when
+      this is in use.'),
   );
   $form['youtube_global']['youtube_enablejsapi'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Enable use of the JavaScript API (enablejsapi, origin).'),
+    '#title' => t('Enable use of the IFrame API (enablejsapi, origin).'),
     '#default_value' => variable_get('youtube_enablejsapi', FALSE),
-    '#description' => 'For more information on the Javascript API and how to use it, see the <a href="https://developers.google.com/youtube/js_api_reference">JavaScript API documentation</a>.',
+    '#description' => t('For more information on the IFrame API and how to use
+      it, see the <a href="@api_reference">IFrame API documentation</a>.',
+      array(
+        '@api_reference' => 'https://developers.google.com/youtube/js_api_reference',
+      )),
   );
   $form['youtube_global']['youtube_wmode'] = array(
     '#type' => 'checkbox',
     '#title' => t('Fix overlay problem in IE (wmode).'),
     '#default_value' => variable_get('youtube_wmode', TRUE),
-    '#description' => t('Checking this will fix the issue of a YouTube video showing above elements with fixed or absolute positioning (including Drupal\'s Overlay and Toolbar).'),
+    '#description' => t('Checking this will fix the issue of a YouTube video
+      showing above elements with fixed or absolute positioning (including
+        Drupal\'s Overlay and Toolbar).'),
   );
   $form['youtube_thumbs'] = array(
     '#type' => 'fieldset',
@@ -90,15 +98,25 @@ function youtube_settings_form($form) {
     '#type' => 'textfield',
     '#title' => t('YouTube thumbnail directory'),
     '#field_prefix' => variable_get('file_public_path', conf_path() . '/files') . '/',
-    '#field_suffix' => '/thumbnail.png',
-    '#description' => t('Location, within the files directory, where you would like the YouTube thumbnails stored.'),
+    '#field_suffix' => '/thumbnail.jpg',
+    '#description' => t('Location, within the files directory, where you would
+      like the YouTube thumbnails stored.'),
     '#default_value' => variable_get('youtube_thumb_dir', 'youtube'),
   );
   $form['youtube_thumbs']['youtube_thumb_hires'] = array(
     '#type' => 'checkbox',
     '#title' => t('Save higher resolution thumbnail images'),
-    '#description' => t('This will save thumbnails larger than the default size, 480x360, to the thumbnails directory specified above.'),
+    '#description' => t('This will save thumbnails larger than the default size,
+      480x360, to the thumbnails directory specified above.'),
     '#default_value' => variable_get('youtube_thumb_hires', FALSE),
+  );
+  $form['youtube_thumbs']['youtube_thumb_token_image_style'] = array(
+    '#type' => 'select',
+    '#options' => image_style_options(TRUE, PASS_THROUGH),
+    '#title' => t('Default token image style'),
+    '#description' => t('Default image style for the output of a
+      youtube_image_url token.'),
+    '#default_value' => variable_get('youtube_thumb_token_image_style', NULL),
   );
   $form['youtube_thumbs']['youtube_thumb_delete_all'] = array(
     '#type' => 'submit',
@@ -109,13 +127,15 @@ function youtube_settings_form($form) {
     '#type' => 'checkbox',
     '#title' => t('Enable privacy-enhanced mode.'),
     '#default_value' => variable_get('youtube_privacy', FALSE),
-    '#description' => t('Checking this box will prevent YouTube from setting cookies in your site visitors browser.'),
+    '#description' => t('Checking this box will prevent YouTube from setting
+      cookies in your site visitors browser.'),
   );
   $form['youtube_player_class'] = array(
     '#type' => 'textfield',
     '#title' => t('YouTube player class'),
     '#default_value' => variable_get('youtube_player_class', 'youtube-field-player'),
-    '#description' => t('The iframe of every player will be given this class. They will also be given IDs based off of this value.'),
+    '#description' => t('The iframe of every player will be given this class.
+      They will also be given IDs based off of this value.'),
   );
 
   return system_settings_form($form);
@@ -156,9 +176,12 @@ function youtube_property_info_callback(&$info, $entity_type, $field, $instance,
 }
 
 /**
- * Defines info for the properties of youtube field data.
+ * Defines info for the properties of YouTube field data.
+ *
+ * @return array
+ *   An array of property information for YouTube fields, keyed by property.
  */
-function youtube_field_data_property_info($name = NULL) {
+function youtube_field_data_property_info() {
   return array(
     'input' => array(
       'label' => t('YouTube URL'),
@@ -231,6 +254,13 @@ function youtube_field_formatter_info() {
       'settings' => array(
         'image_style' => 'thumbnail',
         'image_link' => '',
+      ),
+    ),
+    'youtube_url' => array(
+      'label' => t('YouTube URL'),
+      'field types' => array('youtube'),
+      'settings' => array(
+        'link' => TRUE,
       ),
     ),
   );
@@ -315,8 +345,8 @@ function youtube_field_formatter_settings_form($field, $instance, $view_mode, $f
       '#empty_option' => t('None (original image)'),
     );
 
-    // Option to link the thumbnail to its original node, the YouTube video, or
-    // (if the youtube_colorbox is enabled) a Colorbox modal window.
+    // Option to link the thumbnail to its original node or the YouTube video.
+    // Other modules add options with hook_youtube_thumbnail_link_types_alter().
     $element['image_link'] = array(
       '#title' => t('Link image to'),
       '#type' => 'select',
@@ -325,10 +355,16 @@ function youtube_field_formatter_settings_form($field, $instance, $view_mode, $f
       '#options' => youtube_thumbnail_link_types(),
     );
 
-    if (module_exists('youtube_colorbox')) {
-      // Add Colorbox settings to this form.
-      youtube_colorbox_thumbnail_field_formatter_settings($element, $instance, $settings, $field['field_name']);
-    }
+    // Allow modules that add additional link types to add their own settings.
+    drupal_alter('youtube_thumbnail_field_formatter_settings', $element, $instance, $settings, $field['field_name']);
+  }
+
+  if ($display['type'] == 'youtube_url') {
+    $element['link'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Output this field as a link'),
+      '#default_value' => $settings['link'],
+    );
   }
 
   return $element;
@@ -389,6 +425,19 @@ function youtube_field_formatter_settings_summary($field, $instance, $view_mode)
 
     return $summary;
   }
+
+  // Summary for the URL style.
+  if ($display['type'] == 'youtube_url') {
+    $summary = t('YouTube URL');
+    if (!empty($settings['link'])) {
+      $summary .= t(' as a link.');
+    }
+    else {
+      $summary .= t(' as plain text.');
+    }
+
+    return $summary;
+  }
 }
 
 /**
@@ -431,9 +480,6 @@ function youtube_field_formatter_view($entity_type, $entity, $field, $instance, 
           case 'youtube':
             $link_youtube = TRUE;
             break;
-          case 'colorbox':
-            $link_colorbox = TRUE;
-            break;
         }
       }
 
@@ -446,15 +492,9 @@ function youtube_field_formatter_view($entity_type, $entity, $field, $instance, 
           );
         }
 
-        // Add support for the colorbox module.
-        if (module_exists('youtube_colorbox') && !empty($link_colorbox)) {
-          // Always open in an iframe for proper origin access.
-          if (!empty($display['settings']['colorbox']['parameters'])) {
-            $display['settings']['colorbox']['parameters']['iframe'] = TRUE;
-          }
-
-          $uri = youtube_colorbox_field_item_uri($item, $display['settings']);
-        }
+        // Allow other modules that have added link types to build the uri that
+        // the thumbnail links to when using their link type.
+        drupal_alter('youtube_thumbnail_link_uri', $uri, $display['settings'], $item);
 
         $element[$delta] = array(
           '#theme' => 'youtube_thumbnail',
@@ -465,6 +505,34 @@ function youtube_field_formatter_view($entity_type, $entity, $field, $instance, 
         );
       }
       break;
+
+    // This formatter outputs the YouTube URL as either a link or plain text.
+    case 'youtube_url':
+      foreach ($items as $delta => $item) {
+        if (!empty($display['settings']['link'])) {
+          $element[$delta] = array(
+            '#theme' => 'link',
+            '#text' => check_plain($item['input']),
+            '#path' => $item['input'],
+            '#options' => array(
+              'attributes' => array(
+                'class' => array(
+                  'youtube-url',
+                  'youtube-url--' . drupal_html_class($item['video_id']),
+                ),
+              ),
+              'html' => TRUE,
+            ),
+          );
+        }
+        else {
+          $element[$delta] = array(
+            '#markup' => check_plain($item['input']),
+          );
+        }
+      }
+      break;
+
   }
 
   return $element;
@@ -516,7 +584,7 @@ function youtube_field_widget_form(&$form, &$form_state, $field, $instance, $lan
 }
 
 /**
- * Validation for the youtube field itself.
+ * Validation for YouTube fields.
  */
 function youtube_input_validate($element, &$form_state, $form) {
   $input = $element['#value'];

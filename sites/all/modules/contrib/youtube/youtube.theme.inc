@@ -8,7 +8,7 @@
  * Theme function for videos.
  */
 function theme_youtube_video($variables) {
-  $id = $variables['video_id'];
+  $video_id = $variables['video_id'];
 
   // Get field display settings.
   $size = $variables['size'];
@@ -48,9 +48,9 @@ function theme_youtube_video($variables) {
     $query['color'] = 'white';
   }
   if ($enablejsapi) {
-    global $base_url;
+    global $base_root;
     $query['enablejsapi'] = '1';
-    $query['origin'] = $base_url;
+    $query['origin'] = $base_root;
   }
   if ($wmode) {
     $query['wmode'] = 'opaque';
@@ -60,7 +60,7 @@ function theme_youtube_video($variables) {
   }
   if ($loop) {
     $query['loop'] = '1';
-    $query['playlist'] = $id;
+    $query['playlist'] = $video_id;
   }
   if ($showinfo) {
     $query['showinfo'] = '0';
@@ -78,7 +78,7 @@ function theme_youtube_video($variables) {
   // Domain changes based on settings.
   $domain = ($privacy) ? 'youtube-nocookie.com' : 'youtube.com';
 
-  $path = 'https://www.' . $domain . '/embed/' . $id;
+  $path = 'https://www.' . $domain . '/embed/' . $video_id;
   $src = url($path, array('query' => $query));
 
   $player_title = t('Embedded video');
@@ -88,10 +88,13 @@ function theme_youtube_video($variables) {
     ));
   }
 
+  // Alternative content for browsers that don't understand iframes (WCAG).
+  $alternative_content = l($player_title, $src);
+
   $output = '<iframe id="' . drupal_html_id($player_class) . '" class="' . $player_class . '"
     width="' . $dimensions['width'] . '" height="' . $dimensions['height'] . '"
     src="' . $src . '" title="' . $player_title . '" frameborder="0"
-    allowfullscreen></iframe>';
+    allowfullscreen>' . $alternative_content . '</iframe>';
 
   if ($size == 'responsive') {
     $output = '<div class="youtube-container--responsive">' . $output . '</div>';
@@ -105,23 +108,16 @@ function theme_youtube_video($variables) {
  * Theme function for thumbnails.
  */
 function theme_youtube_thumbnail($variables) {
-  $id = $variables['video_id'];
+  $video_id = $variables['video_id'];
   $style = $variables['image_style'];
-
-  // Get YouTube settings - TODO is this needed?
-  $size = variable_get('youtube_size', '420x315');
-  $dimensions = youtube_get_dimensions($size);
-
-  $files = variable_get('file_public_path', conf_path() . '/files');
-  $youtube = variable_get('youtube_thumb_dir', 'youtube');
-  $dest = $files . '/' . $youtube . '/' . $id . '.png';
+  $uri = youtube_build_thumbnail_uri($video_id);
 
   // Check to see if a thumbnail exists locally.
-  if (!file_exists($dest)) {
+  if (!file_exists($uri)) {
     // Retrieve the image from YouTube.
-    if (!youtube_get_remote_image($id)) {
+    if (!youtube_get_remote_image($video_id)) {
       // Use the remote source if local copy fails.
-      $src = youtube_build_remote_image_path($id);
+      $src = youtube_build_remote_image_path($video_id);
       return theme('image', array('path' => $src));
     }
   }
@@ -134,7 +130,6 @@ function theme_youtube_thumbnail($variables) {
   }
 
   if ($style) {
-    $uri = 'public://' . $youtube . '/' . $id . '.png';
     $image = theme('image_style', array(
       'style_name' => $style,
       'path' => $uri,
@@ -142,8 +137,10 @@ function theme_youtube_thumbnail($variables) {
     ));
   }
   else {
-    $path = $files . '/' . $youtube . '/' . $id . '.png';
-    $image = theme('image', array('path' => $path, 'alt' => $alt));
+    $image = theme('image', array(
+      'path' => $uri,
+      'alt' => $alt
+    ));
   }
 
   // Check if an url path is provided
