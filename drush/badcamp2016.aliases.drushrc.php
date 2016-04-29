@@ -3,7 +3,7 @@
 // Drupal VM.
 $aliases['local'] = array(
   'uri' => 'badcamp2016.dev',
-  'root' => '/var/www',
+  'root' => '/vagrant',
   'remote-host' => 'badcamp2016.dev',
   'remote-user' => 'vagrant',
   'ssh-options' => '-o PasswordAuthentication=no -i ' . drush_server_home() . '/.vagrant.d/insecure_private_key',

@@ -86,6 +86,7 @@ $conf['master_modules']['base'] = array(
   'badcamp_sponsors_page',
   'badcamp_summit_contact_form',
   'badcamp_summits_page',
+  'badcamp_theme',
   'badcamp_trainings_page',
   'badcamp_user_profile',
   'feature_badcamp_homepage',
@@ -148,6 +149,9 @@ $conf['site_name'] = 'BADCamp 2016';
 $conf['site_slogan'] = 'Bay Area Drupal Camp';
 $conf['site_mail'] = 'info@badcamp.net';
 $conf['site_frontpage'] = 'home';
+
+// Theme.
+$conf['theme_default'] = 'stark';
 
 // Local configuration; should remain at the bottom of this file.
 if (file_exists(DRUPAL_ROOT . '/sites/default/settings.local.php')) {

@@ -80,6 +80,10 @@ cp ./drush/badcamp2016.aliases.drushrc.php ~/.drush
 drush cc drush
 # Turn on Drupal VM.
 vagrant up
+# Create local settings.
+./scripts/local_settings.sh
+# Install.
+./scripts/install.sh
 ```
 
 Configure Drush to use the site:

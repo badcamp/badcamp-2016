@@ -1,0 +1,13 @@
+<?php
+/**
+ * @file
+ * SFG Theme module install and update functions.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function badcamp_theme_install() {
+  theme_enable(array('stark'));
+  theme_disable(array('seven', 'bartik'));
+}
