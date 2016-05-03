@@ -8,6 +8,7 @@
  * Implements hook_install().
  */
 function badcamp_theme_install() {
-  theme_enable(array('stark'));
-  theme_disable(array('seven', 'bartik'));
+  theme_enable(array('zurb_foundation', 'badcamp2016'));
+  theme_disable(array('seven', 'bartik', 'stark', 'garland'));
+  variable_set('theme_default', 'badcamp2016');
 }
