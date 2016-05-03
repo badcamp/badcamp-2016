@@ -19,15 +19,7 @@ $font-family-opensans: 'Open Sans', sans-serif;
 
 
 $header-font-family: $font-family-orbitron;
-$body-bg: black;
 $header-font-color: #FFF;
-$body-font-color: #FFF;
+$body-bg: black;
 $body-font-family: $font-family-play;
-
-
-/* BG: */
-.pane {
-  background: rgba(32,55,66,0.60);
-  background-image: radial-gradient(63% 221%, #244B5A 50%, #16262D 100%);
-  border: 3px solid #FF9A00;
-}
+$body-font-color: #FFF;
