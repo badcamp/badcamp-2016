@@ -1,7 +1,7 @@
 @import "../../../../contrib/zurb_foundation/scss/foundation/functions";
 
-$base-font-size: 18px;
-$rem-base: 18px;
+//$base-font-size: 18px;
+//$rem-base: 18px;
 
 
 //custom colors
@@ -12,9 +12,22 @@ $badcamp-blue: #35778D;
 $badcamp-turquoise: #4AE2DE;
 
 
+//custom fonts
+$font-family-orbitron: 'Orbitron', sans-serif;
+$font-family-play: 'Play', sans-serif;
+$font-family-opensans: 'Open Sans', sans-serif;
 
 
-
-$body-font-color: #FFF;
+$header-font-family: $font-family-orbitron;
 $body-bg: black;
-$header-font-family: Orbitron;
+$header-font-color: #FFF;
+$body-font-color: #FFF;
+$body-font-family: $font-family-play;
+
+
+/* BG: */
+.pane {
+  background: rgba(32,55,66,0.60);
+  background-image: radial-gradient(63% 221%, #244B5A 50%, #16262D 100%);
+  border: 3px solid #FF9A00;
+}
