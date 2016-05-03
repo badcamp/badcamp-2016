@@ -152,7 +152,7 @@ $conf['site_mail'] = 'info@badcamp.net';
 $conf['site_frontpage'] = 'home';
 
 // Theme.
-$conf['theme_default'] = 'stark';
+$conf['theme_default'] = 'badcamp2016';
 
 // Local configuration; should remain at the bottom of this file.
 if (file_exists(DRUPAL_ROOT . '/sites/default/settings.local.php')) {
