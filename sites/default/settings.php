@@ -40,6 +40,7 @@ $conf['master_modules']['base'] = array(
   'features',
   'field_group',
   'globalredirect',
+  'jquery_update',
   'inline_entity_form',
   'libraries',
   'link',
