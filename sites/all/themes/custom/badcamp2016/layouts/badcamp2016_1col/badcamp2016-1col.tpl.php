@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Template for a 3 column panel layout.
+ * Template for a custom 1 column panel layout.
  *
  * This template provides a very simple "one column" panel display layout.
  *
@@ -12,8 +12,30 @@
  *   $content['middle']: The only panel in the layout.
  */
 ?>
-<div class="row" <?php !empty($css_id) ? print 'id="' . $css_id . '"' : ''; ?>>
+
+<?php !empty($css_id) ? print '<div id="' . $css_id . '">' : ''; ?>
+<?php if ($content['top']): ?>
+  <div class="row">
+    <div class="medium-12 columns">
+      <?php print $content['top']; ?>
+    </div>
+  </div>
+<?php endif; ?>
+
+<?php if ($content['middle']): ?>
+<div class="row">
   <div class="medium-12 columns">
     <?php print $content['middle']; ?>
   </div>
 </div>
+<?php endif; ?>
+
+<?php if ($content['bottom']): ?>
+  <div class="row">
+    <div class="medium-12 columns">
+      <?php print $content['bottom']; ?>
+    </div>
+  </div>
+<?php endif; ?>
+
+<?php !empty($css_id) ? print '</div>' : ''; ?>
