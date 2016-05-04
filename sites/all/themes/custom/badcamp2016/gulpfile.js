@@ -5,6 +5,7 @@ var gulp = require('gulp'),
   concat = require('gulp-concat'),
   sass = require('gulp-sass'),
   mergeStream = require('merge-stream'),
+  uglify = require('gulp-uglify'),
   Promise = require('es6-promise').Promise;
 // ^ needed this to fix "ReferenceError: Promise is not defined" in
 // gulp-autoprefixer
@@ -14,7 +15,7 @@ var paths = {
   fonts: ['./bower_components/foundation-icon-fonts/*.{eot,svg,ttf,woff}'],
   scripts: {
     libs: ['./bower_components/foundation-sites/dist/foundation.js'],
-    theme: ['./js/*.js'],
+    theme: ['./js/**/*.js'],
   }
 };
 
@@ -41,7 +42,10 @@ gulp.task('styles', ['clean'], function() {
 
 gulp.task('scripts', ['clean'], function() {
   var libs = gulp.src(paths.scripts.libs)
-    .pipe(concat('libs.js'));
+    .pipe(sourcemaps.init())
+    .pipe(concat('libs.js'))
+    .pipe(uglify())
+    .pipe(sourcemaps.write('maps'));
 
   var theme = gulp.src(paths.scripts.theme);
 

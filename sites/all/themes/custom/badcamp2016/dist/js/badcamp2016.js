@@ -1,15 +1,15 @@
-/* Implement custom javascript here */
-
 (function ($) {
 
-  Drupal.behavior.foundation = {
-    attach: function(context, settings) {
+  /**
+   * Attach and detach Foundation JS.
+   */
+  Drupal.behaviors.foundation = {
+    attach: function(context) {
       $(context).foundation();
     },
-    detach: function(context, settings) {
-      $(context).foundation();
+    detach: function(context) {
+      $(context).foundation('destroy');
     }
   }
 
-  
 })(jQuery);
