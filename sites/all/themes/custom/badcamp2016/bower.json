@@ -1,7 +1,8 @@
 {
-  "name": "zurb_foundation",
+  "name": "badcamp2016",
   "private": "true",
   "dependencies": {
-    "foundation": "zurb/bower-foundation"
+    "foundation-sites": "~6.2.0",
+    "foundation-icon-fonts": "*"
   }
 }
