@@ -4,49 +4,19 @@ screenshot = images/screenshot.png
 
 core = 7.x
 engine = phptemplate
-base theme = zurb_foundation
-
-; This section controls the CSS files for your theme. There are 3 different
-; things you can do with a "stylesheets" line:
-; - Add a new stylesheet for your theme.
-; - Override a module's stylesheet. If the stylesheet you are adding uses the
-;   same filename as a stylesheet from a Drupal core or contrib module, your CSS
-;   file will be used instead of the module's file.
-; - Remove a module's stylesheet. If you specify the name of a Drupal core or
-;   contrib module's stylesheets, Drupal will remove that stylesheet if you do
-;   NOT include a file with that name with your theme.
-;
-; stylesheets[MEDIA][] = FILE
-;
-; The "FILE" is the name of the stylesheet to add/override/remove.
-; The "MEDIA" in the first set of brackets is a media type or a media query.
-; Typical CSS media types include "all", "screen", "print", and "handheld". A
-; typical media query is "screen and (max-width: 320px)".
-;
-; CSS2.1 media types: http://www.w3.org/TR/CSS21/media.html#media-types
-; CSS3 media queries: http://www.w3.org/TR/css3-mediaqueries/
 
 ; For CSS users, load the badcamp2016.css file:
-stylesheets[all][] = css/badcamp2016.css
-
-; Block loading of foundation.min.css from the base theme. This file should either
-; not exist or be blank in your subtheme. See https://drupal.org/node/263967
-stylesheets[all][] = css/normalize.css
-stylesheets[all][] = css/foundation.min.css
+stylesheets[all][] = dist/css/badcamp2016.css
 
 ; Foundation JavaScript.
 
 ; External libraries used by Foundation (minified). Add more via Gruntfile.js.
-scripts[] = js/libs.min.js
-
-; Foundation framework scripts (minified).
-; Control specific components via Gruntfile.js.
-scripts[] = js/foundation.min.js
+scripts[] = dist/js/libs.js
 
 ; Theme scripts (minified).
 ; Grunt will compress any custom theme scripts matching the _*.js naming convention
 ; into app.min.js.
-scripts[] = js/app.min.js
+scripts[] = dist/js/badcamp2016.js
 
 ; This section lists the regions defined in the page.tpl.php. The name in
 ; brackets is the machine name of the region. The text after the equals sign is
@@ -93,31 +63,3 @@ regions[footer]              = Footer
 
 ; Panel Layouts
 plugins[panels][layouts] = layouts
-
-; Theme settings:
-
-; Top Bar.
-settings[zurb_foundation_top_bar_enable] = 1
-settings[zurb_foundation_top_bar_grid] = 0
-settings[zurb_foundation_top_bar_sticky] = 0
-settings[zurb_foundation_top_bar_menu_text] = 'Menu'
-settings[zurb_foundation_top_bar_custom_back_text] = 1
-settings[zurb_foundation_top_bar_back_text] = 'Back'
-settings[zurb_foundation_top_bar_is_hover] = 1
-settings[zurb_foundation_top_bar_scrolltop] = 1
-settings[zurb_foundation_top_bar_mobile_show_parent_link] = 1
-
-; Tooltips.
-settings[zurb_foundation_tooltip_enable] = 1
-settings[zurb_foundation_tooltip_position] = 'top'
-settings[zurb_foundation_tooltip_mode] = 'text'
-settings[zurb_foundation_tooltip_text] = 'More information?'
-settings[zurb_foundation_tooltip_touch] = 0
-
-; Styles and Scripts.
-settings[zurb_foundation_disable_core_css] = 0
-
-; Misc.
-settings[zurb_foundation_html_tags] = 1
-settings[zurb_foundation_messages_modal] = 0
-settings[zurb_foundation_pager_center] = 1
