@@ -5,7 +5,7 @@
  */
 function badcamp2016_badcamp2016_1col_panels_layouts() {
   $items['badcamp2016_1col'] = array(
-    'title' => t('BadCamp Page Layout'),
+    'title' => t('BadCamp General Page Layout'),
     'category' => t('BadCamp Page'),
     'icon' => 'badcamp2016_1col.png',
     'theme' => 'badcamp2016_1col',
