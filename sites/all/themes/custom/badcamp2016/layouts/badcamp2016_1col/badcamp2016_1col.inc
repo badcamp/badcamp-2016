@@ -11,9 +11,9 @@ function badcamp2016_badcamp2016_1col_panels_layouts() {
     'theme' => 'badcamp2016_1col',
     //'admin css' => '../foundation_panels_admin.css',
     'regions' => array(
-      'top' => t('Header'),
-      'middle' => t('Main content region'),
-      'bottom' => t('Footer'),
+      'header' => t('Header'),
+      'main' => t('Main content region'),
+      'footer' => t('Footer'),
     ),
   );
   return $items;
