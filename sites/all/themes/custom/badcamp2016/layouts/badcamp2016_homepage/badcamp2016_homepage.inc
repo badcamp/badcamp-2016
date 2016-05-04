@@ -12,7 +12,12 @@ function badcamp2016_badcamp2016_homepage_panels_layouts() {
     //'admin css' => '../foundation_panels_admin.css',
     'regions' => array(
       'hud' => t('Heads Up display'),
-      'about' => t('About'),
+      'about-fr-left' => t('About section: first row left '),
+      'about-fr-middle' => t('About section: first row middle '),
+      'about-fr-right' => t('About section: first row right '),
+      'about-sr' => t('About section: second row'),
+      'about-tr-top' => t('About section: third row top'),
+      'about-tr-bottom' => t('About section: third tow bottom'),
       'news' => t('News'),
       'sponsors' => t('Sponsors'),
     ),

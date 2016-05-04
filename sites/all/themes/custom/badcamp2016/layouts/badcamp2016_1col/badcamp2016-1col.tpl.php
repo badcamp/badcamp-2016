@@ -14,7 +14,7 @@
 ?>
 
 <?php !empty($css_id) ? print '<div id="' . $css_id . '">' : ''; ?>
-<?php if ($content['top']): ?>
+<?php if ($content['header']): ?>
   <div class="row region-header">
     <div class="medium-12 columns">
       <?php print $content['header']; ?>
@@ -22,13 +22,13 @@
   </div>
 <?php endif; ?>
 
-<?php if ($content['middle']): ?>
+<?php if ($content['main']): ?>
 <div class="region-main">
     <?php print $content['main']; ?>
   </div>
 <?php endif; ?>
 
-<?php if ($content['bottom']): ?>
+<?php if ($content['footer']): ?>
   <div class="row region-footer">
     <div class="medium-12 columns">
       <?php print $content['footer']; ?>
