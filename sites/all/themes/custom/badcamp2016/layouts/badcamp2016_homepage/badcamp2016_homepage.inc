@@ -9,7 +9,7 @@ function badcamp2016_badcamp2016_homepage_panels_layouts() {
     'category' => t('BadCamp'),
     'icon' => 'badcamp2016_homepage.png',
     'theme' => 'badcamp2016_homepage',
-    //'admin css' => '../foundation_panels_admin.css',
+    'admin css' => '../../dist/css/panels-admin.css',
     'regions' => array(
       'hero' => t('Hero Section'),
       'about-header' => t('About section: header'),

@@ -14,13 +14,22 @@
 ?>
 
 <?php !empty($css_id) ? print '<div id="' . $css_id . '">' : ''; ?>
-<?php if ($content['header']): ?>
-  <div class="row region-header">
+<header class="row" id="site-header">
+  <div class="row">
+    <div class="medium-6 columns">
+      <?php print $content['branding']; ?>
+    </div>
+    <div class="medium-6 columns">
+      <?php print $content['user_nav']; ?>
+    </div>
+  </div>
+  <div class="row">
     <div class="medium-12 columns">
+      <?php print $content['main_nav']; ?>
       <?php print $content['header']; ?>
     </div>
   </div>
-<?php endif; ?>
+</header>
 
 <?php if ($content['main']): ?>
 <div class="region-main">
@@ -28,12 +37,18 @@
   </div>
 <?php endif; ?>
 
-<?php if ($content['footer']): ?>
-  <div class="row region-footer">
-    <div class="medium-12 columns">
-      <?php print $content['footer']; ?>
+<footer id="site-footer">
+  <?php print $content['footer_nav']; ?>
+  <div class="footer-bottom">
+    <div class="row">
+      <div class="medium-6">
+        <?php print $content['footer_left']; ?>
+      </div>
+      <div class="medium-6">
+        <?php print $content['footer_right']; ?>
+      </div>
     </div>
   </div>
-<?php endif; ?>
+</footer>
 
 <?php !empty($css_id) ? print '</div>' : ''; ?>

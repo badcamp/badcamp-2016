@@ -1,0 +1,12 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+@import "variables";
+@import "../bower_components/foundation-sites/scss/foundation";
+
+@include foundation-grid();
+
+// Force border-box, even in adminimal.
+.columns, body.adminimal-theme .columns {
+  box-sizing:border-box;
+}

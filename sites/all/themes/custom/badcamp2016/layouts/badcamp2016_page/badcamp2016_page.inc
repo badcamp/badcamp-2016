@@ -9,11 +9,15 @@ function badcamp2016_badcamp2016_page_panels_layouts() {
     'category' => t('BadCamp'),
     'icon' => 'badcamp2016_page.png',
     'theme' => 'badcamp2016_page',
-    //'admin css' => '../foundation_panels_admin.css',
+    'admin css' => '../../dist/css/panels-admin.css',
     'regions' => array(
-      'header' => t('Header'),
+      'branding' => t('Branding'),
+      'user_nav' => t('User navigation'),
+      'main_nav' => t('Main Navigation'),
       'main' => t('Main content region'),
-      'footer' => t('Footer'),
+      'footer_nav' => t('Footer Navigation'),
+      'footer_left' => t('Footer Left'),
+      'footer_right' => t('Footer Right'),
     ),
   );
   return $items;
