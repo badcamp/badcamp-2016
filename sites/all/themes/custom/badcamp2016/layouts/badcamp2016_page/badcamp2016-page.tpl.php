@@ -14,7 +14,7 @@
 ?>
 
 <?php !empty($css_id) ? print '<div id="' . $css_id . '">' : ''; ?>
-<header class="row" id="site-header">
+<header id="site-header">
   <div class="row">
     <div class="medium-6 columns">
       <?php print $content['branding']; ?>
@@ -23,10 +23,8 @@
       <?php print $content['user_nav']; ?>
     </div>
   </div>
-  <div class="row">
-    <div class="medium-12 columns">
-      <?php print $content['main_nav']; ?>
-    </div>
+  <div class="columns">
+    <?php print $content['main_nav']; ?>
   </div>
 </header>
 
@@ -37,13 +35,16 @@
 <?php endif; ?>
 
 <footer id="site-footer">
-  <?php print $content['footer_nav']; ?>
+  <div class="columns">
+    <?php print $content['footer_nav']; ?>
+  </div>
+
   <div class="footer-bottom">
     <div class="row">
-      <div class="medium-6">
+      <div class="medium-6 columns">
         <?php print $content['footer_left']; ?>
       </div>
-      <div class="medium-6">
+      <div class="medium-6 columns">
         <?php print $content['footer_right']; ?>
       </div>
     </div>
