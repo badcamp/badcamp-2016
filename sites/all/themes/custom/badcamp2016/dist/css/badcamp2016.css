@@ -3534,12 +3534,15 @@ table.hover tr:nth-of-type(even):hover {
 
 #site-footer .footer-pane-copyright, #site-footer .footer-pane-social {
   margin-top: 120px;
-  font-size: 16px;
   line-height: 1rem; }
   #site-footer .footer-pane-copyright a:hover, #site-footer .footer-pane-social a:hover {
     color: #C77C18; }
 
+#site-footer .footer-pane-copyright {
+  font-size: 16px; }
+
 #site-footer .footer-pane-social {
+  font-size: 18px;
   text-align: right; }
   #site-footer .footer-pane-social span {
     padding-left: 16px; }

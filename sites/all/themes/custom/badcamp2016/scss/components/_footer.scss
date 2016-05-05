@@ -11,13 +11,16 @@
   }
   .footer-pane-copyright, .footer-pane-social {
     margin-top: 120px;
-    font-size: 16px;
     line-height: 1rem;
     a:hover {
       color: $badcamp-dk-orange;
     }
   }
+  .footer-pane-copyright{
+    font-size: 16px;
+  }
   .footer-pane-social {
+    font-size: 18px;
     text-align: right;
     span {
       padding-left: 16px;
