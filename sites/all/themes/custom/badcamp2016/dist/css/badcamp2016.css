@@ -3501,6 +3501,18 @@ table.hover tr:nth-of-type(even):hover {
     position: absolute;
     right: 12px;
     top: 14px; }
+  .button:hover {
+    border-color: #C77C18;
+    background: linear-gradient(270deg, rgba(67, 105, 119, 0.6) 0%, rgba(32, 56, 66, 0.6) 83%); }
+    .button:hover:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset 6px;
+      border-color: transparent transparent transparent #FF9A00;
+      border-left-style: solid;
+      border-right-width: 0; }
 
 #site-header {
   background: url(../../images/hud_top.svg) bottom center no-repeat;

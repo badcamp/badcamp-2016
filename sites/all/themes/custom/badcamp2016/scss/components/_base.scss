@@ -13,4 +13,11 @@
     right: 12px;
     top: 14px;
   }
+  &:hover {
+   border-color: $badcamp-dk-orange;
+    background: linear-gradient(270deg, rgba(67, 105, 119, 0.60) 0%, rgba(32, 56, 66, 0.6) 83%);
+    &:after {
+      @include css-triangle(6px, $badcamp-orange, right);
+    }
+  }
 }
