@@ -2102,7 +2102,7 @@ select {
   .menu.nested {
     margin-left: 1rem; }
   .menu .active > a {
-    color: #fefefe;
+    color: #FEFEFE;
     background: #2199e8; }
 
 .menu-text {
@@ -3485,6 +3485,7 @@ table.hover tr:nth-of-type(even):hover {
   clear: both; }
 
 .button {
+  text-transform: uppercase;
   border: 1px solid #FEFEFE;
   background-color: transparent;
   position: relative;
@@ -3519,7 +3520,10 @@ table.hover tr:nth-of-type(even):hover {
   padding-bottom: 90px;
   margin-bottom: 18px; }
 
-#site-footer {
+#site-footer .footer-top {
+  margin-bottom: 48px; }
+
+#site-footer .footer-bottom {
   min-height: 300px;
   background: url(../../images/hud_bottom.svg), linear-gradient(-180deg, rgba(32, 66, 79, 0.8) 0%, rgba(24, 42, 50, 0.8) 100%);
   background-repeat: no-repeat;
@@ -3545,8 +3549,27 @@ table.hover tr:nth-of-type(even):hover {
     position: absolute;
     top: 21px;
     right: 0; }
-  .pane-system-main-menu a.active {
-    color: #FEFEFE; }
+
+.pane-menu-menu-footer-menu {
+  padding: 0 36px; }
+  .pane-menu-menu-footer-menu a {
+    font-family: "Orbitron", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4AE2DE;
+    position: relative; }
+    .pane-menu-menu-footer-menu a:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset 9px;
+      border-color: transparent transparent transparent #FEFEFE;
+      border-left-style: solid;
+      border-right-width: 0;
+      position: absolute;
+      right: -2px;
+      top: 9px; }
 
 .region-hero h2,
 .region-about-header h2,

@@ -39,8 +39,10 @@
 
 <footer id="site-footer">
   <div class="footer-top">
-    <div class="columns">
-      <?php print $content['footer_nav']; ?>
+    <div class="row">
+      <div class="columns">
+        <?php print $content['footer_nav']; ?>
+      </div>
     </div>
   </div>
 
