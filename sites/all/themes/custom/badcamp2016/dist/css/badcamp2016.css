@@ -380,7 +380,7 @@ body {
   font-family: "Play", sans-serif;
   font-weight: normal;
   line-height: 1.5;
-  color: #FFF;
+  color: #FEFEFE;
   background: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1322,7 +1322,7 @@ cite {
     content: '\2014 \0020'; }
 
 abbr {
-  color: #FFF;
+  color: #FEFEFE;
   cursor: help;
   border-bottom: 1px dotted #0a0a0a; }
 
@@ -1994,7 +1994,7 @@ select {
   border: 1px solid rgba(10, 10, 10, 0.25);
   border-radius: 0;
   position: relative;
-  color: #FFF;
+  color: #FEFEFE;
   background-color: white; }
   .callout > :first-child {
     margin-top: 0; }
@@ -3106,7 +3106,7 @@ table {
   table thead,
   table tfoot {
     background: #f8f8f8;
-    color: #FFF; }
+    color: #FEFEFE; }
     table thead tr,
     table tfoot tr {
       background: transparent; }
@@ -3483,5 +3483,101 @@ table.hover tr:nth-of-type(even):hover {
 
 .clearfix::after {
   clear: both; }
+
+.button {
+  border: 1px solid #FEFEFE;
+  background-color: transparent;
+  position: relative;
+  padding-right: 28px; }
+  .button:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 6px;
+    border-color: transparent transparent transparent #FEFEFE;
+    border-left-style: solid;
+    border-right-width: 0;
+    position: absolute;
+    right: 12px;
+    top: 14px; }
+
+.pane-system-user-menu a {
+  font-size: 16px;
+  color: #C77C18; }
+
+.pane-system-main-menu a {
+  position: relative;
+  font-size: 20px;
+  color: #FEFEFE; }
+  .pane-system-main-menu a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 6px;
+    border-color: #FEFEFE transparent transparent;
+    border-top-style: solid;
+    border-bottom-width: 0;
+    position: absolute;
+    top: 21px;
+    right: 0; }
+  .pane-system-main-menu a.active {
+    color: #FEFEFE; }
+
+.region-hero h2,
+.region-about-header h2,
+.region-news h2,
+.region-sponsors h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold; }
+  .region-hero h2:before,
+  .region-about-header h2:before,
+  .region-news h2:before,
+  .region-sponsors h2:before {
+    content: "\\\\\\\\";
+    padding-right: 18px; }
+  .region-hero h2:after,
+  .region-about-header h2:after,
+  .region-news h2:after,
+  .region-sponsors h2:after {
+    content: "////";
+    padding-left: 18px; }
+  .region-hero h2:before, .region-hero h2:after,
+  .region-about-header h2:before,
+  .region-about-header h2:after,
+  .region-news h2:before,
+  .region-news h2:after,
+  .region-sponsors h2:before,
+  .region-sponsors h2:after {
+    display: inline-block;
+    color: #FF9A00; }
+
+.region-hero h2 {
+  font-size: 46px;
+  color: #59A8C1; }
+  .region-hero h2:before, .region-hero h2:after {
+    color: #FFFFFF; }
+
+.region-about {
+  background: rgba(32, 55, 65, 0.6) linear-gradient(0deg, #33758A 24%, #203842 89%);
+  margin-bottom: 76px; }
+
+.region-about-header {
+  margin-top: 80px; }
+
+.region-about-copy {
+  margin-bottom: 65px; }
+  .region-about-copy p {
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    max-width: 987px;
+    margin: auto; }
+
+.region-about-button {
+  text-align: center;
+  margin-bottom: 107px; }
 
 /*# sourceMappingURL=maps/badcamp2016.css.map */

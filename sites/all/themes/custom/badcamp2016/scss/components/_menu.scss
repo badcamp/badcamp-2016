@@ -1,0 +1,22 @@
+.pane-system-user-menu {
+  a {
+    font-size: 16px;
+    color: $badcamp-dk-orange;
+  }
+}
+.pane-system-main-menu {
+  a {
+    position: relative;
+    font-size: 20px;
+    color: $badcamp-off-white;
+    &:after {
+      @include css-triangle(6px, $badcamp-off-white, down);
+      position: absolute;
+      top: 21px;
+      right: 0;
+    }
+    &.active {
+      color: $badcamp-off-white;
+    }
+  }
+}

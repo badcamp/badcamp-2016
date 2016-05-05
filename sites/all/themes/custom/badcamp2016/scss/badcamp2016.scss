@@ -3,6 +3,7 @@
 
 @import "variables";
 @import "../bower_components/foundation-sites/scss/foundation";
+@import "mixins";
 
 // Do font import in one load, not 3 separate sheets.
 @import url(https://fonts.googleapis.com/css?family=Orbitron:400,700|Play:400,700|Open+Sans);
@@ -10,3 +11,6 @@
 @include foundation-everything();
 
 // Add components here.
+@import "components/base";
+@import "components/menu";
+@import "components/homepage";

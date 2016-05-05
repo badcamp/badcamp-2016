@@ -1,0 +1,16 @@
+//Base styles
+
+
+
+.button {
+  border: 1px solid $badcamp-off-white;
+  background-color: transparent;
+  position: relative;
+  padding-right: 28px;
+  &:after {
+    @include css-triangle(6px, $badcamp-off-white, right);
+    position: absolute;
+    right: 12px;
+    top: 14px;
+  }
+}

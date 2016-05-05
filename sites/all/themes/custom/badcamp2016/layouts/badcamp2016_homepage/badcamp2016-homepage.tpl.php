@@ -85,7 +85,7 @@
 <?php if ($content['news']): ?>
   <div class="region-news">
     <div class="row">
-      <div class="medium-8 columns">
+      <div class="medium-12 columns">
         <?php print $content['news']; ?>
       </div>
     </div>
