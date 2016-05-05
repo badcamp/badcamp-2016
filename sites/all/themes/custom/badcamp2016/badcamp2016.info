@@ -8,6 +8,10 @@ engine = phptemplate
 ; For CSS users, load the badcamp2016.css file:
 stylesheets[all][] = dist/css/badcamp2016.css
 
+; Kill some core stylesheets that get in the way.
+stylesheets[all][] = system.menus.css
+stylesheets[all][] = system.message.css
+
 ; Foundation JavaScript.
 
 ; External libraries used by Foundation (minified). Add more via Gruntfile.js.
