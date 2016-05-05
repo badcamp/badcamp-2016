@@ -26,7 +26,6 @@
   <div class="row">
     <div class="medium-12 columns">
       <?php print $content['main_nav']; ?>
-      <?php print $content['header']; ?>
     </div>
   </div>
 </header>
