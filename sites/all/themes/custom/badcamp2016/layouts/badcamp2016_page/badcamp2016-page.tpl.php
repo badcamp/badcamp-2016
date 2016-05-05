@@ -38,9 +38,12 @@
 <?php endif; ?>
 
 <footer id="site-footer">
-  <div class="columns">
-    <?php print $content['footer_nav']; ?>
+  <div class="footer-top">
+    <div class="columns">
+      <?php print $content['footer_nav']; ?>
+    </div>
   </div>
+
 
   <div class="footer-bottom">
     <div class="row">
