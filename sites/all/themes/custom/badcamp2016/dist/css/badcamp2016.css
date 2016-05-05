@@ -3502,6 +3502,14 @@ table.hover tr:nth-of-type(even):hover {
     right: 12px;
     top: 14px; }
 
+#site-header {
+  background: url(../../images/hud_top.svg) bottom center no-repeat;
+  padding-bottom: 90px;
+  margin-bottom: 18px; }
+
+#site-main {
+  margin-top: 10px; }
+
 .pane-system-user-menu a {
   font-size: 16px;
   color: #C77C18; }
