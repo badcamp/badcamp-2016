@@ -9,6 +9,20 @@
     background-repeat:no-repeat;
     background-position: top center, 0 136px;
   }
+  .footer-pane-copyright, .footer-pane-social {
+    margin-top: 120px;
+    font-size: 16px;
+    line-height: 1rem;
+    a:hover {
+      color: $badcamp-dk-orange;
+    }
+  }
+  .footer-pane-social {
+    text-align: right;
+    span {
+      padding-left: 16px;
+    }
+  }
 }
 
 

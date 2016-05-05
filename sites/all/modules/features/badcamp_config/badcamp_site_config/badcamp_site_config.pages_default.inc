@@ -169,6 +169,36 @@ function badcamp_site_config_default_page_manager_handlers() {
     $display->content['new-b038817b-9b31-4545-8a2b-0f35e336fce3'] = $pane;
     $display->panels['branding'][0] = 'new-b038817b-9b31-4545-8a2b-0f35e336fce3';
     $pane = new stdClass();
+    $pane->pid = 'new-7a46309d-d3ad-4d06-9265-69fa8fe1698a';
+    $pane->panel = 'footer_left';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Copyrights',
+      'title' => '',
+      'body' => '<p class="p1">© Images &amp; Layout <span class="dk-orange">CC-BY-SA</span> 2016 BADCAMP Some rights reserved.&nbsp; <span class="dk-orange">Credits</span><br />
+© Code <span class="dk-orange">GNU General Public License</span> 2016 BADCAMP Some rights reserved.</p>
+',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'footer-pane-copyright',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '7a46309d-d3ad-4d06-9265-69fa8fe1698a';
+    $display->content['new-7a46309d-d3ad-4d06-9265-69fa8fe1698a'] = $pane;
+    $display->panels['footer_left'][0] = 'new-7a46309d-d3ad-4d06-9265-69fa8fe1698a';
+    $pane = new stdClass();
     $pane->pid = 'new-50b7222d-85f5-4057-8427-4cec6010e707';
     $pane->panel = 'footer_nav';
     $pane->type = 'block';
@@ -191,6 +221,35 @@ function badcamp_site_config_default_page_manager_handlers() {
     $pane->uuid = '50b7222d-85f5-4057-8427-4cec6010e707';
     $display->content['new-50b7222d-85f5-4057-8427-4cec6010e707'] = $pane;
     $display->panels['footer_nav'][0] = 'new-50b7222d-85f5-4057-8427-4cec6010e707';
+    $pane = new stdClass();
+    $pane->pid = 'new-b19b80d5-7e71-4e0b-bfd5-119f5eec8bf0';
+    $pane->panel = 'footer_right';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Social Links',
+      'title' => '',
+      'body' => '<p><a class="dk-orange" href="#">Contact Us</a><span>w00t!</span></p>
+',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'footer-pane-social',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b19b80d5-7e71-4e0b-bfd5-119f5eec8bf0';
+    $display->content['new-b19b80d5-7e71-4e0b-bfd5-119f5eec8bf0'] = $pane;
+    $display->panels['footer_right'][0] = 'new-b19b80d5-7e71-4e0b-bfd5-119f5eec8bf0';
     $pane = new stdClass();
     $pane->pid = 'new-fb0097c1-7ac7-4777-aec5-3bc51e64b6f8';
     $pane->panel = 'main';

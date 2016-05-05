@@ -3515,6 +3515,9 @@ table.hover tr:nth-of-type(even):hover {
       border-left-style: solid;
       border-right-width: 0; }
 
+.dk-orange {
+  color: #C77C18; }
+
 #site-header {
   background: url(../../images/hud_top.svg) bottom center no-repeat;
   padding-bottom: 90px;
@@ -3528,6 +3531,18 @@ table.hover tr:nth-of-type(even):hover {
   background: url(../../images/hud_bottom.svg), linear-gradient(-180deg, rgba(32, 66, 79, 0.8) 0%, rgba(24, 42, 50, 0.8) 100%);
   background-repeat: no-repeat;
   background-position: top center, 0 136px; }
+
+#site-footer .footer-pane-copyright, #site-footer .footer-pane-social {
+  margin-top: 120px;
+  font-size: 16px;
+  line-height: 1rem; }
+  #site-footer .footer-pane-copyright a:hover, #site-footer .footer-pane-social a:hover {
+    color: #C77C18; }
+
+#site-footer .footer-pane-social {
+  text-align: right; }
+  #site-footer .footer-pane-social span {
+    padding-left: 16px; }
 
 .pane-system-user-menu a {
   font-size: 16px;
