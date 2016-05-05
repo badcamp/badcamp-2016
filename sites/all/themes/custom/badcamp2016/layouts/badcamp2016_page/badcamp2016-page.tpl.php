@@ -23,15 +23,18 @@
       <?php print $content['user_nav']; ?>
     </div>
   </div>
-  <div class="columns">
-    <?php print $content['main_nav']; ?>
+  <div class="row">
+    <div class="columns">
+      <?php print $content['main_nav']; ?>
+    </div>
   </div>
+
 </header>
 
 <?php if ($content['main']): ?>
-<div class="region-main">
+  <main id="site-main">
     <?php print $content['main']; ?>
-  </div>
+  </main>
 <?php endif; ?>
 
 <footer id="site-footer">
