@@ -17,7 +17,10 @@ gulp.task('eslint', function () {
     'gulp-tasks/*.js',
     'sites/all/modules/custom/**/*.js',
     'sites/all/modules/features/**/*.js',
-    'sites/all/themes/custom/**/*.js'
+    'sites/all/themes/custom/**/*.js',
+    '!sites/all/themes/custom/badcamp2016/dist/**',
+    '!sites/all/themes/custom/badcamp2016/bower_components/**',
+    '!sites/all/themes/custom/badcamp2016/node_modules/**'
   ];
   var writeOutput = argv.hasOwnProperty('outputfile');
   var wstream;
