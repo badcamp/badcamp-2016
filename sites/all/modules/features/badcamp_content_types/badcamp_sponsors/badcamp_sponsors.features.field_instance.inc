@@ -10,7 +10,7 @@
 function badcamp_sponsors_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-sponsor-body'
+  // Exported field_instance: 'node-sponsor-body'.
   $field_instances['node-sponsor-body'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -78,7 +78,7 @@ function badcamp_sponsors_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_sponsor_level'
+  // Exported field_instance: 'node-sponsor-field_sponsor_level'.
   $field_instances['node-sponsor-field_sponsor_level'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -114,7 +114,7 @@ function badcamp_sponsors_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_sponsor_logo'
+  // Exported field_instance: 'node-sponsor-field_sponsor_logo'.
   $field_instances['node-sponsor-field_sponsor_logo'] = array(
     'bundle' => 'sponsor',
     'deleted' => 0,
@@ -182,7 +182,7 @@ function badcamp_sponsors_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_sponsor_url'
+  // Exported field_instance: 'node-sponsor-field_sponsor_url'.
   $field_instances['node-sponsor-field_sponsor_url'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,

@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function badcamp_sponsors_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -35,7 +35,7 @@ function badcamp_sponsors_field_group_info() {
       ),
     ),
   );
-  $export['group_sponsor_description|node|sponsor|form'] = $field_group;
+  $field_groups['group_sponsor_description|node|sponsor|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -64,7 +64,7 @@ function badcamp_sponsors_field_group_info() {
       ),
     ),
   );
-  $export['group_sponsor_information|node|sponsor|form'] = $field_group;
+  $field_groups['group_sponsor_information|node|sponsor|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -91,7 +91,13 @@ function badcamp_sponsors_field_group_info() {
       ),
     ),
   );
-  $export['group_sponsor_level|node|sponsor|form'] = $field_group;
+  $field_groups['group_sponsor_level|node|sponsor|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Sponsor description');
+  t('Sponsor information');
+  t('Sponsor level');
+
+  return $field_groups;
 }

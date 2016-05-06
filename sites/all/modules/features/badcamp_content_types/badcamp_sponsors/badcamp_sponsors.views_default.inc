@@ -309,24 +309,33 @@ function badcamp_sponsors_views_default_views() {
   /* Display: Top Level Sponsors Footer */
   $handler = $view->new_display('panel_pane', 'Top Level Sponsors Footer', 'panel_pane_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Sponsors';
   $handler->display->display_options['display_description'] = 'Linked Logos for the Footer';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['class'] = 'links';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['empty'] = TRUE;
+  $handler->display->display_options['footer']['area']['content'] = '<p><a href="/sponsorship-packages" class="button buttercup">Sponsor BADCamp </a></p>
+<p><a href="/sponsors" class="button buttercup">See all Sponsors</a></p>
+';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Currently there are no sponsors at the Core level.
-<p><a href="/sponsorship-packages" class="button buttercup">Become a BADCamp Sponsor</a></p>';
+  $handler->display->display_options['empty']['area']['content'] = 'Currently there are no sponsors at the Core level.';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Sponsor logo */
@@ -361,7 +370,7 @@ function badcamp_sponsors_views_default_views() {
   $handler->display->display_options['filters']['field_sponsor_level_tid']['table'] = 'field_data_field_sponsor_level';
   $handler->display->display_options['filters']['field_sponsor_level_tid']['field'] = 'field_sponsor_level_tid';
   $handler->display->display_options['filters']['field_sponsor_level_tid']['value'] = array(
-    1 => '1',
+    5 => '5',
   );
   $handler->display->display_options['filters']['field_sponsor_level_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_sponsor_level_tid']['vocabulary'] = 'sponsor_level';

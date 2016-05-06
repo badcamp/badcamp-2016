@@ -221,11 +221,13 @@ function badcamp_news_feature_views_default_views() {
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_type'] = '0';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'F j, Y';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'html5_tools_iso8601';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
