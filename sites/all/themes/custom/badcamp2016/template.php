@@ -26,7 +26,7 @@ function badcamp2016_styleguide_alter(&$guide) {
     'error' => 'alert',
   );
   foreach ($messages as $type => $class) {
-    $guide[$type . '-message']['content'] = '<div class="callout ' . $class . '">' . styleguide_sentence() . '</div>';
+    $guide[$type . '-message']['content'] = '<div class="callout messages ' . "{$class} {$type}" . '">' . styleguide_sentence() . '</div>';
   }
 }
 
@@ -64,7 +64,7 @@ function badcamp2016_status_messages($variables) {
 
   foreach (drupal_get_messages($display) as $type => $messages) {
     if (isset($status_mapping[$type])) {
-      $output .= "<div data-alert class=\"callout messages {$status_mapping[$type]}\">\n";
+      $output .= "<div data-alert class=\"callout messages {$status_mapping[$type]} {$type}\">\n";
     }
     else {
       $output .= "<div data-alert class=\"callout messages alert\">\n";
