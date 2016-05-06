@@ -1,25 +1,20 @@
 name = badcamp2016
-description = Custom sub-theme based on the the Zurb Foundation base theme.
-screenshot = images/screenshot.png
+description = Foundation based theme for Bay Area DrupalCamp 2016
+screenshot = images/badcamp-2016-logo.png
 
 core = 7.x
 engine = phptemplate
 
-; For CSS users, load the badcamp2016.css file:
 stylesheets[all][] = dist/css/badcamp2016.css
 
 ; Kill some core stylesheets that get in the way.
 stylesheets[all][] = system.menus.css
 stylesheets[all][] = system.message.css
 
-; Foundation JavaScript.
-
-; External libraries used by Foundation (minified). Add more via Gruntfile.js.
+; Compiled external libraries.
 scripts[] = dist/js/libs.js
 
-; Theme scripts (minified).
-; Grunt will compress any custom theme scripts matching the _*.js naming convention
-; into app.min.js.
+; Compiled Theme scripts from js/
 scripts[] = dist/js/badcamp2016.js
 
 ; This section lists the regions defined in the page.tpl.php. The name in
@@ -49,23 +44,9 @@ regions[footer_thirdcolumn]  = Footer three
 regions[footer_fourthcolumn] = Footer four
 regions[footer]              = Footer
 
-; Various page elements output by the theme can be toggled on and off. The
-; "features" control which of these check boxes display on the
-; admin/appearance config page. This is useful for suppressing check boxes
-; for elements not used by your sub-theme. To add a check box, uncomment the
-; entry for it below. See the Drupal 7 Theme Guide for more info:
-; http://drupal.org/node/171205#features
-
+; Theme features available to toggle in the theme settings.
 features[] = name
 features[] = favicon
-; features[] = logo
-; features[] = name
-; features[] = slogan
-; features[] = node_user_picture
-; features[] = comment_user_picture
-; features[] = favicon
-; features[] = main_menu
-; features[] = secondary_menu
 
 ; Panel Layouts
 plugins[panels][layouts] = layouts
