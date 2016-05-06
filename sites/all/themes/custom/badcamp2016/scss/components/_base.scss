@@ -1,28 +1,25 @@
 //Base styles
 
-
-
 .button {
   text-transform: uppercase;
   border: 1px solid $badcamp-off-white;
   background-color: transparent;
   position: relative;
-  padding-right: 28px;
+  padding-right: 1.95em;
   &:after {
-    @include css-triangle(6px, $badcamp-off-white, right);
+    @include css-triangle(0.42em, $badcamp-off-white, right);
     position: absolute;
-    right: 12px;
-    top: 14px;
+    right: 0.8em;
+    top: 1.0em;
   }
   &:hover {
    border-color: $badcamp-dk-orange;
     background: linear-gradient(270deg, rgba(67, 105, 119, 0.60) 0%, rgba(32, 56, 66, 0.6) 83%);
     &:after {
-      @include css-triangle(6px, $badcamp-orange, right);
+      @include css-triangle(0.42em, $badcamp-orange, right);
     }
   }
 }
-
 
 //helpful for wysiwyg
 .dk-orange {

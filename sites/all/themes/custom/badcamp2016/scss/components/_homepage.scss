@@ -20,6 +20,7 @@
     }
   }
 }
+
 .region-hero {
   h2 {
     font-size: 46px;
@@ -28,7 +29,53 @@
       color: $badcamp-header-white;
     }
   }
+
+  .pane-content {
+    border-top: 1px solid #4E4E4E;
+    margin-top: 15px;
+    padding-top: 34px;
+    padding-bottom: 106px;
+
+    p {
+      font-size: 1.7rem;
+      line-height: 1.45;
+      margin-bottom: 0;
+      letter-spacing: 2px;
+
+      &.date {
+        margin-top: 2.4rem;
+      }
+
+      strong {
+        font-weight: normal;
+        color: $badcamp-orange;
+        padding-right: 0.8rem;
+        text-transform: uppercase;
+      }
+    }
+
+    hr {
+      clear: none;
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+      width: 75%;
+      border-bottom: 1px solid #4E4E4E;
+      margin-left: 0;
+    }
+
+    img {
+      float: right;
+      padding-right: 25px;
+    }
+
+    a.button {
+      text-transform: none;
+      margin-right: 2rem;
+      font-size: 1.4rem;
+    }
+  }
 }
+
 .region-about {
   background: linear-gradient(0deg, rgba(51, 117, 138, 0.60) 24%, rgba(32, 56, 66, 0.60) 89%);
   margin-bottom: 76px;

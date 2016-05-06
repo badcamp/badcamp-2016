@@ -3489,19 +3489,19 @@ table.hover tr:nth-of-type(even):hover {
   border: 1px solid #FEFEFE;
   background-color: transparent;
   position: relative;
-  padding-right: 28px; }
+  padding-right: 1.95em; }
   .button:after {
     content: '';
     display: block;
     width: 0;
     height: 0;
-    border: inset 6px;
+    border: inset 0.42em;
     border-color: transparent transparent transparent #FEFEFE;
     border-left-style: solid;
     border-right-width: 0;
     position: absolute;
-    right: 12px;
-    top: 14px; }
+    right: 0.8em;
+    top: 1.0em; }
   .button:hover {
     border-color: #C77C18;
     background: linear-gradient(270deg, rgba(67, 105, 119, 0.6) 0%, rgba(32, 56, 66, 0.6) 83%); }
@@ -3510,7 +3510,7 @@ table.hover tr:nth-of-type(even):hover {
       display: block;
       width: 0;
       height: 0;
-      border: inset 6px;
+      border: inset 0.42em;
       border-color: transparent transparent transparent #FF9A00;
       border-left-style: solid;
       border-right-width: 0; }
@@ -3629,6 +3629,38 @@ p {
   color: #59A8C1; }
   .region-hero h2:before, .region-hero h2:after {
     color: #FFFFFF; }
+
+.region-hero .pane-content {
+  border-top: 1px solid #4E4E4E;
+  margin-top: 15px;
+  padding-top: 34px;
+  padding-bottom: 106px; }
+  .region-hero .pane-content p {
+    font-size: 1.7rem;
+    line-height: 1.45;
+    margin-bottom: 0;
+    letter-spacing: 2px; }
+    .region-hero .pane-content p.date {
+      margin-top: 2.4rem; }
+    .region-hero .pane-content p strong {
+      font-weight: normal;
+      color: #FF9A00;
+      padding-right: 0.8rem;
+      text-transform: uppercase; }
+  .region-hero .pane-content hr {
+    clear: none;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    width: 75%;
+    border-bottom: 1px solid #4E4E4E;
+    margin-left: 0; }
+  .region-hero .pane-content img {
+    float: right;
+    padding-right: 25px; }
+  .region-hero .pane-content a.button {
+    text-transform: none;
+    margin-right: 2rem;
+    font-size: 1.4rem; }
 
 .region-about {
   background: linear-gradient(0deg, rgba(51, 117, 138, 0.6) 24%, rgba(32, 56, 66, 0.6) 89%);
