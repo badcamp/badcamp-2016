@@ -438,7 +438,9 @@ function badcamp_homepage_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Placeholder About Row 2: Attendee testimonial/quote',
       'title' => '',
-      'body' => '<p>I heart BadCamp!</p>
+      'body' => '<p>“Lorem ipsum I love BADCamp! It helped me make the decision to move to CA.”</p>
+
+<p class="orange">-John Smith, Company Name</p>
 ',
       'format' => 'full_html',
       'substitute' => TRUE,
@@ -447,7 +449,10 @@ function badcamp_homepage_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pane-testimonials',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
