@@ -41,10 +41,16 @@ function badcamp_homepage_default_ctools_custom_content() {
   $content->settings = array(
     'admin_title' => 'Main Title callout',
     'title' => 'Bay Area Drupal Camp 2016',
-    'body' => '<p><strong>Location</strong>&nbsp;Planet Earth, Berkeley, CA<br />
-37°52\'18.8358"N, -122°15\'38.6388"W</p>
+    'body' => '<div class="main-title-callout"><img src="sites/all/themes/custom/badcamp2016/images/badcamp-2016-logo.png" />
+<div>
+<p class="location"><strong>Location:</strong> Planet Earth / Berkeley, CA</p>
 
-<p><strong>Date</strong>&nbsp;2016.10.20 - 2016.10.23</p>
+<p class="coordinates"><strong>Coordinates:</strong> 37°52\'18.8358"N, -122°15\'38.6388"W</p>
+
+<p class="date"><strong>Date:</strong> 2016.10.20 - 2016.10.23</p>
+</div>
+
+<hr /> <a class="button" href="">Register for BADCamp</a> <a class="button" href="">Submit a Session</a></div>
 ',
     'format' => 'full_html',
     'substitute' => 0,
