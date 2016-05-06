@@ -12,6 +12,7 @@ var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var mergeStream = require('merge-stream');
 var uglify = require('gulp-uglify');
+var bower = require('gulp-bower');
 
 var paths = {
   styles: ['sites/all/themes/custom/badcamp2016/scss/**/*.scss'],
@@ -23,11 +24,16 @@ var paths = {
   dist: 'sites/all/themes/custom/badcamp2016/dist'
 };
 
-gulp.task('theme', ['theme:fonts', 'theme:scripts', 'theme:styles'], function () {
+gulp.task('theme', ['theme:bower', 'theme:fonts', 'theme:scripts', 'theme:styles'], function () {
   'use strict';
   gulp.watch(paths.styles, ['theme:styles', 'theme:scripts', 'theme:fonts']);
   gulp.watch(paths.scripts.libs, ['theme:styles', 'theme:scripts', 'theme:fonts']);
   gulp.watch(paths.scripts.theme, ['theme:styles', 'theme:scripts', 'theme:fonts']);
+});
+
+gulp.task('theme:bower', function () {
+  'use strict';
+  return bower({cwd: 'sites/all/themes/custom/badcamp2016'});
 });
 
 gulp.task('theme:clean', function () {
