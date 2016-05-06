@@ -56,6 +56,8 @@ regions[footer]              = Footer
 ; entry for it below. See the Drupal 7 Theme Guide for more info:
 ; http://drupal.org/node/171205#features
 
+features[] = name
+features[] = favicon
 ; features[] = logo
 ; features[] = name
 ; features[] = slogan

@@ -10,7 +10,6 @@ function badcamp2016_preprocess_html(&$variables) {
  * Implements template_preprocess_page.
  */
 function badcamp2016_preprocess_page(&$variables) {
-  drupal_set_message('testing');
 }
 
 function badcamp2016_styleguide_alter(&$guide) {
