@@ -3518,6 +3518,12 @@ table.hover tr:nth-of-type(even):hover {
 .dk-orange {
   color: #C77C18; }
 
+.orange {
+  color: #FF9A00; }
+
+p {
+  margin: 0; }
+
 #site-header {
   background: url(../../images/hud_top.svg) bottom center no-repeat;
   padding-bottom: 90px;
@@ -3628,6 +3634,16 @@ table.hover tr:nth-of-type(even):hover {
   background: linear-gradient(0deg, rgba(51, 117, 138, 0.6) 24%, rgba(32, 56, 66, 0.6) 89%);
   margin-bottom: 76px; }
 
+.region-about-first, .region-about-third {
+  margin-bottom: 32px; }
+
+.region-about-second .pane-testimonials {
+  min-height: 175px;
+  text-align: center;
+  background: rgba(53, 119, 141, 0.2); }
+  .region-about-second .pane-testimonials p {
+    margin: 0; }
+
 .region-about-header {
   margin-top: 80px; }
 
@@ -3642,6 +3658,7 @@ table.hover tr:nth-of-type(even):hover {
 
 .region-about-button {
   text-align: center;
+  margin-top: 50px;
   margin-bottom: 107px; }
 
 /*# sourceMappingURL=maps/badcamp2016.css.map */

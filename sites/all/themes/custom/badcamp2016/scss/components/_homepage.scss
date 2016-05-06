@@ -34,6 +34,19 @@
   margin-bottom: 76px;
 
 }
+.region-about-first, .region-about-third {
+  margin-bottom: 32px;
+}
+.region-about-second {
+  .pane-testimonials {
+    min-height: 175px;
+    text-align: center;
+    background: $badcamp-bg-trans-blue;
+    p {
+      margin: 0;
+    }
+  }
+}
 .region-about-header {
   margin-top: 80px;
 }
@@ -49,5 +62,6 @@
 }
 .region-about-button {
   text-align: center;
+  margin-top: 50px;
   margin-bottom: 107px;
 }
