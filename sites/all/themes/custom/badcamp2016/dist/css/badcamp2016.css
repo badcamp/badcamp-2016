@@ -3723,5 +3723,14 @@ p {
 .region-sponsors {
   background: rgba(32, 55, 65, 0.6) linear-gradient(0deg, #33758A 24%, #203842 89%);
   padding: 76px 0 76px 0; }
+  .region-sponsors .view-header {
+    font-family: "Orbitron", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #59A8C1;
+    letter-spacing: 1.56px;
+    padding-bottom: 28px; }
+  .region-sponsors .field-content > a > img {
+    padding-bottom: 40px; }
 
 /*# sourceMappingURL=maps/badcamp2016.css.map */
