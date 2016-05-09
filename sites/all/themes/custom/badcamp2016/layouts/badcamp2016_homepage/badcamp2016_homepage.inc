@@ -1,7 +1,11 @@
 <?php
+/**
+ * @file
+ * Badcamp homepage panels layout.
+ */
 
 /**
- * Implements hook_panels_layouts()
+ * Implements hook_panels_layouts().
  */
 function badcamp2016_badcamp2016_homepage_panels_layouts() {
   $items['badcamp2016_homepage'] = array(
@@ -14,9 +18,9 @@ function badcamp2016_badcamp2016_homepage_panels_layouts() {
       'hero' => t('Hero Section'),
       'about-header' => t('About section: header'),
       'about-copy' => t('About section: copy'),
-      'about-fr-left' => t('About section: first row left '),
-      'about-fr-middle' => t('About section: first row middle '),
-      'about-fr-right' => t('About section: first row right '),
+      'about-fr-left' => t('About section: first row left'),
+      'about-fr-middle' => t('About section: first row middle'),
+      'about-fr-right' => t('About section: first row right'),
       'about-sr' => t('About section: second row'),
       'about-tr-top' => t('About section: third row top'),
       'about-tr-bottom' => t('About section: third tow bottom'),

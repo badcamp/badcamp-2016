@@ -11,6 +11,7 @@
  *   panel of the layout. This layout supports the following sections:
  *   $content['middle']: The only panel in the layout.
  */
+
 ?>
 
 <?php !empty($css_id) ? print '<div id="' . $css_id . '">' : ''; ?>
@@ -31,7 +32,7 @@
 
 </header>
 
-<?php if ($content['main']): ?>
+<?php if ($content['main']) : ?>
   <main id="site-main">
     <?php print $content['main']; ?>
   </main>

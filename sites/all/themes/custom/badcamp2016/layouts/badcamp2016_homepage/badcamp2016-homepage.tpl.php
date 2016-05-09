@@ -1,80 +1,71 @@
 <?php
 /**
  * @file
- * Template for a custom 1 column panel layout.
- *
- * This template provides a very simple "one column" panel display layout.
- *
- * Variables:
- * - $id: An optional CSS id to use for the layout.
- * - $content: An array of content, each item in the array is keyed to one
- *   panel of the layout. This layout supports the following sections:
- *   $content['middle']: The only panel in the layout.
+ * Template for Badcamp homepage layout.
  */
+
 ?>
 
 <?php !empty($css_id) ? print '<div id="' . $css_id . '">' : ''; ?>
 
-<?php if ($content['hero']): ?>
-  <div class="region-hero">
-    <div class="row">
-      <div class="medium-12 columns">
-        <?php print $content['hero']; ?>
-      </div>
+<div class="region-hero">
+  <div class="row">
+    <div class="medium-12 columns">
+      <?php print $content['hero']; ?>
     </div>
   </div>
-<?php endif; ?>
+</div>
 
 <div class="region-about">
   <div class="row">
-    <?php if ($content['about-header']): ?>
+    <?php if ($content['about-header']) : ?>
       <div class="medium-12 columns region-about-header">
         <?php print $content['about-header']; ?>
       </div>
     <?php endif; ?>
-    <?php if ($content['about-copy']): ?>
+    <?php if ($content['about-copy']) : ?>
       <div class="medium-12 columns region-about-copy">
         <?php print $content['about-copy']; ?>
       </div>
     <?php endif; ?>
 
-    <?php if ($content['about-fr-left']): ?>
+    <?php if ($content['about-fr-left']) : ?>
       <div class="medium-4 columns region-about-first">
         <?php print $content['about-fr-left']; ?>
       </div>
     <?php endif; ?>
 
-    <?php if ($content['about-fr-middle']): ?>
+    <?php if ($content['about-fr-middle']) : ?>
       <div class="medium-4 columns region-about-first">
         <?php print $content['about-fr-middle']; ?>
       </div>
     <?php endif; ?>
 
-    <?php if ($content['about-fr-right']): ?>
+    <?php if ($content['about-fr-right']) : ?>
       <div class="medium-4 columns region-about-first">
         <?php print $content['about-fr-right']; ?>
       </div>
     <?php endif; ?>
 
-    <?php if ($content['about-sr']): ?>
+    <?php if ($content['about-sr']) : ?>
       <div class="medium-8 columns region-about-second">
         <?php print $content['about-sr']; ?>
       </div>
     <?php endif; ?>
 
-    <?php if ($content['about-tr-top']): ?>
+    <?php if ($content['about-tr-top']) : ?>
       <div class="medium-4 columns region-about-third">
         <?php print $content['about-tr-top']; ?>
       </div>
     <?php endif; ?>
 
-    <?php if ($content['about-tr-bottom']): ?>
+    <?php if ($content['about-tr-bottom']) : ?>
       <div class="medium-4 columns region-about-third">
         <?php print $content['about-tr-bottom']; ?>
       </div>
     <?php endif; ?>
 
-    <?php if ($content['about-button']): ?>
+    <?php if ($content['about-button']) : ?>
       <div class="medium-12 columns region-about-button">
         <?php print $content['about-button']; ?>
       </div>
@@ -82,7 +73,7 @@
   </div>
 </div>
 
-<?php if ($content['news']): ?>
+<?php if ($content['news']) : ?>
   <div class="region-news">
     <div class="row">
       <div class="medium-12 columns">
@@ -92,7 +83,7 @@
   </div>
 <?php endif; ?>
 
-<?php if ($content['sponsors']): ?>
+<?php if ($content['sponsors']) : ?>
   <div class="region-sponsors">
     <div class="row">
       <div class="medium-12 columns">

@@ -1,7 +1,11 @@
 <?php
+/**
+ * @file
+ * Badcamp full page panel layout.
+ */
 
 /**
- * Implements hook_panels_layouts()
+ * Implements hook_panels_layouts().
  */
 function badcamp2016_badcamp2016_page_panels_layouts() {
   $items['badcamp2016_page'] = array(
@@ -22,4 +26,3 @@ function badcamp2016_badcamp2016_page_panels_layouts() {
   );
   return $items;
 }
-
