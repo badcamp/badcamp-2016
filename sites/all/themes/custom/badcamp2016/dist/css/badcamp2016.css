@@ -3697,16 +3697,15 @@ p {
   margin-bottom: 76px; }
   .region-news h2.pane-title {
     margin-bottom: 40px; }
-  .region-news h2.field-content {
+  .region-news h3.field-content {
     /* Title of News/Events: */
     text-align: left;
     font-family: "Play", sans-serif;
+    font-weight: bold;
     text-transform: none;
     font-size: 28px;
     color: #59A8C1;
     letter-spacing: 1.82px; }
-    .region-news h2.field-content:before, .region-news h2.field-content:after {
-      content: none; }
   .region-news a {
     color: #59A8C1; }
   .region-news p {
@@ -3731,6 +3730,10 @@ p {
     letter-spacing: 1.56px;
     padding-bottom: 28px; }
   .region-sponsors .field-content > a > img {
-    padding-bottom: 40px; }
+    padding-bottom: 40px;
+    margin: auto;
+    text-align: center; }
+  .region-sponsors .view-footer .button {
+    margin: 2em; }
 
 /*# sourceMappingURL=maps/badcamp2016.css.map */

@@ -117,18 +117,16 @@
   h2.pane-title{
     margin-bottom: 40px;
   }
-  h2.field-content {
+  h3.field-content {
     /* Title of News/Events: */
     text-align: left;
     font-family: $font-family-play;
+    font-weight: bold;
     text-transform: none;
     font-size: 28px;
     color: $badcamp-lt-blue;
     letter-spacing: 1.82px;
-    &:before, &:after {
-      content: none;
-    }
-  }   
+  }
   a {
      color: $badcamp-lt-blue;
     }
@@ -157,7 +155,12 @@
   }
   .field-content > a > img {
     padding-bottom: 40px;
-    
+    margin: auto;
+    text-align: center;
   }
-
+  .view-footer {
+    .button {
+      margin: 2em;
+    };
+  }
 }
