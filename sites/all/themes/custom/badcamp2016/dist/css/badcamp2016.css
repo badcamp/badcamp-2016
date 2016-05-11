@@ -3736,4 +3736,64 @@ p {
   .region-sponsors .view-footer .button {
     margin: 2em; }
 
+ul.tabs {
+  background-color: #000000;
+  padding: 2em 2em 0 0;
+  white-space: nowrap;
+  list-style: none;
+  margin-left: 2em;
+  border: none; }
+
+ul.tabs li {
+  display: inline-block;
+  background-color: black;
+  border: 2px solid #C77C18;
+  border-bottom: 0;
+  width: 10em;
+  height: 3.6em;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 1em;
+  margin-bottom: 0;
+  background-image: linear-gradient(90deg, #436977 0%, #203842 83%);
+  background-size: 95% 95%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: .5em;
+  float: left; }
+
+ul.tabs li a {
+  font-family: "Orbitron", sans-serif;
+  font-size: 14.18px;
+  color: #FEFEFE;
+  letter-spacing: 1.16px; }
+
+ul.tabs li.active {
+  background-image: none;
+  border-left: 2px solid #868C8E;
+  border-top: 2px solid #868C8E;
+  border-right: 2px solid #868C8E;
+  border-bottom: 2px solid black; }
+
+.tabs {
+  background: black;
+  border: none; }
+
+.tabs.primary {
+  background: black;
+  /* Line: */
+  border-bottom: 4px solid #955D12; }
+  .tabs.primary > li > a {
+    color: #fefefe; }
+    .tabs.primary > li > a:hover, .tabs.primary > li > a:focus {
+      background: #0d0d0d; }
+
+ul.tabs li a:hover {
+  opacity: 0.5;
+  background-image: linear-gradient(90deg, #436977 0%, #203842 83%);
+  font-family: "Orbitron", sans-serif;
+  font-size: 14.18px;
+  color: #FEFEFE;
+  letter-spacing: 1.16px; }
+
 /*# sourceMappingURL=maps/badcamp2016.css.map */
