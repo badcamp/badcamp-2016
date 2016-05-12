@@ -3,7 +3,6 @@
  * @file
  * Template for Badcamp homepage layout.
  */
-
 ?>
 
 <?php !empty($css_id) ? print '<div id="' . $css_id . '">' : ''; ?>
