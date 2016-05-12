@@ -3749,7 +3749,6 @@ ul.tabs li {
   background-color: black;
   border: 2px solid #C77C18;
   border-bottom: 0;
-  width: 10em;
   height: 3.6em;
   text-align: center;
   vertical-align: middle;
@@ -3766,7 +3765,8 @@ ul.tabs li a {
   font-family: "Orbitron", sans-serif;
   font-size: 14.18px;
   color: #FEFEFE;
-  letter-spacing: 1.16px; }
+  letter-spacing: 1.16px;
+  margin: 0 2em 0 2em; }
 
 ul.tabs li.active {
   background-image: none;
