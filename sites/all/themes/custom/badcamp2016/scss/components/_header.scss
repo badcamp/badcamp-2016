@@ -3,4 +3,18 @@
   background: url(../../images/hud_top.svg) bottom center no-repeat;
   padding-bottom: 90px;
   margin-bottom:18px;
+  .pane-content {
+    font-family: $font-family-orbitron;
+    color: $badcamp-off-white;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1.67px;
+    padding-top: 24px;
+    .menu {
+      font-family: $font-family-play;
+      font-size: 20px;
+      letter-spacing: 1.29px;
+      text-transform: uppercase;
+    }
+  }
 }

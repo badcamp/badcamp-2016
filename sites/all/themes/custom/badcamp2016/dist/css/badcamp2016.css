@@ -3528,6 +3528,18 @@ p {
   background: url(../../images/hud_top.svg) bottom center no-repeat;
   padding-bottom: 90px;
   margin-bottom: 18px; }
+  #site-header .pane-content {
+    font-family: "Orbitron", sans-serif;
+    color: #FEFEFE;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1.67px;
+    padding-top: 24px; }
+    #site-header .pane-content .menu {
+      font-family: "Play", sans-serif;
+      font-size: 20px;
+      letter-spacing: 1.29px;
+      text-transform: uppercase; }
 
 #site-footer .footer-top {
   margin-bottom: 48px; }
