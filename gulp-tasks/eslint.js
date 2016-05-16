@@ -20,7 +20,8 @@ gulp.task('eslint', function () {
     'sites/all/themes/custom/**/*.js',
     '!sites/all/themes/custom/badcamp2016/dist/**',
     '!sites/all/themes/custom/badcamp2016/bower_components/**',
-    '!sites/all/themes/custom/badcamp2016/node_modules/**'
+    '!sites/all/themes/custom/badcamp2016/node_modules/**',
+    '!sites/all/themes/custom/badcamp2016/js/libs/**'
   ];
   var writeOutput = argv.hasOwnProperty('outputfile');
   var wstream;

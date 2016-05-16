@@ -1,4 +1,4 @@
-(function ($) {
+(function ($, StarField) {
   'use strict';
 
   /**
@@ -13,4 +13,10 @@
     }
   };
 
-})(jQuery);
+  // Use document ready because there's no reason to re-build the
+  // starfield on ajax.
+  $(document).ready(function () {
+    new StarField('layout-wrapper').render(60, 4.6);
+  });
+
+})(jQuery, document.StarField);

@@ -268,10 +268,3 @@ StarField.prototype.render = function(numStars, maxStarSpeed) {
       clearTimeout(id);
     };
 }());
-
-(function ($) {
-  $(document).ready(function() {
-    var starField = new StarField('layout-wrapper').render(60, 4.6);
-  });
-
-})(jQuery);
