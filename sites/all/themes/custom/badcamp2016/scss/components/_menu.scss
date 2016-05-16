@@ -23,7 +23,8 @@
   .menu {
     text-align: center;
     li {
-      display: inline;
+      display: inline-block;
+      margin:0 32px;
       a {
         display: inline-block;
         font-family: $font-family-orbitron;

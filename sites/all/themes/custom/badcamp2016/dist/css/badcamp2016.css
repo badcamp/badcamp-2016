@@ -3553,7 +3553,8 @@ p {
   .pane-menu-menu-footer-menu .menu {
     text-align: center; }
     .pane-menu-menu-footer-menu .menu li {
-      display: inline; }
+      display: inline-block;
+      margin: 0 32px; }
       .pane-menu-menu-footer-menu .menu li a {
         display: inline-block;
         font-family: "Orbitron", sans-serif;
