@@ -12,7 +12,8 @@
  *   $content['middle']: The only panel in the layout.
  */
 ?>
-
+<div id="layout-wrapper">
+  <canvas id="canvas2d"></canvas>
 <?php !empty($css_id) ? print '<div id="' . $css_id . '">' : ''; ?>
 <header id="site-header">
   <div class="row">
@@ -60,3 +61,4 @@
 </footer>
 
 <?php !empty($css_id) ? print '</div>' : ''; ?>
+</div>

@@ -12,5 +12,11 @@
       $(context).foundation('destroy');
     }
   };
+  
+  Drupal.behaviors.starfield = {
+    attach: function(context) {
+      
+    }
+  }
 
 })(jQuery);

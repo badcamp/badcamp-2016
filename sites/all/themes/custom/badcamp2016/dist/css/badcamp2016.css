@@ -3524,6 +3524,18 @@ table.hover tr:nth-of-type(even):hover {
 p {
   margin: 0; }
 
+#canvas2d {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute; }
+
+#site-header,
+#site-footer,
+#site-main {
+  position: relative; }
+
 #site-header {
   background: url(../../images/hud_top.svg) bottom center no-repeat;
   padding-bottom: 90px;
