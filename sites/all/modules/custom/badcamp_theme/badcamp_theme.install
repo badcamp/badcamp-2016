@@ -8,7 +8,16 @@
  * Implements hook_install().
  */
 function badcamp_theme_install() {
-  theme_enable('badcamp2016');
+  theme_enable(array('badcamp2016'));
   theme_disable(array('seven', 'bartik', 'garland'));
   variable_set('theme_default', 'badcamp2016');
+}
+
+/**
+ * Enable the badcamp theme if it isn't already.
+ *
+ * @author Rob Bayliss
+ */
+function badcamp_theme_update_7001() {
+  theme_enable(array('badcamp2016'));
 }
