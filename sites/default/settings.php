@@ -50,6 +50,7 @@ $conf['master_modules']['base'] = array(
   'panels',
   'panels_everywhere',
   'panels_node',
+  'pantheon_api',
   'pathauto',
   'realname',
   'r4032login',
