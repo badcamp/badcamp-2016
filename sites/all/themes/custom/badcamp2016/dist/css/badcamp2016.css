@@ -3697,16 +3697,15 @@ p {
   margin-bottom: 76px; }
   .region-news h2.pane-title {
     margin-bottom: 40px; }
-  .region-news h2.field-content {
+  .region-news h3.field-content {
     /* Title of News/Events: */
     text-align: left;
     font-family: "Play", sans-serif;
+    font-weight: bold;
     text-transform: none;
     font-size: 28px;
     color: #59A8C1;
     letter-spacing: 1.82px; }
-    .region-news h2.field-content:before, .region-news h2.field-content:after {
-      content: none; }
   .region-news a {
     color: #59A8C1; }
   .region-news p {
@@ -3723,5 +3722,78 @@ p {
 .region-sponsors {
   background: rgba(32, 55, 65, 0.6) linear-gradient(0deg, #33758A 24%, #203842 89%);
   padding: 76px 0 76px 0; }
+  .region-sponsors .view-header {
+    font-family: "Orbitron", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #59A8C1;
+    letter-spacing: 1.56px;
+    padding-bottom: 28px; }
+  .region-sponsors .field-content > a > img {
+    padding-bottom: 40px;
+    margin: auto;
+    text-align: center; }
+  .region-sponsors .view-footer .button {
+    margin: 2em; }
+
+ul.tabs {
+  background-color: #000000;
+  padding: 2em 2em 0 0;
+  white-space: nowrap;
+  list-style: none;
+  margin-left: 2em;
+  border: none; }
+
+ul.tabs li {
+  display: inline-block;
+  background-color: black;
+  border: 2px solid #C77C18;
+  border-bottom: 0;
+  height: 3.6em;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 1em;
+  margin-bottom: 0;
+  background-image: linear-gradient(90deg, #436977 0%, #203842 83%);
+  background-size: 95% 95%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: .5em;
+  float: left; }
+
+ul.tabs li a {
+  font-family: "Orbitron", sans-serif;
+  font-size: 14.18px;
+  color: #FEFEFE;
+  letter-spacing: 1.16px;
+  margin: 0 2em 0 2em; }
+
+ul.tabs li.active {
+  background-image: none;
+  border-left: 2px solid #868C8E;
+  border-top: 2px solid #868C8E;
+  border-right: 2px solid #868C8E;
+  border-bottom: 2px solid black; }
+
+.tabs {
+  background: black;
+  border: none; }
+
+.tabs.primary {
+  background: black;
+  /* Line: */
+  border-bottom: 4px solid #955D12; }
+  .tabs.primary > li > a {
+    color: #fefefe; }
+    .tabs.primary > li > a:hover, .tabs.primary > li > a:focus {
+      background: #0d0d0d; }
+
+ul.tabs li a:hover {
+  opacity: 0.5;
+  background-image: linear-gradient(90deg, #436977 0%, #203842 83%);
+  font-family: "Orbitron", sans-serif;
+  font-size: 14.18px;
+  color: #FEFEFE;
+  letter-spacing: 1.16px; }
 
 /*# sourceMappingURL=maps/badcamp2016.css.map */

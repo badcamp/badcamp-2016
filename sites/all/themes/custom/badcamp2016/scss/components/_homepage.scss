@@ -117,18 +117,16 @@
   h2.pane-title{
     margin-bottom: 40px;
   }
-  h2.field-content {
+  h3.field-content {
     /* Title of News/Events: */
     text-align: left;
     font-family: $font-family-play;
+    font-weight: bold;
     text-transform: none;
     font-size: 28px;
     color: $badcamp-lt-blue;
     letter-spacing: 1.82px;
-    &:before, &:after {
-      content: none;
-    }
-  }   
+  }
   a {
      color: $badcamp-lt-blue;
     }
@@ -147,4 +145,22 @@
 .region-sponsors {
   background: rgba(32, 55, 65, 0.60) linear-gradient(0deg, #33758A 24%, #203842 89%);
   padding: 76px 0 76px 0;
+  .view-header {
+    font-family: $font-family-orbitron;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: $badcamp-lt-blue;
+    letter-spacing: 1.56px;
+    padding-bottom: 28px;
+  }
+  .field-content > a > img {
+    padding-bottom: 40px;
+    margin: auto;
+    text-align: center;
+  }
+  .view-footer {
+    .button {
+      margin: 2em;
+    };
+  }
 }
