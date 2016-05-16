@@ -88,13 +88,14 @@ $conf['master_modules']['base'] = array(
   'badcamp_sponsors_page',
   'badcamp_summit_contact_form',
   'badcamp_summits_page',
-  'badcamp_theme',
   'badcamp_trainings_page',
   'badcamp_user_profile',
   'feature_badcamp_homepage',
   'feature_badcamp_reports',
   'training_reg_feature',
   // BADCamp custom modules.
+  'training_reg',
+  'badcamp_theme',
 );
 $conf['master_modules']['local'] = array(
   'dblog',
