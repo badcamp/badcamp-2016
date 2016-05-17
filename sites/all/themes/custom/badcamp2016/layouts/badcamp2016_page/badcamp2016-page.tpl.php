@@ -49,6 +49,8 @@
 
 
   <div class="footer-bottom">
+    <div class="footer-hud-top"></div>
+    <div class="footer-hud-bottom">
     <div class="row">
       <div class="medium-6 columns">
         <?php print $content['footer_left']; ?>
@@ -56,6 +58,7 @@
       <div class="medium-6 columns">
         <?php print $content['footer_right']; ?>
       </div>
+    </div>
     </div>
   </div>
 </footer>

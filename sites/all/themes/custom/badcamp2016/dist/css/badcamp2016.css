@@ -3539,7 +3539,8 @@ p {
 #site-header {
   background: url(../../images/hud_top.svg) bottom center no-repeat;
   padding-bottom: 90px;
-  margin-bottom: 18px; }
+  margin-bottom: 18px;
+  background-size: cover; }
   #site-header .pane-content {
     font-family: "Orbitron", sans-serif;
     color: #FEFEFE;
@@ -3553,29 +3554,33 @@ p {
       letter-spacing: 1.29px;
       text-transform: uppercase; }
 
-#site-footer .footer-top {
-  margin: 128px 0 48px 0; }
-
-#site-footer .footer-bottom {
-  min-height: 300px;
-  background: url(../../images/hud_bottom.svg), linear-gradient(-180deg, rgba(32, 66, 79, 0.8) 0%, rgba(24, 42, 50, 0.8) 100%);
-  background-repeat: no-repeat;
-  background-position: top center, 0 136px; }
-
-#site-footer .footer-pane-copyright, #site-footer .footer-pane-social {
-  margin-top: 120px;
-  line-height: 1rem; }
-  #site-footer .footer-pane-copyright a:hover, #site-footer .footer-pane-social a:hover {
-    color: #C77C18; }
-
-#site-footer .footer-pane-copyright {
-  font-size: 16px; }
-
-#site-footer .footer-pane-social {
-  font-size: 18px;
-  text-align: right; }
-  #site-footer .footer-pane-social span {
-    padding-left: 16px; }
+#site-footer {
+  position: relative; }
+  #site-footer .footer-top {
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: -150px; }
+  #site-footer .footer-hud-top {
+    background: url(../../images/hud_bottom.svg);
+    background-position: center bottom;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%; }
+  #site-footer .footer-hud-bottom {
+    background: linear-gradient(-180deg, rgba(32, 66, 79, 0.8) 0%, rgba(24, 42, 50, 0.8) 100%); }
+  #site-footer .footer-pane-copyright, #site-footer .footer-pane-social {
+    margin-top: 120px;
+    line-height: 1rem; }
+    #site-footer .footer-pane-copyright a:hover, #site-footer .footer-pane-social a:hover {
+      color: #C77C18; }
+  #site-footer .footer-pane-copyright {
+    font-size: 16px; }
+  #site-footer .footer-pane-social {
+    font-size: 18px;
+    text-align: right; }
+    #site-footer .footer-pane-social span {
+      padding-left: 16px; }
 
 .pane-system-user-menu a {
   font-size: 16px;
