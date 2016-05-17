@@ -22,14 +22,6 @@ function badcamp_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
 
-  // Create a Home link in the main menu.
-  $item = array(
-    'link_title' => st('Home'),
-    'link_path' => '<front>',
-    'menu_name' => 'main-menu',
-  );
-  menu_link_save($item);
-
   // Update the menu router information.
   menu_rebuild();
 
@@ -41,4 +33,21 @@ function badcamp_install() {
     ->execute();
   variable_set('admin_theme', 'adminimal');
   variable_set('node_admin_theme', '1');
+}
+
+/**
+ * Delete the home link from the main menu.
+ * 
+ * @author Rob Bayliss
+ */
+function badcamp_update_7001() {
+  $mlid = db_select('menu_links', 'ml')
+    ->fields('ml', array('mlid'))
+    ->condition('menu_name', 'main-menu')
+    ->condition('link_path', '<front>')
+    ->execute()
+    ->fetchField();
+  if($mlid) {
+    menu_link_delete($mlid);
+  }
 }
