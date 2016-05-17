@@ -37,7 +37,7 @@ function badcamp_install() {
 
 /**
  * Delete the home link from the main menu.
- * 
+ *
  * @author Rob Bayliss
  */
 function badcamp_update_7001() {
@@ -47,7 +47,7 @@ function badcamp_update_7001() {
     ->condition('link_path', '<front>')
     ->execute()
     ->fetchField();
-  if($mlid) {
+  if ($mlid) {
     menu_link_delete($mlid);
   }
 }
