@@ -4,6 +4,15 @@
   padding-bottom: 90px;
   margin-bottom:18px;
   background-size:cover;
+  .columns {
+    padding: 0;
+  }
+  .pane-page-site-name {
+    padding-left: 16px;
+    a {
+      color: $badcamp-off-white;
+    }
+  }
 
   .pane-content {
     font-family: $font-family-orbitron;

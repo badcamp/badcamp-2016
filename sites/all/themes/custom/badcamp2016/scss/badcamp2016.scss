@@ -7,6 +7,7 @@
 
 // Do font import in one load, not 3 separate sheets.
 @import url(https://fonts.googleapis.com/css?family=Orbitron:400,700|Play:400,700|Open+Sans);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
 
 @include foundation-everything();
 

@@ -152,7 +152,7 @@ function badcamp_site_config_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'linked' => 0,
+      'linked' => 1,
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -178,8 +178,8 @@ function badcamp_site_config_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'Copyrights',
       'title' => '',
-      'body' => '<p class="p1">© Images &amp; Layout <span class="dk-orange">CC-BY-SA</span> 2016 BADCAMP Some rights reserved.&nbsp; <span class="dk-orange">Credits</span><br />
-© Code <span class="dk-orange">GNU General Public License</span> 2016 BADCAMP Some rights reserved.</p>
+      'body' => '<p class="p1">© Images &amp; Layout <a class="dk-orange" href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a> 2016 BADCAMP Some rights reserved.&nbsp; <a class="dk-orange" href="/credits">Credits</a><br />
+© Code <a class="dk-orange" href="http://www.gnu.org/licenses/gpl-2.0.en.html">GNU General Public License</a> 2016 BADCAMP Some rights reserved.</p>
 ',
       'format' => 'full_html',
       'substitute' => 1,
@@ -231,7 +231,7 @@ function badcamp_site_config_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'Social Links',
       'title' => '',
-      'body' => '<p><a class="dk-orange" href="#">Contact Us</a><span>w00t!</span></p>
+      'body' => '<p><a class="footer-social dk-orange" href="/contact">Contact Us</a> <a class="footer-social twitter-icon" href="twitter.com/badcamp"><img alt="twitter icon" src="http://33.33.33.55/badcamp/sites/all/themes/custom/badcamp2016/images/twitter-icon.png" /></a> <a class="footer-social fb-icon" href="https://www.facebook.com/BayAreaDrupalCamp/"><img alt="facebook icon" src="http://33.33.33.55/badcamp/sites/all/themes/custom/badcamp2016/images/fb-icon.png" /></a></p>
 ',
       'format' => 'full_html',
       'substitute' => 1,

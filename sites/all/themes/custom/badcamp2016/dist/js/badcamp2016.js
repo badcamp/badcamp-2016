@@ -19,4 +19,4 @@
     new StarField('layout-wrapper').render(60, 4.6);
   });
 
-})(jQuery, window.StarField);
+})(jQuery, document.StarField);

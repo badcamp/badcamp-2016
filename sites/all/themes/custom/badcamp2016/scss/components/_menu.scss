@@ -1,19 +1,40 @@
 .pane-system-user-menu {
+  float: right;
   a {
+    font-weight: normal;
     font-size: 16px;
     color: $badcamp-dk-orange;
+    text-transform: none;
   }
 }
 .pane-system-main-menu {
+  li {
+    &:hover {
+      background: #1A323C;
+    }
+  }
   a {
+    display: inline-block;
     position: relative;
+    margin: 0 8px;
     font-size: 20px;
+    font-weight: normal;
+    white-space: nowrap;
     color: $badcamp-off-white;
+    &:first-child {
+      margin-left: 0;
+    }
     &:after {
       @include css-triangle(6px, $badcamp-off-white, down);
       position: absolute;
       top: 21px;
       right: 0;
+    }
+    &:hover {
+      color: $badcamp-lt-blue;
+      &:after {
+        @include css-triangle(6px, $badcamp-orange, down);
+      }
     }
   }
 }

@@ -2,9 +2,10 @@
 #site-footer {
   position:relative;
   .footer-top {
-    position:absolute;
-    bottom:100%;
+    //position:absolute;
+    //bottom:100%;
     margin-bottom:-150px;
+    padding-top: 72px;
   }
   .footer-hud-top {
     background: url(../../images/hud_bottom.svg);
@@ -18,7 +19,8 @@
     background: linear-gradient(-180deg, rgba(32, 66, 79, 0.8) 0%, rgba(24, 42, 50, 0.8) 100%);
   }
   .footer-pane-copyright, .footer-pane-social {
-    margin-top: 120px;
+    margin-top: 24px;
+    margin-bottom: 144px;
     line-height: 1rem;
     a:hover {
       color: $badcamp-dk-orange;
