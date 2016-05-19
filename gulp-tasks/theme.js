@@ -18,17 +18,20 @@ var paths = {
   styles: ['sites/all/themes/custom/badcamp2016/scss/**/*.scss'],
   fonts: ['sites/all/themes/custom/badcamp2016//bower_components/foundation-icon-fonts/*.{eot,svg,ttf,woff}'],
   scripts: {
-    libs: ['sites/all/themes/custom/badcamp2016/bower_components/foundation-sites/dist/foundation.js'],
-    theme: ['sites/all/themes/custom/badcamp2016/js/**/*.js']
+    libs: [
+      'sites/all/themes/custom/badcamp2016/bower_components/foundation-sites/dist/foundation.js',
+      'sites/all/themes/custom/badcamp2016/js/libs/*.js'
+    ],
+    theme: ['sites/all/themes/custom/badcamp2016/js/*.js']
   },
   dist: 'sites/all/themes/custom/badcamp2016/dist'
 };
 
 gulp.task('theme', ['theme:bower', 'theme:fonts', 'theme:scripts', 'theme:styles'], function () {
   'use strict';
-  gulp.watch(paths.styles, ['theme:styles', 'theme:scripts', 'theme:fonts']);
-  gulp.watch(paths.scripts.libs, ['theme:styles', 'theme:scripts', 'theme:fonts']);
-  gulp.watch(paths.scripts.theme, ['theme:styles', 'theme:scripts', 'theme:fonts']);
+  gulp.watch(paths.styles, ['theme:styles']);
+  gulp.watch(paths.scripts.libs, ['theme:scripts']);
+  gulp.watch(paths.scripts.theme, ['theme:scripts']);
 });
 
 gulp.task('theme:bower', function () {
@@ -36,18 +39,26 @@ gulp.task('theme:bower', function () {
   return bower({cwd: 'sites/all/themes/custom/badcamp2016'});
 });
 
-gulp.task('theme:clean', function () {
+gulp.task('theme:clean:styles', function () {
   'use strict';
-  return del([paths.dist]);
+  return del([paths.dist + '/css']);
+});
+gulp.task('theme:clean:fonts', function () {
+  'use strict';
+  return del([paths.dist + '/fonts']);
+});
+gulp.task('theme:clean:scripts', function () {
+  'use strict';
+  return del([paths.dist + '/js']);
 });
 
-gulp.task('theme:fonts', ['theme:clean'], function () {
+gulp.task('theme:fonts', ['theme:clean:fonts'], function () {
   'use strict';
   return gulp.src(paths.fonts)
     .pipe(gulp.dest(paths.dist + '/fonts'));
 });
 
-gulp.task('theme:scripts', ['theme:clean'], function () {
+gulp.task('theme:scripts', ['theme:clean:scripts'], function () {
   'use strict';
   var libs = gulp.src(paths.scripts.libs)
     .pipe(sourcemaps.init())
@@ -61,7 +72,7 @@ gulp.task('theme:scripts', ['theme:clean'], function () {
     .pipe(gulp.dest(paths.dist + '/js'));
 });
 
-gulp.task('theme:styles', ['theme:clean'], function () {
+gulp.task('theme:styles', ['theme:clean:styles'], function () {
   'use strict';
   return gulp.src(paths.styles)
     .pipe(sourcemaps.init())
