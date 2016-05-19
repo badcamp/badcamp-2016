@@ -2,8 +2,6 @@
 #site-footer {
   position:relative;
   .footer-top {
-    //position:absolute;
-    //bottom:100%;
     margin-bottom:-150px;
     padding-top: 72px;
   }
@@ -24,6 +22,14 @@
     line-height: 1rem;
     a:hover {
       color: $badcamp-dk-orange;
+    }
+  }
+  .footer-social {
+    display: inline-block;
+    margin-left: 18px;
+    .fa {
+      color: white;
+      font-size: 32px;
     }
   }
   .footer-pane-copyright{

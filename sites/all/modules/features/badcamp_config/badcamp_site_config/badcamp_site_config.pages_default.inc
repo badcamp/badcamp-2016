@@ -231,7 +231,7 @@ function badcamp_site_config_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'Social Links',
       'title' => '',
-      'body' => '<p><a class="footer-social dk-orange" href="/contact">Contact Us</a> <a class="footer-social twitter-icon" href="twitter.com/badcamp"><i class="fa fa-twitter" aria-hidden="true"></i></a> <a class="footer-social fb-icon" href="https://www.facebook.com/BayAreaDrupalCamp/"><i class="fa fa-facebook" aria-hidden="true"></i></a></p>
+      'body' => '<p><a class="footer-social dk-orange" href="/contact">Contact Us</a><a class="footer-social fb-icon" href="https://www.facebook.com/BayAreaDrupalCamp/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><a class="footer-social twitter-icon" href="https://twitter.com/badcamp"><i class="fa fa-twitter-square" aria-hidden="true"></i></a> </p>
 ',
       'format' => 'full_html',
       'substitute' => 1,
