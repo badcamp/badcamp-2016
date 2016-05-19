@@ -41,9 +41,7 @@ function badcamp_homepage_default_page_manager_pages() {
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
     'css_id' => 'home',
-    'css' => '.core-sponsor .views-field-field-sponsor-logo {
-        width: 50%;
- }',
+    'css' => '',
     'contexts' => array(),
     'relationships' => array(),
     'metatag_panels' => array(
@@ -250,32 +248,6 @@ function badcamp_homepage_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-f55aef02-ee19-40ef-9d0c-a4c6baf29cfb';
-    $pane->panel = 'about-button';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'About Section Learn more button',
-      'title' => '',
-      'body' => '<p><a class="button" href="#">learn more</a></p>
-',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'f55aef02-ee19-40ef-9d0c-a4c6baf29cfb';
-    $display->content['new-f55aef02-ee19-40ef-9d0c-a4c6baf29cfb'] = $pane;
-    $display->panels['about-button'][0] = 'new-f55aef02-ee19-40ef-9d0c-a4c6baf29cfb';
-    $pane = new stdClass();
     $pane->pid = 'new-22ce8ecd-34d1-4086-8c3b-426bf13459c8';
     $pane->panel = 'about-copy';
     $pane->type = 'custom';
@@ -311,7 +283,7 @@ function badcamp_homepage_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Placeholder About: First Row Left',
       'title' => '',
-      'body' => '<img src="http://placehold.it/376x340">',
+      'body' => '<div class="digit-hero"><h2 class="digits">$0.00</h2><p class="description">No admission cost. Ever.</p>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
