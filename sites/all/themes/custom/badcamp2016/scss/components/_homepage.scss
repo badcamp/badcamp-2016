@@ -80,7 +80,18 @@
   background: linear-gradient(0deg, rgba(51, 117, 138, 0.60) 24%, rgba(32, 56, 66, 0.60) 89%);
   margin-bottom: 76px;
 
+  .digit-hero {
+    min-height: 335px;
+    // Needed to prevent margin on .digits from
+    // overflowing the .digit-hero.
+    overflow:auto;
+
+    .digits {
+      margin-top:119px;
+    }
+  }
 }
+
 .region-about-first, .region-about-third {
   margin-bottom: 32px;
 }
@@ -163,5 +174,21 @@
     .button {
       margin: 2em;
     };
+  }
+}
+
+.digit-hero {
+  text-align: center;
+  background: rgba(53,119,141,0.20);
+
+  .digits {
+    font-size: rem-calc(64);
+    line-height: 1em;
+    margin-bottom:0;
+    letter-spacing: 4.13px;
+  }
+  .description {
+    font-size: rem-calc(22);
+    color: #F59603;
   }
 }
