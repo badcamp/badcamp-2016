@@ -467,7 +467,12 @@ function badcamp_homepage_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Placeholder About: Third Row Top',
       'title' => '',
-      'body' => '<img src="http://placehold.it/376x340">',
+      'body' => '<div class="digit-hero">
+<h2 class="digits">1675</h2>
+
+<p class="description">People trained in Drupal<br>since 2007</p>
+</div>
+',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
