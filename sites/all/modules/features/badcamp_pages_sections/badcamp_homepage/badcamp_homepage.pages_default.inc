@@ -41,9 +41,7 @@ function badcamp_homepage_default_page_manager_pages() {
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
     'css_id' => 'home',
-    'css' => '.core-sponsor .views-field-field-sponsor-logo {
-        width: 50%;
- }',
+    'css' => '',
     'contexts' => array(),
     'relationships' => array(),
     'metatag_panels' => array(
@@ -285,7 +283,7 @@ function badcamp_homepage_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Placeholder About: First Row Left',
       'title' => '',
-      'body' => '<img src="http://placehold.it/376x340">',
+      'body' => '<div class="digit-hero"><h2 class="digits">$0.00</h2><p class="description">No admission cost. Ever.</p>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
