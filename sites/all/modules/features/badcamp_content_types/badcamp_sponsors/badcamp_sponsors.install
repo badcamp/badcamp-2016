@@ -8,5 +8,5 @@
  * @author Rob Bayliss
  */
 function badcamp_sponsors_update_7001() {
-
+  module_enable(array('uuid'));
 }
