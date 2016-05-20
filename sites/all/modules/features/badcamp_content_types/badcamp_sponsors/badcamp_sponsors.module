@@ -5,3 +5,72 @@
  */
 
 include_once 'badcamp_sponsors.features.inc';
+
+/**
+ * Implements hook_post_features_revert().
+ *
+ * Create sponsor level terms after the sponsor level vocabulary
+ * is created.
+ */
+function badcamp_sponsors_post_features_revert($component) {
+  if ($component === 'taxonomy' && !variable_get('badcamp_sponsors_levels_created', FALSE)) {
+    if (badcamp_sponsor_create_level_terms()) {
+      variable_set('badcamp_sponsors_levels_created', TRUE);
+    }
+  }
+}
+
+/**
+ * Implements hook_post_features_rebuild().
+ *
+ * Create sponsor level terms after the sponsor level vocabulary
+ * is created.
+ */
+function badcamp_sponsors_post_features_rebuild($component) {
+  if ($component === 'taxonomy' && !variable_get('badcamp_sponsors_levels_created', FALSE)) {
+    if (badcamp_sponsor_create_level_terms()) {
+      variable_set('badcamp_sponsors_levels_created', TRUE);
+    }
+  }
+}
+
+/**
+ * Create the sponsor level terms.
+ */
+function badcamp_sponsor_create_level_terms() {
+  $vocab = taxonomy_vocabulary_machine_name_load('sponsor_level');
+  if ($vocab) {
+    foreach (badcamp_sponsor_level_terms() as $term) {
+      $term->vid = $vocab->vid;
+      $term->vocabulary_machine_name = $vocab->machine_name;
+      taxonomy_term_save($term);
+    }
+    return TRUE;
+  }
+  return FALSE;
+}
+
+/**
+ * Get a list of the sponsor level terms that should be created.
+ */
+function badcamp_sponsor_level_terms() {
+  $terms = array(
+    (object) array(
+      'name' => 'Tier 1',
+      'uuid' => '964f44c7-81c1-4b5b-b731-baf9021b1ee1',
+    ),
+    (object) array(
+      'name' => 'Tier 2',
+      'uuid' => '75bd789f-0bb6-45b0-b92a-b520c93f0382',
+    ),
+    (object) array(
+      'name' => 'Tier 3',
+      'uuid' => 'dd6058d8-fb70-451b-bb9c-6b25f499a416',
+    ),
+    (object) array(
+      'name' => 'Tier 4',
+      'uuid' => '6b92047e-130c-409d-a198-18b9247856c8',
+    ),
+  );
+  return $terms;
+}
