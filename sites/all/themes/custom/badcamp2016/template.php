@@ -5,15 +5,62 @@
  */
 
 /**
- * Implements hook_preprocess_html().
+ * Implements hook_theme_registry_alter().
+ *
+ * Do not use template_preprocess_menu_tree() to build menu trees.
+ * Necessary so we can access data about the menu links in theme and preprocess
+ * functions.
+ *
+ * @see template_preprocess_menu_tree()
  */
-function badcamp2016_preprocess_html(&$variables) {
+function badcamp2016_theme_registry_alter(&$registry) {
+  $idx = array_search('template_preprocess_menu_tree', $registry['menu_tree']['preprocess functions']);
+  if ($idx !== FALSE) {
+    unset($registry['menu_tree']['preprocess functions'][$idx]);
+  }
 }
 
 /**
- * Implements hook_preprocess_page().
+ * Override of theme_menu_tree().
+ *
+ * Print out $variables['tree']['#children'] instead of $variables['tree'].
+ * Necessary so we can access data about the menu links in theme and preprocess
+ * functions.
+ *
+ * @see badcamp2016_theme_registry_alter()
  */
-function badcamp2016_preprocess_page(&$variables) {
+function badcamp2016_menu_tree(&$variables) {
+  return '<ul class="menu">' . $variables['tree']['#children'] . '</ul>';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Add a has_children variable to trees of the main menu.
+ */
+function badcamp2016_preprocess_menu_tree__main_menu(&$variables) {
+  $variables['has_children'] = TRUE;
+  foreach (element_children($variables['tree']) as $cid) {
+    if (!empty($variables['tree'][$cid]['#below'])) {
+      $variables['has_children'] = TRUE;
+      break;
+    }
+  }
+}
+
+/**
+ * Overrides theme_menu_tree() for the main menu.
+ *
+ * Add foundation dropdown attributes if this tree has children.
+ */
+function badcamp2016_menu_tree__main_menu(&$variables) {
+  if ($variables['has_children']) {
+    return '<ul class="menu dropdown" data-dropdown-menu>' . $variables['tree']['#children'] . '</ul>';
+  }
+  else {
+    return '<ul class="menu">' . $variables['tree']['#children'] . '</ul>';
+  }
+
 }
 
 /**
