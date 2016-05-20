@@ -1,3 +1,4 @@
+//user menu styles
 .pane-system-user-menu {
   float: right;
   a {
@@ -6,6 +7,7 @@
     color: $badcamp-dk-orange;
   }
 }
+
 //main menu styles
 .pane-system-main-menu {
   a {
@@ -29,21 +31,27 @@
         background: $badcamp-menu-blue;
       }
     }
+
+    &.is-dropdown-submenu-parent {
+      > a {
+        &:after {
+          @include css-triangle(6px, $badcamp-lt-blue, down);
+          position: absolute;
+          top: 21px;
+          right: 0;
+        }
+        &:hover {
+          &:after {
+            @include css-triangle(6px, $badcamp-orange, down);
+          }
+        }
+      }
+    }
+
     > a {
       text-transform: uppercase;
       &:first-child {
         margin-left: 0;
-      }
-      &:after {
-        @include css-triangle(6px, $badcamp-off-white, down);
-        position: absolute;
-        top: 21px;
-        right: 0;
-      }
-      &:hover {
-        &:after {
-          @include css-triangle(6px, $badcamp-orange, down);
-        }
       }
     }
   }
@@ -70,6 +78,7 @@
   }
 }
 
+//styles for footer menu
 .pane-menu-menu-footer-menu {
   padding: 0 36px;
   .menu {

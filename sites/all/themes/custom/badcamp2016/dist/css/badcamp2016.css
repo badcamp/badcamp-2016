@@ -3612,31 +3612,33 @@ p {
 .pane-system-main-menu > .pane-content > .menu > li.is-active:hover {
   background: #1A323C; }
 
+.pane-system-main-menu > .pane-content > .menu > li.is-dropdown-submenu-parent > a:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 6px;
+  border-color: #59A8C1 transparent transparent;
+  border-top-style: solid;
+  border-bottom-width: 0;
+  position: absolute;
+  top: 21px;
+  right: 0; }
+
+.pane-system-main-menu > .pane-content > .menu > li.is-dropdown-submenu-parent > a:hover:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 6px;
+  border-color: #FF9A00 transparent transparent;
+  border-top-style: solid;
+  border-bottom-width: 0; }
+
 .pane-system-main-menu > .pane-content > .menu > li > a {
   text-transform: uppercase; }
   .pane-system-main-menu > .pane-content > .menu > li > a:first-child {
     margin-left: 0; }
-  .pane-system-main-menu > .pane-content > .menu > li > a:after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    border: inset 6px;
-    border-color: #FEFEFE transparent transparent;
-    border-top-style: solid;
-    border-bottom-width: 0;
-    position: absolute;
-    top: 21px;
-    right: 0; }
-  .pane-system-main-menu > .pane-content > .menu > li > a:hover:after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    border: inset 6px;
-    border-color: #FF9A00 transparent transparent;
-    border-top-style: solid;
-    border-bottom-width: 0; }
 
 .pane-system-main-menu ul.submenu {
   background: #1A323C;
