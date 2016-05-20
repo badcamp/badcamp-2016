@@ -3615,6 +3615,9 @@ p {
       border-top-style: solid;
       border-bottom-width: 0; }
 
+.pane-system-main-menu ul.submenu {
+  background: #1A323C; }
+
 .pane-menu-menu-footer-menu {
   padding: 0 36px; }
   .pane-menu-menu-footer-menu .menu {
@@ -3732,11 +3735,9 @@ p {
   padding-top: 54px; }
 
 .region-about-header {
-  margin-top: 80px; }
-
-.region-about-copy {
+  margin-top: 80px;
   margin-bottom: 65px; }
-  .region-about-copy p {
+  .region-about-header p {
     font-size: 20px;
     line-height: 27px;
     text-align: center;

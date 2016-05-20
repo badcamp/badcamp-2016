@@ -8,6 +8,7 @@
   }
 }
 .pane-system-main-menu {
+  //.dropdown
   li {
     &:hover {
       background: #1A323C;
@@ -37,6 +38,10 @@
       }
     }
   }
+}
+//styles for main menu dropdowns
+.pane-system-main-menu ul.submenu {
+  background: #1A323C;;
 }
 
 .pane-menu-menu-footer-menu {
