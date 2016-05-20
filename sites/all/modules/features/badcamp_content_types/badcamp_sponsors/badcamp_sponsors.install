@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Enable the uuid module
+ *
+ * Required if this feature was enabled prior to 5/20/16.
+ *
+ * @author Rob Bayliss
+ */
+function badcamp_sponsors_update_7001() {
+
+}
