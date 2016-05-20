@@ -1,0 +1,20 @@
+
+.pane-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:before {
+    content: "\\\\\\\\";
+    padding-right: 18px;
+  }
+  &:after {
+    content: "////";
+    padding-left: 18px;
+  }
+  &:before, &:after {
+    display: inline-block;
+    color:$badcamp-orange;
+  }
+}
+

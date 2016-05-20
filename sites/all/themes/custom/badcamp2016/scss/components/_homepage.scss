@@ -1,35 +1,13 @@
-.region-hero,
-.region-about-header,
-.region-news,
-.region-sponsors {
-  h2 {
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    &:before {
-      content: "\\\\\\\\";
-      padding-right: 18px;
-    }
-    &:after {
-      content: "////";
-      padding-left: 18px;
-    }
-    &:before, &:after {
-      display: inline-block;
-      color:$badcamp-orange;
-    }
-  }
-}
 
-.region-hero {
-  h2 {
-    font-size: 46px;
+#home-intro {
+  .pane-title {
+    font-size: rem-calc(46);
     color: $badcamp-lt-blue;
+
     &:before, &:after {
-      color: $badcamp-header-white;
+      color:$badcamp-header-white;
     }
   }
-
   .pane-content {
     border-top: 1px solid #4E4E4E;
     margin-top: 15px;
@@ -53,7 +31,6 @@
         text-transform: uppercase;
       }
     }
-
     hr {
       clear: none;
       margin-top: 2.5rem;
@@ -180,18 +157,3 @@
   }
 }
 
-.digit-hero {
-  text-align: center;
-  background: rgba(53,119,141,0.20);
-
-  .digits {
-    font-size: rem-calc(64);
-    line-height: 1em;
-    margin-bottom:0;
-    letter-spacing: 4.13px;
-  }
-  .description {
-    font-size: rem-calc(22);
-    color: #F59603;
-  }
-}

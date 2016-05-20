@@ -3511,6 +3511,28 @@ p {
 #site-main {
   position: relative; }
 
+.panels-pane h2.pane-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold; }
+
+.page-summits .hero {
+  background: url(../../images/Hero/Summits-Hero.png);
+  background-size: cover;
+  padding: 50px 0 100px 0; }
+
+.digit-hero {
+  text-align: center;
+  background: rgba(53, 119, 141, 0.2); }
+  .digit-hero .digits {
+    font-size: 4rem;
+    line-height: 1em;
+    margin-bottom: 0;
+    letter-spacing: 4.13px; }
+  .digit-hero .description {
+    font-size: 1.375rem;
+    color: #F59603; }
+
 #site-header {
   background: url(../../images/hud_top.svg) bottom center no-repeat;
   padding-bottom: 90px;
@@ -3654,69 +3676,40 @@ p {
           right: -2px;
           top: 9px; }
 
-.region-hero h2,
-.region-about-header h2,
-.region-news h2,
-.region-sponsors h2 {
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold; }
-  .region-hero h2:before,
-  .region-about-header h2:before,
-  .region-news h2:before,
-  .region-sponsors h2:before {
-    content: "\\\\\\\\";
-    padding-right: 18px; }
-  .region-hero h2:after,
-  .region-about-header h2:after,
-  .region-news h2:after,
-  .region-sponsors h2:after {
-    content: "////";
-    padding-left: 18px; }
-  .region-hero h2:before, .region-hero h2:after,
-  .region-about-header h2:before,
-  .region-about-header h2:after,
-  .region-news h2:before,
-  .region-news h2:after,
-  .region-sponsors h2:before,
-  .region-sponsors h2:after {
-    display: inline-block;
-    color: #FF9A00; }
-
-.region-hero h2 {
-  font-size: 46px;
+#home-intro .pane-title {
+  font-size: 2.875rem;
   color: #59A8C1; }
-  .region-hero h2:before, .region-hero h2:after {
+  #home-intro .pane-title:before, #home-intro .pane-title:after {
     color: #FFFFFF; }
 
-.region-hero .pane-content {
+#home-intro .pane-content {
   border-top: 1px solid #4E4E4E;
   margin-top: 15px;
   padding-top: 34px;
   padding-bottom: 106px; }
-  .region-hero .pane-content p {
+  #home-intro .pane-content p {
     font-size: 1.7rem;
     line-height: 1.45;
     margin-bottom: 0;
     letter-spacing: 2px; }
-    .region-hero .pane-content p.date {
+    #home-intro .pane-content p.date {
       margin-top: 2.4rem; }
-    .region-hero .pane-content p strong {
+    #home-intro .pane-content p strong {
       font-weight: normal;
       color: #FF9A00;
       padding-right: 0.8rem;
       text-transform: uppercase; }
-  .region-hero .pane-content hr {
+  #home-intro .pane-content hr {
     clear: none;
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
     width: 75%;
     border-bottom: 1px solid #4E4E4E;
     margin-left: 0; }
-  .region-hero .pane-content img {
+  #home-intro .pane-content img {
     float: right;
     padding-right: 25px; }
-  .region-hero .pane-content a.button {
+  #home-intro .pane-content a.button {
     text-transform: none;
     margin-right: 2rem;
     font-size: 1.4rem; }
@@ -3802,18 +3795,6 @@ p {
   .region-sponsors .view-footer .button {
     margin: 2em; }
 
-.digit-hero {
-  text-align: center;
-  background: rgba(53, 119, 141, 0.2); }
-  .digit-hero .digits {
-    font-size: 4rem;
-    line-height: 1em;
-    margin-bottom: 0;
-    letter-spacing: 4.13px; }
-  .digit-hero .description {
-    font-size: 1.375rem;
-    color: #F59603; }
-
 ul.tabs {
   background-color: #000000;
   padding: 2em 2em 0 0;
@@ -3873,5 +3854,19 @@ ul.tabs li a:hover {
   font-size: 14.18px;
   color: #FEFEFE;
   letter-spacing: 1.16px; }
+
+.pane-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold; }
+  .pane-title:before {
+    content: "\\\\\\\\";
+    padding-right: 18px; }
+  .pane-title:after {
+    content: "////";
+    padding-left: 18px; }
+  .pane-title:before, .pane-title:after {
+    display: inline-block;
+    color: #FF9A00; }
 
 /*# sourceMappingURL=maps/badcamp2016.css.map */
