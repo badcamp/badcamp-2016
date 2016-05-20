@@ -333,8 +333,10 @@ function badcamp_homepage_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => 'What is BadCamp?',
-      'title' => 'What is BadCamp?',
-      'body' => '<p class="p1"><span class="s1">BADCamp is a technology conference for the people, an annual celebration of the web, open-source software, and the creators who make it all possible. Join us this fall for four days of talks, trainings, summits, sprints and socials with some of the brightest minds from all over the world.</span></p>
+      'title' => '',
+      'body' => '<h2>What is BadCamp?</h2>
+
+<p class="p1"><span class="s1">BADCamp is a technology conference for the people, an annual celebration of the web, open-source software, and the creators who make it all possible. Join us this fall for four days of talks, trainings, summits, sprints and socials with some of the brightest minds from all over the world.</span></p>
 ',
       'format' => 'full_html',
       'substitute' => TRUE,
@@ -490,10 +492,7 @@ Berkeley</h2>',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => 'home-intro',
-      'css_class' => '',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
