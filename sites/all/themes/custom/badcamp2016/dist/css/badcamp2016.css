@@ -3715,7 +3715,6 @@ p {
     font-size: 1.4rem; }
 
 .region-about {
-  background: linear-gradient(0deg, rgba(51, 117, 138, 0.6) 24%, rgba(32, 56, 66, 0.6) 89%);
   margin-bottom: 76px; }
   .region-about .digit-hero {
     min-height: 335px;
@@ -3737,7 +3736,6 @@ p {
   padding-top: 54px; }
 
 .region-about-header {
-  margin-top: 80px;
   margin-bottom: 65px; }
   .region-about-header p {
     font-size: 20px;
@@ -3778,7 +3776,6 @@ p {
     margin-bottom: 40px; }
 
 .region-sponsors {
-  background: rgba(32, 55, 65, 0.6) linear-gradient(0deg, #33758A 24%, #203842 89%);
   padding: 76px 0 76px 0; }
   .region-sponsors .view-header {
     font-family: "Orbitron", sans-serif;
@@ -3868,5 +3865,12 @@ ul.tabs li a:hover {
   .pane-title:before, .pane-title:after {
     display: inline-block;
     color: #FF9A00; }
+
+.region-content,
+.region-about,
+.region-sponsors {
+  padding-top: 76px;
+  padding-bottom: 76px;
+  background: linear-gradient(0deg, rgba(51, 117, 138, 0.6) 24%, rgba(32, 56, 66, 0.6) 89%); }
 
 /*# sourceMappingURL=maps/badcamp2016.css.map */

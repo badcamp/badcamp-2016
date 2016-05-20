@@ -54,7 +54,7 @@
 }
 
 .region-about {
-  background: linear-gradient(0deg, rgba(51, 117, 138, 0.60) 24%, rgba(32, 56, 66, 0.60) 89%);
+  //background: linear-gradient(0deg, rgba(51, 117, 138, 0.60) 24%, rgba(32, 56, 66, 0.60) 89%);
   margin-bottom: 76px;
 
   .digit-hero {
@@ -88,7 +88,6 @@
   }
 }
 .region-about-header {
-  margin-top: 80px;
   margin-bottom: 65px;
   p {
     font-size: 20px;
@@ -134,8 +133,6 @@
   }
 }
 .region-sponsors {
-  background: rgba(32, 55, 65, 0.60) linear-gradient(0deg, #33758A 24%, #203842 89%);
-  padding: 76px 0 76px 0;
   .view-header {
     font-family: $font-family-orbitron;
     font-size: 24px;
