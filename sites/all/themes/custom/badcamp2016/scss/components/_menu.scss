@@ -53,11 +53,17 @@
   border: none;
   padding: 0 18px;
   li {
-    display: block;
-    padding: 12px;
+    padding: 18px 6px;
     border-bottom: 1px solid $badcamp-grey;
+    &:first-child {
+      padding-top: 24px;
+    }
     &:last-child {
       border-bottom: none;
+    }
+    a {
+      padding:0;
+      font-size: 18px;
     }
   }
 }
