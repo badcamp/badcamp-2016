@@ -1,7 +1,11 @@
 <?php
+/**
+ * @file
+ * Install/update hooks for the badcamp_sponsor module.
+ */
 
 /**
- * Enable the uuid module
+ * Enable the uuid module.
  *
  * Required if this feature was enabled prior to 5/20/16.
  *
