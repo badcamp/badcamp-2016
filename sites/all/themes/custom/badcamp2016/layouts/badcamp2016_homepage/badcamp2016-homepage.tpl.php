@@ -22,11 +22,6 @@
         <?php print $content['about-header']; ?>
       </div>
     <?php endif; ?>
-    <?php if ($content['about-copy']) : ?>
-      <div class="medium-12 columns region-about-copy">
-        <?php print $content['about-copy']; ?>
-      </div>
-    <?php endif; ?>
 
     <?php if ($content['about-fr-left']) : ?>
       <div class="medium-4 columns region-about-first">

@@ -248,32 +248,6 @@ function badcamp_homepage_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-22ce8ecd-34d1-4086-8c3b-426bf13459c8';
-    $pane->panel = 'about-copy';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Placeholder About: copy',
-      'title' => '',
-      'body' => '<p class="p1"><span class="s1">BADCamp is a technology conference for the people, an annual celebration of the web, open-source software, and the creators who make it all possible. Join us this fall for four days of talks, trainings, summits, sprints and socials with some of the brightest minds from all over the world.</span></p>
-',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '22ce8ecd-34d1-4086-8c3b-426bf13459c8';
-    $display->content['new-22ce8ecd-34d1-4086-8c3b-426bf13459c8'] = $pane;
-    $display->panels['about-copy'][0] = 'new-22ce8ecd-34d1-4086-8c3b-426bf13459c8';
-    $pane = new stdClass();
     $pane->pid = 'new-33000f31-d199-4036-b929-f8f5853b3232';
     $pane->panel = 'about-fr-left';
     $pane->type = 'custom';
@@ -361,6 +335,8 @@ function badcamp_homepage_default_page_manager_pages() {
       'admin_title' => 'What is BadCamp?',
       'title' => '',
       'body' => '<h2>What is BadCamp?</h2>
+
+<p class="p1"><span class="s1">BADCamp is a technology conference for the people, an annual celebration of the web, open-source software, and the creators who make it all possible. Join us this fall for four days of talks, trainings, summits, sprints and socials with some of the brightest minds from all over the world.</span></p>
 ',
       'format' => 'full_html',
       'substitute' => TRUE,

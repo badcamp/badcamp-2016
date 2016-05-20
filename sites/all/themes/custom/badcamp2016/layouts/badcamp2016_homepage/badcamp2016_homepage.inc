@@ -17,7 +17,6 @@ function badcamp2016_badcamp2016_homepage_panels_layouts() {
     'regions' => array(
       'hero' => t('Hero Section'),
       'about-header' => t('About section: header'),
-      'about-copy' => t('About section: copy'),
       'about-fr-left' => t('About section: first row left'),
       'about-fr-middle' => t('About section: first row middle'),
       'about-fr-right' => t('About section: first row right'),
