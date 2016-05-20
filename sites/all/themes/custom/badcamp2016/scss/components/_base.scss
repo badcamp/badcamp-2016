@@ -45,3 +45,36 @@ p {
 #site-main {
   position:relative;
 }
+
+.panels-pane h2.pane-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.page-summits {
+  .hero {
+    background:url(../../images/Hero/Summits-Hero.png);
+    background-size:cover;
+    padding: 50px 0 100px 0;
+  }
+}
+
+// Defines an element that has
+// a large display of numbers (like a stat)
+// with smaller descriptive text.
+.digit-hero {
+  text-align: center;
+  background: rgba(53,119,141,0.20);
+
+  .digits {
+    font-size: rem-calc(64);
+    line-height: 1em;
+    margin-bottom:0;
+    letter-spacing: 4.13px;
+  }
+  .description {
+    font-size: rem-calc(22);
+    color: #F59603;
+  }
+}
+
