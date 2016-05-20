@@ -23,7 +23,7 @@ function badcamp_theme_update_7001() {
 }
 
 /**
- * Enable the pathologic module
+ * Enable the pathologic module.
  *
  * @author jayme johnson
  */
