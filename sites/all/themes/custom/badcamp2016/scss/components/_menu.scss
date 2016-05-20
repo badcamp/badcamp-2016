@@ -4,16 +4,10 @@
     font-weight: normal;
     font-size: 16px;
     color: $badcamp-dk-orange;
-    text-transform: none;
   }
 }
+//main menu styles
 .pane-system-main-menu {
-  //.dropdown
-  li {
-    &:hover {
-      background: #1A323C;
-    }
-  }
   a {
     display: inline-block;
     position: relative;
@@ -22,26 +16,50 @@
     font-weight: normal;
     white-space: nowrap;
     color: $badcamp-off-white;
-    &:first-child {
-      margin-left: 0;
-    }
-    &:after {
-      @include css-triangle(6px, $badcamp-off-white, down);
-      position: absolute;
-      top: 21px;
-      right: 0;
-    }
     &:hover {
       color: $badcamp-lt-blue;
+    }
+  }
+}
+//main menu top-level specific links
+.pane-system-main-menu > .pane-content > .menu {
+  > li {
+    &:hover {
+      background: $badcamp-menu-blue;
+    }
+    > a {
+      text-transform: uppercase;
+      &:first-child {
+        margin-left: 0;
+      }
       &:after {
-        @include css-triangle(6px, $badcamp-orange, down);
+        @include css-triangle(6px, $badcamp-off-white, down);
+        position: absolute;
+        top: 21px;
+        right: 0;
+      }
+      &:hover {
+        &:after {
+          @include css-triangle(6px, $badcamp-orange, down);
+        }
       }
     }
   }
 }
+
 //styles for main menu dropdowns
 .pane-system-main-menu ul.submenu {
-  background: #1A323C;;
+  background: $badcamp-menu-blue;
+  border: none;
+  padding: 0 18px;
+  li {
+    display: block;
+    padding: 12px;
+    border-bottom: 1px solid $badcamp-grey;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 }
 
 .pane-menu-menu-footer-menu {

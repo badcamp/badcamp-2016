@@ -3532,8 +3532,7 @@ p {
     #site-header .pane-content .menu {
       font-family: "Play", sans-serif;
       font-size: 20px;
-      letter-spacing: 1.29px;
-      text-transform: uppercase; }
+      letter-spacing: 1.29px; }
 
 #site-footer {
   position: relative; }
@@ -3575,11 +3574,7 @@ p {
   .pane-system-user-menu a {
     font-weight: normal;
     font-size: 16px;
-    color: #C77C18;
-    text-transform: none; }
-
-.pane-system-main-menu li:hover {
-  background: #1A323C; }
+    color: #C77C18; }
 
 .pane-system-main-menu a {
   display: inline-block;
@@ -3589,9 +3584,17 @@ p {
   font-weight: normal;
   white-space: nowrap;
   color: #FEFEFE; }
-  .pane-system-main-menu a:first-child {
+  .pane-system-main-menu a:hover {
+    color: #59A8C1; }
+
+.pane-system-main-menu > .pane-content > .menu > li:hover {
+  background: #1A323C; }
+
+.pane-system-main-menu > .pane-content > .menu > li > a {
+  text-transform: uppercase; }
+  .pane-system-main-menu > .pane-content > .menu > li > a:first-child {
     margin-left: 0; }
-  .pane-system-main-menu a:after {
+  .pane-system-main-menu > .pane-content > .menu > li > a:after {
     content: '';
     display: block;
     width: 0;
@@ -3603,20 +3606,26 @@ p {
     position: absolute;
     top: 21px;
     right: 0; }
-  .pane-system-main-menu a:hover {
-    color: #59A8C1; }
-    .pane-system-main-menu a:hover:after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 0;
-      border: inset 6px;
-      border-color: #FF9A00 transparent transparent;
-      border-top-style: solid;
-      border-bottom-width: 0; }
+  .pane-system-main-menu > .pane-content > .menu > li > a:hover:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 6px;
+    border-color: #FF9A00 transparent transparent;
+    border-top-style: solid;
+    border-bottom-width: 0; }
 
 .pane-system-main-menu ul.submenu {
-  background: #1A323C; }
+  background: #1A323C;
+  border: none;
+  padding: 0 18px; }
+  .pane-system-main-menu ul.submenu li {
+    display: block;
+    padding: 12px;
+    border-bottom: 1px solid #868C8E; }
+    .pane-system-main-menu ul.submenu li:last-child {
+      border-bottom: none; }
 
 .pane-menu-menu-footer-menu {
   padding: 0 36px; }
