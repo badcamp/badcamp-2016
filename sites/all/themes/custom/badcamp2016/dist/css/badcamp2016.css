@@ -3609,7 +3609,7 @@ p {
   .pane-system-main-menu a:hover {
     color: #59A8C1; }
 
-.pane-system-main-menu > .pane-content > .menu > li:hover {
+.pane-system-main-menu > .pane-content > .menu > li.is-active:hover {
   background: #1A323C; }
 
 .pane-system-main-menu > .pane-content > .menu > li > a {

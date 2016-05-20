@@ -24,8 +24,10 @@
 //main menu top-level specific links
 .pane-system-main-menu > .pane-content > .menu {
   > li {
-    &:hover {
-      background: $badcamp-menu-blue;
+    &.is-active {
+      &:hover {
+        background: $badcamp-menu-blue;
+      }
     }
     > a {
       text-transform: uppercase;
