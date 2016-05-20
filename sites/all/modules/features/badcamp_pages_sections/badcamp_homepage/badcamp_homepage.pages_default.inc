@@ -308,7 +308,8 @@ function badcamp_homepage_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Placeholder About: First Row Center',
       'title' => '',
-      'body' => '<img src="http://placehold.it/376x340">',
+      'body' => '<p><img src="/sites/all/themes/custom/badcamp2016/images/bc-about-img-panel.jpg" /></p>
+',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -333,7 +334,7 @@ function badcamp_homepage_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Placeholder About: First Row Right',
       'title' => '',
-      'body' => '<p><img src="http://placehold.it/376x340" /></p>
+      'body' => '<p><img src="/sites/all/themes/custom/badcamp2016/images/bc-about-img-audience.jpg" /></p>
 ',
       'format' => 'full_html',
       'substitute' => TRUE,
@@ -385,7 +386,8 @@ function badcamp_homepage_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Placeholder About Row 2: Big Image',
       'title' => '',
-      'body' => '<img src="http://placehold.it/783x535">',
+      'body' => '<p><img src="/sites/all/themes/custom/badcamp2016/images/bc-about-img-learn.jpg" /></p>
+',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -441,7 +443,7 @@ function badcamp_homepage_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Placeholder About: Third Row Bottom',
       'title' => '',
-      'body' => '<p><img src="http://placehold.it/376x340" /></p>
+      'body' => '<p><img src="/sites/all/themes/custom/badcamp2016/images/bc-about-img-group.jpg" /></p>
 ',
       'format' => 'full_html',
       'substitute' => TRUE,
