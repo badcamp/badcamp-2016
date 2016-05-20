@@ -278,6 +278,13 @@ function badcamp_sponsors_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'Currently there are no sponsors at the Core level.
 <p><a href="/sponsorship-packages" class="button buttercup">Become a BADCamp Sponsor</a></p>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Sponsor level (field_sponsor_level) */
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['id'] = 'field_sponsor_level_tid';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['table'] = 'field_data_field_sponsor_level';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['field'] = 'field_sponsor_level_tid';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['label'] = 'Sponsor Level';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['required'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -294,15 +301,12 @@ function badcamp_sponsors_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  /* Filter criterion: Content: Sponsor level (field_sponsor_level) */
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['id'] = 'field_sponsor_level_tid';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['table'] = 'field_data_field_sponsor_level';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['field'] = 'field_sponsor_level_tid';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['value'] = array(
-    1 => '1',
-  );
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['vocabulary'] = 'sponsor_level';
+  /* Filter criterion: Taxonomy term: Taxonomy term UUID */
+  $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['relationship'] = 'field_sponsor_level_tid';
+  $handler->display->display_options['filters']['uuid']['value'] = '964f44c7-81c1-4b5b-b731-baf9021b1ee1';
   $handler->display->display_options['pane_category']['name'] = 'BADCamp';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -340,6 +344,13 @@ function badcamp_sponsors_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Currently there are no sponsors at the Core level.';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Sponsor level (field_sponsor_level) */
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['id'] = 'field_sponsor_level_tid';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['table'] = 'field_data_field_sponsor_level';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['field'] = 'field_sponsor_level_tid';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['label'] = 'Sponsor Level';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Sponsor logo */
   $handler->display->display_options['fields']['field_sponsor_logo']['id'] = 'field_sponsor_logo';
@@ -368,15 +379,12 @@ function badcamp_sponsors_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  /* Filter criterion: Content: Sponsor level (field_sponsor_level) */
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['id'] = 'field_sponsor_level_tid';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['table'] = 'field_data_field_sponsor_level';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['field'] = 'field_sponsor_level_tid';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['value'] = array(
-    5 => '5',
-  );
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['vocabulary'] = 'sponsor_level';
+  /* Filter criterion: Taxonomy term: Taxonomy term UUID */
+  $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['relationship'] = 'field_sponsor_level_tid';
+  $handler->display->display_options['filters']['uuid']['value'] = '964f44c7-81c1-4b5b-b731-baf9021b1ee1';
   $handler->display->display_options['pane_category']['name'] = 'BADCamp';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['sponsors'] = $view;
