@@ -50,3 +50,4 @@ features[] = favicon
 
 ; Panel Layouts
 plugins[panels][layouts] = layouts
+plugins[panels][styles] = styles

@@ -586,13 +586,22 @@ function badcamp_summits_page_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'onecol';
-  $display->layout_settings = array();
+  $display->layout = 'badcamp2016_hero1col';
+  $display->layout_settings = array(
+    'background' => '%theme/images/Hero/Summits-Hero.png',
+    'height' => 552,
+    'width' => 1440,
+  );
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
       'middle' => NULL,
+      'content' => NULL,
+      'hero' => NULL,
+    ),
+    'hero' => array(
+      'style' => 'default',
     ),
   );
   $display->cache = array();
@@ -602,7 +611,7 @@ function badcamp_summits_page_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-978c5496-66a9-4f8d-b1f8-fa47747aeafa';
-    $pane->panel = 'middle';
+    $pane->panel = 'content';
     $pane->type = 'views_panes';
     $pane->subtype = 'events_view-panel_pane_2';
     $pane->shown = TRUE;
@@ -615,7 +624,16 @@ function badcamp_summits_page_default_page_manager_pages() {
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
+      'settings' => array(
+        'small' => '',
+        'medium' => '8',
+        'large' => '',
+        'small-push' => '',
+        'medium-push' => '2',
+        'large-push' => '',
+        'row' => 0,
+      ),
+      'style' => 'grid',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -623,7 +641,34 @@ function badcamp_summits_page_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '978c5496-66a9-4f8d-b1f8-fa47747aeafa';
     $display->content['new-978c5496-66a9-4f8d-b1f8-fa47747aeafa'] = $pane;
-    $display->panels['middle'][0] = 'new-978c5496-66a9-4f8d-b1f8-fa47747aeafa';
+    $display->panels['content'][0] = 'new-978c5496-66a9-4f8d-b1f8-fa47747aeafa';
+    $pane = new stdClass();
+    $pane->pid = 'new-e0d133b8-5a76-4498-9628-bf7fb4dcd956';
+    $pane->panel = 'hero';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Summits Intro',
+      'title' => 'Summits',
+      'body' => '<p>Summits allow people in specific industries or with specific skills to dive deep into the issues that matter and collaborate freely. Registration is first come, first served and part of the BADCamp registration process, so sign up today!</p>
+',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'style' => 'default',
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e0d133b8-5a76-4498-9628-bf7fb4dcd956';
+    $display->content['new-e0d133b8-5a76-4498-9628-bf7fb4dcd956'] = $pane;
+    $display->panels['hero'][0] = 'new-e0d133b8-5a76-4498-9628-bf7fb4dcd956';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
