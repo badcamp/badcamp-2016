@@ -1,31 +1,57 @@
 <?php
+/**
+ * @file
+ * Style plugin for a pane that has grid classes.
+ */
 
-// Plugin definition
 $plugin = array(
   'title' => t('Foundation Grid'),
   'description' => t('Display the pane in a foundation grid container.'),
-  'render pane' => 'badcamp_panels_foundation_pane',
-  'settings form' => 'badcamp_panels_foundation_settings_form',
-  'pane settings form' => 'badcamp_panels_foundation_settings_form',
+  'render pane' => 'badcamp2016_styles_grid_pane',
+  'pane settings form' => 'badcamp2016_styles_grid_pane_settings_form',
   'weight' => -100,
 );
 
-function badcamp_panels_foundation_settings_form($settings) {
-  $form['small'] = array(
-    '#type' => 'numberfield',
-    '#title' => t('Small Grid Rows'),
-    '#default_value' => $settings['small'],
+/**
+ * Return a list of grid sizes, optionally with a given suffix.
+ *
+ * @param string $suffix
+ *   Suffix to append to the size name (ex: push or pull).
+ *
+ * @return array
+ *   The requested array of sizes.
+ */
+function badcamp2016_styles_grid_get_sizes($suffix = NULL) {
+  return array(
+    $suffix ? "small-$suffix" : 'small',
+    $suffix ? "medium-$suffix" : 'medium',
+    $suffix ? "large-$suffix" : 'large',
   );
-  $form['medium'] = array(
-    '#type' => 'numberfield',
-    '#title' => t('Medium Grid Rows'),
-    '#default_value' => $settings['medium'],
-  );
-  $form['large'] = array(
-    '#type' => 'numberfield',
-    '#title' => t('Large Grid Rows'),
-    '#default_value' => $settings['large'],
-  );
+}
+
+/**
+ * Style settings form.
+ */
+function badcamp2016_styles_grid_pane_settings_form($settings) {
+  foreach (badcamp2016_styles_grid_get_sizes() as $size) {
+    $form[$size] = array(
+      '#type' => 'numberfield',
+      // Coder ignored - this is actually valid.
+      // @codingStandardsIgnoreStart
+      '#title' => t(ucfirst($size) . ' Columns'),
+      // @codingStandardsIgnoreEnd
+      '#default_value' => isset($settings[$size]) ? $settings[$size] : NULL,
+    );
+  }
+  foreach (badcamp2016_styles_grid_get_sizes('push') as $size) {
+    $form[$size] = array(
+      '#type' => 'numberfield',
+      // @codingStandardsIgnoreStart
+      '#title' => t(ucfirst($size) . ' columns'),
+      // @codingStandardsIgnoreEnd
+      '#default_value' => isset($settings[$size]) ? $settings[$size] : NULL,
+    );
+  }
   $form['row'] = array(
     '#type' => 'checkbox',
     '#title' => 'Add row?',
@@ -34,32 +60,43 @@ function badcamp_panels_foundation_settings_form($settings) {
   return $form;
 }
 
-function theme_badcamp_panels_foundation_pane(&$vars) {
+/**
+ * Style theme callback.
+ */
+function theme_badcamp2016_styles_grid_pane(&$vars) {
   $content = $vars['content'];
   $pane = $vars['pane'];
   $display = $vars['display'];
 
   $settings = $vars['settings'];
-  $active_sizes = array_filter(array_intersect_key($settings, array(
-    'small' => NULL, 'medium'=> NULL, 'large' => NULL
-  )));
+  $active_sizes = array_filter(array_intersect_key($settings, badcamp2016_styles_grid_get_sizes()));
+  $active_pushes = array_filter(array_intersect_key($settings, badcamp2016_styles_grid_get_sizes('push')));
 
-  $classes = array(
-    'columns',
-  );
-  $classes = array_merge(array_map(function($size, $columns) {
+  $size_classes = array_map(function ($size, $columns) {
     return "$size-$columns";
-  }, array_keys($active_sizes), $active_sizes), $classes);
+  }, array_keys($active_sizes), $active_sizes);
 
-  if($settings['row']) {
+  $push_classes = array_map(function ($size, $columns) {
+    return "$size-$columns";
+  }, array_keys($active_pushes), $active_pushes);
+
+  $classes = array_merge($size_classes, $push_classes, array(
+    'columns',
+  ));
+
+  if ($settings['row']) {
     $classes[] = 'row';
   }
-  if(isset($content->css_class)) {
+  if (isset($content->css_class)) {
     $content->css_class .= ' ' . implode(' ', $classes);
   }
   else {
     $content->css_class = implode(' ', $classes);
   }
 
-  return theme('panels_pane', array('content' => $content, 'pane' => $pane, 'display' => $display));
+  return theme('panels_pane', array(
+    'content' => $content,
+    'pane' => $pane,
+    'display' => $display,
+  ));
 }
