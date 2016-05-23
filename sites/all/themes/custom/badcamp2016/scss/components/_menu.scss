@@ -1,10 +1,21 @@
 //user menu styles
 .pane-system-user-menu {
   float: right;
-  a {
-    font-weight: normal;
-    font-size: 16px;
-    color: $badcamp-dk-orange;
+  margin-right: 60px;
+  li {
+    > a {
+      display: inline-block;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: $badcamp-dk-orange;
+      padding: 3px 6px;
+    }
+    &:first-child {
+      a {
+        border-right: 1px solid $badcamp-grey;
+      }
+    }
   }
 }
 
