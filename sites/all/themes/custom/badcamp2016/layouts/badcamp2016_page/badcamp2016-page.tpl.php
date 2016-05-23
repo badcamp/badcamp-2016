@@ -17,13 +17,10 @@
 <?php !empty($css_id) ? print '<div id="' . $css_id . '">' : ''; ?>
 <header id="site-header">
   <div class="row expanded">
-    <div class="medium-4 columns">
-      <?php print $content['header_left']; ?>
-    </div>
-    <div class="medium-4 columns">
+    <div class="medium-6 medium-push-3 columns">
       <?php print $content['branding']; ?>
     </div>
-    <div class="medium-4 columns">
+    <div class="medium-3 columns">
       <?php print $content['user_nav']; ?>
     </div>
   </div>

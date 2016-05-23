@@ -3553,12 +3553,12 @@ p {
       content: url(../../images/bc_triangle_left.png);
       position: absolute;
       top: -7px;
-      left: -104px; }
+      left: 0; }
     #site-header .pane-page-site-name a:after {
       content: url(../../images/bc_triangle_right.png);
       position: absolute;
       top: -7px;
-      right: -104px; }
+      right: 0; }
   #site-header .pane-content {
     font-family: "Orbitron", sans-serif;
     color: #FEFEFE;
