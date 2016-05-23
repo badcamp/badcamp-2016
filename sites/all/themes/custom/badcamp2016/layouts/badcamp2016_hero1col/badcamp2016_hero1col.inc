@@ -36,6 +36,7 @@ function badcamp2016_layouts_hero1col_settings_form($display, $plugin, $settings
       '#title' => 'Path to Hero Background',
       '#type' => 'textfield',
       '#default_value' => $settings['background'],
+      '#description' => t('Enter the path to the image.  The %theme token will be replaced with the path to the badcamp 2016 theme.')
     ),
   );
 }

@@ -69,8 +69,8 @@ function theme_badcamp2016_styles_grid_pane(&$vars) {
   $display = $vars['display'];
 
   $settings = $vars['settings'];
-  $active_sizes = array_filter(array_intersect_key($settings, badcamp2016_styles_grid_get_sizes()));
-  $active_pushes = array_filter(array_intersect_key($settings, badcamp2016_styles_grid_get_sizes('push')));
+  $active_sizes = array_filter(array_intersect_key($settings, array_flip(badcamp2016_styles_grid_get_sizes())));
+  $active_pushes = array_filter(array_intersect_key($settings, array_flip(badcamp2016_styles_grid_get_sizes('push'))));
 
   $size_classes = array_map(function ($size, $columns) {
     return "$size-$columns";
