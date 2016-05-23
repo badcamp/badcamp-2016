@@ -7,10 +7,31 @@
   .columns {
     padding: 0;
   }
+  .row {
+    .columns:first-child {
+      min-height: 1px;
+    }
+  }
   .pane-page-site-name {
-    padding-left: 16px;
     a {
+      display: block;
+      text-align: center;
       color: $badcamp-off-white;
+      font-size: 31px;
+      text-transform: uppercase;
+      position: relative;
+      &:before {
+        content: url(../../images/bc_triangle_left.png);
+        position: absolute;
+        top: -7px;
+        left: -104px;
+      }
+      &:after {
+        content: url(../../images/bc_triangle_right.png);
+        position: absolute;
+        top: -7px;
+        right: -104px;
+      }
     }
   }
 

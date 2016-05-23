@@ -21,3 +21,12 @@ function badcamp_theme_install() {
 function badcamp_theme_update_7001() {
   theme_enable(array('badcamp2016'));
 }
+
+/**
+ * Enable the pathologic module.
+ *
+ * @author jayme johnson
+ */
+function badcamp_theme_update_7002() {
+  module_enable(array('pathologic'));
+}

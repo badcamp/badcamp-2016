@@ -11,6 +11,7 @@ dependencies[] = menu
 dependencies[] = node
 dependencies[] = page_manager
 dependencies[] = panels_everywhere
+dependencies[] = pathologic
 dependencies[] = strongarm
 dependencies[] = text
 features[ckeditor_profile][] = Advanced

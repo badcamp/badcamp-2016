@@ -15,6 +15,7 @@ function badcamp2016_badcamp2016_page_panels_layouts() {
     'theme' => 'badcamp2016_page',
     'admin css' => '../../dist/css/panels-admin.css',
     'regions' => array(
+      'header_left' => t('Header Left'),
       'branding' => t('Branding'),
       'user_nav' => t('User navigation'),
       'main_nav' => t('Main Navigation'),

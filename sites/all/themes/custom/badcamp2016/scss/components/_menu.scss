@@ -1,11 +1,24 @@
+//user menu styles
 .pane-system-user-menu {
   float: right;
-  a {
-    font-weight: normal;
-    font-size: 16px;
-    color: $badcamp-dk-orange;
+  margin-right: 60px;
+  li {
+    > a {
+      display: inline-block;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: $badcamp-dk-orange;
+      padding: 3px 6px;
+    }
+    &:first-child {
+      a {
+        border-right: 1px solid $badcamp-grey;
+      }
+    }
   }
 }
+
 //main menu styles
 .pane-system-main-menu {
   a {
@@ -24,24 +37,32 @@
 //main menu top-level specific links
 .pane-system-main-menu > .pane-content > .menu {
   > li {
-    &:hover {
-      background: $badcamp-menu-blue;
+    &.is-active {
+      &:hover {
+        background: $badcamp-menu-blue;
+      }
     }
+
+    &.is-dropdown-submenu-parent {
+      > a {
+        &:after {
+          @include css-triangle(6px, $badcamp-lt-blue, down);
+          position: absolute;
+          top: 21px;
+          right: 0;
+        }
+        &:hover {
+          &:after {
+            @include css-triangle(6px, $badcamp-orange, down);
+          }
+        }
+      }
+    }
+
     > a {
       text-transform: uppercase;
       &:first-child {
         margin-left: 0;
-      }
-      &:after {
-        @include css-triangle(6px, $badcamp-off-white, down);
-        position: absolute;
-        top: 21px;
-        right: 0;
-      }
-      &:hover {
-        &:after {
-          @include css-triangle(6px, $badcamp-orange, down);
-        }
       }
     }
   }
@@ -53,15 +74,22 @@
   border: none;
   padding: 0 18px;
   li {
-    display: block;
-    padding: 12px;
+    padding: 18px 6px;
     border-bottom: 1px solid $badcamp-grey;
+    &:first-child {
+      padding-top: 24px;
+    }
     &:last-child {
       border-bottom: none;
+    }
+    a {
+      padding:0;
+      font-size: 18px;
     }
   }
 }
 
+//styles for footer menu
 .pane-menu-menu-footer-menu {
   padding: 0 36px;
   .menu {
