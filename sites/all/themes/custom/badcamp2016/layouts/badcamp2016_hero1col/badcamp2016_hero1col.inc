@@ -72,6 +72,7 @@ function template_preprocess_badcamp2016_hero1col(&$vars) {
       'min-height:' . $settings['height'] . 'px',
     );
     $vars['hero_attributes_array'] = array(
+      'class' => array('region-hero'),
       'style' => implode(';', $styles),
     );
   }
