@@ -16,11 +16,14 @@
   <canvas id="canvas2d"></canvas>
 <?php !empty($css_id) ? print '<div id="' . $css_id . '">' : ''; ?>
 <header id="site-header">
-  <div class="row">
-    <div class="medium-6 columns">
+  <div class="row expanded">
+    <div class="medium-4 columns">
+      <?php print $content['header_left']; ?>
+    </div>
+    <div class="medium-4 columns">
       <?php print $content['branding']; ?>
     </div>
-    <div class="medium-6 columns">
+    <div class="medium-4 columns">
       <?php print $content['user_nav']; ?>
     </div>
   </div>
@@ -29,7 +32,6 @@
       <?php print $content['main_nav']; ?>
     </div>
   </div>
-
 </header>
 
 <?php if ($content['main']) : ?>

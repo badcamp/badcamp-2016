@@ -3540,10 +3540,25 @@ p {
   background-size: cover; }
   #site-header .columns {
     padding: 0; }
-  #site-header .pane-page-site-name {
-    padding-left: 16px; }
-    #site-header .pane-page-site-name a {
-      color: #FEFEFE; }
+  #site-header .row .columns:first-child {
+    min-height: 1px; }
+  #site-header .pane-page-site-name a {
+    display: block;
+    text-align: center;
+    color: #FEFEFE;
+    font-size: 31px;
+    text-transform: uppercase;
+    position: relative; }
+    #site-header .pane-page-site-name a:before {
+      content: url(../../images/bc_triangle_left.png);
+      position: absolute;
+      top: -7px;
+      left: -104px; }
+    #site-header .pane-page-site-name a:after {
+      content: url(../../images/bc_triangle_right.png);
+      position: absolute;
+      top: -7px;
+      right: -104px; }
   #site-header .pane-content {
     font-family: "Orbitron", sans-serif;
     color: #FEFEFE;
