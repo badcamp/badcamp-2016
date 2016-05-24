@@ -63,7 +63,7 @@ function badcamp_trainings_page_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'onecol';
+  $display->layout = 'badcamp2016_1col';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -78,7 +78,7 @@ function badcamp_trainings_page_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-aff1eaaf-bfe0-4fa6-a66e-cbedb1cc920d';
-    $pane->panel = 'middle';
+    $pane->panel = 'content';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -103,10 +103,10 @@ function badcamp_trainings_page_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = 'aff1eaaf-bfe0-4fa6-a66e-cbedb1cc920d';
     $display->content['new-aff1eaaf-bfe0-4fa6-a66e-cbedb1cc920d'] = $pane;
-    $display->panels['middle'][0] = 'new-aff1eaaf-bfe0-4fa6-a66e-cbedb1cc920d';
+    $display->panels['content'][0] = 'new-aff1eaaf-bfe0-4fa6-a66e-cbedb1cc920d';
     $pane = new stdClass();
     $pane->pid = 'new-354bb14c-a000-4971-aba3-0e2063aa304b';
-    $pane->panel = 'middle';
+    $pane->panel = 'content';
     $pane->type = 'views';
     $pane->subtype = 'badcamp_trainings';
     $pane->shown = TRUE;
@@ -138,7 +138,7 @@ function badcamp_trainings_page_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '354bb14c-a000-4971-aba3-0e2063aa304b';
     $display->content['new-354bb14c-a000-4971-aba3-0e2063aa304b'] = $pane;
-    $display->panels['middle'][1] = 'new-354bb14c-a000-4971-aba3-0e2063aa304b';
+    $display->panels['content'][1] = 'new-354bb14c-a000-4971-aba3-0e2063aa304b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

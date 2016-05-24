@@ -589,6 +589,7 @@ function badcamp_summits_page_default_page_manager_pages() {
   $display->layout = 'badcamp2016_hero1col';
   $display->layout_settings = array(
     'background' => '%theme/images/Hero/Summits-Hero.png',
+    'opaque' => 1,
     'height' => 552,
     'width' => 1440,
   );

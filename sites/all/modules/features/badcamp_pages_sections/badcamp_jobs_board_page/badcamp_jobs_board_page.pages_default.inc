@@ -58,7 +58,7 @@ function badcamp_jobs_board_page_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'onecol';
+  $display->layout = 'badcamp2016_1col';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -73,7 +73,7 @@ function badcamp_jobs_board_page_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-efef48e2-e619-4790-9306-011b87781c5f';
-    $pane->panel = 'middle';
+    $pane->panel = 'content';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -110,10 +110,10 @@ function badcamp_jobs_board_page_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = 'efef48e2-e619-4790-9306-011b87781c5f';
     $display->content['new-efef48e2-e619-4790-9306-011b87781c5f'] = $pane;
-    $display->panels['middle'][0] = 'new-efef48e2-e619-4790-9306-011b87781c5f';
+    $display->panels['content'][0] = 'new-efef48e2-e619-4790-9306-011b87781c5f';
     $pane = new stdClass();
     $pane->pid = 'new-d5db0382-84b3-4ae1-a22c-0dfd17876e6a';
-    $pane->panel = 'middle';
+    $pane->panel = 'content';
     $pane->type = 'views_panes';
     $pane->subtype = 'jobs-panel_pane_1';
     $pane->shown = TRUE;
@@ -129,7 +129,7 @@ function badcamp_jobs_board_page_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = 'd5db0382-84b3-4ae1-a22c-0dfd17876e6a';
     $display->content['new-d5db0382-84b3-4ae1-a22c-0dfd17876e6a'] = $pane;
-    $display->panels['middle'][1] = 'new-d5db0382-84b3-4ae1-a22c-0dfd17876e6a';
+    $display->panels['content'][1] = 'new-d5db0382-84b3-4ae1-a22c-0dfd17876e6a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
