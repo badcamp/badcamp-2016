@@ -147,6 +147,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
+      'content' => NULL,
     ),
   );
   $display->cache = array();
@@ -190,9 +191,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $pane->configuration = array(
       'more_link' => 0,
       'exposed' => array(
-        'field_sponsor_level_tid' => array(
-          1 => '1',
-        ),
+        'uuid' => '964f44c7-81c1-4b5b-b731-baf9021b1ee1',
       ),
       'override_title' => 1,
       'override_title_text' => 'Core Level',
@@ -222,9 +221,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $pane->configuration = array(
       'more_link' => 0,
       'exposed' => array(
-        'field_sponsor_level_tid' => array(
-          2 => '2',
-        ),
+        'uuid' => '75bd789f-0bb6-45b0-b92a-b520c93f0382',
       ),
       'override_title' => 1,
       'override_title_text' => 'Contrib  Level',
@@ -251,9 +248,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $pane->configuration = array(
       'more_link' => 0,
       'exposed' => array(
-        'field_sponsor_level_tid' => array(
-          3 => '3',
-        ),
+        'uuid' => 'dd6058d8-fb70-451b-bb9c-6b25f499a416',
       ),
       'override_title' => 1,
       'override_title_text' => 'Supporting Level',

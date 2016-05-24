@@ -83,6 +83,13 @@ function badcamp_sponsors_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Sponsors Content pane', 'panel_pane_1');
   $handler->display->display_options['display_description'] = 'Use to show all sponsors or a filtered group of sponsors';
   $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Sponsor level (field_sponsor_level) */
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['id'] = 'field_sponsor_level_tid';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['table'] = 'field_data_field_sponsor_level';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['field'] = 'field_sponsor_level_tid';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['label'] = 'Sponsor Level';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Sponsor logo */
   $handler->display->display_options['fields']['field_sponsor_logo']['id'] = 'field_sponsor_logo';
@@ -111,26 +118,24 @@ function badcamp_sponsors_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  /* Filter criterion: Content: Sponsor level (field_sponsor_level) */
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['id'] = 'field_sponsor_level_tid';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['table'] = 'field_data_field_sponsor_level';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['field'] = 'field_sponsor_level_tid';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['expose']['operator_id'] = 'field_sponsor_level_tid_op';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['expose']['label'] = 'Sponsor level';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['expose']['operator'] = 'field_sponsor_level_tid_op';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['expose']['identifier'] = 'field_sponsor_level_tid';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['expose']['remember_roles'] = array(
+  /* Filter criterion: Taxonomy term: Taxonomy term UUID */
+  $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['relationship'] = 'field_sponsor_level_tid';
+  $handler->display->display_options['filters']['uuid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['uuid']['expose']['operator_id'] = 'uuid_op';
+  $handler->display->display_options['filters']['uuid']['expose']['label'] = 'Sponsor Level UUID';
+  $handler->display->display_options['filters']['uuid']['expose']['operator'] = 'uuid_op';
+  $handler->display->display_options['filters']['uuid']['expose']['identifier'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
-    4 => 0,
     5 => 0,
+    4 => 0,
     6 => 0,
   );
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_sponsor_level_tid']['vocabulary'] = 'sponsor_level';
   $handler->display->display_options['pane_category']['name'] = 'BADCamp';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
