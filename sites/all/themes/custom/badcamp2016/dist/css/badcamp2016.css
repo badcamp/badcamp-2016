@@ -3537,6 +3537,9 @@ p {
 #site-main {
   position: relative; }
 
+#site-main {
+  margin-top: 18px; }
+
 .panels-pane h2.pane-title {
   text-align: center;
   text-transform: uppercase;
@@ -3562,7 +3565,6 @@ p {
 #site-header {
   background: url(../../images/hud_top.svg) bottom center no-repeat;
   padding-bottom: 90px;
-  margin-bottom: 18px;
   background-size: cover; }
   #site-header .columns {
     padding: 0; }
@@ -3927,6 +3929,7 @@ ul.tabs li a:hover {
   background: linear-gradient(0deg, rgba(51, 117, 138, 0.6) 24%, rgba(32, 56, 66, 0.6) 89%); }
 
 .region-hero {
-  padding-top: 3.625rem; }
+  padding-top: 3.625rem;
+  margin-top: -18px; }
 
 /*# sourceMappingURL=maps/badcamp2016.css.map */
