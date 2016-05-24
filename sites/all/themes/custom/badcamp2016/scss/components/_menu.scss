@@ -20,6 +20,12 @@
 }
 
 //main menu styles
+.top-bar {
+  background: transparent;
+  ul:first-child {
+    background: transparent;
+  }
+}
 .pane-system-main-menu {
   a {
     display: inline-block;
@@ -87,6 +93,13 @@
       font-size: 18px;
     }
   }
+}
+//styles for main menu responsive/mobile
+.title-bar {
+  background: transparent;
+}
+.title-bar-title {
+  text-transform: uppercase;
 }
 
 //styles for footer menu
