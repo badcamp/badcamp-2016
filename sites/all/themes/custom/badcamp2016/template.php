@@ -42,8 +42,8 @@ function badcamp2016_preprocess_menu_tree__main_menu(&$variables) {
   $variables['has_children'] = TRUE;
   $variables['top_level'] = TRUE;
   foreach (element_children($variables['tree']) as $cid) {
-    // Check whether we're at the top level by inspecting the depth of the first
-    // link.
+    // Check whether we're at the top level by inspecting the
+    // depth of the first link.
     if ($variables['tree'][$cid]['#original_link']['depth'] > 1) {
       $variables['top_level'] = FALSE;
     }
