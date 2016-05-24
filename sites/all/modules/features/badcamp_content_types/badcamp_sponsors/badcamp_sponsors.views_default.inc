@@ -82,6 +82,17 @@ function badcamp_sponsors_views_default_views() {
   /* Display: Sponsors Content pane */
   $handler = $view->new_display('panel_pane', 'Sponsors Content pane', 'panel_pane_1');
   $handler->display->display_options['display_description'] = 'Use to show all sponsors or a filtered group of sponsors';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'block_grid';
+  $handler->display->display_options['style_options']['grid'] = array(
+    'small' => '2',
+    'medium' => '4',
+    'large' => '',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Sponsor level (field_sponsor_level) */
@@ -321,7 +332,12 @@ function badcamp_sponsors_views_default_views() {
   $handler->display->display_options['title'] = 'Sponsors';
   $handler->display->display_options['display_description'] = 'Linked Logos for the Footer';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'block_grid';
+  $handler->display->display_options['style_options']['grid'] = array(
+    'small' => '2',
+    'medium' => '4',
+    'large' => '',
+  );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';

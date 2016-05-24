@@ -4,6 +4,7 @@ core = 7.x
 package = BADCamp Content types
 version = 7.x-2.0-beta4
 dependencies[] = badcamp_site_config
+dependencies[] = badcamp_theme
 dependencies[] = ctools
 dependencies[] = entityreference
 dependencies[] = features
