@@ -3,3 +3,5 @@ description = Settings for the BADCamp Theme
 core = 7.x
 package = BADCamp
 version = 7.x-10.0
+
+files[] = handlers/badcamp_theme_views_plugin_block_grid.inc

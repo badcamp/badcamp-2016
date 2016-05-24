@@ -3647,6 +3647,11 @@ p {
   .pane-system-user-menu li:first-child a {
     border-right: 1px solid #868C8E; }
 
+.top-bar {
+  background: transparent; }
+  .top-bar ul:first-child {
+    background: transparent; }
+
 .pane-system-main-menu a {
   display: inline-block;
   position: relative;
@@ -3703,6 +3708,12 @@ p {
     .pane-system-main-menu ul.submenu li a {
       padding: 0;
       font-size: 18px; }
+
+.title-bar {
+  background: transparent; }
+
+.title-bar-title {
+  text-transform: uppercase; }
 
 .pane-menu-menu-footer-menu {
   padding: 0 36px; }
