@@ -84,10 +84,10 @@ function template_preprocess_badcamp2016_hero1col(&$vars) {
     );
   }
   if ($settings['opaque']) {
-    $vars['opaque'] = 'opaque';
+    $vars['opaque_class'] = 'opaque';
   }
   else {
-    $vars['opaque'] = '';
+    $vars['opaque_class'] = '';
   }
 }
 
