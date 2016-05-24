@@ -260,7 +260,16 @@ function badcamp_site_config_default_page_manager_handlers() {
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
+      'settings' => array(
+        'small' => '12',
+        'medium' => '',
+        'large' => '',
+        'small-push' => '',
+        'medium-push' => '',
+        'large-push' => '',
+        'row' => 1,
+      ),
+      'style' => 'grid',
     );
     $pane->css = array();
     $pane->extras = array();
