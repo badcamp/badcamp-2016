@@ -10,7 +10,7 @@
 function badcamp_registration_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'donation-donation-field_donation_stripe_trans'
+  // Exported field_instance: 'donation-donation-field_donation_stripe_trans'.
   $field_instances['donation-donation-field_donation_stripe_trans'] = array(
     'bundle' => 'donation',
     'default_value' => NULL,
@@ -72,7 +72,7 @@ function badcamp_registration_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'donation-donation-field_donation_type'
+  // Exported field_instance: 'donation-donation-field_donation_type'.
   $field_instances['donation-donation-field_donation_type'] = array(
     'bundle' => 'donation',
     'default_value' => NULL,
@@ -122,7 +122,7 @@ function badcamp_registration_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'donation-donation-field_donation_user'
+  // Exported field_instance: 'donation-donation-field_donation_user'.
   $field_instances['donation-donation-field_donation_user'] = array(
     'bundle' => 'donation',
     'default_value' => NULL,
@@ -168,7 +168,7 @@ function badcamp_registration_page_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'donation_type-donation_type-field_donation_type_amount'
+  // 'donation_type-donation_type-field_donation_type_amount'.
   $field_instances['donation_type-donation_type-field_donation_type_amount'] = array(
     'bundle' => 'donation_type',
     'default_value' => array(
@@ -225,7 +225,7 @@ function badcamp_registration_page_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'donation_type-donation_type-field_donation_type_benefits'
+  // 'donation_type-donation_type-field_donation_type_benefits'.
   $field_instances['donation_type-donation_type-field_donation_type_benefits'] = array(
     'bundle' => 'donation_type',
     'default_value' => NULL,
@@ -313,7 +313,7 @@ function badcamp_registration_page_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'donation_type-donation_type-field_donation_type_description'
+  // 'donation_type-donation_type-field_donation_type_description'.
   $field_instances['donation_type-donation_type-field_donation_type_description'] = array(
     'bundle' => 'donation_type',
     'default_value' => NULL,

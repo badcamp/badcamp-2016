@@ -26,12 +26,14 @@ function badcamp_registration_page_eck_bundle_info() {
       'entity_type' => 'donation',
       'name' => 'donation',
       'label' => 'Donation',
+      'config' => array(),
     ),
     'donation_type_donation_type' => array(
       'machine_name' => 'donation_type_donation_type',
       'entity_type' => 'donation_type',
       'name' => 'donation_type',
       'label' => 'Donation Type',
+      'config' => array(),
     ),
   );
   return $items;

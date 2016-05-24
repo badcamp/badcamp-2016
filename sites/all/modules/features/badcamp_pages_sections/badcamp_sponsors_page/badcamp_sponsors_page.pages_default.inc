@@ -141,7 +141,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'onecol';
+  $display->layout = 'badcamp2016_1col';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -156,7 +156,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-bd52c3b4-da17-48a9-b676-92c21fe9f489';
-    $pane->panel = 'middle';
+    $pane->panel = 'content';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -179,10 +179,10 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = 'bd52c3b4-da17-48a9-b676-92c21fe9f489';
     $display->content['new-bd52c3b4-da17-48a9-b676-92c21fe9f489'] = $pane;
-    $display->panels['middle'][0] = 'new-bd52c3b4-da17-48a9-b676-92c21fe9f489';
+    $display->panels['content'][0] = 'new-bd52c3b4-da17-48a9-b676-92c21fe9f489';
     $pane = new stdClass();
     $pane->pid = 'new-acb60212-4971-48f8-ba3f-7ef4ecc4cd7b';
-    $pane->panel = 'middle';
+    $pane->panel = 'content';
     $pane->type = 'views_panes';
     $pane->subtype = 'sponsors-panel_pane_1';
     $pane->shown = TRUE;
@@ -211,10 +211,10 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = 'acb60212-4971-48f8-ba3f-7ef4ecc4cd7b';
     $display->content['new-acb60212-4971-48f8-ba3f-7ef4ecc4cd7b'] = $pane;
-    $display->panels['middle'][1] = 'new-acb60212-4971-48f8-ba3f-7ef4ecc4cd7b';
+    $display->panels['content'][1] = 'new-acb60212-4971-48f8-ba3f-7ef4ecc4cd7b';
     $pane = new stdClass();
     $pane->pid = 'new-3819ca88-6526-4eae-9ce9-2a14192015d0';
-    $pane->panel = 'middle';
+    $pane->panel = 'content';
     $pane->type = 'views_panes';
     $pane->subtype = 'sponsors-panel_pane_1';
     $pane->shown = TRUE;
@@ -240,10 +240,10 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '3819ca88-6526-4eae-9ce9-2a14192015d0';
     $display->content['new-3819ca88-6526-4eae-9ce9-2a14192015d0'] = $pane;
-    $display->panels['middle'][2] = 'new-3819ca88-6526-4eae-9ce9-2a14192015d0';
+    $display->panels['content'][2] = 'new-3819ca88-6526-4eae-9ce9-2a14192015d0';
     $pane = new stdClass();
     $pane->pid = 'new-18d618f9-3e3f-4c27-af94-90aea6b667cf';
-    $pane->panel = 'middle';
+    $pane->panel = 'content';
     $pane->type = 'views_panes';
     $pane->subtype = 'sponsors-panel_pane_1';
     $pane->shown = TRUE;
@@ -269,7 +269,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '18d618f9-3e3f-4c27-af94-90aea6b667cf';
     $display->content['new-18d618f9-3e3f-4c27-af94-90aea6b667cf'] = $pane;
-    $display->panels['middle'][3] = 'new-18d618f9-3e3f-4c27-af94-90aea6b667cf';
+    $display->panels['content'][3] = 'new-18d618f9-3e3f-4c27-af94-90aea6b667cf';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

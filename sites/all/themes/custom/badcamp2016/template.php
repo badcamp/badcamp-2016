@@ -40,10 +40,14 @@ function badcamp2016_menu_tree(&$variables) {
  */
 function badcamp2016_preprocess_menu_tree__main_menu(&$variables) {
   $variables['has_children'] = TRUE;
+  $variables['top_level'] = TRUE;
   foreach (element_children($variables['tree']) as $cid) {
+    // Check whether we're at the top level by inspecting the depth of the first link.
+    if ($variables['tree'][$cid]['#original_link']['depth'] > 1) {
+      $variables['top_level'] = FALSE;
+    }
     if (!empty($variables['tree'][$cid]['#below'])) {
       $variables['has_children'] = TRUE;
-      break;
     }
   }
 }
@@ -54,13 +58,17 @@ function badcamp2016_preprocess_menu_tree__main_menu(&$variables) {
  * Add foundation dropdown attributes if this tree has children.
  */
 function badcamp2016_menu_tree__main_menu(&$variables) {
+  $attributes = array(
+    'class' => array('menu'),
+  );
   if ($variables['has_children']) {
-    return '<ul class="menu dropdown" data-dropdown-menu>' . $variables['tree']['#children'] . '</ul>';
+    $attributes['class'][] = 'dropdown';
+    $attributes['data-dropdown-menu'] = NULL;
   }
-  else {
-    return '<ul class="menu">' . $variables['tree']['#children'] . '</ul>';
+  if ($variables['top_level']) {
+    $attributes['class'][] = 'vertical medium-horizontal';
   }
-
+  return '<ul' . drupal_attributes($attributes)  . '>' . $variables['tree']['#children'] . '</ul>';
 }
 
 /**

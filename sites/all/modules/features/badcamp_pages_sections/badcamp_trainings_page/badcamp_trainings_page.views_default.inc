@@ -109,7 +109,7 @@ function badcamp_trainings_page_views_default_views() {
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'More Information';
-  /* Sort criterion: Content: Date and Time -  start date (field_training_date_time) */
+  /* Sort criterion: Content: Date and Time (field_training_date_time) */
   $handler->display->display_options['sorts']['field_training_date_time_value']['id'] = 'field_training_date_time_value';
   $handler->display->display_options['sorts']['field_training_date_time_value']['table'] = 'field_data_field_training_date_time';
   $handler->display->display_options['sorts']['field_training_date_time_value']['field'] = 'field_training_date_time_value';

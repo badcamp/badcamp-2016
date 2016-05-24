@@ -11,10 +11,8 @@
     </div>
   </div>
 <?php endif; ?>
-<div class="region-content">
-  <div class="row">
-    <div class="columns">
-      <?php print $content['content']; ?>
-    </div>
+<div class="region-content <?php print $opaque_class; ?>">
+  <div class="row columns">
+    <?php print $content['content']; ?>
   </div>
 </div>

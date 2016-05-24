@@ -18,6 +18,7 @@ function badcamp2016_badcamp2016_hero1col_panels_layouts() {
     'settings validate' => 'badcamp2016_layouts_hero1col_settings_form_validate',
     'settings' => array(
       'background' => NULL,
+      'opaque' => FALSE,
     ),
     'regions' => array(
       'hero' => t('Hero'),
@@ -33,10 +34,15 @@ function badcamp2016_badcamp2016_hero1col_panels_layouts() {
 function badcamp2016_layouts_hero1col_settings_form($display, $plugin, $settings) {
   return array(
     'background' => array(
-      '#title' => 'Path to Hero Background',
+      '#title' => t('Path to Hero Background'),
       '#type' => 'textfield',
       '#default_value' => $settings['background'],
-      '#description' => t('Enter the path to the image.  The %theme token will be replaced with the path to the badcamp 2016 theme.')
+      '#description' => t('Enter the path to the image.  The %theme token will be replaced with the path to the badcamp 2016 theme.'),
+    ),
+    'opaque' => array(
+      '#title' => t('Opaque background'),
+      '#type' => 'checkbox',
+      '#default_value' => $settings['opaque'],
     ),
   );
 }
@@ -76,6 +82,12 @@ function template_preprocess_badcamp2016_hero1col(&$vars) {
       'class' => array('region-hero'),
       'style' => implode(';', $styles),
     );
+  }
+  if ($settings['opaque']) {
+    $vars['opaque_class'] = 'opaque';
+  }
+  else {
+    $vars['opaque_class'] = '';
   }
 }
 

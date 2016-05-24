@@ -270,31 +270,6 @@ function badcamp_site_config_default_page_manager_handlers() {
     $display->content['new-fb0097c1-7ac7-4777-aec5-3bc51e64b6f8'] = $pane;
     $display->panels['main'][0] = 'new-fb0097c1-7ac7-4777-aec5-3bc51e64b6f8';
     $pane = new stdClass();
-    $pane->pid = 'new-2f76a66f-276b-4466-abe1-36e1d3a73920';
-    $pane->panel = 'main';
-    $pane->type = 'page_tabs';
-    $pane->subtype = 'page_tabs';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'type' => 'both',
-      'id' => 'tabs',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '2f76a66f-276b-4466-abe1-36e1d3a73920';
-    $display->content['new-2f76a66f-276b-4466-abe1-36e1d3a73920'] = $pane;
-    $display->panels['main'][1] = 'new-2f76a66f-276b-4466-abe1-36e1d3a73920';
-    $pane = new stdClass();
     $pane->pid = 'new-e770b52e-e2c7-469c-a58e-b23535482bdb';
     $pane->panel = 'main';
     $pane->type = 'page_content';
@@ -313,11 +288,11 @@ function badcamp_site_config_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'e770b52e-e2c7-469c-a58e-b23535482bdb';
     $display->content['new-e770b52e-e2c7-469c-a58e-b23535482bdb'] = $pane;
-    $display->panels['main'][2] = 'new-e770b52e-e2c7-469c-a58e-b23535482bdb';
+    $display->panels['main'][1] = 'new-e770b52e-e2c7-469c-a58e-b23535482bdb';
     $pane = new stdClass();
     $pane->pid = 'new-c4c17bcd-eb8d-4818-a598-f0418aa7cbeb';
     $pane->panel = 'main_nav';
