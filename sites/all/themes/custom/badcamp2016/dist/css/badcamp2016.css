@@ -3925,7 +3925,9 @@ ul.tabs li a:hover {
 .region-about,
 .region-sponsors {
   padding-top: 76px;
-  padding-bottom: 76px;
+  padding-bottom: 76px; }
+
+.opaque {
   background: linear-gradient(0deg, rgba(51, 117, 138, 0.6) 24%, rgba(32, 56, 66, 0.6) 89%); }
 
 .region-hero {

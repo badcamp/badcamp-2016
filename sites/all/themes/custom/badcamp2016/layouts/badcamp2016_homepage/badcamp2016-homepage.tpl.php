@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<div class="region-about">
+<div class="region-about opaque">
   <div class="row">
     <?php if ($content['about-header']) : ?>
       <div class="medium-12 columns region-about-header">
@@ -78,7 +78,7 @@
 <?php endif; ?>
 
 <?php if ($content['sponsors']) : ?>
-  <div class="region-sponsors">
+  <div class="region-sponsors opaque">
     <div class="row">
       <div class="medium-12 columns">
         <?php print $content['sponsors']; ?>
