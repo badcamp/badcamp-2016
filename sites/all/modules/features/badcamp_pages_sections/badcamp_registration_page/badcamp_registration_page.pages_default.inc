@@ -96,7 +96,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'onecol';
+  $display->layout = 'badcamp2016_1col';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -112,7 +112,7 @@ function badcamp_registration_page_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
-    $pane->panel = 'middle';
+    $pane->panel = 'content';
     $pane->type = 'user_register_form';
     $pane->subtype = 'user_register_form';
     $pane->shown = TRUE;
@@ -135,7 +135,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
     $display->content['new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f'] = $pane;
-    $display->panels['middle'][0] = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
+    $display->panels['content'][0] = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
   $handler->conf['display'] = $display;

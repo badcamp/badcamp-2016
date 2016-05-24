@@ -10,7 +10,7 @@
 function badcamp_registration_page_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_donation_stripe_trans'
+  // Exported field_base: 'field_donation_stripe_trans'.
   $field_bases['field_donation_stripe_trans'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -34,7 +34,7 @@ function badcamp_registration_page_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_donation_type'
+  // Exported field_base: 'field_donation_type'.
   $field_bases['field_donation_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -72,7 +72,7 @@ function badcamp_registration_page_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_donation_type_amount'
+  // Exported field_base: 'field_donation_type_amount'.
   $field_bases['field_donation_type_amount'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -90,7 +90,7 @@ function badcamp_registration_page_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_donation_type_benefits'
+  // Exported field_base: 'field_donation_type_benefits'.
   $field_bases['field_donation_type_benefits'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -114,7 +114,7 @@ function badcamp_registration_page_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_donation_type_description'
+  // Exported field_base: 'field_donation_type_description'.
   $field_bases['field_donation_type_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -136,7 +136,7 @@ function badcamp_registration_page_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_donation_user'
+  // Exported field_base: 'field_donation_user'.
   $field_bases['field_donation_user'] = array(
     'active' => 1,
     'cardinality' => 1,
