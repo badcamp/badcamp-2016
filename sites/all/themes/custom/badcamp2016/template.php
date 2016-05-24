@@ -42,12 +42,28 @@ function badcamp2016_preprocess_menu_tree__main_menu(&$variables) {
   $variables['has_children'] = TRUE;
   $variables['top_level'] = TRUE;
   foreach (element_children($variables['tree']) as $cid) {
-    // Check whether we're at the top level by inspecting the depth of the first link.
+    // Check whether we're at the top level by inspecting the depth of the first
+    // link.
     if ($variables['tree'][$cid]['#original_link']['depth'] > 1) {
       $variables['top_level'] = FALSE;
     }
     if (!empty($variables['tree'][$cid]['#below'])) {
       $variables['has_children'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Add foundation grid classes to the main page content if this is not
+ * a page manager page.
+ */
+function badcamp2016_preprocess_panels_pane(&$vars) {
+  if ($vars['pane']->type == 'page_content') {
+    $pm_page = module_invoke('page_manager', 'get_current_page');
+    if (!$pm_page) {
+      $vars['classes_array'][] = 'row column';
     }
   }
 }
@@ -68,7 +84,7 @@ function badcamp2016_menu_tree__main_menu(&$variables) {
   if ($variables['top_level']) {
     $attributes['class'][] = 'vertical medium-horizontal';
   }
-  return '<ul' . drupal_attributes($attributes)  . '>' . $variables['tree']['#children'] . '</ul>';
+  return '<ul' . drupal_attributes($attributes) . '>' . $variables['tree']['#children'] . '</ul>';
 }
 
 /**
