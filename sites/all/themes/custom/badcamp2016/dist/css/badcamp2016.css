@@ -3640,12 +3640,14 @@ p {
   color: #FEFEFE; }
   .pane-system-main-menu a:hover {
     color: #59A8C1; }
-  .pane-system-main-menu a.active {
-    color: #59A8C1; }
 
 @media screen and (min-width: 40em) {
   .pane-system-main-menu > .pane-content > .menu {
     text-align: center; } }
+
+@media screen and (min-width: 79em) {
+  .pane-system-main-menu > .pane-content > .menu {
+    display: table; } }
 
 .pane-system-main-menu > .pane-content > .menu > li.is-active:hover {
   background: #1A323C; }
@@ -3677,12 +3679,14 @@ p {
   .pane-system-main-menu > .pane-content > .menu > li {
     display: inline-block; } }
 
-@media screen and (min-width: 64em) {
+@media screen and (min-width: 79em) {
   .pane-system-main-menu > .pane-content > .menu > li {
     display: table-cell; } }
 
 .pane-system-main-menu > .pane-content > .menu > li > a {
   text-transform: uppercase; }
+  .pane-system-main-menu > .pane-content > .menu > li > a.active {
+    color: #59A8C1; }
   .pane-system-main-menu > .pane-content > .menu > li > a:first-child {
     margin-left: 0; }
 

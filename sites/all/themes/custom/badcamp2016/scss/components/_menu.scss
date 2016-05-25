@@ -37,15 +37,15 @@
     &:hover {
       color: $badcamp-lt-blue;
     }
-    &.active {
-      color: $badcamp-lt-blue;
-    }
   }
 }
 //styles for main menu top-level links
 .pane-system-main-menu > .pane-content > .menu {
   @include breakpoint(medium) {
     text-align: center;
+  }
+  @include breakpoint(1264px) {
+    display: table;
   }
   > li {
     &.is-active {
@@ -72,11 +72,14 @@
     @include breakpoint(medium) {
       display: inline-block;
     }
-    @include breakpoint(large) {
+    @include breakpoint(1264px) {
       display: table-cell;
     }
     > a {
       text-transform: uppercase;
+      &.active {
+        color: $badcamp-lt-blue;
+      }
       &:first-child {
         margin-left: 0;
       }
@@ -111,9 +114,6 @@
 .title-bar-title {
   text-transform: uppercase;
 }
-
-//adjust for responsive/mobile styling
-
 
 //styles for footer menu
 .pane-menu-menu-footer-menu {

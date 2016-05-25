@@ -26,7 +26,7 @@
     </div>
     <div class="row">
       <div class="columns">
-        <div class="title-bar" data-responsive-toggle="main-nav" data-hide-for="medium">
+        <div class="title-bar" data-responsive-toggle="main-nav-99" data-hide-for="medium">
           <button class="menu-icon" type="button" data-toggle></button>
           <div class="title-bar-title">Menu</div>
         </div>
@@ -51,8 +51,7 @@
         </div>
       </div>
     </div>
-
-
+    
     <div class="footer-bottom">
       <div class="footer-hud-top"></div>
       <div class="footer-hud-bottom">
