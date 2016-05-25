@@ -4,7 +4,6 @@
   margin-right: 60px;
   li {
     > a {
-      display: inline-block;
       font-weight: normal;
       text-transform: uppercase;
       font-size: 14px;
@@ -38,10 +37,16 @@
     &:hover {
       color: $badcamp-lt-blue;
     }
+    &.active {
+      color: $badcamp-lt-blue;
+    }
   }
 }
-//main menu top-level specific links
+//styles for main menu top-level links
 .pane-system-main-menu > .pane-content > .menu {
+  @include breakpoint(medium) {
+    text-align: center;
+  }
   > li {
     &.is-active {
       &:hover {
@@ -64,7 +69,12 @@
         }
       }
     }
-
+    @include breakpoint(medium) {
+      display: inline-block;
+    }
+    @include breakpoint(large) {
+      display: table-cell;
+    }
     > a {
       text-transform: uppercase;
       &:first-child {
@@ -94,13 +104,16 @@
     }
   }
 }
-//styles for main menu responsive/mobile
+//mobile specific styles for main menu
 .title-bar {
   background: transparent;
 }
 .title-bar-title {
   text-transform: uppercase;
 }
+
+//adjust for responsive/mobile styling
+
 
 //styles for footer menu
 .pane-menu-menu-footer-menu {
