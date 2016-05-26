@@ -24,37 +24,37 @@
     <?php endif; ?>
 
     <?php if ($content['about-fr-left']) : ?>
-      <div class="medium-4 columns region-about-first">
+      <div class="small-12 medium-4 columns region-about-first">
         <?php print $content['about-fr-left']; ?>
       </div>
     <?php endif; ?>
 
     <?php if ($content['about-fr-middle']) : ?>
-      <div class="medium-4 columns region-about-first">
+      <div class="small-6 medium-4 columns region-about-first">
         <?php print $content['about-fr-middle']; ?>
       </div>
     <?php endif; ?>
 
     <?php if ($content['about-fr-right']) : ?>
-      <div class="medium-4 columns region-about-first">
+      <div class="small-6 medium-4 columns region-about-first">
         <?php print $content['about-fr-right']; ?>
       </div>
     <?php endif; ?>
 
     <?php if ($content['about-sr']) : ?>
-      <div class="medium-8 columns region-about-second">
+      <div class="small-12 medium-8 columns region-about-second">
         <?php print $content['about-sr']; ?>
       </div>
     <?php endif; ?>
 
     <?php if ($content['about-tr-top']) : ?>
-      <div class="medium-4 columns region-about-third">
+      <div class="small-6 medium-4 columns region-about-third">
         <?php print $content['about-tr-top']; ?>
       </div>
     <?php endif; ?>
 
     <?php if ($content['about-tr-bottom']) : ?>
-      <div class="medium-4 columns region-about-third">
+      <div class="small-6 medium-4 columns region-about-third">
         <?php print $content['about-tr-bottom']; ?>
       </div>
     <?php endif; ?>

@@ -3787,12 +3787,14 @@ p {
 .region-about-first, .region-about-third {
   margin-bottom: 32px; }
 
-.region-about-second .pane-testimonials {
-  min-height: 175px;
-  text-align: center;
-  background: rgba(53, 119, 141, 0.2); }
-  .region-about-second .pane-testimonials p {
-    margin: 0; }
+.region-about-second {
+  margin-bottom: 32px; }
+  .region-about-second .pane-testimonials {
+    min-height: 175px;
+    text-align: center;
+    background: rgba(53, 119, 141, 0.2); }
+    .region-about-second .pane-testimonials p {
+      margin: 0; }
 
 .pane-testimonials .pane-content {
   padding-top: 54px; }
