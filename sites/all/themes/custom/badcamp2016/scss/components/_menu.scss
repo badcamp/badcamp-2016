@@ -1,7 +1,15 @@
 //user menu styles
 .pane-system-user-menu {
-  float: right;
-  margin-right: 60px;
+  white-space: nowrap;
+
+  @include breakpoint(medium up) {
+    float: right;
+    margin-right: 60px;
+  }
+  @include breakpoint(small only) {
+    margin-right: 0;
+  }
+
   li {
     > a {
       font-weight: normal;
@@ -117,14 +125,11 @@
 
 //styles for footer menu
 .pane-menu-menu-footer-menu {
-  padding: 0 36px;
   .menu {
     text-align: center;
     li {
       display: inline-block;
-      margin:0 32px;
       a {
-        display: inline-block;
         font-family: $font-family-orbitron;
         font-size: 18px;
         font-weight: bold;
