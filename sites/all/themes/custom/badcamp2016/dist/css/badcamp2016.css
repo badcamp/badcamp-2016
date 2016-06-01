@@ -3741,8 +3741,8 @@ p {
         top: 9px; }
 
 #home-intro .pane-title {
-  font-size: 2.875rem;
-  color: #59A8C1; }
+  color: #59A8C1;
+  font-size: 3.25vw; }
   #home-intro .pane-title:before, #home-intro .pane-title:after {
     color: #FFFFFF; }
 
