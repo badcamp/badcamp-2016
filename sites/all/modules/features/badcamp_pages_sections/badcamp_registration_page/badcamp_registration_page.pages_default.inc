@@ -194,12 +194,13 @@ function badcamp_registration_page_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'foundation_1col';
+  $display->layout = 'badcamp2016_1col';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
+      'content' => NULL,
     ),
   );
   $display->cache = array();
@@ -208,18 +209,18 @@ function badcamp_registration_page_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-0a8e5ebd-62c8-4aab-8375-8362b1e025d0';
-    $pane->panel = 'middle';
+    $pane->pid = 'new-6b15a30f-98a0-4942-8bc7-aec60d4dbfeb';
+    $pane->panel = 'content';
     $pane->type = 'donation_options';
     $pane->subtype = 'donation_options';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h1',
       'stripe_donation_payment_page_title' => NULL,
       'stripe_donation_zero_amt_donation_redirect_path' => '/user',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -229,11 +230,11 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '0a8e5ebd-62c8-4aab-8375-8362b1e025d0';
-    $display->content['new-0a8e5ebd-62c8-4aab-8375-8362b1e025d0'] = $pane;
-    $display->panels['middle'][0] = 'new-0a8e5ebd-62c8-4aab-8375-8362b1e025d0';
+    $pane->uuid = '6b15a30f-98a0-4942-8bc7-aec60d4dbfeb';
+    $display->content['new-6b15a30f-98a0-4942-8bc7-aec60d4dbfeb'] = $pane;
+    $display->panels['content'][0] = 'new-6b15a30f-98a0-4942-8bc7-aec60d4dbfeb';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-0a8e5ebd-62c8-4aab-8375-8362b1e025d0';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['registration_step_2'] = $page;
