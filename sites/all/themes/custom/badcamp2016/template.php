@@ -54,6 +54,26 @@ function badcamp2016_preprocess_menu_tree__main_menu(&$variables) {
 }
 
 /**
+ * Overrides theme_menu_tree() for the main menu.
+ *
+ * Add foundation dropdown attributes if this tree has children.
+ */
+function badcamp2016_menu_tree__main_menu(&$variables) {
+  $attributes = array(
+    'class' => array('menu'),
+  );
+  if ($variables['has_children']) {
+    $attributes['class'][] = 'drilldown medium-dropdown';
+    $attributes['data-dropdown-menu'] = NULL;
+  }
+  if ($variables['top_level']) {
+    $attributes['class'][] = 'vertical medium-horizontal';
+  }
+  return '<ul' . drupal_attributes($attributes) . '>' . $variables['tree']['#children'] . '</ul>';
+
+}
+
+/**
  * Implements hook_preprocess_HOOK().
  *
  * Add foundation grid classes to the main page content if this is not
@@ -66,25 +86,6 @@ function badcamp2016_preprocess_panels_pane(&$vars) {
       $vars['classes_array'][] = 'row column';
     }
   }
-}
-
-/**
- * Overrides theme_menu_tree() for the main menu.
- *
- * Add foundation dropdown attributes if this tree has children.
- */
-function badcamp2016_menu_tree__main_menu(&$variables) {
-  $attributes = array(
-    'class' => array('menu'),
-  );
-  if ($variables['has_children']) {
-    $attributes['class'][] = 'dropdown';
-    $attributes['data-dropdown-menu'] = NULL;
-  }
-  if ($variables['top_level']) {
-    $attributes['class'][] = 'vertical medium-horizontal';
-  }
-  return '<ul' . drupal_attributes($attributes) . '>' . $variables['tree']['#children'] . '</ul>';
 }
 
 /**

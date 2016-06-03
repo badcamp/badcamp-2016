@@ -1,8 +1,8 @@
 
 #home-intro {
   .pane-title {
-    font-size: rem-calc(46);
     color: $badcamp-lt-blue;
+    font-size: 3.25vw;
 
     &:before, &:after {
       color:$badcamp-header-white;
@@ -73,6 +73,7 @@
   margin-bottom: 32px;
 }
 .region-about-second {
+  margin-bottom: 32px;
   .pane-testimonials {
     min-height: 175px;
     text-align: center;

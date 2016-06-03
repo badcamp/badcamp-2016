@@ -2,7 +2,17 @@
 #site-header {
   background: url(../../images/hud_top.svg) bottom center no-repeat;
   padding-bottom: 90px;
-  background-size:cover;
+
+  @include breakpoint(medium) {
+    background-size: cover;
+  }
+
+  @include breakpoint(medium down) {
+    .row {
+      background: rgba(17, 35, 42, 1);
+    }
+  }
+
   .columns {
     padding: 0;
   }
