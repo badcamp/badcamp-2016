@@ -1,0 +1,73 @@
+<?php
+/**
+ * @file
+ * BADCamp Registration installation.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function badcamp_registration_page_install() {
+  badcamp_registration_page_update_7100();
+}
+
+/**
+ * Add donation types.
+ */
+function badcamp_registration_page_update_7100() {
+  $entity_type = 'donation_type';
+
+  // Free.
+  $entity = entity_create($entity_type, array(
+    'type' => 'donation_type',
+    'title' => 'Stargazer',
+  ));
+  $wrapper = entity_metadata_wrapper($entity_type, $entity);
+  $wrapper->field_donation_type_amount->set(0);
+  $wrapper->field_donation_type_benefits->set(array(
+    'Much love and respect',
+  ));
+  $wrapper->save();
+
+  // 25.
+  $entity = entity_create($entity_type, array(
+    'type' => 'donation_type',
+    'title' => 'Cadet',
+  ));
+  $wrapper = entity_metadata_wrapper($entity_type, $entity);
+  $wrapper->field_donation_type_amount->set(25);
+  $wrapper->field_donation_type_benefits->set(array(
+    'Much love and respect',
+    'BADCamp T-shirt',
+  ));
+  $wrapper->save();
+
+  // 50.
+  $entity = entity_create($entity_type, array(
+    'type' => 'donation_type',
+    'title' => 'Astronaut',
+  ));
+  $wrapper = entity_metadata_wrapper($entity_type, $entity);
+  $wrapper->field_donation_type_amount->set(50);
+  $wrapper->field_donation_type_benefits->set(array(
+    'Much love and respect',
+    'BADCamp T-shirt',
+    'Surprise Swag!',
+  ));
+  $wrapper->save();
+
+  // 100.
+  $entity = entity_create($entity_type, array(
+    'type' => 'donation_type',
+    'title' => 'Interstellar Explorer',
+  ));
+  $wrapper = entity_metadata_wrapper($entity_type, $entity);
+  $wrapper->field_donation_type_amount->set(100);
+  $wrapper->field_donation_type_benefits->set(array(
+    'Much love and respect',
+    'BADCamp T-shirt',
+    'Surprise Swag!',
+    'Limited-edition BADCamp hoodie',
+  ));
+  $wrapper->save();
+}
