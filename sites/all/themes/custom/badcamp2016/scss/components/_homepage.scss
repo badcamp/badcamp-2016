@@ -174,8 +174,12 @@
     width: 100%;
   }
   .view-footer {
+    .sponsor-buttons {
+      text-align: center;
+    }
     .button {
-      margin: 2em;
+      margin-top: 2em;
+      white-space: nowrap;
     };
   }
 }

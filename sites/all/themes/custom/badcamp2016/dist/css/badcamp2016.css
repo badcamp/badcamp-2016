@@ -3627,9 +3627,10 @@ p {
     text-transform: uppercase;
     font-size: 14px;
     color: #C77C18;
-    padding: 3px 6px; }
-  .pane-system-user-menu li:first-child a {
+    padding: 3px 6px;
     border-right: 1px solid #868C8E; }
+  .pane-system-user-menu li:last-child a {
+    border-right: none; }
 
 .top-bar {
   background: transparent; }
@@ -3869,8 +3870,12 @@ p {
   text-align: center;
   width: 100%; }
 
+.region-sponsors .view-footer .sponsor-buttons {
+  text-align: center; }
+
 .region-sponsors .view-footer .button {
-  margin: 2em; }
+  margin-top: 2em;
+  white-space: nowrap; }
 
 ul.tabs {
   background-color: #000000;

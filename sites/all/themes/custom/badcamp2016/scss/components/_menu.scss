@@ -17,10 +17,11 @@
       font-size: 14px;
       color: $badcamp-dk-orange;
       padding: 3px 6px;
+      border-right: 1px solid $badcamp-grey;
     }
-    &:first-child {
+    &:last-child {
       a {
-        border-right: 1px solid $badcamp-grey;
+        border-right: none;
       }
     }
   }

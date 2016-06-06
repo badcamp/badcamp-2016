@@ -334,8 +334,8 @@ function badcamp_sponsors_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'block_grid';
   $handler->display->display_options['style_options']['grid'] = array(
-    'small' => '2',
-    'medium' => '4',
+    'small' => '1',
+    'medium' => '3',
     'large' => '',
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -355,7 +355,13 @@ function badcamp_sponsors_views_default_views() {
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = '<div class="small-6 small-centered"><a href="/sponsorship-packages" class="button">Sponsor BADCamp</a><a href="/sponsors" class="button">See all Sponsors</a></div>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="row">
+<div class="small-12 medium-6 medium-centered sponsor-buttons">
+<div  class="row">
+<div class="small-12 medium-6 columns"><a href="/sponsorship-packages" class="button">Sponsor BADCamp</a></div>
+<div class="small-12 medium-6 columns"><a href="/sponsors" class="button">See all Sponsors</a></div>
+</div>
+</div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
