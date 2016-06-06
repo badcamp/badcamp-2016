@@ -3882,8 +3882,12 @@ p {
   text-align: center;
   width: 100%; }
 
+.region-sponsors .view-footer .sponsor-buttons {
+  text-align: center; }
+
 .region-sponsors .view-footer .button {
-  margin: 2em; }
+  margin-top: 2em;
+  white-space: nowrap; }
 
 ul.tabs {
   background-color: #000000;
