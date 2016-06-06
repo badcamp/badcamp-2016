@@ -57,6 +57,12 @@
   //background: linear-gradient(0deg, rgba(51, 117, 138, 0.60) 24%, rgba(32, 56, 66, 0.60) 89%);
   margin-bottom: 76px;
 
+  img {
+    display: block;
+    margin: auto;
+    //width:100%;
+  }
+
   .digit-hero {
     min-height: 335px;
     // Needed to prevent margin on .digits from
@@ -82,7 +88,26 @@
       margin: 0;
     }
   }
+  img {
+    width: 100%;
+  }
 }
+
+.region-about-third {
+  .digit-hero {
+    //Needed to keep width lined up with
+    //adjacent images
+    max-width: 376px;
+    margin: auto;
+    @include breakpoint(small only) {
+      min-height: 274px;
+      .digits {
+        margin-top: 73px;
+      }
+    }
+  }
+}
+
 .pane-testimonials {
   .pane-content {
     padding-top: 54px;

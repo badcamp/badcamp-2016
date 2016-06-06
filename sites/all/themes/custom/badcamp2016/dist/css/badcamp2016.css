@@ -3780,6 +3780,9 @@ p {
 
 .region-about {
   margin-bottom: 76px; }
+  .region-about img {
+    display: block;
+    margin: auto; }
   .region-about .digit-hero {
     min-height: 335px;
     overflow: auto; }
@@ -3797,6 +3800,17 @@ p {
     background: rgba(53, 119, 141, 0.2); }
     .region-about-second .pane-testimonials p {
       margin: 0; }
+  .region-about-second img {
+    width: 100%; }
+
+.region-about-third .digit-hero {
+  max-width: 376px;
+  margin: auto; }
+  @media screen and (max-width: 39.9375em) {
+    .region-about-third .digit-hero {
+      min-height: 274px; }
+      .region-about-third .digit-hero .digits {
+        margin-top: 73px; } }
 
 .pane-testimonials .pane-content {
   padding-top: 54px; }

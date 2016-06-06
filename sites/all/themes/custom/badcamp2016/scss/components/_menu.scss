@@ -53,6 +53,7 @@
     text-align: center;
   }
   @include breakpoint(1264px) {
+    //this is needed to address a Chrome bug
     display: table;
   }
   > li {
