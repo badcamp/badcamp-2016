@@ -49,7 +49,7 @@ function badcamp_registration_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'logintoboggan_override_destination_parameter';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['logintoboggan_override_destination_parameter'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -70,14 +70,14 @@ function badcamp_registration_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'logintoboggan_redirect_on_confirm';
-  $strongarm->value = '';
+  $strongarm->value = 'registration/sponsorship';
   $export['logintoboggan_redirect_on_confirm'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'logintoboggan_redirect_on_register';
-  $strongarm->value = '';
+  $strongarm->value = 'registration/sponsorship';
   $export['logintoboggan_redirect_on_register'] = $strongarm;
 
   $strongarm = new stdClass();
