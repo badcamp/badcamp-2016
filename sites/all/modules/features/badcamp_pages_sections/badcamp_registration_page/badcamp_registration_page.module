@@ -37,3 +37,25 @@ function badcamp_registration_page_menu_alter(&$items) {
   $items['user/password']['title'] = 'I forgot my password';
   $items['user/password']['weight'] = 3;
 }
+
+/**
+ * Implements hook_admin_paths_alter().
+ *
+ * Use the front end theme for the user edit page.
+ */
+function badcamp_registration_page_admin_paths_alter(array &$paths) {
+  $kill_paths = array(
+    'user/*/edit' => '',
+    'user/*/edit/*' => '',
+  );
+  $paths = array_diff_key($paths, $kill_paths);
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function badcamp_registration_page_ctools_plugin_directory($module, $api) {
+  if ($module === 'ctools') {
+    return "plugins/$api";
+  }
+}
