@@ -1,7 +1,9 @@
-input {
-  font-size: 18px;
-  color: $badcamp-dk-grey;
+//General form styles.
+label {
+  color: $badcamp-off-white;
 }
+
+//User registration page styles.
 .page-registration {
   color: $badcamp-off-white;
   .pane-title {
@@ -16,49 +18,47 @@ input {
   .pane-user-register-form {
     margin-top: 60px;
   }
-  #user-register-form {
-    .form-actions {
-      position: relative;
-      &:after {
-        @include css-triangle(9px, $badcamp-off-white, right);
-        position: absolute;
-        top: 11px;
-        right: 270px;
-      }
-    }
-    label {
-      color: $badcamp-off-white;
-    }
-    .form-submit {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      padding-right: 42px;
+}
 
+#user-register-form {
+  .form-actions {
+    position: relative;
+    &:after {
+      @include css-triangle(9px, $badcamp-off-white, right);
+      position: absolute;
+      top: 11px;
+      right: 270px;
     }
+  }
+  .form-submit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 42px;
 
-    .field-name-field-user-interest-volunteering, .field-name-field-user-mailchimp {
-      display: inline-block;
-      width: 49%;
+  }
+
+  .field-name-field-user-interest-volunteering, .field-name-field-user-mailchimp {
+    display: inline-block;
+    width: 49%;
+  }
+  .form-type-checkbox {
+    .form-checkbox {
+      margin-top: 12px;
     }
-    .form-type-checkbox {
-      .form-checkbox {
-        margin-top: 12px;
-      }
+  }
+  .field-type-mailchimp-lists-subscription {
+    legend {
+      display: none;
     }
-    .field-type-mailchimp-lists-subscription {
-      legend {
-        display: none;
-      }
+  }
+  .form-type-password-confirm {
+    .description {
+      display: none;
     }
-    .form-type-password-confirm {
-      .description {
-        display: none;
-      }
-    }
-    .confirm-parent {
-      margin-top: 1em;
-      margin-bottom: 1em;
-    }
+  }
+  .confirm-parent {
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
 }

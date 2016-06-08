@@ -3964,9 +3964,8 @@ ul.tabs li a:hover {
   padding-top: 3.625rem;
   margin-top: -18px; }
 
-input {
-  font-size: 18px;
-  color: #010101; }
+label {
+  color: #FEFEFE; }
 
 .page-registration {
   color: #FEFEFE; }
@@ -3979,38 +3978,43 @@ input {
       content: none; }
   .page-registration .pane-user-register-form {
     margin-top: 60px; }
-  .page-registration #user-register-form .form-actions {
-    position: relative; }
-    .page-registration #user-register-form .form-actions:after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 0;
-      border: inset 9px;
-      border-color: transparent transparent transparent #FEFEFE;
-      border-left-style: solid;
-      border-right-width: 0;
-      position: absolute;
-      top: 11px;
-      right: 270px; }
-  .page-registration #user-register-form label {
-    color: #FEFEFE; }
-  .page-registration #user-register-form .form-submit {
+
+#user-register-form .form-actions {
+  position: relative; }
+  #user-register-form .form-actions:after {
+    content: '';
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 42px; }
-  .page-registration #user-register-form .field-name-field-user-interest-volunteering, .page-registration #user-register-form .field-name-field-user-mailchimp {
-    display: inline-block;
-    width: 49%; }
-  .page-registration #user-register-form .form-type-checkbox .form-checkbox {
-    margin-top: 12px; }
-  .page-registration #user-register-form .field-type-mailchimp-lists-subscription legend {
-    display: none; }
-  .page-registration #user-register-form .form-type-password-confirm .description {
-    display: none; }
-  .page-registration #user-register-form .confirm-parent {
-    margin-top: 1em;
-    margin-bottom: 1em; }
+    width: 0;
+    height: 0;
+    border: inset 9px;
+    border-color: transparent transparent transparent #FEFEFE;
+    border-left-style: solid;
+    border-right-width: 0;
+    position: absolute;
+    top: 11px;
+    right: 270px; }
+
+#user-register-form .form-submit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 42px; }
+
+#user-register-form .field-name-field-user-interest-volunteering, #user-register-form .field-name-field-user-mailchimp {
+  display: inline-block;
+  width: 49%; }
+
+#user-register-form .form-type-checkbox .form-checkbox {
+  margin-top: 12px; }
+
+#user-register-form .field-type-mailchimp-lists-subscription legend {
+  display: none; }
+
+#user-register-form .form-type-password-confirm .description {
+  display: none; }
+
+#user-register-form .confirm-parent {
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 /*# sourceMappingURL=maps/badcamp2016.css.map */
