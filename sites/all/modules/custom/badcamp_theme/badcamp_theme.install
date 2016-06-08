@@ -52,7 +52,6 @@ function badcamp_theme_update_7004() {
     ->condition('name', 'user', '=')
     ->execute()
     ->fetchField();
-  var_dump($weight);
 
   // Set our module to a weight 1 heavier, and thus lower
   // in execution order.
