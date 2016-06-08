@@ -14,8 +14,8 @@ $plugin = array(
   'keyword' => 'user_category_form',
   'description' => t('Adds user category edit form from a user context.'),
   'required context' => new ctools_context_required(t('User'), 'user'),
-  'context' => 'ctools_user_category_edit_form_from_user_context',
-  'edit form' => 'ctools_user_category_edit_form_from_user_settings_form',
+  'context' => 'badcamp_registration_page_user_category_edit_form_from_user_context',
+  'edit form' => 'badcamp_registration_page_user_category_edit_form_from_user_settings_form',
   'defaults' => array('category' => NULL),
 );
 
