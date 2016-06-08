@@ -27,6 +27,35 @@ function badcamp_registration_page_form_user_pass_alter(&$form, &$form_state) {
 }
 
 /**
+ * Implements hook_form_ID_alter().
+ */
+function badcamp_registration_page_form_user_register_form_alter(&$form, &$form_state, $form_id) {
+  $form['account']['name']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+  $form['account']['mail']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+  $form['account']['pass']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+  $form['account']['conf_mail']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+  $form['field_user_drupalorg_username']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+  $form['actions']['submit']['#value'] = t('Next');
+}
+
+/**
+ * Preprocess user registration elements to convert titles to placeholders.
+ */
+function _badcamp_registration_page_form_pre_render_element($element) {
+  if ($children = element_children($element)) {
+    foreach ($children as $child) {
+      $element[$child] = _badcamp_registration_page_form_pre_render_element($element[$child]);
+    }
+    return $element;
+  }
+  $element['#title'] = $element['#required'] ? $element['#title'] . '*' : $element['#title'];
+  $element['#attributes']['placeholder'] = $element['#title'];
+  $element['#title_display'] = 'invisible';
+  $element['#description'] = NULL;
+  return $element;
+}
+
+/**
  * Implements hook_menu_alter().
  */
 function badcamp_registration_page_menu_alter(&$items) {

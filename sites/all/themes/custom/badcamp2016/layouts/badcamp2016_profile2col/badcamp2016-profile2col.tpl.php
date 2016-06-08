@@ -1,8 +1,7 @@
 <?php
 /**
  * @file
- * Template for Badcamp two column layout with a narrow
- * left column for an image or the like.
+ * Template for Badcamp two column layout with a 3-9 grid layout.
  */
 ?>
 
@@ -28,5 +27,3 @@
     <?php endif; ?>
   </div>
 </div>
-
-
