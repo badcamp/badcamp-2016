@@ -8,6 +8,13 @@
 
 <div class="region-content">
   <div class="row">
+    <?php if ($content['header']) : ?>
+      <div class="medium-6 medium-push-3 columns progress-bar">
+        <?php print $content['header']; ?>
+      </div>
+    <?php endif; ?>
+  </div>
+  <div class="row">
     <?php if ($content['image']) : ?>
       <div class="medium-3 columns profile-image">
         <?php print $content['image']; ?>
@@ -19,7 +26,6 @@
         <?php print $content['main']; ?>
       </div>
     <?php endif; ?>
-
   </div>
 </div>
 

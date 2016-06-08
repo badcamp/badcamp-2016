@@ -15,6 +15,7 @@ function badcamp2016_badcamp2016_profile2col_panels_layouts() {
     'theme' => 'badcamp2016_profile2col',
     'admin css' => '../../dist/css/panels-admin.css',
     'regions' => array(
+      'header' => t('Header area'),
       'image' => t('Image'),
       'main' => t('Main Content'),
     ),
