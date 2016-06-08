@@ -152,6 +152,9 @@ function badcamp_sponsors_page_default_page_manager_pages() {
       'middle' => NULL,
       'content' => NULL,
     ),
+    'content' => array(
+      'style' => '-1',
+    ),
   );
   $display->cache = array();
   $display->title = 'BADCamp Sponsors';
@@ -167,7 +170,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => 'Sponsor Intro Text',
-      'title' => '',
+      'title' => 'Sponsors',
       'body' => '<p>BADCamp would not be possible&nbsp;without our many generous sponsors.&nbsp;If you\'d like&nbsp;to be a part of making&nbsp;BADCamp happen, check out our <a href="/sponsorship-packages">sponsorship options</a> and let Matt and Anne know how you\'d like&nbsp;to get involved.</p>
 ',
       'format' => 'full_html',
@@ -198,7 +201,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
       ),
       'override_title' => 1,
       'override_title_text' => 'Core Level',
-      'override_title_heading' => 'h2',
+      'override_title_heading' => 'h3',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -228,7 +231,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
       ),
       'override_title' => 1,
       'override_title_text' => 'Contrib  Level',
-      'override_title_heading' => 'h2',
+      'override_title_heading' => 'h3',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -255,7 +258,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
       ),
       'override_title' => 1,
       'override_title_text' => 'Supporting Level',
-      'override_title_heading' => 'h2',
+      'override_title_heading' => 'h3',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -268,8 +271,8 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $pane->uuid = '18d618f9-3e3f-4c27-af94-90aea6b667cf';
     $display->content['new-18d618f9-3e3f-4c27-af94-90aea6b667cf'] = $pane;
     $display->panels['content'][3] = 'new-18d618f9-3e3f-4c27-af94-90aea6b667cf';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
+  $display->hide_title = PANELS_TITLE_PANE;
+  $display->title_pane = 'new-bd52c3b4-da17-48a9-b676-92c21fe9f489';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['sponsors'] = $page;
