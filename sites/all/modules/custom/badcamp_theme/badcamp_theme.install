@@ -32,24 +32,15 @@ function badcamp_theme_update_7002() {
 }
 
 /**
- * Enable the badcamp_user_reg module.
- *
- * @author jayme johnson
- */
-function badcamp_theme_update_7003() {
-  module_enable(array('badcamp_user_reg'));
-}
-
-/**
  * Database update to add weight to bad_camp_user_reg.
  *
  * @author jayme johnson
  */
-function badcamp_theme_update_7004() {
-   // Get the weight of the module we want to compare against.
+function badcamp_theme_update_7003() {
+  // Get the weight of the module we want to compare against.
   $weight = db_select('system', 's')
     ->fields('s', array('weight'))
-    ->condition('name', 'user', '=')
+    ->condition('name', 'logintoboggan', '=')
     ->execute()
     ->fetchField();
 
@@ -57,6 +48,6 @@ function badcamp_theme_update_7004() {
   // in execution order.
   db_update('system')
     ->fields(array('weight' => $weight + 1))
-    ->condition('name', 'badcamp_user_reg', '=')
+    ->condition('name', 'badcamp_registration_page', '=')
     ->execute();
 }

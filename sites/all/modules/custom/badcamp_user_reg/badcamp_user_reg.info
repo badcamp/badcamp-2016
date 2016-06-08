@@ -1,5 +1,0 @@
-name = BADCamp Registration Pages
-description = Modifications to the user registration form
-core = 7.x
-package = BADCamp
-version = 7.x-10.0
