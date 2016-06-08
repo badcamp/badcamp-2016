@@ -16,7 +16,10 @@ function badcamp_food_and_drink_page_default_page_manager_pages() {
   $page->admin_title = 'Food and Drink';
   $page->admin_description = '';
   $page->path = 'food-drink';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(

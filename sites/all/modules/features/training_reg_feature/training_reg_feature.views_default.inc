@@ -850,7 +850,7 @@ function training_reg_feature_views_default_views() {
   $handler->display->display_options['fields']['field_training_room']['table'] = 'field_data_field_training_room';
   $handler->display->display_options['fields']['field_training_room']['field'] = 'field_training_room';
   $handler->display->display_options['fields']['field_training_room']['relationship'] = 'field_training_reg_training_target_id';
-  /* Field: User: I would like to volunteer at BADCamp */
+  /* Field: User: I would like to volunteer! */
   $handler->display->display_options['fields']['field_user_interest_volunteering']['id'] = 'field_user_interest_volunteering';
   $handler->display->display_options['fields']['field_user_interest_volunteering']['table'] = 'field_data_field_user_interest_volunteering';
   $handler->display->display_options['fields']['field_user_interest_volunteering']['field'] = 'field_user_interest_volunteering';

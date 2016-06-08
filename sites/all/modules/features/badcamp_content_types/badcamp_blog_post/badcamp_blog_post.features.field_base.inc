@@ -10,7 +10,7 @@
 function badcamp_blog_post_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_blog_tags'
+  // Exported field_base: 'field_blog_tags'.
   $field_bases['field_blog_tags'] = array(
     'active' => 1,
     'cardinality' => -1,

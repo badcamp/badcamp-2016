@@ -44,7 +44,7 @@ function badcamp_user_profile_strongarm() {
           'weight' => '28',
         ),
         'account' => array(
-          'weight' => '4',
+          'weight' => '1',
         ),
         'timezone' => array(
           'weight' => '2',

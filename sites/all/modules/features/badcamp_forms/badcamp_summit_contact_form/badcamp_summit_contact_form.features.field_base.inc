@@ -10,7 +10,7 @@
 function badcamp_summit_contact_form_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_scf_summit'
+  // Exported field_base: 'field_scf_summit'.
   $field_bases['field_scf_summit'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -45,7 +45,7 @@ function badcamp_summit_contact_form_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_scf_talk_description'
+  // Exported field_base: 'field_scf_talk_description'.
   $field_bases['field_scf_talk_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -67,7 +67,7 @@ function badcamp_summit_contact_form_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_scf_talk_title'
+  // Exported field_base: 'field_scf_talk_title'.
   $field_bases['field_scf_talk_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -91,7 +91,7 @@ function badcamp_summit_contact_form_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_scf_your_email'
+  // Exported field_base: 'field_scf_your_email'.
   $field_bases['field_scf_your_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -115,7 +115,7 @@ function badcamp_summit_contact_form_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_scf_your_name'
+  // Exported field_base: 'field_scf_your_name'.
   $field_bases['field_scf_your_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -139,7 +139,7 @@ function badcamp_summit_contact_form_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_scf_your_organization'
+  // Exported field_base: 'field_scf_your_organization'.
   $field_bases['field_scf_your_organization'] = array(
     'active' => 1,
     'cardinality' => 1,

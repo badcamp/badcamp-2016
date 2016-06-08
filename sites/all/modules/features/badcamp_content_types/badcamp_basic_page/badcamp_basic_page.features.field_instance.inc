@@ -10,7 +10,7 @@
 function badcamp_basic_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-basic_page-body'
+  // Exported field_instance: 'node-basic_page-body'.
   $field_instances['node-basic_page-body'] = array(
     'bundle' => 'basic_page',
     'default_value' => NULL,

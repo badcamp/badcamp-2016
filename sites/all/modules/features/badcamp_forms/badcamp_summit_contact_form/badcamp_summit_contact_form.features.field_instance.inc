@@ -10,7 +10,7 @@
 function badcamp_summit_contact_form_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'entityform-summit_contact_form-field_scf_summit'
+  // Exported field_instance: 'entityform-summit_contact_form-field_scf_summit'.
   $field_instances['entityform-summit_contact_form-field_scf_summit'] = array(
     'bundle' => 'summit_contact_form',
     'default_value' => NULL,
@@ -43,7 +43,7 @@ function badcamp_summit_contact_form_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-summit_contact_form-field_scf_talk_description'
+  // 'entityform-summit_contact_form-field_scf_talk_description'.
   $field_instances['entityform-summit_contact_form-field_scf_talk_description'] = array(
     'bundle' => 'summit_contact_form',
     'default_value' => NULL,
@@ -100,7 +100,7 @@ function badcamp_summit_contact_form_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-summit_contact_form-field_scf_talk_title'
+  // 'entityform-summit_contact_form-field_scf_talk_title'.
   $field_instances['entityform-summit_contact_form-field_scf_talk_title'] = array(
     'bundle' => 'summit_contact_form',
     'default_value' => NULL,
@@ -157,7 +157,7 @@ function badcamp_summit_contact_form_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-summit_contact_form-field_scf_your_email'
+  // 'entityform-summit_contact_form-field_scf_your_email'.
   $field_instances['entityform-summit_contact_form-field_scf_your_email'] = array(
     'bundle' => 'summit_contact_form',
     'default_value' => NULL,
@@ -212,7 +212,7 @@ function badcamp_summit_contact_form_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-summit_contact_form-field_scf_your_name'
+  // 'entityform-summit_contact_form-field_scf_your_name'.
   $field_instances['entityform-summit_contact_form-field_scf_your_name'] = array(
     'bundle' => 'summit_contact_form',
     'default_value' => NULL,
@@ -269,7 +269,7 @@ function badcamp_summit_contact_form_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-summit_contact_form-field_scf_your_organization'
+  // 'entityform-summit_contact_form-field_scf_your_organization'.
   $field_instances['entityform-summit_contact_form-field_scf_your_organization'] = array(
     'bundle' => 'summit_contact_form',
     'default_value' => NULL,

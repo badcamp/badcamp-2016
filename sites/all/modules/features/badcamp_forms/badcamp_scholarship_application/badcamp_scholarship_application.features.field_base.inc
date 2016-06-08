@@ -10,7 +10,7 @@
 function badcamp_scholarship_application_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_sa_assistance_needed'
+  // Exported field_base: 'field_sa_assistance_needed'.
   $field_bases['field_sa_assistance_needed'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -39,7 +39,7 @@ function badcamp_scholarship_application_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_sa_drupal_org_name'
+  // Exported field_base: 'field_sa_drupal_org_name'.
   $field_bases['field_sa_drupal_org_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -63,7 +63,7 @@ function badcamp_scholarship_application_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sa_email'
+  // Exported field_base: 'field_sa_email'.
   $field_bases['field_sa_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -87,7 +87,7 @@ function badcamp_scholarship_application_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sa_first_name'
+  // Exported field_base: 'field_sa_first_name'.
   $field_bases['field_sa_first_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -111,7 +111,7 @@ function badcamp_scholarship_application_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sa_last_name'
+  // Exported field_base: 'field_sa_last_name'.
   $field_bases['field_sa_last_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -135,7 +135,7 @@ function badcamp_scholarship_application_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sa_reason_for_scholarship'
+  // Exported field_base: 'field_sa_reason_for_scholarship'.
   $field_bases['field_sa_reason_for_scholarship'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -157,7 +157,7 @@ function badcamp_scholarship_application_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_sa_skype_name'
+  // Exported field_base: 'field_sa_skype_name'.
   $field_bases['field_sa_skype_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -181,7 +181,7 @@ function badcamp_scholarship_application_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sa_willing_to_volunteer'
+  // Exported field_base: 'field_sa_willing_to_volunteer'.
   $field_bases['field_sa_willing_to_volunteer'] = array(
     'active' => 1,
     'cardinality' => 1,

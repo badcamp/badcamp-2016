@@ -96,13 +96,14 @@ function badcamp_registration_page_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'badcamp2016_1col';
+  $display->layout = 'badcamp2016_narrow1col';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
       'middle' => NULL,
+      'content' => NULL,
     ),
   );
   $display->cache = array();
@@ -111,19 +112,19 @@ function badcamp_registration_page_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
+    $pane->pid = 'new-280f39d2-fef4-46b8-9826-0e39f2bc85be';
     $pane->panel = 'content';
-    $pane->type = 'user_register_form';
-    $pane->subtype = 'user_register_form';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title_heading' => 'h2',
-      'form_build_id' => 'form-jumAEj8vmAU2VEcx2UoFg2aMGhpt-bFrL7ga1arsHWw',
-      'form_token' => 'kt_Ktlfua7SOuZbQIOGCaaPugOs6qvdB7GGG3yaRHmc',
-      'form_id' => 'ctools_user_register_form_content_type_edit_form',
-      'override_title' => 1,
-      'override_title_text' => 'Registration',
+      'admin_title' => 'Registration step 1 marker',
+      'title' => 'Registration',
+      'body' => '<p><img src="/sites/all/themes/custom/badcamp2016/images/bc_reg_step_1.svg" /></p>
+',
+      'format' => 'full_html',
+      'substitute' => TRUE,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -133,9 +134,35 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
+    $pane->uuid = '280f39d2-fef4-46b8-9826-0e39f2bc85be';
+    $display->content['new-280f39d2-fef4-46b8-9826-0e39f2bc85be'] = $pane;
+    $display->panels['content'][0] = 'new-280f39d2-fef4-46b8-9826-0e39f2bc85be';
+    $pane = new stdClass();
+    $pane->pid = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
+    $pane->panel = 'content';
+    $pane->type = 'user_register_form';
+    $pane->subtype = 'user_register_form';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title_heading' => 'h2',
+      'form_build_id' => 'form-WDHNMSpb1AgHaQMHbgQxG5702_4x-Iuin1shi00QWvU',
+      'form_token' => 'Lxr5D3PZqjaGT_fvk_Pz8xX49gkxp63qaSlyL6nKWrM',
+      'form_id' => 'ctools_user_register_form_content_type_edit_form',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
     $pane->uuid = '4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
     $display->content['new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f'] = $pane;
-    $display->panels['content'][0] = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
+    $display->panels['content'][1] = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
   $handler->conf['display'] = $display;

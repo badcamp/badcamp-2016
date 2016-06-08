@@ -10,12 +10,13 @@
 function badcamp_mailchimp_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'user-user-field_user_mailchimp'
+  // Exported field_instance: 'user-user-field_user_mailchimp'.
   $field_instances['user-user-field_user_mailchimp'] = array(
     'bundle' => 'user',
     'default_value' => array(
       0 => array(
-        'subscribe' => 1,
+        'subscribe' => 0,
+        'is_default' => TRUE,
       ),
     ),
     'deleted' => 0,
@@ -35,10 +36,6 @@ function badcamp_mailchimp_field_default_field_instances() {
     'settings' => array(
       'interest_groups_title' => 'Interest Groups',
       'mergefields' => array(
-        'EMAIL' => '[user:mail]',
-        'MMERGE1' => '[user:field-user-first-name]',
-        'MMERGE2' => '[user:field-user-last-name]',
-        'MMERGE3' => '',
         'advanced' => 0,
       ),
       'options' => array(
@@ -54,7 +51,7 @@ function badcamp_mailchimp_field_default_field_instances() {
       'module' => 'mailchimp_lists',
       'settings' => array(),
       'type' => 'mailchimp_lists_select',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 

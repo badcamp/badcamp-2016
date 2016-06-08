@@ -123,7 +123,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -238,36 +238,10 @@ function badcamp_user_profile_field_default_field_instances() {
     'fences_wrapper' => 'no_wrapper',
     'field_name' => 'field_user_first_name',
     'label' => 'First name',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'mailchimp_campaign' => 0,
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'mailchimp_campaign' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
       'text_processing' => 0,
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -276,7 +250,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 0,
+      'weight' => 2,
     ),
   );
 
@@ -359,7 +333,7 @@ function badcamp_user_profile_field_default_field_instances() {
     'label' => 'I\'m interested in information about Drupal hosting',
     'required' => 0,
     'settings' => array(
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -368,7 +342,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -431,7 +405,7 @@ function badcamp_user_profile_field_default_field_instances() {
     'label' => 'I\'m interested in information about Drupal job opportunities',
     'required' => 0,
     'settings' => array(
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -440,7 +414,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -464,7 +438,7 @@ function badcamp_user_profile_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_user_interest_volunteering',
-    'label' => 'I would like to volunteer at BADCamp',
+    'label' => 'I would like to volunteer!',
     'required' => 0,
     'settings' => array(
       'user_register_form' => 1,
@@ -476,7 +450,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -533,36 +507,10 @@ function badcamp_user_profile_field_default_field_instances() {
     'fences_wrapper' => 'no_wrapper',
     'field_name' => 'field_user_last_name',
     'label' => 'Last name',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'mailchimp_campaign' => 0,
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'mailchimp_campaign' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
       'text_processing' => 0,
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -571,7 +519,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -596,34 +544,8 @@ function badcamp_user_profile_field_default_field_instances() {
     'label' => 'Organization',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'mailchimp_campaign' => 0,
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'mailchimp_campaign' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
       'text_processing' => 0,
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -632,7 +554,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -659,7 +581,7 @@ function badcamp_user_profile_field_default_field_instances() {
     'label' => 'I\'m interested in information about Drupal development services',
     'required' => 0,
     'settings' => array(
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -668,7 +590,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -756,7 +678,7 @@ function badcamp_user_profile_field_default_field_instances() {
     'label' => 'I would like Drupal training at BADCamp',
     'required' => 0,
     'settings' => array(
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -765,7 +687,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -834,7 +756,7 @@ function badcamp_user_profile_field_default_field_instances() {
   t('First name');
   t('Flickr profile');
   t('I would like Drupal training at BADCamp');
-  t('I would like to volunteer at BADCamp');
+  t('I would like to volunteer!');
   t('I\'m interested in information about Drupal development services');
   t('I\'m interested in information about Drupal hosting');
   t('I\'m interested in information about Drupal job opportunities');

@@ -11,7 +11,7 @@ function badcamp_contact_form_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'entityform-contact_form-field_contact_admin_category'
+  // 'entityform-contact_form-field_contact_admin_category'.
   $field_instances['entityform-contact_form-field_contact_admin_category'] = array(
     'bundle' => 'contact_form',
     'default_value' => NULL,
@@ -45,7 +45,7 @@ function badcamp_contact_form_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-contact_form-field_contact_admin_notes'
+  // 'entityform-contact_form-field_contact_admin_notes'.
   $field_instances['entityform-contact_form-field_contact_admin_notes'] = array(
     'bundle' => 'contact_form',
     'default_value' => NULL,
@@ -105,7 +105,7 @@ function badcamp_contact_form_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-contact_form-field_contact_admin_status'
+  // 'entityform-contact_form-field_contact_admin_status'.
   $field_instances['entityform-contact_form-field_contact_admin_status'] = array(
     'bundle' => 'contact_form',
     'default_value' => array(
@@ -139,7 +139,7 @@ function badcamp_contact_form_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-contact_form-field_contact_from'
+  // Exported field_instance: 'entityform-contact_form-field_contact_from'.
   $field_instances['entityform-contact_form-field_contact_from'] = array(
     'bundle' => 'contact_form',
     'default_value' => NULL,
@@ -197,7 +197,7 @@ function badcamp_contact_form_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-contact_form-field_contact_message'
+  // Exported field_instance: 'entityform-contact_form-field_contact_message'.
   $field_instances['entityform-contact_form-field_contact_message'] = array(
     'bundle' => 'contact_form',
     'default_value' => NULL,
@@ -253,7 +253,7 @@ function badcamp_contact_form_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-contact_form-field_contact_subject'
+  // Exported field_instance: 'entityform-contact_form-field_contact_subject'.
   $field_instances['entityform-contact_form-field_contact_subject'] = array(
     'bundle' => 'contact_form',
     'default_value' => NULL,

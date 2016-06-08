@@ -30,3 +30,34 @@ function badcamp_theme_update_7001() {
 function badcamp_theme_update_7002() {
   module_enable(array('pathologic'));
 }
+
+/**
+ * Enable the badcamp_user_reg module.
+ *
+ * @author jayme johnson
+ */
+function badcamp_theme_update_7003() {
+  module_enable(array('badcamp_user_reg'));
+}
+
+/**
+ * Database update to add weight to bad_camp_user_reg.
+ *
+ * @author jayme johnson
+ */
+function badcamp_theme_update_7004() {
+   // Get the weight of the module we want to compare against.
+  $weight = db_select('system', 's')
+    ->fields('s', array('weight'))
+    ->condition('name', 'user', '=')
+    ->execute()
+    ->fetchField();
+  var_dump($weight);
+
+  // Set our module to a weight 1 heavier, and thus lower
+  // in execution order.
+  db_update('system')
+    ->fields(array('weight' => $weight + 1))
+    ->condition('name', 'badcamp_user_reg', '=')
+    ->execute();
+}

@@ -1,6 +1,64 @@
+input {
+  font-size: 18px;
+  color: $badcamp-dk-grey;
+}
 .page-registration {
   color: $badcamp-off-white;
-  label {
-    color: $badcamp-off-white;
+  .pane-title {
+    font-size: 36px;
+    text-transform: none;
+    color: $badcamp-lt-blue;
+    margin-bottom: 36px;
+    &:before, &:after {
+      content: none;
+    }
+  }
+  .pane-user-register-form {
+    margin-top: 60px;
+  }
+  #user-register-form {
+    .form-actions {
+      position: relative;
+      &:after {
+        @include css-triangle(9px, $badcamp-off-white, right);
+        position: absolute;
+        top: 11px;
+        right: 270px;
+      }
+    }
+    label {
+      color: $badcamp-off-white;
+    }
+    .form-submit {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: 42px;
+
+    }
+
+    .field-name-field-user-interest-volunteering, .field-name-field-user-mailchimp {
+      display: inline-block;
+      width: 49%;
+    }
+    .form-type-checkbox {
+      .form-checkbox {
+        margin-top: 12px;
+      }
+    }
+    .field-type-mailchimp-lists-subscription {
+      legend {
+        display: none;
+      }
+    }
+    .form-type-password-confirm {
+      .description {
+        display: none;
+      }
+    }
+    .confirm-parent {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
   }
 }

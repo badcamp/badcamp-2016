@@ -10,7 +10,7 @@
 function badcamp_contact_form_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_contact_admin_category'
+  // Exported field_base: 'field_contact_admin_category'.
   $field_bases['field_contact_admin_category'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -39,7 +39,7 @@ function badcamp_contact_form_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_contact_admin_notes'
+  // Exported field_base: 'field_contact_admin_notes'.
   $field_bases['field_contact_admin_notes'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -61,7 +61,7 @@ function badcamp_contact_form_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_contact_admin_status'
+  // Exported field_base: 'field_contact_admin_status'.
   $field_bases['field_contact_admin_status'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -90,7 +90,7 @@ function badcamp_contact_form_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_contact_from'
+  // Exported field_base: 'field_contact_from'.
   $field_bases['field_contact_from'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -114,7 +114,7 @@ function badcamp_contact_form_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_contact_message'
+  // Exported field_base: 'field_contact_message'.
   $field_bases['field_contact_message'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -136,7 +136,7 @@ function badcamp_contact_form_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_contact_subject'
+  // Exported field_base: 'field_contact_subject'.
   $field_bases['field_contact_subject'] = array(
     'active' => 1,
     'cardinality' => 1,

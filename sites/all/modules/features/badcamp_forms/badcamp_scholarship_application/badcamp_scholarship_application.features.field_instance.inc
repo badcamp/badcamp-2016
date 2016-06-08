@@ -11,7 +11,7 @@ function badcamp_scholarship_application_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'entityform-scholarship_application-field_sa_assistance_needed'
+  // 'entityform-scholarship_application-field_sa_assistance_needed'.
   $field_instances['entityform-scholarship_application-field_sa_assistance_needed'] = array(
     'bundle' => 'scholarship_application',
     'default_value' => NULL,
@@ -43,7 +43,7 @@ function badcamp_scholarship_application_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-scholarship_application-field_sa_drupal_org_name'
+  // 'entityform-scholarship_application-field_sa_drupal_org_name'.
   $field_instances['entityform-scholarship_application-field_sa_drupal_org_name'] = array(
     'bundle' => 'scholarship_application',
     'default_value' => NULL,
@@ -100,7 +100,7 @@ function badcamp_scholarship_application_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-scholarship_application-field_sa_email'
+  // 'entityform-scholarship_application-field_sa_email'.
   $field_instances['entityform-scholarship_application-field_sa_email'] = array(
     'bundle' => 'scholarship_application',
     'default_value' => NULL,
@@ -155,7 +155,7 @@ function badcamp_scholarship_application_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-scholarship_application-field_sa_first_name'
+  // 'entityform-scholarship_application-field_sa_first_name'.
   $field_instances['entityform-scholarship_application-field_sa_first_name'] = array(
     'bundle' => 'scholarship_application',
     'default_value' => NULL,
@@ -212,7 +212,7 @@ function badcamp_scholarship_application_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-scholarship_application-field_sa_last_name'
+  // 'entityform-scholarship_application-field_sa_last_name'.
   $field_instances['entityform-scholarship_application-field_sa_last_name'] = array(
     'bundle' => 'scholarship_application',
     'default_value' => NULL,
@@ -269,7 +269,7 @@ function badcamp_scholarship_application_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-scholarship_application-field_sa_reason_for_scholarship'
+  // 'entityform-scholarship_application-field_sa_reason_for_scholarship'.
   $field_instances['entityform-scholarship_application-field_sa_reason_for_scholarship'] = array(
     'bundle' => 'scholarship_application',
     'default_value' => NULL,
@@ -330,7 +330,7 @@ function badcamp_scholarship_application_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-scholarship_application-field_sa_skype_name'
+  // 'entityform-scholarship_application-field_sa_skype_name'.
   $field_instances['entityform-scholarship_application-field_sa_skype_name'] = array(
     'bundle' => 'scholarship_application',
     'default_value' => NULL,
@@ -387,7 +387,7 @@ function badcamp_scholarship_application_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-scholarship_application-field_sa_willing_to_volunteer'
+  // 'entityform-scholarship_application-field_sa_willing_to_volunteer'.
   $field_instances['entityform-scholarship_application-field_sa_willing_to_volunteer'] = array(
     'bundle' => 'scholarship_application',
     'default_value' => array(

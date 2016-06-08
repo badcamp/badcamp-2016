@@ -21,12 +21,9 @@ function badcamp_user_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Administration settings',
-    'weight' => '14',
+    'weight' => '15',
     'children' => array(
-      0 => 'googleanalytics',
-      1 => 'metatags',
-      2 => 'rabbit_hole',
-      3 => 'redirect',
+      0 => 'metatags',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -51,13 +48,13 @@ function badcamp_user_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Camper information',
-    'weight' => '11',
+    'weight' => '12',
     'children' => array(
-      0 => 'field_user_featured_attendee',
-      1 => 'field_user_title_role',
-      2 => 'field_user_bio',
+      0 => 'field_user_bio',
+      1 => 'field_user_featured_attendee',
+      2 => 'field_user_individual_sponsor',
       3 => 'field_user_interests',
-      4 => 'field_user_individual_sponsor',
+      4 => 'field_user_title_role',
       5 => 'picture',
     ),
     'format_type' => 'tab',
@@ -144,7 +141,7 @@ function badcamp_user_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Personal settings',
-    'weight' => '13',
+    'weight' => '14',
     'children' => array(
       0 => 'ckeditor',
       1 => 'timezone',
@@ -172,11 +169,11 @@ function badcamp_user_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Social media',
-    'weight' => '12',
+    'weight' => '13',
     'children' => array(
-      0 => 'field_user_twitter_handle',
-      1 => 'field_user_facebook_profile',
-      2 => 'field_user_flickr_profile',
+      0 => 'field_user_facebook_profile',
+      1 => 'field_user_flickr_profile',
+      2 => 'field_user_twitter_handle',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -202,9 +199,7 @@ function badcamp_user_profile_field_group_info() {
   $field_group->data = array(
     'label' => 'User information',
     'weight' => '0',
-    'children' => array(
-      0 => 'account',
-    ),
+    'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',

@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function badcamp_contact_form_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -39,7 +39,11 @@ function badcamp_contact_form_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_contact_admin|entityform|contact_form|form'] = $field_group;
+  $field_groups['group_contact_admin|entityform|contact_form|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Administration');
+
+  return $field_groups;
 }

@@ -10,7 +10,7 @@
 function badcamp_mailchimp_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_user_mailchimp'
+  // Exported field_base: 'field_user_mailchimp'.
   $field_bases['field_user_mailchimp'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -27,6 +27,7 @@ function badcamp_mailchimp_field_default_field_bases() {
       'double_opt_in' => 1,
       'mc_list_id' => '1da9db51fe',
       'send_welcome' => 1,
+      'unsubscribe_action' => 'remove',
     ),
     'translatable' => 0,
     'type' => 'mailchimp_lists_subscription',

@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * Implements hook_form_ID_alter
+ */
+
+function badcamp_user_reg_form_user_register_form_alter(&$form, &$form_state, $form_id) {
+  $form['account']['name']['#attributes']['placeholder'] = t('Username (optional display name)');
+  $form['account']['mail']['#attributes']['placeholder'] = t('Email Address');
+  $form['account']['conf_mail']['#attributes']['placeholder'] = t('Confirm Email Address');
+  $form['field_user_drupalorg_username']['und'][0]['value']['#attributes']['placeholder'] = t('drupal.org username');
+  $form['actions']['submit']['#value'] = t('Next');
+
+  // Remove these lines if you want to show the field labels.
+  $form['account']['name']['#title_display'] = 'invisible';
+  $form['account']['mail']['#title_display'] = 'invisible';
+  $form['account']['conf_mail']['#title_display'] = 'invisible';
+  $form['field_user_drupalorg_username']['und'][0]['value']['#title_display'] = 'invisible';
+
+  // Remove these lines if you want to show the field description text
+  unset($form['account']['name']['#description']);
+  unset($form['account']['mail']['#description']);
+  unset($form['account']['conf_mail']['#description']);
+
+}
+
+/**
+ * Implements hook_element_info_alter ()
+ */
+function badcamp_user_reg_element_info_alter (& $type) {
+  if (isset($type['password_confirm']['#process'])) {
+    $func = '_badcamp_user_reg_process_password_confirm';
+
+    $type['password_confirm']['#process'][] = $func;
+  }
+
+  return $type;
+}
+
+/**
+ * Do a bit of processing for the password_confirm element.
+ * Original processing happens in expand_password_confirm()
+ */
+function _badcamp_user_reg_process_password_confirm ($element) {
+  $element['pass1']['#attributes']['placeholder'] = $element['pass1']['#title'];
+  $element['pass2']['#attributes']['placeholder'] = $element['pass2']['#title'];
+
+  // Remove these lines if you want to show the field labels.
+  $element['pass1']['#title_display'] = 'invisible';
+  $element['pass2']['#title_display'] = 'invisible';
+
+  return $element;
+}
+

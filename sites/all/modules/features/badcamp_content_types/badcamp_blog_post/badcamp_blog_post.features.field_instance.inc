@@ -10,7 +10,7 @@
 function badcamp_blog_post_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-blog_post-body'
+  // Exported field_instance: 'node-blog_post-body'.
   $field_instances['node-blog_post-body'] = array(
     'bundle' => 'blog_post',
     'default_value' => NULL,
@@ -81,7 +81,7 @@ function badcamp_blog_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-field_blog_tags'
+  // Exported field_instance: 'node-blog_post-field_blog_tags'.
   $field_instances['node-blog_post-field_blog_tags'] = array(
     'bundle' => 'blog_post',
     'default_value' => array(

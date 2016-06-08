@@ -9,7 +9,6 @@ dependencies[] = badcamp_site_config
 dependencies[] = ctools
 dependencies[] = date
 dependencies[] = eck
-dependencies[] = eck
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = list

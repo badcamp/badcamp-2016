@@ -24,12 +24,6 @@ function badcamp_my_schedule_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'My Schedule';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'user_and_role';
-  $handler->display->display_options['access']['role'] = array(
-    3 => '3',
-    2 => '2',
-  );
-  $handler->display->display_options['access']['contextual_match'] = 1;
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -156,7 +150,7 @@ function badcamp_my_schedule_views_default_views() {
   $handler->display->display_options['sorts']['field_session_date_and_time_value']['id'] = 'field_session_date_and_time_value';
   $handler->display->display_options['sorts']['field_session_date_and_time_value']['table'] = 'field_data_field_session_date_and_time';
   $handler->display->display_options['sorts']['field_session_date_and_time_value']['field'] = 'field_session_date_and_time_value';
-  /* Sort criterion: Content: Event date and time -  start date (field_event_date_and_time) */
+  /* Sort criterion: Content: Event date and time (field_event_date_and_time) */
   $handler->display->display_options['sorts']['field_event_date_and_time_value']['id'] = 'field_event_date_and_time_value';
   $handler->display->display_options['sorts']['field_event_date_and_time_value']['table'] = 'field_data_field_event_date_and_time';
   $handler->display->display_options['sorts']['field_event_date_and_time_value']['field'] = 'field_event_date_and_time_value';
@@ -440,7 +434,7 @@ function badcamp_my_schedule_views_default_views() {
   $handler->display->display_options['fields']['nothing']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Date and Time -  start date (field_training_date_time) */
+  /* Sort criterion: Content: Date and Time (field_training_date_time) */
   $handler->display->display_options['sorts']['field_training_date_time_value']['id'] = 'field_training_date_time_value';
   $handler->display->display_options['sorts']['field_training_date_time_value']['table'] = 'field_data_field_training_date_time';
   $handler->display->display_options['sorts']['field_training_date_time_value']['field'] = 'field_training_date_time_value';
