@@ -347,7 +347,7 @@ function badcamp_sponsors_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div>Alpha Sponsors</div>';
+  $handler->display->display_options['header']['area']['content'] = '<h3>Alpha Sponsors</h3>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
