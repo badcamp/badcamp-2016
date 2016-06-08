@@ -1,0 +1,57 @@
+//styles used in views
+//h3 for sponsors grouping and news item titles
+h3 {
+  font-family: $font-family-orbitron;
+  color: $badcamp-lt-blue;
+  letter-spacing: rem-calc(1.56);
+  padding-bottom: rem-calc(28);
+  padding-top: rem-calc(28);
+  font-weight: normal;
+}
+
+//sponsors view
+.pane-sponsors-panel-pane-1 {
+  h3.pane-title {
+    &:before {
+      content: none;
+    }
+    &:after {
+      content: none;
+    }
+    font-weight: normal;
+    text-align: left;
+  }
+}
+
+// news view
+.pane-badcamp-news-panel-pane-1
+h2.pane-title{
+  margin-bottom: 40px;
+}
+
+.view-badcamp-news {
+  h3.field-content {
+    /* Title of News/Events: */
+    text-align: left;
+    font-family: $font-family-play;
+    font-weight: bold;
+    text-transform: none;
+    font-size: rem-calc(28);
+    letter-spacing: 1.82px;
+    padding-bottom: rem-calc(8);
+  }
+  a {
+    color: $badcamp-lt-blue;
+  }
+  p {
+    font-family: $font-family-opensans;
+    font-size: rem-calc(18);
+    color: #FFFFFF;
+    letter-spacing: 0px;
+    line-height:  rem-calc(28);
+    padding-bottom: 30px;
+    padding-top: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 40px;
+  }
+}

@@ -25,3 +25,24 @@ $header-font-color: $badcamp-header-white;
 $body-background: black;
 $body-font-family: $font-family-play;
 $body-font-color: $badcamp-off-white;
+
+
+//change the h3 size
+$header-sizes: (
+  small: (
+    'h1': 24,
+    'h2': 20,
+    'h3': 19,
+    'h4': 18,
+    'h5': 17,
+    'h6': 16,
+  ),
+  medium: (
+    'h1': 48,
+    'h2': 40,
+    'h3': 24,
+    'h4': 25,
+    'h5': 20,
+    'h6': 16,
+  ),
+) !default;
