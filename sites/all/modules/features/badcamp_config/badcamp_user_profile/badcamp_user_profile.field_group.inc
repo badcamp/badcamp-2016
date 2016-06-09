@@ -21,7 +21,7 @@ function badcamp_user_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Administration settings',
-    'weight' => '15',
+    'weight' => '23',
     'children' => array(
       0 => 'metatags',
     ),
@@ -48,14 +48,11 @@ function badcamp_user_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Camper information',
-    'weight' => '12',
+    'weight' => '14',
     'children' => array(
-      0 => 'field_user_bio',
-      1 => 'field_user_featured_attendee',
-      2 => 'field_user_individual_sponsor',
-      3 => 'field_user_interests',
-      4 => 'field_user_title_role',
-      5 => 'picture',
+      0 => 'field_user_featured_attendee',
+      1 => 'field_user_individual_sponsor',
+      2 => 'picture',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -83,9 +80,9 @@ function badcamp_user_profile_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'field_user_drupalorg_username',
-      1 => 'field_user_twitter_handle',
-      2 => 'field_user_facebook_profile',
-      3 => 'field_user_flickr_profile',
+      1 => 'field_user_facebook_profile',
+      2 => 'field_user_flickr_profile',
+      3 => 'field_user_twitter_handle',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -109,15 +106,15 @@ function badcamp_user_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Participation',
-    'weight' => '9',
+    'weight' => '8',
     'children' => array(
       0 => 'field_user_featured_attendee',
-      1 => 'field_user_interest_volunteering',
-      2 => 'field_user_interest_jobs',
-      3 => 'field_user_individual_sponsor',
-      4 => 'field_user_training_interest',
-      5 => 'field_user_hosting',
-      6 => 'field_user_services',
+      1 => 'field_user_hosting',
+      2 => 'field_user_individual_sponsor',
+      3 => 'field_user_interest_jobs',
+      4 => 'field_user_interest_volunteering',
+      5 => 'field_user_services',
+      6 => 'field_user_training_interest',
     ),
     'format_type' => 'hidden',
     'format_settings' => array(
@@ -141,7 +138,7 @@ function badcamp_user_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Personal settings',
-    'weight' => '14',
+    'weight' => '22',
     'children' => array(
       0 => 'ckeditor',
       1 => 'timezone',
@@ -169,12 +166,8 @@ function badcamp_user_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Social media',
-    'weight' => '13',
-    'children' => array(
-      0 => 'field_user_facebook_profile',
-      1 => 'field_user_flickr_profile',
-      2 => 'field_user_twitter_handle',
-    ),
+    'weight' => '16',
+    'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',

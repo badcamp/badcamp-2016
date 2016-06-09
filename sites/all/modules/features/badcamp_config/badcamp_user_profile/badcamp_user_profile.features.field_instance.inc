@@ -62,7 +62,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 39,
+      'weight' => 15,
     ),
   );
 
@@ -123,7 +123,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -179,7 +179,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 19,
     ),
   );
 
@@ -250,7 +250,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -306,7 +306,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 20,
     ),
   );
 
@@ -342,7 +342,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 9,
+      'weight' => 11,
     ),
   );
 
@@ -414,7 +414,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 8,
+      'weight' => 10,
     ),
   );
 
@@ -450,7 +450,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -484,7 +484,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 40,
+      'weight' => 21,
     ),
   );
 
@@ -519,7 +519,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -541,7 +541,7 @@ function badcamp_user_profile_field_default_field_instances() {
     'entity_type' => 'user',
     'fences_wrapper' => 'no_wrapper',
     'field_name' => 'field_user_organization',
-    'label' => 'Organization',
+    'label' => 'Company',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -554,7 +554,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
@@ -590,7 +590,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -612,35 +612,9 @@ function badcamp_user_profile_field_default_field_instances() {
     'entity_type' => 'user',
     'fences_wrapper' => 'no_wrapper',
     'field_name' => 'field_user_title_role',
-    'label' => 'Title/Role',
+    'label' => 'Title',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'mailchimp_campaign' => 0,
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'mailchimp_campaign' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -651,7 +625,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 38,
+      'weight' => 5,
     ),
   );
 
@@ -687,7 +661,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -743,13 +717,14 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 18,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Bio');
+  t('Company');
   t('Drupal.org username');
   t('Facebook profile');
   t('Featured attendee');
@@ -763,8 +738,7 @@ function badcamp_user_profile_field_default_field_instances() {
   t('Individual sponsor');
   t('Interests');
   t('Last name');
-  t('Organization');
-  t('Title/Role');
+  t('Title');
   t('Twitter handle');
 
   return $field_instances;

@@ -29,13 +29,53 @@ function badcamp_registration_page_form_user_pass_alter(&$form, &$form_state) {
 /**
  * Implements hook_form_ID_alter().
  */
+function badcamp_registration_page_form_alter(&$form, &$form_state, $form_id) {
+  if (in_array($form_id, array(
+    'user_profile_form',
+    'user_register_form',
+  ))) {
+    $form['account']['name']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+    $form['account']['pass']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+    $form['account']['conf_mail']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+    $form['field_user_interests']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+    $form['field_user_bio']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+    $form['field_user_organization']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+    $form['field_user_twitter_handle']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+    $form['field_user_facebook_profile']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+    $form['field_user_flickr_profile']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+    $form['field_user_title_role']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+  }
+}
+
+/**
+ * Implements hook_form_ID_alter().
+ */
 function badcamp_registration_page_form_user_register_form_alter(&$form, &$form_state, $form_id) {
-  $form['account']['name']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+  $form['field_user_first_name']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+  $form['field_user_last_name']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
   $form['account']['mail']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
-  $form['account']['pass']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
-  $form['account']['conf_mail']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
   $form['field_user_drupalorg_username']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
   $form['actions']['submit']['#value'] = t('Next');
+}
+
+/**
+ * Implements hook_form_ID_alter().
+ */
+function badcamp_registration_page_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
+  $form['field_first_name_last_name']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+  $form['field_do_profile']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+  $form['actions']['submit']['#value'] = t('Skip/Finish');
+  $form['field_user_drupalorg_username'] = NULL;
+  $form['account']['mail'] = NULL;
+  $form['account']['pass'] = NULL;
+  $form['field_user_interest_volunteering'] = NULL;
+  $form['field_user_training_interest'] = NULL;
+  $form['field_user_interest_jobs'] = NULL;
+  $form['field_user_hosting'] = NULL;
+  $form['field_user_services'] = NULL;
+  $form['field_user_mailchimp'] = NULL;
+  $form['field_user_first_name'] = NULL;
+  $form['field_user_last_name'] = NULL;
 }
 
 /**
@@ -48,11 +88,13 @@ function _badcamp_registration_page_form_pre_render_element($element) {
     }
     return $element;
   }
-  $element['#title'] = $element['#required'] ? $element['#title'] . '*' : $element['#title'];
-  $element['#attributes']['placeholder'] = $element['#title'];
-  $element['#title_display'] = 'invisible';
-  $element['#description'] = NULL;
-  return $element;
+  if (isset($element['#title'])) {
+    $element['#title'] = $element['#required'] ? $element['#title'] . '*' : $element['#title'];
+    $element['#attributes']['placeholder'] = $element['#title'];
+    $element['#title_display'] = 'invisible';
+    $element['#description'] = NULL;
+    return $element;
+  }
 }
 
 /**

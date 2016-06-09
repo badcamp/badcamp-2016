@@ -1,6 +1,40 @@
 //General form styles.
+input::-webkit-input-placeholder {
+  color: $badcamp-dk-grey !important;
+}
+input:-moz-placeholder { /* Firefox 18- */
+  color: $badcamp-dk-grey !important;
+}
+input::-moz-placeholder {  /* Firefox 19+ */
+  color: $badcamp-dk-grey !important;
+}
+input:-ms-input-placeholder {
+  color: $badcamp-dk-grey !important;
+}
+textarea::-webkit-input-placeholder {
+  color: $badcamp-dk-grey !important;
+}
+textarea:-moz-placeholder { /* Firefox 18- */
+  color: $badcamp-dk-grey !important;
+}
+textarea::-moz-placeholder {  /* Firefox 19+ */
+  color: $badcamp-dk-grey !important;
+}
+textarea:-ms-input-placeholder {
+  color: $badcamp-dk-grey !important;
+}
+//Geesh... if there any other way that worked.
+
 label {
   color: $badcamp-off-white;
+}
+
+.form-submit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 42px;
+
 }
 
 //User registration page styles.
@@ -60,5 +94,48 @@ label {
   .confirm-parent {
     margin-top: 1em;
     margin-bottom: 1em;
+  }
+}
+
+//Profile edit page styles.
+.user-profile {
+  @include breakpoint(medium up) {
+    margin-right: 96px;
+  }
+  .field-name-field-first-name-last-name,
+  .field-name-field-user-title-role,
+  #edit-account,
+  .field-name-field-user-organization,
+  .field-name-field-do-profile,
+  .field-name-field-user-twitter-handle,
+  .field-name-field-user-facebook-profile,
+  .field-name-field-user-flickr-profile {
+    @include breakpoint(medium up) {
+      max-width: 48%;
+      display: inline-block;
+    }
+  }
+  .field-name-field-user-title-role,
+  #edit-account,
+  .field-name-field-do-profile,
+  .field-name-field-user-facebook-profile {
+    @include breakpoint(medium up) {
+      float: left;
+    }
+  }
+  .field-name-field-first-name-last-name,
+  .field-name-field-user-organization,
+  .field-name-field-user-twitter-handle,
+  .field-name-field-user-flickr-profile {
+    @include breakpoint(medium up) {
+      float: right;
+    }
+  }
+  .form-submit {
+    padding: 0.85em 1em;
+  }
+  fieldset.form-wrapper {
+    height: 0;
+    padding:0;
   }
 }

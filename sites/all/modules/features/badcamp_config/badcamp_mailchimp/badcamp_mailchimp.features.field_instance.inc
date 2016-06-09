@@ -26,7 +26,7 @@ function badcamp_mailchimp_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'user',
@@ -51,7 +51,7 @@ function badcamp_mailchimp_field_default_field_instances() {
       'module' => 'mailchimp_lists',
       'settings' => array(),
       'type' => 'mailchimp_lists_select',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 

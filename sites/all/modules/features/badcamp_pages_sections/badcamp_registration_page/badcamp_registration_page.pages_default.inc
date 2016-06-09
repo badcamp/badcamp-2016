@@ -210,7 +210,16 @@ function badcamp_registration_page_default_page_manager_pages() {
         'id' => 1,
       ),
     ),
-    'relationships' => array(),
+    'relationships' => array(
+      0 => array(
+        'identifier' => 'User category edit form from user (fixed)',
+        'keyword' => 'user_category_form',
+        'name' => 'user_category_edit_form_from_user',
+        'category' => '',
+        'context' => 'context_user_1',
+        'id' => 1,
+      ),
+    ),
     'name' => 'panel',
   );
   $display = new panels_display();
@@ -256,18 +265,13 @@ function badcamp_registration_page_default_page_manager_pages() {
     $display->content['new-7b95b0d4-d042-4e6a-b781-6ab9d0160f2a'] = $pane;
     $display->panels['header'][0] = 'new-7b95b0d4-d042-4e6a-b781-6ab9d0160f2a';
     $pane = new stdClass();
-    $pane->pid = 'new-7d77fe88-ccd0-4b7f-bc7e-8b2ddd562baa';
+    $pane->pid = 'new-8b167625-cdb2-4025-ba76-3d31cd7dbbc0';
     $pane->panel = 'image';
-    $pane->type = 'user_picture';
-    $pane->subtype = 'user_picture';
+    $pane->type = 'user_picture_edit';
+    $pane->subtype = 'user_picture_edit';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'context_user_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -276,20 +280,19 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '7d77fe88-ccd0-4b7f-bc7e-8b2ddd562baa';
-    $display->content['new-7d77fe88-ccd0-4b7f-bc7e-8b2ddd562baa'] = $pane;
-    $display->panels['image'][0] = 'new-7d77fe88-ccd0-4b7f-bc7e-8b2ddd562baa';
+    $pane->uuid = '8b167625-cdb2-4025-ba76-3d31cd7dbbc0';
+    $display->content['new-8b167625-cdb2-4025-ba76-3d31cd7dbbc0'] = $pane;
+    $display->panels['image'][0] = 'new-8b167625-cdb2-4025-ba76-3d31cd7dbbc0';
     $pane = new stdClass();
-    $pane->pid = 'new-982fc08c-c310-40ae-b46a-5d9ee5e4ba9d';
+    $pane->pid = 'new-378633d1-dd8d-4040-ac8e-6a001deba04b';
     $pane->panel = 'main';
-    $pane->type = 'user_profile';
-    $pane->subtype = 'user_profile';
+    $pane->type = 'form';
+    $pane->subtype = 'form';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'view_mode' => 'full',
-      'context' => 'context_user_1',
-      'override_title' => 1,
+      'context' => 'relationship_user_category_edit_form_from_user_1',
+      'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -301,9 +304,9 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '982fc08c-c310-40ae-b46a-5d9ee5e4ba9d';
-    $display->content['new-982fc08c-c310-40ae-b46a-5d9ee5e4ba9d'] = $pane;
-    $display->panels['main'][0] = 'new-982fc08c-c310-40ae-b46a-5d9ee5e4ba9d';
+    $pane->uuid = '378633d1-dd8d-4040-ac8e-6a001deba04b';
+    $display->content['new-378633d1-dd8d-4040-ac8e-6a001deba04b'] = $pane;
+    $display->panels['main'][0] = 'new-378633d1-dd8d-4040-ac8e-6a001deba04b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
