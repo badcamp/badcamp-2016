@@ -42,7 +42,7 @@ function badcamp_registration_page_form_alter(&$form, &$form_state, $form_id) {
     $form['field_user_organization']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
     $form['field_user_twitter_handle']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
     $form['field_user_facebook_profile']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
-    $form['field_user_flickr_profile']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+    $form['field_user_linkedin']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
     $form['field_user_title_role']['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
   }
 }
@@ -71,6 +71,7 @@ function badcamp_registration_page_form_user_profile_form_alter(&$form, &$form_s
   $form['field_user_interest_volunteering'] = NULL;
   $form['field_user_training_interest'] = NULL;
   $form['field_user_interest_jobs'] = NULL;
+  $form['field_user_flickr_profile'] = NULL;
   $form['field_user_hosting'] = NULL;
   $form['field_user_services'] = NULL;
   $form['field_user_mailchimp'] = NULL;

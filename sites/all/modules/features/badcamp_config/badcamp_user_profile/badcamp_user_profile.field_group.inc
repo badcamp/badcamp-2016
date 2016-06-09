@@ -21,7 +21,7 @@ function badcamp_user_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Administration settings',
-    'weight' => '23',
+    'weight' => '24',
     'children' => array(
       0 => 'metatags',
     ),
@@ -138,7 +138,7 @@ function badcamp_user_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Personal settings',
-    'weight' => '22',
+    'weight' => '23',
     'children' => array(
       0 => 'ckeditor',
       1 => 'timezone',

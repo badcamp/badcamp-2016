@@ -4035,7 +4035,7 @@ label {
   .user-profile .field-name-field-do-profile,
   .user-profile .field-name-field-user-twitter-handle,
   .user-profile .field-name-field-user-facebook-profile,
-  .user-profile .field-name-field-user-flickr-profile {
+  .user-profile .field-name-field-user-linkedin {
     max-width: 48%;
     display: inline-block; } }
 
@@ -4050,7 +4050,7 @@ label {
   .user-profile .field-name-field-first-name-last-name,
   .user-profile .field-name-field-user-organization,
   .user-profile .field-name-field-user-twitter-handle,
-  .user-profile .field-name-field-user-flickr-profile {
+  .user-profile .field-name-field-user-linkedin {
     float: right; } }
 
 .user-profile .form-submit {

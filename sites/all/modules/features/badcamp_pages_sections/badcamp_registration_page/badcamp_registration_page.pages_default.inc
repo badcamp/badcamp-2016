@@ -365,13 +365,15 @@ function badcamp_registration_page_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'badcamp2016_1col';
+  $display->layout = 'badcamp2016_sponsorship1col';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
       'content' => NULL,
+      'header' => NULL,
+      'main' => NULL,
     ),
   );
   $display->cache = array();
@@ -380,8 +382,67 @@ function badcamp_registration_page_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-e6fdb089-a86f-4bb2-b486-95cf223868f1';
+    $pane->panel = 'header';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Registration Progress Bar Step 2',
+      'title' => 'Registration ',
+      'body' => '<p><img src="/sites/all/themes/custom/badcamp2016/images/bc_reg_step_2.svg" /></p>
+',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e6fdb089-a86f-4bb2-b486-95cf223868f1';
+    $display->content['new-e6fdb089-a86f-4bb2-b486-95cf223868f1'] = $pane;
+    $display->panels['header'][0] = 'new-e6fdb089-a86f-4bb2-b486-95cf223868f1';
+    $pane = new stdClass();
+    $pane->pid = 'new-9f8939c0-f3ca-4619-b881-5e2024c1d4dc';
+    $pane->panel = 'main';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Reg Sponsorship Copy',
+      'title' => '',
+      'body' => '<p class="p1"><span class="s1">Do you think BADCamp is awesome? Would you be willing to pay for your ticket?</span></p>
+
+<p class="p1"><span class="s1">If so, then you can give back to the camp by purchasing an individual sponsorship level most comfortable for you.</span></p>
+
+<p class="p1"><span class="s1">As a bonus, all individual sponsor will recieve BADCamp T-shirt.</span></p>
+',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'sponsorship-overview',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '9f8939c0-f3ca-4619-b881-5e2024c1d4dc';
+    $display->content['new-9f8939c0-f3ca-4619-b881-5e2024c1d4dc'] = $pane;
+    $display->panels['main'][0] = 'new-9f8939c0-f3ca-4619-b881-5e2024c1d4dc';
+    $pane = new stdClass();
     $pane->pid = 'new-6b15a30f-98a0-4942-8bc7-aec60d4dbfeb';
-    $pane->panel = 'content';
+    $pane->panel = 'main';
     $pane->type = 'donation_options';
     $pane->subtype = 'donation_options';
     $pane->shown = TRUE;
@@ -399,11 +460,11 @@ function badcamp_registration_page_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '6b15a30f-98a0-4942-8bc7-aec60d4dbfeb';
     $display->content['new-6b15a30f-98a0-4942-8bc7-aec60d4dbfeb'] = $pane;
-    $display->panels['content'][0] = 'new-6b15a30f-98a0-4942-8bc7-aec60d4dbfeb';
+    $display->panels['main'][1] = 'new-6b15a30f-98a0-4942-8bc7-aec60d4dbfeb';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

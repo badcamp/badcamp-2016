@@ -144,31 +144,9 @@ function badcamp_user_profile_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_user_facebook_profile',
-    'label' => 'Facebook profile',
+    'label' => 'Facebook',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -306,7 +284,7 @@ function badcamp_user_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 22,
     ),
   );
 
@@ -682,31 +660,9 @@ function badcamp_user_profile_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_user_twitter_handle',
-    'label' => 'Twitter handle',
+    'label' => 'Twitter',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
-      ),
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -726,7 +682,7 @@ function badcamp_user_profile_field_default_field_instances() {
   t('Bio');
   t('Company');
   t('Drupal.org username');
-  t('Facebook profile');
+  t('Facebook');
   t('Featured attendee');
   t('First name');
   t('Flickr profile');
@@ -739,7 +695,7 @@ function badcamp_user_profile_field_default_field_instances() {
   t('Interests');
   t('Last name');
   t('Title');
-  t('Twitter handle');
+  t('Twitter');
 
   return $field_instances;
 }

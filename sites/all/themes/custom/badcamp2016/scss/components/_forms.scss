@@ -109,7 +109,7 @@ label {
   .field-name-field-do-profile,
   .field-name-field-user-twitter-handle,
   .field-name-field-user-facebook-profile,
-  .field-name-field-user-flickr-profile {
+  .field-name-field-user-linkedin {
     @include breakpoint(medium up) {
       max-width: 48%;
       display: inline-block;
@@ -126,7 +126,7 @@ label {
   .field-name-field-first-name-last-name,
   .field-name-field-user-organization,
   .field-name-field-user-twitter-handle,
-  .field-name-field-user-flickr-profile {
+  .field-name-field-user-linkedin {
     @include breakpoint(medium up) {
       float: right;
     }
