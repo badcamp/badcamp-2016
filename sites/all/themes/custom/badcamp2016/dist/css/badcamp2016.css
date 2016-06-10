@@ -1486,19 +1486,19 @@ textarea {
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #cacaca; }
+  color: #010101; }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #cacaca; }
+  color: #010101; }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #cacaca; }
+  color: #010101; }
 
 input::placeholder,
 textarea::placeholder {
-  color: #cacaca; }
+  color: #010101; }
 
 input:disabled, input[readonly],
 textarea:disabled,
@@ -3936,34 +3936,6 @@ ul.tabs li a:hover {
   padding-top: 3.625rem;
   margin-top: -18px; }
 
-input::-webkit-input-placeholder {
-  color: #010101 !important; }
-
-input:-moz-placeholder {
-  /* Firefox 18- */
-  color: #010101 !important; }
-
-input::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #010101 !important; }
-
-input:-ms-input-placeholder {
-  color: #010101 !important; }
-
-textarea::-webkit-input-placeholder {
-  color: #010101 !important; }
-
-textarea:-moz-placeholder {
-  /* Firefox 18- */
-  color: #010101 !important; }
-
-textarea::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #010101 !important; }
-
-textarea:-ms-input-placeholder {
-  color: #010101 !important; }
-
 label {
   color: #FEFEFE; }
 
@@ -4023,42 +3995,9 @@ label {
   margin-top: 1em;
   margin-bottom: 1em; }
 
-@media screen and (min-width: 40em) {
-  .user-profile {
-    margin-right: 96px; } }
-
-@media screen and (min-width: 40em) {
-  .user-profile .field-name-field-first-name-last-name,
-  .user-profile .field-name-field-user-title-role,
-  .user-profile #edit-account,
-  .user-profile .field-name-field-user-organization,
-  .user-profile .field-name-field-do-profile,
-  .user-profile .field-name-field-user-twitter-handle,
-  .user-profile .field-name-field-user-facebook-profile,
-  .user-profile .field-name-field-user-linkedin {
-    max-width: 48%;
-    display: inline-block; } }
-
-@media screen and (min-width: 40em) {
-  .user-profile .field-name-field-user-title-role,
-  .user-profile #edit-account,
-  .user-profile .field-name-field-do-profile,
-  .user-profile .field-name-field-user-facebook-profile {
-    float: left; } }
-
-@media screen and (min-width: 40em) {
-  .user-profile .field-name-field-first-name-last-name,
-  .user-profile .field-name-field-user-organization,
-  .user-profile .field-name-field-user-twitter-handle,
-  .user-profile .field-name-field-user-linkedin {
-    float: right; } }
-
-.user-profile .form-submit {
-  padding: 0.85em 1em; }
-
-.user-profile fieldset.form-wrapper {
-  height: 0;
-  padding: 0; }
+.sponsorship-overview {
+  text-align: center;
+  margin-top: 58px; }
 
 h3 {
   font-family: "Orbitron", sans-serif;

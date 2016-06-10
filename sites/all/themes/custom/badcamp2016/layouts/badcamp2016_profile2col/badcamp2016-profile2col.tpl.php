@@ -20,10 +20,25 @@
       </div>
     <?php endif; ?>
 
-    <?php if ($content['main']) : ?>
-      <div class="medium-9 columns user-profile">
-        <?php print $content['main']; ?>
+    <div class="medium-9 columns">
+      <div class="row">
+        <div class="medium-6 columns"><?php print $content['name1']; ?></div>
+        <div class="medium-6 columns"><?php print render($content['name2']); ?></div>
       </div>
-    <?php endif; ?>
+
+      <div class="row">
+        <div class="columns"><?php print $content['bio']; ?></div>
+      </div>
+
+      <div class="row">
+        <div class="medium-6 columns"><?php print $content['social_medial_1']; ?></div>
+        <div class="medium-6 columns"><?php print $content['social_medial_2']; ?></div>
+      </div>
+
+      <div class="row">
+        <div class="columns"><?php print $content['interests']; ?></div>
+      </div>
+      <div class="row column"><?php print $content['main']; ?></div>
+    </div>
   </div>
 </div>

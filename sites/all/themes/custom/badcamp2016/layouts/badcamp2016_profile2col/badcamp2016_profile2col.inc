@@ -16,7 +16,13 @@ function badcamp2016_badcamp2016_profile2col_panels_layouts() {
     'admin css' => '../../dist/css/panels-admin.css',
     'regions' => array(
       'header' => t('Header area'),
-      'image' => t('Image'),
+      'image' => t('Profile Image'),
+      'name1' => t('Name and Job Info Left'),
+      'name2' => t('Name and Job Info Right'),
+      'bio' => t('Bio'),
+      'social_medial_1' => t('Social Media Left'),
+      'social_medial_2' => t('Social Media Right'),
+      'interests' => t('Interests'),
       'main' => t('Main Content'),
     ),
   );
