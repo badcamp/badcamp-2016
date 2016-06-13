@@ -5,6 +5,365 @@
  */
 
 /**
+ * Implements hook_default_page_manager_handlers().
+ */
+function badcamp_registration_page_default_page_manager_handlers() {
+  $export = array();
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'user_edit__panel_context_6f7b0fdb-1f5c-44ed-b06a-938b66cd639d';
+  $handler->task = 'user_edit';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'User Edit Page',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+  );
+  $display = new panels_display();
+  $display->layout = 'badcamp2016_profile2col';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'header' => NULL,
+      'image' => NULL,
+      'name1' => NULL,
+      'name2' => NULL,
+      'bio' => NULL,
+      'social_medial_1' => NULL,
+      'social_medial_2' => NULL,
+      'interests' => NULL,
+      'main' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '385ec5a5-55c6-49d4-a10a-c9d2547dfbf6';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-e45bd29f-fb58-42dd-8a90-6ddf03a4a6cf';
+    $pane->panel = 'bio';
+    $pane->type = 'entity_form_field';
+    $pane->subtype = 'user:field_user_bio';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => '',
+      'formatter' => '',
+      'context' => 'argument_user_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e45bd29f-fb58-42dd-8a90-6ddf03a4a6cf';
+    $display->content['new-e45bd29f-fb58-42dd-8a90-6ddf03a4a6cf'] = $pane;
+    $display->panels['bio'][0] = 'new-e45bd29f-fb58-42dd-8a90-6ddf03a4a6cf';
+    $pane = new stdClass();
+    $pane->pid = 'new-8aa2465c-019f-4560-9d0e-4fea52088a14';
+    $pane->panel = 'image';
+    $pane->type = 'user_picture_edit';
+    $pane->subtype = 'user_picture_edit';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '8aa2465c-019f-4560-9d0e-4fea52088a14';
+    $display->content['new-8aa2465c-019f-4560-9d0e-4fea52088a14'] = $pane;
+    $display->panels['image'][0] = 'new-8aa2465c-019f-4560-9d0e-4fea52088a14';
+    $pane = new stdClass();
+    $pane->pid = 'new-8231b791-ecaf-4867-be5d-ce58e377b99e';
+    $pane->panel = 'interests';
+    $pane->type = 'entity_form_field';
+    $pane->subtype = 'user:field_user_interests';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => '',
+      'formatter' => '',
+      'context' => 'argument_user_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '8231b791-ecaf-4867-be5d-ce58e377b99e';
+    $display->content['new-8231b791-ecaf-4867-be5d-ce58e377b99e'] = $pane;
+    $display->panels['interests'][0] = 'new-8231b791-ecaf-4867-be5d-ce58e377b99e';
+    $pane = new stdClass();
+    $pane->pid = 'new-deaec71c-b599-47dc-9a4a-eff278664074';
+    $pane->panel = 'main';
+    $pane->type = 'form';
+    $pane->subtype = 'form';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'argument_user_edit_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'deaec71c-b599-47dc-9a4a-eff278664074';
+    $display->content['new-deaec71c-b599-47dc-9a4a-eff278664074'] = $pane;
+    $display->panels['main'][0] = 'new-deaec71c-b599-47dc-9a4a-eff278664074';
+    $pane = new stdClass();
+    $pane->pid = 'new-c3356a24-dfa1-4b92-b2e4-fcd6982bccbb';
+    $pane->panel = 'name1';
+    $pane->type = 'entity_form_field';
+    $pane->subtype = 'user:field_user_first_name';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => '',
+      'formatter' => '',
+      'context' => 'argument_user_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c3356a24-dfa1-4b92-b2e4-fcd6982bccbb';
+    $display->content['new-c3356a24-dfa1-4b92-b2e4-fcd6982bccbb'] = $pane;
+    $display->panels['name1'][0] = 'new-c3356a24-dfa1-4b92-b2e4-fcd6982bccbb';
+    $pane = new stdClass();
+    $pane->pid = 'new-efce586c-6475-4361-ad9d-09b4d0924d89';
+    $pane->panel = 'name1';
+    $pane->type = 'entity_form_field';
+    $pane->subtype = 'user:field_user_title_role';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => '',
+      'formatter' => '',
+      'context' => 'argument_user_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'efce586c-6475-4361-ad9d-09b4d0924d89';
+    $display->content['new-efce586c-6475-4361-ad9d-09b4d0924d89'] = $pane;
+    $display->panels['name1'][1] = 'new-efce586c-6475-4361-ad9d-09b4d0924d89';
+    $pane = new stdClass();
+    $pane->pid = 'new-3ddf4d49-ea72-46b9-8b4a-b9c810e7e5b3';
+    $pane->panel = 'name2';
+    $pane->type = 'entity_form_field';
+    $pane->subtype = 'user:field_user_last_name';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => '',
+      'formatter' => '',
+      'context' => 'argument_user_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '3ddf4d49-ea72-46b9-8b4a-b9c810e7e5b3';
+    $display->content['new-3ddf4d49-ea72-46b9-8b4a-b9c810e7e5b3'] = $pane;
+    $display->panels['name2'][0] = 'new-3ddf4d49-ea72-46b9-8b4a-b9c810e7e5b3';
+    $pane = new stdClass();
+    $pane->pid = 'new-a7a08253-dc72-4372-84a0-cbfa5ce75623';
+    $pane->panel = 'name2';
+    $pane->type = 'entity_form_field';
+    $pane->subtype = 'user:field_user_organization';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => '',
+      'formatter' => '',
+      'context' => 'argument_user_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'a7a08253-dc72-4372-84a0-cbfa5ce75623';
+    $display->content['new-a7a08253-dc72-4372-84a0-cbfa5ce75623'] = $pane;
+    $display->panels['name2'][1] = 'new-a7a08253-dc72-4372-84a0-cbfa5ce75623';
+    $pane = new stdClass();
+    $pane->pid = 'new-0cc75387-bd45-426b-a888-26e4f94ad155';
+    $pane->panel = 'social_medial_1';
+    $pane->type = 'entity_form_field';
+    $pane->subtype = 'user:field_user_drupalorg_username';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => '',
+      'formatter' => '',
+      'context' => 'argument_user_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '0cc75387-bd45-426b-a888-26e4f94ad155';
+    $display->content['new-0cc75387-bd45-426b-a888-26e4f94ad155'] = $pane;
+    $display->panels['social_medial_1'][0] = 'new-0cc75387-bd45-426b-a888-26e4f94ad155';
+    $pane = new stdClass();
+    $pane->pid = 'new-1c4d1f11-d8af-4fec-a618-8e491836517c';
+    $pane->panel = 'social_medial_1';
+    $pane->type = 'entity_form_field';
+    $pane->subtype = 'user:field_user_facebook_profile';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => '',
+      'formatter' => '',
+      'context' => 'argument_user_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '1c4d1f11-d8af-4fec-a618-8e491836517c';
+    $display->content['new-1c4d1f11-d8af-4fec-a618-8e491836517c'] = $pane;
+    $display->panels['social_medial_1'][1] = 'new-1c4d1f11-d8af-4fec-a618-8e491836517c';
+    $pane = new stdClass();
+    $pane->pid = 'new-a5798f12-921d-48a3-b6f6-dc203ef543a6';
+    $pane->panel = 'social_medial_2';
+    $pane->type = 'entity_form_field';
+    $pane->subtype = 'user:field_user_twitter_handle';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => '',
+      'formatter' => '',
+      'context' => 'argument_user_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'a5798f12-921d-48a3-b6f6-dc203ef543a6';
+    $display->content['new-a5798f12-921d-48a3-b6f6-dc203ef543a6'] = $pane;
+    $display->panels['social_medial_2'][0] = 'new-a5798f12-921d-48a3-b6f6-dc203ef543a6';
+    $pane = new stdClass();
+    $pane->pid = 'new-a5313cbb-91d5-450e-a71d-885721bc8582';
+    $pane->panel = 'social_medial_2';
+    $pane->type = 'entity_form_field';
+    $pane->subtype = 'user:field_user_flickr_profile';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => '',
+      'formatter' => '',
+      'context' => 'argument_user_edit_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'a5313cbb-91d5-450e-a71d-885721bc8582';
+    $display->content['new-a5313cbb-91d5-450e-a71d-885721bc8582'] = $pane;
+    $display->panels['social_medial_2'][1] = 'new-a5313cbb-91d5-450e-a71d-885721bc8582';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-8aa2465c-019f-4560-9d0e-4fea52088a14';
+  $handler->conf['display'] = $display;
+  $export['user_edit__panel_context_6f7b0fdb-1f5c-44ed-b06a-938b66cd639d'] = $handler;
+
+  return $export;
+}
+
+/**
  * Implements hook_default_page_manager_pages().
  */
 function badcamp_registration_page_default_page_manager_pages() {
