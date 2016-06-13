@@ -513,7 +513,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->pid = 'new-8ba8c7f0-08d1-446b-9a8c-aad932baa307';
     $pane->panel = 'social_medial_1';
     $pane->type = 'entity_form_field';
-    $pane->subtype = 'user:field_do_profile';
+    $pane->subtype = 'user:field_user_drupalorg_username';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -591,7 +591,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->pid = 'new-d1463a66-14d5-405e-9d24-08ddab6d57b3';
     $pane->panel = 'social_medial_2';
     $pane->type = 'entity_form_field';
-    $pane->subtype = 'user:field_user_linkedin';
+    $pane->subtype = 'user:field_user_flickr_profile';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
