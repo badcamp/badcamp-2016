@@ -47,11 +47,6 @@ label {
       margin-top: 12px;
     }
   }
-  .field-type-mailchimp-lists-subscription {
-    legend {
-      display: none;
-    }
-  }
   .form-type-password-confirm {
     .description {
       display: none;
@@ -62,9 +57,6 @@ label {
     margin-bottom: 1em;
   }
 }
-
-//Profile edit reg page styles.
-
 
 //Sponsorship reg page styles.
 .sponsorship-overview {
@@ -97,13 +89,8 @@ label {
       margin-right: 12px;
     }
     @include breakpoint(1200px down) {
-      //@include grid-column(50%);
       width: 60%;
       margin:0 auto 48px auto;
-      //margin-bottom: 48px;
-      //margin-left: 12px;
-      //margin-right: 12px;
-
     }
 
   }

@@ -3979,9 +3979,6 @@ label {
 #user-register-form .form-type-checkbox .form-checkbox {
   margin-top: 12px; }
 
-#user-register-form .field-type-mailchimp-lists-subscription legend {
-  display: none; }
-
 #user-register-form .form-type-password-confirm .description {
   display: none; }
 
