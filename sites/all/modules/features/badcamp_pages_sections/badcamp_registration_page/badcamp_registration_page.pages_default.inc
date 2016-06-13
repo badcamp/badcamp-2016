@@ -360,7 +360,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->panel = 'main';
     $pane->type = 'form';
     $pane->subtype = 'form';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'context' => 'relationship_user_category_edit_form_from_user_1',

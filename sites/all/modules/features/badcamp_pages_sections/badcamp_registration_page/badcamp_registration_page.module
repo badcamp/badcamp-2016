@@ -63,7 +63,6 @@ function badcamp_registration_page_form_user_profile_form_alter(&$form, &$form_s
     'field_user_organization',
     'field_user_drupalorg_username',
     'field_user_facebook_profile',
-    'field_user_linkedin',
     'field_user_flickr_profile',
   );
 
