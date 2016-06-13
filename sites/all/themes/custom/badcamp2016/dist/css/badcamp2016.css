@@ -1486,19 +1486,19 @@ textarea {
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #010101; }
+  color: #868C8E; }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #010101; }
+  color: #868C8E; }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #010101; }
+  color: #868C8E; }
 
 input::placeholder,
 textarea::placeholder {
-  color: #010101; }
+  color: #868C8E; }
 
 input:disabled, input[readonly],
 textarea:disabled,
@@ -3991,7 +3991,7 @@ label {
 
 .sponsorship-overview {
   text-align: center;
-  margin-top: 58px; }
+  margin: 58px 0 48px 0; }
 
 .pane-donation-options .form-item h2 {
   font-size: 1.25em;
@@ -4035,8 +4035,7 @@ label {
   .pane-donation-options .form-type-radio input[type="radio"] {
     position: absolute;
     bottom: -53px;
-    left: 0;
-    border-radius: 0; }
+    left: 0; }
 
 .pane-donation-options .spons-reg-button {
   text-align: center; }

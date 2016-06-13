@@ -69,8 +69,9 @@ label {
 //Sponsorship reg page styles.
 .sponsorship-overview {
   text-align: center;
-  margin-top: 58px;
+  margin: 58px 0 48px 0;
 }
+
 .pane-donation-options {
   .form-item {
     @extend .digit-hero;
@@ -112,7 +113,6 @@ label {
       position: absolute;
       bottom: -53px;
       left: 0;
-      border-radius: 0;
     }
   }
   .spons-reg-button {
