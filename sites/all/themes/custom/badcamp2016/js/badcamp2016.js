@@ -22,10 +22,11 @@
       new StarField('layout-wrapper').render(60, 4.6);
     }
     //
-    var donationOptions = $('.form-item-stripe-donation-options');
-    if (donationOptions.length === 1) {
-      var elem = new Foundation.Equalizer(donationOptions, {'data-equalize-by-row': true});
-    }
+    var stripeOptions = $('#edit-stripe-donation-options');
+    stripeOptions.attr('data-equalizer', true);
+    stripeOptions.attr('data-equalizer-on', 'medium');
+    stripeOptions.find('.form-item').attr('data-equalizer-watch', true);
+    $('#edit-stripe-donation-options').foundation();
   });
 
 })(jQuery, window.StarField);

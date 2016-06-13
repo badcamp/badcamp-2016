@@ -37,13 +37,6 @@ label {
       right: 270px;
     }
   }
-  .form-submit {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 42px;
-
-  }
 
   .field-name-field-user-interest-volunteering, .field-name-field-user-mailchimp {
     display: inline-block;
@@ -79,35 +72,61 @@ label {
   margin-top: 58px;
 }
 .pane-donation-options {
-  overflow: hidden;
   .form-item {
     @extend .digit-hero;
-    h2 a {
-      font-size: .5em;
-      color: $badcamp-lt-orange;
-
+    h2 {
+      font-size: 1.25em;
+      font-family: $font-family-play;
+      margin: 36px 0 18px 0;
+      a {
+        color: $badcamp-lt-orange;
+      }
     }
     .field-name-field-donation-type-amount {
       font-family: "Orbitron", sans-serif;
       font-weight: normal;
-      font-size: 4rem;
+      font-size: 3rem;
       line-height: 1em;
       margin-bottom: 0px;
       letter-spacing: 4.13px;
     }
-    @include breakpoint(900px up) {
+    @include breakpoint(1200px up) {
       @include grid-column(23%);
       margin-left: 12px;
       margin-right: 12px;
     }
+    @include breakpoint(1200px down) {
+      //@include grid-column(50%);
+      width: 60%;
+      margin:0 auto 48px auto;
+      //margin-bottom: 48px;
+      //margin-left: 12px;
+      //margin-right: 12px;
+
+    }
+
   }
-  .form-submit {
+  .form-type-radio {
     position: relative;
+    input[type="radio"] {
+      position: absolute;
+      bottom: -53px;
+      left: 0;
+      border-radius: 0;
+    }
+  }
+  .spons-reg-button {
+    text-align: center;
+  }
+  .spons-reg-button-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-top: 72px;
     &:after {
       @include css-triangle(9px, $badcamp-off-white, right);
       position: absolute;
       top: 11px;
-      right: 270px;
+      right: 16px;
     }
   }
 }

@@ -117,6 +117,8 @@ function stripe_donation_options_form($form, &$form_state) {
   $form['stripe_donation_submit'] = array(
     '#type' => 'submit',
     '#value' => t('Next'),
+    '#prefix' => '<div class="spons-reg-button"><div class="spons-reg-button-wrapper">',
+    '#suffix' => '</div></div>',
   );
   return $form;
 }

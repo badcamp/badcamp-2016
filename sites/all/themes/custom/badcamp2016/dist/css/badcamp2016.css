@@ -3972,12 +3972,6 @@ label {
     top: 11px;
     right: 270px; }
 
-#user-register-form .form-submit {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: 42px; }
-
 #user-register-form .field-name-field-user-interest-volunteering, #user-register-form .field-name-field-user-mailchimp {
   display: inline-block;
   width: 49%; }
@@ -3999,47 +3993,70 @@ label {
   text-align: center;
   margin-top: 58px; }
 
-.pane-donation-options {
-  overflow: hidden; }
+.pane-donation-options .form-item h2 {
+  font-size: 1.25em;
+  font-family: "Play", sans-serif;
+  margin: 36px 0 18px 0; }
   .pane-donation-options .form-item h2 a {
-    font-size: .5em;
     color: #F7A526; }
-  .pane-donation-options .form-item .field-name-field-donation-type-amount {
-    font-family: "Orbitron", sans-serif;
-    font-weight: normal;
-    font-size: 4rem;
-    line-height: 1em;
-    margin-bottom: 0px;
-    letter-spacing: 4.13px; }
-  @media screen and (min-width: 56.25em) {
-    .pane-donation-options .form-item {
-      width: 23%;
-      float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
-      margin-left: 12px;
-      margin-right: 12px; } }
-  @media screen and (min-width: 56.25em) and (min-width: 40em) {
+
+.pane-donation-options .form-item .field-name-field-donation-type-amount {
+  font-family: "Orbitron", sans-serif;
+  font-weight: normal;
+  font-size: 3rem;
+  line-height: 1em;
+  margin-bottom: 0px;
+  letter-spacing: 4.13px; }
+
+@media screen and (min-width: 75em) {
+  .pane-donation-options .form-item {
+    width: 23%;
+    float: left;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    margin-left: 12px;
+    margin-right: 12px; } }
+  @media screen and (min-width: 75em) and (min-width: 40em) {
     .pane-donation-options .form-item {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  @media screen and (min-width: 56.25em) {
-      .pane-donation-options .form-item:last-child:not(:first-child) {
-        float: right; } }
-  .pane-donation-options .form-submit {
-    position: relative; }
-    .pane-donation-options .form-submit:after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 0;
-      border: inset 9px;
-      border-color: transparent transparent transparent #FEFEFE;
-      border-left-style: solid;
-      border-right-width: 0;
-      position: absolute;
-      top: 11px;
-      right: 270px; }
+
+@media screen and (min-width: 75em) {
+    .pane-donation-options .form-item:last-child:not(:first-child) {
+      float: right; } }
+
+@media screen and (max-width: 75em) {
+  .pane-donation-options .form-item {
+    width: 60%;
+    margin: 0 auto 48px auto; } }
+
+.pane-donation-options .form-type-radio {
+  position: relative; }
+  .pane-donation-options .form-type-radio input[type="radio"] {
+    position: absolute;
+    bottom: -53px;
+    left: 0;
+    border-radius: 0; }
+
+.pane-donation-options .spons-reg-button {
+  text-align: center; }
+
+.pane-donation-options .spons-reg-button-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-top: 72px; }
+  .pane-donation-options .spons-reg-button-wrapper:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 9px;
+    border-color: transparent transparent transparent #FEFEFE;
+    border-left-style: solid;
+    border-right-width: 0;
+    position: absolute;
+    top: 11px;
+    right: 16px; }
 
 h3 {
   font-family: "Orbitron", sans-serif;
