@@ -68,7 +68,7 @@ p {
 // with smaller descriptive text.
 .digit-hero {
   text-align: center;
-  background: rgba(53,119,141,0.20);
+  background: $badcamp-bg-trans-blue;
 
   .digits {
     font-size: rem-calc(64);

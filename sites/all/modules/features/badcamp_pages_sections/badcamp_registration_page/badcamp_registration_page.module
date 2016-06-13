@@ -39,7 +39,8 @@ function badcamp_registration_page_form_user_register_form_alter(&$form, &$form_
  * Implements hook_form_ID_alter().
  */
 function badcamp_registration_page_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
-  $form['field_user_linkedin']['#attributes']['placeholder'] = t('THIS IS HOW YOU DO IT THEME STYLE');
+  //$form['field_user_linkedin']['#attributes']['placeholder'] = t('THIS IS HOW YOU DO IT THEME STYLE');
+  $form['account']['name']['#attributes']['placeholder'] = t('butt');
   $form['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
   $form['actions']['submit']['#value'] = t('Skip/Finish');
   $form['field_first_name_last_name']['#access'] = FALSE;
@@ -73,6 +74,14 @@ function badcamp_registration_page_form_user_profile_form_alter(&$form, &$form_s
     $form[$field_name][LANGUAGE_NONE][0]['value']['#attributes']['placeholder'] = $form[$field_name][LANGUAGE_NONE][0]['value']['#title'];
     $form[$field_name][LANGUAGE_NONE][0]['value']['#title_display'] = 'invisible';
   }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function badcamp_registration_page_form_alter(&$form, &$form_state, $form_id) {
+//  dpm($form_id);
+//  dpm($form);
 }
 
 /**
