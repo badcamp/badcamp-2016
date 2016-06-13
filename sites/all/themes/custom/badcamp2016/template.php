@@ -64,9 +64,9 @@ function badcamp2016_menu_tree__main_menu(&$variables) {
   );
   if ($variables['has_children']) {
     $attributes['class'][] = 'drilldown medium-dropdown';
-    $attributes['data-dropdown-menu'] = NULL;
   }
   if ($variables['top_level']) {
+    $attributes['data-responsive-menu'] = 'drilldown medium-dropdown';
     $attributes['class'][] = 'vertical medium-horizontal';
   }
   return '<ul' . drupal_attributes($attributes) . '>' . $variables['tree']['#children'] . '</ul>';
