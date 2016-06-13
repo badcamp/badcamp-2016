@@ -47,11 +47,6 @@ label {
       margin-top: 12px;
     }
   }
-  .field-type-mailchimp-lists-subscription {
-    legend {
-      display: none;
-    }
-  }
   .form-type-password-confirm {
     .description {
       display: none;
@@ -63,14 +58,12 @@ label {
   }
 }
 
-//Profile edit reg page styles.
-
-
 //Sponsorship reg page styles.
 .sponsorship-overview {
   text-align: center;
-  margin-top: 58px;
+  margin: 58px 0 48px 0;
 }
+
 .pane-donation-options {
   .form-item {
     @extend .digit-hero;
@@ -96,13 +89,8 @@ label {
       margin-right: 12px;
     }
     @include breakpoint(1200px down) {
-      //@include grid-column(50%);
       width: 60%;
       margin:0 auto 48px auto;
-      //margin-bottom: 48px;
-      //margin-left: 12px;
-      //margin-right: 12px;
-
     }
 
   }
@@ -112,7 +100,6 @@ label {
       position: absolute;
       bottom: -53px;
       left: 0;
-      border-radius: 0;
     }
   }
   .spons-reg-button {
