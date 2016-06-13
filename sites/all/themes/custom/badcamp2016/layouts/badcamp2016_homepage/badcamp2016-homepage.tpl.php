@@ -49,13 +49,13 @@
     <?php endif; ?>
 
     <?php if ($content['about-tr-top']) : ?>
-      <div class="small-12 medium-6 large-4 columns region-about-third">
+      <div class="small-6 large-4 columns region-about-third">
         <?php print $content['about-tr-top']; ?>
       </div>
     <?php endif; ?>
 
     <?php if ($content['about-tr-bottom']) : ?>
-      <div class="small-12 medium-6 large-4 columns region-about-third">
+      <div class="small-6 large-4 large-4 columns region-about-third">
         <?php print $content['about-tr-bottom']; ?>
       </div>
     <?php endif; ?>
