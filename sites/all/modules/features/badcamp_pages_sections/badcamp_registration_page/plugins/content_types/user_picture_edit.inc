@@ -22,8 +22,10 @@ function badcamp_registration_page_user_picture_edit_content_type_render($subtyp
 
   if (isset($context->form)) {
     if (isset($context->form['picture'])) {
+      $context->form['picture']['#title_display'] = 'invisible';
       $block->content = $context->form['picture'];
       unset($context->form['picture']);
+      $block->content['#title'] = NULL;
     }
     $block->delta = $context->form_id;
   }
