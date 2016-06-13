@@ -3711,6 +3711,27 @@ p {
     .pane-system-main-menu ul.submenu li a {
       padding: 0;
       font-size: 18px; }
+  .pane-system-main-menu ul.submenu .is-dropdown-submenu-parent > a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 6px;
+    border-color: #59A8C1 transparent transparent;
+    border-top-style: solid;
+    border-bottom-width: 0;
+    position: absolute;
+    top: 9px;
+    right: -9px; }
+  .pane-system-main-menu ul.submenu .is-dropdown-submenu-parent > a:hover:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 6px;
+    border-color: #FF9A00 transparent transparent;
+    border-top-style: solid;
+    border-bottom-width: 0; }
 
 .title-bar {
   background: transparent; }
