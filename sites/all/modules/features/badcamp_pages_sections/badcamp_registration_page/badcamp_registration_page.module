@@ -39,38 +39,24 @@ function badcamp_registration_page_form_user_register_form_alter(&$form, &$form_
 
 /**
  * Implements hook_form_ID_alter().
+ *
+ * The user profile form shows up in two places - once on registration/profile, where it
+ * is a minimal version (step 3 of registration), and once on user/%uid/edit.
  */
 function badcamp_registration_page_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
-  $form['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
-  $form['actions']['submit']['#value'] = t('Skip/Finish');
-  $form['field_first_name_last_name']['#access'] = FALSE;
-  $form['account']['mail']['#access'] = FALSE;
-  $form['account']['pass']['#access'] = FALSE;
-  $form['field_user_interest_volunteering']['#access'] = FALSE;
-  $form['field_user_training_interest']['#access'] = FALSE;
-  $form['field_user_interest_jobs']['#access'] = FALSE;
-  $form['field_user_hosting']['#access'] = FALSE;
-  $form['field_user_services']['#access'] = FALSE;
-  $form['field_user_mailchimp']['#access'] = FALSE;
-  $form['field_user_interests'][LANGUAGE_NONE]['#title_display'] = 'invisible';
-  $form['field_user_interests'][LANGUAGE_NONE]['#attributes']['placeholder'] = $form['field_user_interests'][LANGUAGE_NONE]['#title'];
+  // Add a pre_render callback to handle converting labels
+  // to placeholders.
+  foreach(element_children($form) as $child) {
+    $form[$child]['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
+  }
 
-  $placeholder_textfields = array(
-    'field_user_first_name',
-    'field_user_last_name',
-    'field_user_title_role',
-    'field_user_bio',
-    'field_user_drupalorg_username',
-    'field_user_twitter_handle',
-    'field_user_organization',
-    'field_user_drupalorg_username',
-    'field_user_facebook_profile',
-    'field_user_flickr_profile',
-  );
-
-  foreach ($placeholder_textfields as $field_name) {
-    $form[$field_name][LANGUAGE_NONE][0]['value']['#attributes']['placeholder'] = $form[$field_name][LANGUAGE_NONE][0]['value']['#title'];
-    $form[$field_name][LANGUAGE_NONE][0]['value']['#title_display'] = 'invisible';
+  // This is the least hacky way I could find to do
+  // detection on when this form is being loaded for
+  // the registration workflow...
+  $menu_item = menu_get_item();
+  if($menu_item['page_callback'] === 'page_manager_page_execute' && $menu_item['page_arguments'][0] === 'profile_edit_page') {
+    $form['actions']['submit']['#value'] = t('Skip/Finish');
+    $form['account']['#access'] = FALSE;
   }
 }
 
@@ -83,7 +69,6 @@ function _badcamp_registration_page_form_pre_render_element($element) {
     foreach ($children as $child) {
       $element[$child] = _badcamp_registration_page_form_pre_render_element($element[$child]);
     }
-    return $element;
   }
   $placeholder_types = array(
     'textfield',
