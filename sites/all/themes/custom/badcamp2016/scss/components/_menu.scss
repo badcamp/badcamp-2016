@@ -116,6 +116,19 @@
       font-size: 18px;
     }
   }
+  .is-dropdown-submenu-parent > a {
+    &:after {
+      @include css-triangle(6px, $badcamp-lt-blue, down);
+      position: absolute;
+      top: 9px;
+      right: -9px;
+    }
+    &:hover {
+      &:after {
+        @include css-triangle(6px, $badcamp-orange, down);
+      }
+    }
+  }
 }
 //mobile specific styles for main menu
 .title-bar {
