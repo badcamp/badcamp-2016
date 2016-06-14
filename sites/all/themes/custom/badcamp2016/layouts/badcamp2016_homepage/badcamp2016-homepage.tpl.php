@@ -67,8 +67,8 @@
       </div>
     <?php endif; ?>
 
+  </div>
 </div>
-
 <?php if ($content['news']) : ?>
   <div class="region-news">
     <div class="row">
