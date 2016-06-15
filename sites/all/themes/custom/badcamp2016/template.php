@@ -64,6 +64,7 @@ function badcamp2016_menu_tree__main_menu(&$variables) {
   );
   if ($variables['has_children']) {
     $attributes['class'][] = 'drilldown medium-dropdown';
+    $attributes['data-parent-link'] = 'true';
   }
   if ($variables['top_level']) {
     $attributes['data-responsive-menu'] = 'drilldown medium-dropdown';
