@@ -147,18 +147,16 @@ function stripe_donation_options_form_submit($form, &$form_state) {
   $selected_donation_id = $form_state['values']['stripe_donation_options'];
   $donation_value = _donation_options_get_amount($selected_donation_id);
 
-  $form_state['rebuild'] = TRUE;
-
   // If the value of the selected action is $0, move on.
   if ($donation_value == '0') {
     $path = !empty($conf['stripe_donation_zero_amt_donation_redirect_path']) ?
       $conf['stripe_donation_zero_amt_donation_redirect_path'] : '/user';
-    drupal_goto($path);
+    $form_state['redirect'] = $path;
   }
   else {
     // @TODO: Make the payment form a second step in a multi-step form instead
     // of going through hook menu.
-    drupal_goto('donation/payment/' . $selected_donation_id);
+    $form_state['redirect'] = 'donation/payment/' . $selected_donation_id;
   }
 
 }
