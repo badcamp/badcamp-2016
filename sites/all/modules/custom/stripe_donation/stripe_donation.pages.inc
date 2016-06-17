@@ -98,7 +98,8 @@ function stripe_donation_payment_form_submit($form, &$form_state) {
     $wrapper->field_donation_user = $user->uid;
     $wrapper->field_donation_stripe_trans = $stripe_transaction_id;
     $wrapper->save();
-  }
 
-  drupal_goto('/user');
+    // Redirect to step 3 of registration.
+    $form_state['redirect'] = 'registration/profile';
+  }
 }
