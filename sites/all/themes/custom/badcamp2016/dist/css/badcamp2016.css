@@ -3897,15 +3897,6 @@ p {
   .region-about-second img {
     width: 100%; }
 
-.region-about-third .digit-hero, .region-about-third .pane-donation-options .form-item, .pane-donation-options .region-about-third .form-item {
-  max-width: 376px;
-  margin: auto; }
-  @media screen and (max-width: 39.9375em) {
-    .region-about-third .digit-hero, .region-about-third .pane-donation-options .form-item, .pane-donation-options .region-about-third .form-item {
-      min-height: 274px; }
-      .region-about-third .digit-hero .digits, .region-about-third .pane-donation-options .form-item .digits, .pane-donation-options .region-about-third .form-item .digits {
-        margin-top: 73px; } }
-
 .pane-testimonials .pane-content {
   padding-top: 54px; }
 

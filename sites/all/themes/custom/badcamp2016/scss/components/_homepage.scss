@@ -93,21 +93,6 @@
   }
 }
 
-.region-about-third {
-  .digit-hero {
-    //Needed to keep width lined up with
-    //adjacent images
-    max-width: 376px;
-    margin: auto;
-    @include breakpoint(small only) {
-      min-height: 274px;
-      .digits {
-        margin-top: 73px;
-      }
-    }
-  }
-}
-
 .pane-testimonials {
   .pane-content {
     padding-top: 54px;
