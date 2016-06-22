@@ -1088,7 +1088,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'stripe_donation_payment_page_title' => NULL,
-      'stripe_donation_zero_amt_donation_redirect_path' => '/user',
+      'stripe_donation_zero_amt_donation_redirect_path' => '/registration/profile',
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
