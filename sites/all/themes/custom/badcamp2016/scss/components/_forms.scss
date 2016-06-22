@@ -117,3 +117,16 @@ label {
     }
   }
 }
+
+//Profile edit reg page
+.page-registration-profile {
+  .form-actions {
+    position: relative;
+    &:after {
+      @include css-triangle(9px, $badcamp-off-white, right);
+      position: absolute;
+      top: 11px;
+      right: 384px;
+    }
+  }
+}

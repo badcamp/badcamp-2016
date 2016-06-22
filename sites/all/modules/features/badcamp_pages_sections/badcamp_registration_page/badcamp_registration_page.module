@@ -77,9 +77,9 @@ function _badcamp_registration_page_form_pre_render_element($element) {
     'password',
   );
   if (isset($element['#type']) && in_array($element['#type'], $placeholder_types)) {
-    $element['#title'] = $element['#required'] ? $element['#title'] . '*' : $element['#title'];
+    //$element['#title'] = $element['#required'] ? $element['#title'] . '*' : $element['#title'];
     $element['#attributes']['placeholder'] = $element['#title'];
-    $element['#title_display'] = 'invisible';
+    //$element['#title_display'] = 'invisible';
     $element['#description'] = NULL;
   }
 
