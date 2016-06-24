@@ -40,13 +40,14 @@ function badcamp_registration_page_form_user_register_form_alter(&$form, &$form_
 /**
  * Implements hook_form_ID_alter().
  *
- * The user profile form shows up in two places - once on registration/profile, where it
- * is a minimal version (step 3 of registration), and once on user/%uid/edit.
+ * The user profile form shows up in two places - once on registration/profile,
+ * where it is a minimal version (step 3 of registration), and once on
+ * user/%uid/edit.
  */
 function badcamp_registration_page_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
   // Add a pre_render callback to handle converting labels
   // to placeholders.
-  foreach(element_children($form) as $child) {
+  foreach (element_children($form) as $child) {
     $form[$child]['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
   }
 
@@ -54,7 +55,7 @@ function badcamp_registration_page_form_user_profile_form_alter(&$form, &$form_s
   // detection on when this form is being loaded for
   // the registration workflow...
   $menu_item = menu_get_item();
-  if($menu_item['page_callback'] === 'page_manager_page_execute' && $menu_item['page_arguments'][0] === 'profile_edit_page') {
+  if ($menu_item['page_callback'] === 'page_manager_page_execute' && $menu_item['page_arguments'][0] === 'profile_edit_page') {
     $form['actions']['submit']['#value'] = t('Skip/Finish');
     $form['account']['#access'] = FALSE;
   }
@@ -77,13 +78,19 @@ function _badcamp_registration_page_form_pre_render_element($element) {
     'password',
   );
   if (isset($element['#type']) && in_array($element['#type'], $placeholder_types)) {
-    //$element['#title'] = $element['#required'] ? $element['#title'] . '*' : $element['#title'];
     $element['#attributes']['placeholder'] = $element['#title'];
-    //$element['#title_display'] = 'invisible';
     $element['#description'] = NULL;
   }
 
   return $element;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function badcamp_registration_page_form_alter(&$form, &$form_state, $form_id) {
+  $form['actions']['submit']['#prefix'] = '<div class="form-submit-wrapper">';
+  $form['actions']['submit']['#suffix'] = '</div>';
 }
 
 /**

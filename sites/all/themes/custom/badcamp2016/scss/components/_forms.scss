@@ -1,4 +1,4 @@
-label {
+label, .form-required {
   color: $badcamp-off-white;
 }
 
@@ -26,15 +26,18 @@ label {
     margin-top: 60px;
   }
 }
-
+.form-submit-wrapper {
+  position: relative;
+  max-width: 95px;
+  margin: auto;
+}
 #user-register-form {
-  .form-actions {
-    position: relative;
+  .form-submit-wrapper {
     &:after {
       @include css-triangle(9px, $badcamp-off-white, right);
       position: absolute;
       top: 11px;
-      right: 270px;
+      right: 16px;
     }
   }
 
@@ -118,15 +121,14 @@ label {
   }
 }
 
-//Profile edit reg page
+
 .page-registration-profile {
-  .form-actions {
-    position: relative;
+  .form-submit-wrapper {
     &:after {
       @include css-triangle(9px, $badcamp-off-white, right);
       position: absolute;
       top: 11px;
-      right: 384px;
+      right: -26px;
     }
   }
 }
