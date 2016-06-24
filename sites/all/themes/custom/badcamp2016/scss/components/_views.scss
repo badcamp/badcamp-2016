@@ -1,4 +1,5 @@
 //styles used in views
+
 //h3 for sponsors grouping and news item titles
 h3 {
   font-family: $font-family-orbitron;
@@ -29,14 +30,13 @@ h2.pane-title{
   margin-bottom: 40px;
 }
 
-.view-badcamp-news {
+//news, summit events view
+.view-badcamp-news, .view-events-view {
   h3.field-content {
-    /* Title of News/Events: */
     text-align: left;
     font-family: $font-family-play;
     font-weight: bold;
     text-transform: none;
-    font-size: rem-calc(28);
     letter-spacing: 1.82px;
     padding-bottom: rem-calc(8);
   }
@@ -51,7 +51,10 @@ h2.pane-title{
     line-height:  rem-calc(28);
     padding-bottom: 30px;
     padding-top: 10px;
+    margin-bottom: 25px;
+  }
+  .views-row {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    margin-bottom: 40px;
   }
 }
+  
