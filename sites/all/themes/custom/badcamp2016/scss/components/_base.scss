@@ -82,3 +82,57 @@ p {
   }
 }
 
+//default page - basic page styles
+
+#badcamp-default {
+
+  .region-title {
+    margin: rem-calc(25);
+    padding: rem-calc(25);
+  }
+
+  .region-default-content {
+    color: black;
+    background-color: $badcamp-off-white;
+    margin-left: rem-calc(100);
+    margin-right: rem-calc(100);
+    padding: rem-calc(50);
+  }
+
+  h1 {
+    font-family: $font-family-orbitron;
+    font-weight: bold;
+    //   font-size: rem-calc(46);
+    color: #59A8C1;
+    letter-spacing: rem-calc(3);
+    line-height: rem-calc(40);
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.50);
+  }
+
+  h2 {
+    font-family: $font-family-play;
+    //  font-size: 28px;
+    color: #59A8C1;
+  }
+
+  h3 {
+    font-family: $font-family-opensans;
+    font-weight: bold;
+    //  font-size: 20px;
+    color: #4E5661;
+  }
+  
+  p.large {
+    font-family: $font-family-opensans;
+    font-size: rem-calc(28);
+    color: #1F2C33;
+   // letter-spacing: -0.41px;
+    line-height: rem-calc(40);
+  }
+
+  a {
+    color: $badcamp-orange;
+    text-decoration: underline;
+    font-size: 18px;
+  }
+}
