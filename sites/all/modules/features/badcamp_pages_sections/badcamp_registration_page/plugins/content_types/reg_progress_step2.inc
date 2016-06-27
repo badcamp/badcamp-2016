@@ -19,11 +19,11 @@ $plugin = array(
 function badcamp_registration_page_reg_progress_two_render($subtype, $conf, $panel_args, $context) {
   $block = new stdClass();
 
-  // initial content is blank
+  // Initial content is blank.
   $block->title = '';
   $block->content = '';
 
-  // Add in the content
+  // Add in the content.
   $block->content .= '<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="607px" height="90px" viewBox="0 76 607 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
