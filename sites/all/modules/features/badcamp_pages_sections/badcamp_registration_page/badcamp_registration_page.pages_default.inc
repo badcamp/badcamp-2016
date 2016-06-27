@@ -372,7 +372,7 @@ function badcamp_registration_page_default_page_manager_pages() {
   $page->api_version = 1;
   $page->name = 'badcamp_registration';
   $page->task = 'page';
-  $page->admin_title = 'Registration';
+  $page->admin_title = 'Registration Step 1';
   $page->admin_description = 'Register for camp!';
   $page->path = 'registration';
   $page->access = array(
@@ -471,20 +471,13 @@ function badcamp_registration_page_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-280f39d2-fef4-46b8-9826-0e39f2bc85be';
+    $pane->pid = 'new-9f9872b7-f2a7-4d33-89d9-43f5a51afc2f';
     $pane->panel = 'content';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'reg_progress_step1';
+    $pane->subtype = 'reg_progress_step1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Registration step 1 marker',
-      'title' => 'Registration',
-      'body' => '<p><img src="/sites/all/themes/custom/badcamp2016/images/bc_reg_step_1.svg" /></p>
-',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -493,9 +486,9 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '280f39d2-fef4-46b8-9826-0e39f2bc85be';
-    $display->content['new-280f39d2-fef4-46b8-9826-0e39f2bc85be'] = $pane;
-    $display->panels['content'][0] = 'new-280f39d2-fef4-46b8-9826-0e39f2bc85be';
+    $pane->uuid = '9f9872b7-f2a7-4d33-89d9-43f5a51afc2f';
+    $display->content['new-9f9872b7-f2a7-4d33-89d9-43f5a51afc2f'] = $pane;
+    $display->panels['content'][0] = 'new-9f9872b7-f2a7-4d33-89d9-43f5a51afc2f';
     $pane = new stdClass();
     $pane->pid = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
     $pane->panel = 'content';
@@ -644,20 +637,13 @@ function badcamp_registration_page_default_page_manager_pages() {
     $display->content['new-c0612d84-d8d8-47bb-b0c5-ec0193e12bfc'] = $pane;
     $display->panels['bio'][0] = 'new-c0612d84-d8d8-47bb-b0c5-ec0193e12bfc';
     $pane = new stdClass();
-    $pane->pid = 'new-7b95b0d4-d042-4e6a-b781-6ab9d0160f2a';
+    $pane->pid = 'new-c1ffd19e-709a-4a08-9d7e-8ab18d1cdf77';
     $pane->panel = 'header';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'reg_progress_step3';
+    $pane->subtype = 'reg_progress_step3';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Registration Progress Bar Step 1',
-      'title' => 'Registration',
-      'body' => '<p><img src="/sites/all/themes/custom/badcamp2016/images/bc_reg_step_3.svg" /></p>
-',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -666,9 +652,9 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '7b95b0d4-d042-4e6a-b781-6ab9d0160f2a';
-    $display->content['new-7b95b0d4-d042-4e6a-b781-6ab9d0160f2a'] = $pane;
-    $display->panels['header'][0] = 'new-7b95b0d4-d042-4e6a-b781-6ab9d0160f2a';
+    $pane->uuid = 'c1ffd19e-709a-4a08-9d7e-8ab18d1cdf77';
+    $display->content['new-c1ffd19e-709a-4a08-9d7e-8ab18d1cdf77'] = $pane;
+    $display->panels['header'][0] = 'new-c1ffd19e-709a-4a08-9d7e-8ab18d1cdf77';
     $pane = new stdClass();
     $pane->pid = 'new-8b167625-cdb2-4025-ba76-3d31cd7dbbc0';
     $pane->panel = 'image';
@@ -1021,20 +1007,13 @@ function badcamp_registration_page_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-e6fdb089-a86f-4bb2-b486-95cf223868f1';
+    $pane->pid = 'new-cd401352-55f0-4d0a-bb14-803eb0d55d15';
     $pane->panel = 'header';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'reg_progress_step2';
+    $pane->subtype = 'reg_progress_step2';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Registration Progress Bar Step 2',
-      'title' => 'Registration ',
-      'body' => '<p><img src="/sites/all/themes/custom/badcamp2016/images/bc_reg_step_2.svg" /></p>
-',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -1043,9 +1022,9 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'e6fdb089-a86f-4bb2-b486-95cf223868f1';
-    $display->content['new-e6fdb089-a86f-4bb2-b486-95cf223868f1'] = $pane;
-    $display->panels['header'][0] = 'new-e6fdb089-a86f-4bb2-b486-95cf223868f1';
+    $pane->uuid = 'cd401352-55f0-4d0a-bb14-803eb0d55d15';
+    $display->content['new-cd401352-55f0-4d0a-bb14-803eb0d55d15'] = $pane;
+    $display->panels['header'][0] = 'new-cd401352-55f0-4d0a-bb14-803eb0d55d15';
     $pane = new stdClass();
     $pane->pid = 'new-9f8939c0-f3ca-4619-b881-5e2024c1d4dc';
     $pane->panel = 'main';
