@@ -87,15 +87,17 @@ p {
 #badcamp-default {
 
   .region-title {
-    margin: rem-calc(25);
-    padding: rem-calc(25);
-    
+    margin-top:rem-calc(50);
+    margin-bottom:rem-calc(50);
+
     .page-title {
-      &:after {
-        content: "////";
-        padding-left: 18px;
-        display: inline-block;
-        color:$badcamp-header-white;
+      @include breakpoint(medium) {
+        &:after {
+          content: "////";
+          padding-left: .4em;
+          display: inline-block;
+          color:$badcamp-header-white;
+        }
       }
     }
   }
@@ -103,15 +105,12 @@ p {
   .region-default-content {
     color: black;
     background-color: $badcamp-off-white;
-    margin-left: rem-calc(100);
-    margin-right: rem-calc(100);
     padding: rem-calc(50);
   }
 
   h1 {
     font-family: $font-family-orbitron;
     font-weight: bold;
-    //   font-size: rem-calc(46);
     color: #59A8C1;
     letter-spacing: rem-calc(3);
     line-height: rem-calc(40);
@@ -120,7 +119,6 @@ p {
 
   h2 {
     font-family: $font-family-play;
-    //  font-size: 28px;
     color: #59A8C1;
   }
 
@@ -129,7 +127,7 @@ p {
     font-weight: bold;
     color: #4E5661;
   }
-  
+
   p.large {
     font-family: $font-family-opensans;
     font-size: rem-calc(28);
@@ -142,7 +140,7 @@ p {
     text-decoration: underline;
     font-size: rem-calc(18);
   }
-  
+
   ul {
     list-style: none;
     line-height: rem-calc(27);

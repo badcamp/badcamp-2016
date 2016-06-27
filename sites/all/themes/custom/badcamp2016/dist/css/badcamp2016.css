@@ -3609,19 +3609,18 @@ p {
     color: #F59603; }
 
 #badcamp-default .region-title {
-  margin: 1.5625rem;
-  padding: 1.5625rem; }
-  #badcamp-default .region-title .page-title:after {
-    content: "////";
-    padding-left: 18px;
-    display: inline-block;
-    color: #FFFFFF; }
+  margin-top: 3.125rem;
+  margin-bottom: 3.125rem; }
+  @media screen and (min-width: 40em) {
+    #badcamp-default .region-title .page-title:after {
+      content: "////";
+      padding-left: .4em;
+      display: inline-block;
+      color: #FFFFFF; } }
 
 #badcamp-default .region-default-content {
   color: black;
   background-color: #FEFEFE;
-  margin-left: 6.25rem;
-  margin-right: 6.25rem;
   padding: 3.125rem; }
 
 #badcamp-default h1 {
