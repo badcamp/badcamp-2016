@@ -40,6 +40,10 @@ h2.pane-title{
     letter-spacing: 1.82px;
     padding-bottom: rem-calc(8);
   }
+  .date-display-single {
+    color: $badcamp-orange;
+    font-size: rem-calc(18);
+  }
   a {
     color: $badcamp-lt-blue;
   }
@@ -55,6 +59,11 @@ h2.pane-title{
   }
   .views-row {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .learn-more {
+    color: $badcamp-orange;
+    text-decoration: underline;
+    font-size: 18px;
   }
 }
   

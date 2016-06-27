@@ -3650,7 +3650,20 @@ p {
 #badcamp-default a {
   color: #FF9A00;
   text-decoration: underline;
-  font-size: 18px; }
+  font-size: 1.125rem; }
+
+#badcamp-default ul {
+  list-style: none;
+  line-height: 1.6875rem;
+  padding-right: 1.5625rem; }
+  #badcamp-default ul li {
+    margin-left: 0.5rem;
+    padding-bottom: 0.625rem; }
+  #badcamp-default ul li:before {
+    content: "—  ";
+    color: #59A8C1;
+    font-weight: 700;
+    margin-left: -0.5rem; }
 
 #site-header {
   background: url(../../images/hud_top.svg) bottom center no-repeat;
@@ -4225,6 +4238,10 @@ h3 {
   letter-spacing: 1.82px;
   padding-bottom: 0.5rem; }
 
+.view-badcamp-news .date-display-single, .view-events-view .date-display-single {
+  color: #FF9A00;
+  font-size: 1.125rem; }
+
 .view-badcamp-news a, .view-events-view a {
   color: #59A8C1; }
 
@@ -4240,5 +4257,10 @@ h3 {
 
 .view-badcamp-news .views-row, .view-events-view .views-row {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+
+.view-badcamp-news .learn-more, .view-events-view .learn-more {
+  color: #FF9A00;
+  text-decoration: underline;
+  font-size: 18px; }
 
 /*# sourceMappingURL=maps/badcamp2016.css.map */
