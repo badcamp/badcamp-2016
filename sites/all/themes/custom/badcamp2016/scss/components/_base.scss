@@ -89,6 +89,15 @@ p {
   .region-title {
     margin: rem-calc(25);
     padding: rem-calc(25);
+    
+    .page-title {
+      &:after {
+        content: "////";
+        padding-left: 18px;
+        display: inline-block;
+        color:$badcamp-header-white;
+      }
+    }
   }
 
   .region-default-content {
@@ -135,4 +144,5 @@ p {
     text-decoration: underline;
     font-size: 18px;
   }
+  
 }

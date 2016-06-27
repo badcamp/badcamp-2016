@@ -84,7 +84,7 @@ function badcamp_basic_page_default_page_manager_handlers() {
       'link' => 0,
       'markup' => 'h1',
       'id' => '',
-      'class' => '',
+      'class' => 'page-title',
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
       'override_title_text' => '',
