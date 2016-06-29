@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Credits feature.
+ */
+
+include_once 'badcamp_feature_credits_page.features.inc';

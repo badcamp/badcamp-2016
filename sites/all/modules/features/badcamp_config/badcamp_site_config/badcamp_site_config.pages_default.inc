@@ -178,8 +178,8 @@ function badcamp_site_config_default_page_manager_handlers() {
     $pane->configuration = array(
       'admin_title' => 'Copyrights',
       'title' => '',
-      'body' => '<p class="p1">© Images &amp; Layout <a class="dk-orange" href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a> 2016 BADCAMP Some rights reserved.&nbsp; <a class="dk-orange" href="/credits">Credits</a><br />
-© Code <a class="dk-orange" href="http://www.gnu.org/licenses/gpl-2.0.en.html">GNU General Public License</a> 2016 BADCAMP Some rights reserved.</p>
+      'body' => '<p class="p1">© Images &amp; Layout <a class="dk-orange" href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a> 2016 BADCamp, some rights reserved. <a class="dk-orange" href="/credits">Credits!</a><br />
+© Code <a class="dk-orange" href="http://www.gnu.org/licenses/gpl-2.0.en.html">GNU General Public License</a> 2016 BADCamp, some rights reserved.</p>
 ',
       'format' => 'full_html',
       'substitute' => 1,
