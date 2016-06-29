@@ -93,7 +93,6 @@ function badcamp_registration_page_user_default_permissions() {
     'name' => 'view field_user_interest_jobs',
     'roles' => array(
       'administrator' => 'administrator',
-      'job posting editor' => 'job posting editor',
       'site editor' => 'site editor',
       'summit leader' => 'summit leader',
     ),
