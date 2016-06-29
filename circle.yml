@@ -35,7 +35,7 @@ dependencies:
 
   post:
     # Set up global commands.
-    - sudo ln -s ~/badcamp-2016-artifact/vendor/bin/drush /usr/bin/drush
+    - sudo ln -s ~/badcamp-2016/vendor/bin/drush /usr/bin/drush
 
     # Set alias.
     - drush cc drush
