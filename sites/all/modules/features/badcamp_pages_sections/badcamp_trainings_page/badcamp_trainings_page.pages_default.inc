@@ -86,10 +86,7 @@ function badcamp_trainings_page_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Training Description',
       'title' => '',
-      'body' => '<p>For two full days on Thursday and Friday, BADCamp offers world-class training from some of the best Drupal teachers in the world. Whether you are looking to level up your front end, back end, devops, marketing automation or CRM skills, we have classes for you.&nbsp;</p>
-
-<p>Secure your seat today with a $20 fully-refundable deposit -- openings go quickly, and classes will fill up fast.</p>
-',
+      'body' => '<p>For two full days on Thursday and Friday, BADCamp offers world-class training from some of the best Drupal teachers in the world. Whether you are looking to level up your front end, back end, devops, marketing automation or CRM skills, we have classes for you.</p>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );

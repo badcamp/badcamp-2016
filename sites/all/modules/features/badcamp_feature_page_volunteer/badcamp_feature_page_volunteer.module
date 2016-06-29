@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the BADCamp Volunteer Page feature.
+ */
+
+include_once 'badcamp_feature_page_volunteer.features.inc';

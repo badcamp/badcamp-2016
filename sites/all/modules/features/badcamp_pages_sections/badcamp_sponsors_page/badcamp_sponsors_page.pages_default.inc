@@ -171,8 +171,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Sponsor Intro Text',
       'title' => 'Sponsors',
-      'body' => '<p>BADCamp would not be possible&nbsp;without our many generous sponsors.&nbsp;If you\'d like&nbsp;to be a part of making&nbsp;BADCamp happen, check out our <a href="/sponsorship-packages">sponsorship options</a> and let Matt and Anne know how you\'d like&nbsp;to get involved.</p>
-',
+      'body' => '<p>BADCamp would not be possible without our many generous sponsors. If you\'d like to be a part of making BADCamp happen, check out our <a href="/sponsorship-packages">sponsorship options</a> and let Matt and Anne know how you\'d like to get involved.</p>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
