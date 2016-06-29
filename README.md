@@ -15,7 +15,7 @@ editor to use the included `.editorconfig` file.
 You are welcome to use any local development environment you'd like, but a
 DrupalVM configuration is included for your convenience and is preferred.
 
-### DrupalVM
+### Drupal VM
 
 http://www.drupalvm.com/
 
@@ -23,7 +23,7 @@ http://www.drupalvm.com/
 
 * VirtualBox: 5.x
 * Vagrant: 1.7.x
-* Ansible (optional, but recommended): 1.9.x
+* Ansible: 1.9.x
 
 ##### Mac
 
@@ -31,15 +31,6 @@ http://www.drupalvm.com/
 brew cask install virtualbox
 brew cask install vagrant
 brew install ansible
-```
-
-#### Vagrant
-
-Two plugins are required.
-
-```bash
-vagrant plugin install vagrant-hostsupdater
-vagrant plugin install vagrant-auto_network
 ```
 
 #### Getting started
@@ -55,20 +46,6 @@ Configure:
 
 ```bash
 cp custom.config.yml config.yml
-```
-
-Edit config.yml and update the local path to wherever you cloned the repo:
-
-```yml
-vagrant_synced_folders:
-  - local_path: CHANGEME
-```
-
-Mac or Linux only:
-
-```bash
-# Install Ansible Galaxy roles required for this VM.
-sudo ansible-galaxy install -r provisioning/requirements.yml --force
 ```
 
 Complete the installation:
