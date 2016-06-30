@@ -84,8 +84,12 @@
     min-height: 175px;
     text-align: center;
     background: $badcamp-bg-trans-blue;
+    box-sizing: border-box;
+    padding: 0 7%;
     p {
       margin: 0;
+      line-height: 1.4;
+      margin-bottom: 0.25em;
     }
   }
   img {
@@ -95,7 +99,10 @@
 
 .pane-testimonials {
   .pane-content {
-    padding-top: 54px;
+    padding-top: 2em;
+  }
+  p {
+    font-size: 1.5em;
   }
 }
 .region-about-header {

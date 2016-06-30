@@ -25,10 +25,12 @@
     a {
       display: block;
       text-align: center;
-      color: $badcamp-off-white;
-      font-size: 31px;
+      color: $badcamp-header-white;
+      font-size: 32px;
       text-transform: uppercase;
       position: relative;
+      padding-top: 24px;
+      letter-spacing: 2.6px;
       &:before {
         content: url(../../images/bc_triangle_left.png);
         position: absolute;
@@ -50,7 +52,6 @@
     font-size: 26px;
     font-weight: bold;
     letter-spacing: 1.67px;
-    padding-top: 24px;
     .menu {
       font-family: $font-family-play;
       font-size: 20px;
