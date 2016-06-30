@@ -48,7 +48,8 @@ function badcamp_homepage_default_ctools_custom_content() {
 <p class="coordinates"><strong>Coordinates:</strong> 37°52\'18.8358"N, -122°15\'38.6388"W</p>
 
 <p class="date"><strong>Date:</strong> 2016.10.20 - 2016.10.23</p>
-</div>',
+</div>
+<hr /> <a class="button" href="./registration">Register for BADCamp</a>',
     'format' => 'full_html',
     'substitute' => 0,
   );
