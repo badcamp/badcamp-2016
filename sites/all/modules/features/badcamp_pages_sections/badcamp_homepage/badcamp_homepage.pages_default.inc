@@ -360,7 +360,7 @@ function badcamp_homepage_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Placeholder About Row 2: Big Image',
       'title' => '',
-      'body' => '<p><img src="/sites/all/themes/custom/badcamp2016/images/bc-about-img-learn.jpg" /></p>
+      'body' => '<p><img src="/sites/all/themes/custom/badcamp2016/images/badcamp-presentation.jpg" /></p>
 ',
       'format' => 'full_html',
       'substitute' => TRUE,
@@ -386,9 +386,9 @@ function badcamp_homepage_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Placeholder About Row 2: Attendee testimonial/quote',
       'title' => '',
-      'body' => '<p>“Lorem ipsum I love BADCamp! It helped me make the decision to move to CA.”</p>
+      'body' => '<p>“The magic of BADCamp is real. Not only are many of the same inspiring sessions at DrupalCon presented at BADCamp for free; but the atmosphere, events and community are so warm, open, fun and exciting. I’ve even moved to California to join the ranks of BADCamp volunteers. There’s literally no other event like it in the galaxy.”</p>
 
-<p class="orange">-John Smith, Company Name</p>
+<p class="orange">- Heather Rodriguez</p>
 ',
       'format' => 'full_html',
       'substitute' => TRUE,
