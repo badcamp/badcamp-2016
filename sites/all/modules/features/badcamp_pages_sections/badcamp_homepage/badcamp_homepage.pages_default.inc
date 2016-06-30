@@ -501,6 +501,45 @@ Berkeley</h2>',
     $display->content['new-8ee2d834-99f2-446d-9108-52703411c8f3'] = $pane;
     $display->panels['hero'][0] = 'new-8ee2d834-99f2-446d-9108-52703411c8f3';
     $pane = new stdClass();
+    $pane->pid = 'new-c1d45293-0db0-4a3e-b010-80d1c51d0f4a';
+    $pane->panel = 'hero';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'Buttons',
+      'title' => '',
+      'body' => '<p><a class="button" href="./registration">Register for BADCamp</a></p>
+',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'c1d45293-0db0-4a3e-b010-80d1c51d0f4a';
+    $display->content['new-c1d45293-0db0-4a3e-b010-80d1c51d0f4a'] = $pane;
+    $display->panels['hero'][1] = 'new-c1d45293-0db0-4a3e-b010-80d1c51d0f4a';
+    $pane = new stdClass();
     $pane->pid = 'new-8229d6aa-3cab-45af-a135-3e8e7417377e';
     $pane->panel = 'news';
     $pane->type = 'views_panes';

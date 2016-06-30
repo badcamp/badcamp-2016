@@ -49,7 +49,8 @@ function badcamp_homepage_default_ctools_custom_content() {
 
 <p class="date"><strong>Date:</strong> 2016.10.20 - 2016.10.23</p>
 </div>
-<hr /> <a class="button" href="./registration">Register for BADCamp</a>',
+</div>
+',
     'format' => 'full_html',
     'substitute' => 0,
   );
