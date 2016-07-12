@@ -13,4 +13,3 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[page_manager_handlers][] = node_view__event
 features[page_manager_pages][] = summits
-features[variable][] = page_manager_node_view_disabled

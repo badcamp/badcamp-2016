@@ -64,6 +64,7 @@ features[variable][] = html5_tools_override_user_register_form
 features[variable][] = html5_tools_override_views_field_rewrite_elements
 features[variable][] = image_jpeg_quality
 features[variable][] = image_toolkit
+features[variable][] = page_manager_node_view_disabled
 features[variable][] = panels_everywhere_site_template_enabled
 features[variable][] = site_403
 features[variable][] = site_default_country
