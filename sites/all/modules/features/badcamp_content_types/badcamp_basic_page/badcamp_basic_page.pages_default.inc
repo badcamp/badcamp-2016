@@ -50,16 +50,22 @@ function badcamp_basic_page_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-8594bb16-fbe7-4c7d-abc1-0c12f833c257';
+    $pane->pid = 'new-7e0ef841-6953-47d8-b4c7-adf058ba4138';
     $pane->panel = 'content';
-    $pane->type = 'node_body';
-    $pane->subtype = 'node_body';
+    $pane->type = 'node_content';
+    $pane->subtype = 'node_content';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'context' => 'argument_entity_id:node_1',
+      'links' => 0,
+      'no_extras' => 0,
       'override_title' => 1,
       'override_title_text' => '',
+      'identifier' => '',
+      'link' => 0,
+      'leave_node_title' => 0,
+      'build_mode' => 'full',
+      'context' => 'argument_entity_id:node_1',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -70,9 +76,9 @@ function badcamp_basic_page_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '8594bb16-fbe7-4c7d-abc1-0c12f833c257';
-    $display->content['new-8594bb16-fbe7-4c7d-abc1-0c12f833c257'] = $pane;
-    $display->panels['content'][0] = 'new-8594bb16-fbe7-4c7d-abc1-0c12f833c257';
+    $pane->uuid = '7e0ef841-6953-47d8-b4c7-adf058ba4138';
+    $display->content['new-7e0ef841-6953-47d8-b4c7-adf058ba4138'] = $pane;
+    $display->panels['content'][0] = 'new-7e0ef841-6953-47d8-b4c7-adf058ba4138';
     $pane = new stdClass();
     $pane->pid = 'new-ec9a3784-fc72-4e52-a4a8-51b2176bb1f3';
     $pane->panel = 'title';
@@ -102,7 +108,7 @@ function badcamp_basic_page_default_page_manager_handlers() {
     $display->content['new-ec9a3784-fc72-4e52-a4a8-51b2176bb1f3'] = $pane;
     $display->panels['title'][0] = 'new-ec9a3784-fc72-4e52-a4a8-51b2176bb1f3';
   $display->hide_title = PANELS_TITLE_NONE;
-  $display->title_pane = 'new-8594bb16-fbe7-4c7d-abc1-0c12f833c257';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view__panel_context_59090335-f05d-42ec-ac35-f4b1918461e9'] = $handler;
 
