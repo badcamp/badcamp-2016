@@ -46,12 +46,12 @@ function badcamp_food_and_drink_page_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'foundation_1col';
+  $display->layout = 'badcamp2016_1col';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
-      'middle' => NULL,
+      'content' => NULL,
     ),
   );
   $display->cache = array();
@@ -61,7 +61,7 @@ function badcamp_food_and_drink_page_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-3ff15d40-6cdb-4ee9-95a8-c40d4a8ac5e5';
-    $pane->panel = 'middle';
+    $pane->panel = 'content';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -83,10 +83,10 @@ function badcamp_food_and_drink_page_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '3ff15d40-6cdb-4ee9-95a8-c40d4a8ac5e5';
     $display->content['new-3ff15d40-6cdb-4ee9-95a8-c40d4a8ac5e5'] = $pane;
-    $display->panels['middle'][0] = 'new-3ff15d40-6cdb-4ee9-95a8-c40d4a8ac5e5';
+    $display->panels['content'][0] = 'new-3ff15d40-6cdb-4ee9-95a8-c40d4a8ac5e5';
     $pane = new stdClass();
     $pane->pid = 'new-3ab4c949-8488-4dc7-8ee6-fe176afb0523';
-    $pane->panel = 'middle';
+    $pane->panel = 'content';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -109,7 +109,7 @@ function badcamp_food_and_drink_page_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '3ab4c949-8488-4dc7-8ee6-fe176afb0523';
     $display->content['new-3ab4c949-8488-4dc7-8ee6-fe176afb0523'] = $pane;
-    $display->panels['middle'][1] = 'new-3ab4c949-8488-4dc7-8ee6-fe176afb0523';
+    $display->panels['content'][1] = 'new-3ab4c949-8488-4dc7-8ee6-fe176afb0523';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-3ab4c949-8488-4dc7-8ee6-fe176afb0523';
   $handler->conf['display'] = $display;
