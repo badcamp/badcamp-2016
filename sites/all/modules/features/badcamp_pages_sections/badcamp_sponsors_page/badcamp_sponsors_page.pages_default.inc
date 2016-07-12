@@ -46,7 +46,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'onecol';
+  $display->layout = 'badcamp2016_1col';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -61,7 +61,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-563a8ecb-2d49-40d3-b31a-df5796d82a7f';
-    $pane->panel = 'middle';
+    $pane->panel = 'content';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -84,7 +84,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '563a8ecb-2d49-40d3-b31a-df5796d82a7f';
     $display->content['new-563a8ecb-2d49-40d3-b31a-df5796d82a7f'] = $pane;
-    $display->panels['middle'][0] = 'new-563a8ecb-2d49-40d3-b31a-df5796d82a7f';
+    $display->panels['content'][0] = 'new-563a8ecb-2d49-40d3-b31a-df5796d82a7f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-563a8ecb-2d49-40d3-b31a-df5796d82a7f';
   $handler->conf['display'] = $display;
@@ -171,7 +171,8 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Sponsor Intro Text',
       'title' => 'Sponsors',
-      'body' => '<p>BADCamp would not be possible without our many generous sponsors. If you\'d like to be a part of making BADCamp happen, check out our <a href="/sponsorship-packages">sponsorship options</a> and let Matt and Anne know how you\'d like to get involved.</p>',
+      'body' => '<p>BADCamp would not be possible&nbsp;without our many generous sponsors.&nbsp;If you\'d like&nbsp;to be a part of making&nbsp;BADCamp happen, check out our <a href="/sponsorship-packages">sponsorship options</a> and let Matt and Anne know how you\'d like&nbsp;to get involved.</p>
+',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -187,10 +188,10 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $display->content['new-bd52c3b4-da17-48a9-b676-92c21fe9f489'] = $pane;
     $display->panels['content'][0] = 'new-bd52c3b4-da17-48a9-b676-92c21fe9f489';
     $pane = new stdClass();
-    $pane->pid = 'new-acb60212-4971-48f8-ba3f-7ef4ecc4cd7b';
+    $pane->pid = 'new-059e5b53-eeb1-4673-8ad4-428804cdfafb';
     $pane->panel = 'content';
     $pane->type = 'views_panes';
-    $pane->subtype = 'sponsors-panel_pane_1';
+    $pane->subtype = 'sponsors-panel_pane_4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -206,16 +207,13 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'core-sponsor',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'acb60212-4971-48f8-ba3f-7ef4ecc4cd7b';
-    $display->content['new-acb60212-4971-48f8-ba3f-7ef4ecc4cd7b'] = $pane;
-    $display->panels['content'][1] = 'new-acb60212-4971-48f8-ba3f-7ef4ecc4cd7b';
+    $pane->uuid = '059e5b53-eeb1-4673-8ad4-428804cdfafb';
+    $display->content['new-059e5b53-eeb1-4673-8ad4-428804cdfafb'] = $pane;
+    $display->panels['content'][1] = 'new-059e5b53-eeb1-4673-8ad4-428804cdfafb';
     $pane = new stdClass();
     $pane->pid = 'new-3819ca88-6526-4eae-9ce9-2a14192015d0';
     $pane->panel = 'content';
@@ -271,7 +269,7 @@ function badcamp_sponsors_page_default_page_manager_pages() {
     $display->content['new-18d618f9-3e3f-4c27-af94-90aea6b667cf'] = $pane;
     $display->panels['content'][3] = 'new-18d618f9-3e3f-4c27-af94-90aea6b667cf';
   $display->hide_title = PANELS_TITLE_PANE;
-  $display->title_pane = 'new-bd52c3b4-da17-48a9-b676-92c21fe9f489';
+  $display->title_pane = 'new-059e5b53-eeb1-4673-8ad4-428804cdfafb';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['sponsors'] = $page;
