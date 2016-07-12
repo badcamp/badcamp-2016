@@ -335,7 +335,7 @@ function badcamp_sponsors_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'block_grid';
   $handler->display->display_options['style_options']['grid'] = array(
     'small' => '1',
-    'medium' => '3',
+    'medium' => '2',
     'large' => '',
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
