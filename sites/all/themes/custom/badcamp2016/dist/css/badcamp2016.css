@@ -4127,21 +4127,31 @@ label, .form-required {
 
 .form-submit-wrapper {
   position: relative;
-  max-width: 95px;
   margin: auto; }
 
-#user-register-form .form-submit-wrapper:after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  border: inset 9px;
-  border-color: transparent transparent transparent #FEFEFE;
-  border-left-style: solid;
-  border-right-width: 0;
-  position: absolute;
-  top: 11px;
-  right: 16px; }
+.form-actions.form-wrapper {
+  text-align: center; }
+
+/* Use .form-submit-wrapper to mimic a.button style with input elements */
+.form-submit-wrapper.button {
+  display: inline-block;
+  /* Move the padding to the input element */
+  padding: 0; }
+  .form-submit-wrapper.button input.button,
+  .form-submit-wrapper.button input.button:hover {
+    margin-bottom: 0;
+    padding: 0.85em 1.95em 0.85em 1em;
+    border: 0;
+    background: none; }
+  .form-submit-wrapper.button:after {
+    /* Need this so the CSS triangle doesn't eat click events */
+    pointer-events: none; }
+
+.form-submit-wrapper + .form-submit-wrapper {
+  margin-left: 0.5em; }
+
+#user-register-form .form-actions.form-wrapper {
+  text-align: center; }
 
 #user-register-form .field-name-field-user-interest-volunteering, #user-register-form .field-name-field-user-mailchimp {
   display: inline-block;
@@ -4225,18 +4235,8 @@ label, .form-required {
     top: 11px;
     right: 16px; }
 
-.page-registration-profile .form-submit-wrapper:after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  border: inset 9px;
-  border-color: transparent transparent transparent #FEFEFE;
-  border-left-style: solid;
-  border-right-width: 0;
-  position: absolute;
-  top: 11px;
-  right: -26px; }
+.page-node-add-session form.node-session-form {
+  margin-bottom: 70px; }
 
 h3 {
   font-family: "Orbitron", sans-serif;

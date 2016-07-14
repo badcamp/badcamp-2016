@@ -42,20 +42,43 @@ label, .form-required {
   display: none !important;
 }
 
-
 .form-submit-wrapper {
   position: relative;
-  max-width: 95px;
   margin: auto;
 }
+
+.form-actions.form-wrapper {
+  text-align: center;
+}
+
+/* Use .form-submit-wrapper to mimic a.button style with input elements */
+.form-submit-wrapper.button {
+  display: inline-block;
+
+  /* Move the padding to the input element */
+  padding: 0;
+
+  input.button,
+  input.button:hover {
+    margin-bottom: 0;
+    padding: 0.85em 1.95em 0.85em 1em;
+    border: 0;
+    background: none;
+  }
+
+  &:after {
+    /* Need this so the CSS triangle doesn't eat click events */
+    pointer-events: none;
+  }
+}
+
+.form-submit-wrapper + .form-submit-wrapper {
+  margin-left: 0.5em;
+}
+
 #user-register-form {
-  .form-submit-wrapper {
-    &:after {
-      @include css-triangle(9px, $badcamp-off-white, right);
-      position: absolute;
-      top: 11px;
-      right: 16px;
-    }
+  .form-actions.form-wrapper {
+    text-align: center;
   }
 
   .field-name-field-user-interest-volunteering, .field-name-field-user-mailchimp {
@@ -139,13 +162,6 @@ label, .form-required {
 }
 
 
-.page-registration-profile {
-  .form-submit-wrapper {
-    &:after {
-      @include css-triangle(9px, $badcamp-off-white, right);
-      position: absolute;
-      top: 11px;
-      right: -26px;
-    }
-  }
+.page-node-add-session form.node-session-form {
+  margin-bottom: 70px;
 }
