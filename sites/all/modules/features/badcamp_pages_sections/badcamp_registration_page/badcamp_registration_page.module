@@ -88,7 +88,7 @@ function _badcamp_registration_page_form_pre_render_element($element) {
  * Implements hook_form_alter().
  */
 function badcamp_registration_page_form_alter(&$form, &$form_state, $form_id) {
-  // Checking because /registration/sponsorship has no "actions"
+  // Checking because /registration/sponsorship has no "actions".
   if (!array_key_exists('actions', $form)) {
     return;
   }
@@ -98,7 +98,7 @@ function badcamp_registration_page_form_alter(&$form, &$form_state, $form_id) {
     $form['actions']['submit']['#suffix'] = '</div>';
   }
 
-  // For /node/add/session
+  // For /node/add/session.
   if (array_key_exists('preview', $form['actions'])) {
     $form['actions']['preview']['#prefix'] = '<div class="form-submit-wrapper button">';
     $form['actions']['preview']['#suffix'] = '</div>';
