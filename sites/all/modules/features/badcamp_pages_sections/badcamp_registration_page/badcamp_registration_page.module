@@ -34,7 +34,6 @@ function badcamp_registration_page_form_user_register_form_alter(&$form, &$form_
   $form['field_user_mailchimp']['und'][0]['#title'] = '';
   $form['field_user_mailchimp']['und'][0]['subscribe']['#title'] = t('Subscribe to newsletter');
   $form['actions']['submit']['#value'] = t('Next');
-
 }
 
 /**
@@ -89,8 +88,21 @@ function _badcamp_registration_page_form_pre_render_element($element) {
  * Implements hook_form_alter().
  */
 function badcamp_registration_page_form_alter(&$form, &$form_state, $form_id) {
-  $form['actions']['submit']['#prefix'] = '<div class="form-submit-wrapper">';
-  $form['actions']['submit']['#suffix'] = '</div>';
+  // Checking because /registration/sponsorship has no "actions"
+  if (!array_key_exists('actions', $form)) {
+    return;
+  }
+
+  if (array_key_exists('submit', $form['actions'])) {
+    $form['actions']['submit']['#prefix'] = '<div class="form-submit-wrapper button">';
+    $form['actions']['submit']['#suffix'] = '</div>';
+  }
+
+  // For /node/add/session
+  if (array_key_exists('preview', $form['actions'])) {
+    $form['actions']['preview']['#prefix'] = '<div class="form-submit-wrapper button">';
+    $form['actions']['preview']['#suffix'] = '</div>';
+  }
 }
 
 /**
