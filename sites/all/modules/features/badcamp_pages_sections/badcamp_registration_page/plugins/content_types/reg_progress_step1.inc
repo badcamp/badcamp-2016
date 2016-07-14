@@ -25,7 +25,7 @@ function badcamp_registration_page_reg_progress_one_render($subtype, $conf, $pan
 
   // Add in the content.
   $block->content .= '<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="607px" height="90px" viewBox="0 76 607 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg class="reg-progress" width="607px" height="90px" viewBox="0 76 607 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
     <title>Registration title and steps</title>
     <desc>Created with Sketch.</desc>

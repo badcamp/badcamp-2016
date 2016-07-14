@@ -3665,6 +3665,11 @@ p {
     font-weight: 700;
     margin-left: -0.5rem; }
 
+svg.reg-progress {
+  max-width: 90%;
+  margin-left: 5%;
+  margin-right: 5%; }
+
 #site-header {
   background: url(../../images/hud_top.svg) bottom center no-repeat;
   padding-bottom: 90px; }
@@ -4109,6 +4114,16 @@ label, .form-required {
       content: none; }
   .page-registration .pane-user-register-form {
     margin-top: 60px; }
+
+.confirm-parent, .password-parent {
+  width: auto; }
+  .confirm-parent > div.password-confirm,
+  .confirm-parent .password-strength, .password-parent > div.password-confirm,
+  .password-parent .password-strength {
+    display: none; }
+
+.password-suggestions {
+  display: none !important; }
 
 .form-submit-wrapper {
   position: relative;

@@ -26,6 +26,23 @@ label, .form-required {
     margin-top: 60px;
   }
 }
+
+.confirm-parent, .password-parent {
+  //clear:none;
+  width:auto;
+
+  // Hide the password match & strength indicators
+  > div.password-confirm,
+  .password-strength {
+    display: none;
+  }
+}
+// Hide the password tips.
+.password-suggestions {
+  display: none !important;
+}
+
+
 .form-submit-wrapper {
   position: relative;
   max-width: 95px;
