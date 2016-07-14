@@ -70,6 +70,7 @@ $conf['master_modules']['base'] = array(
   'views_content',
 
   // BADCamp features.
+  'badcamp_community',
   'badcamp_basic_page',
   'badcamp_blog_post',
   'badcamp_code_of_conduct_page',
