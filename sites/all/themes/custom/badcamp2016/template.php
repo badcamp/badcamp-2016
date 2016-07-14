@@ -137,10 +137,10 @@ function badcamp2016_status_messages($variables) {
 
   foreach (drupal_get_messages($display) as $type => $messages) {
     if (isset($status_mapping[$type])) {
-      $output .= "<div data-alert class=\"callout messages {$status_mapping[$type]} {$type}\">\n";
+      $output .= "<div data-alert data-closable class=\"callout messages {$status_mapping[$type]} {$type}\">\n";
     }
     else {
-      $output .= "<div data-alert class=\"callout messages alert\">\n";
+      $output .= "<div data-alert data-closable class=\"callout messages alert\">\n";
     }
 
     if (!empty($status_heading[$type])) {
@@ -157,7 +157,7 @@ function badcamp2016_status_messages($variables) {
       $output .= $messages[0];
     }
 
-    $output .= '<button class="close-button"><span aria-hidden="true">&times;</span></button>';
+    $output .= '<button class="close-button" data-close><span aria-hidden="true">&times;</span></button>';
 
     $output .= "</div>\n";
   }
