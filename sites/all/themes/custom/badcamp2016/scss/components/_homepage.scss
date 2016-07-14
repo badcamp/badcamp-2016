@@ -114,6 +114,13 @@
     max-width: 987px;
     margin: auto;
   }
+
+  @include breakpoint(medium down) {
+    h2:before,
+    h2:after {
+      content: none;
+    }
+  }
 }
 .region-about-button {
   text-align: center;

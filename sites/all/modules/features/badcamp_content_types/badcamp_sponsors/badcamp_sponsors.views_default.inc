@@ -414,6 +414,75 @@ function badcamp_sponsors_views_default_views() {
   $handler->display->display_options['filters']['uuid']['value'] = '964f44c7-81c1-4b5b-b731-baf9021b1ee1';
   $handler->display->display_options['pane_category']['name'] = 'BADCamp';
   $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Core Sponsor Content pane */
+  $handler = $view->new_display('panel_pane', 'Core Sponsor Content pane', 'panel_pane_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Core Sponsors';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'block_grid';
+  $handler->display->display_options['style_options']['grid'] = array(
+    'small' => '1',
+    'medium' => '2',
+    'large' => '',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Sponsor level (field_sponsor_level) */
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['id'] = 'field_sponsor_level_tid';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['table'] = 'field_data_field_sponsor_level';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['field'] = 'field_sponsor_level_tid';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['label'] = 'Sponsor Level';
+  $handler->display->display_options['relationships']['field_sponsor_level_tid']['required'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'sponsor' => 'sponsor',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Taxonomy term: Taxonomy term UUID */
+  $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['relationship'] = 'field_sponsor_level_tid';
+  $handler->display->display_options['filters']['uuid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['uuid']['expose']['operator_id'] = 'uuid_op';
+  $handler->display->display_options['filters']['uuid']['expose']['label'] = 'Taxonomy term UUID';
+  $handler->display->display_options['filters']['uuid']['expose']['operator'] = 'uuid_op';
+  $handler->display->display_options['filters']['uuid']['expose']['identifier'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['pane_category']['name'] = 'BADCamp';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 'more_link';
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $export['sponsors'] = $view;
 
   return $export;
