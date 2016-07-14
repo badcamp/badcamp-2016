@@ -89,7 +89,7 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['fields']['name']['element_class'] = 'attendee-username';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
-  /* Field: User: Organization */
+  /* Field: User: Company */
   $handler->display->display_options['fields']['field_user_organization']['id'] = 'field_user_organization';
   $handler->display->display_options['fields']['field_user_organization']['table'] = 'field_data_field_user_organization';
   $handler->display->display_options['fields']['field_user_organization']['field'] = 'field_user_organization';
@@ -145,7 +145,7 @@ function badcamp_community_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  /* Filter criterion: User: Organization (field_user_organization) */
+  /* Filter criterion: User: Company (field_user_organization) */
   $handler->display->display_options['filters']['field_user_organization_value']['id'] = 'field_user_organization_value';
   $handler->display->display_options['filters']['field_user_organization_value']['table'] = 'field_data_field_user_organization';
   $handler->display->display_options['filters']['field_user_organization_value']['field'] = 'field_user_organization_value';
@@ -176,7 +176,7 @@ function badcamp_community_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  /* Filter criterion: User: I would like to volunteer at BADCamp (field_user_interest_volunteering) */
+  /* Filter criterion: User: I would like to volunteer! (field_user_interest_volunteering) */
   $handler->display->display_options['filters']['field_user_interest_volunteering_value']['id'] = 'field_user_interest_volunteering_value';
   $handler->display->display_options['filters']['field_user_interest_volunteering_value']['table'] = 'field_data_field_user_interest_volunteering';
   $handler->display->display_options['filters']['field_user_interest_volunteering_value']['field'] = 'field_user_interest_volunteering_value';
@@ -288,7 +288,7 @@ function badcamp_community_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  /* Filter criterion: User: Organization (field_user_organization) */
+  /* Filter criterion: User: Company (field_user_organization) */
   $handler->display->display_options['filters']['field_user_organization_value']['id'] = 'field_user_organization_value';
   $handler->display->display_options['filters']['field_user_organization_value']['table'] = 'field_data_field_user_organization';
   $handler->display->display_options['filters']['field_user_organization_value']['field'] = 'field_user_organization_value';
@@ -393,7 +393,7 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['fields']['name']['element_class'] = 'attendee-username link green';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
-  /* Field: User: Organization */
+  /* Field: User: Company */
   $handler->display->display_options['fields']['field_user_organization']['id'] = 'field_user_organization';
   $handler->display->display_options['fields']['field_user_organization']['table'] = 'field_data_field_user_organization';
   $handler->display->display_options['fields']['field_user_organization']['field'] = 'field_user_organization';
@@ -458,7 +458,7 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: User: I would like to volunteer at BADCamp (field_user_interest_volunteering) */
+  /* Filter criterion: User: I would like to volunteer! (field_user_interest_volunteering) */
   $handler->display->display_options['filters']['field_user_interest_volunteering_value']['id'] = 'field_user_interest_volunteering_value';
   $handler->display->display_options['filters']['field_user_interest_volunteering_value']['table'] = 'field_data_field_user_interest_volunteering';
   $handler->display->display_options['filters']['field_user_interest_volunteering_value']['field'] = 'field_user_interest_volunteering_value';
@@ -524,7 +524,7 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['fields']['name']['element_class'] = 'attendee-username';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
-  /* Field: User: Organization */
+  /* Field: User: Company */
   $handler->display->display_options['fields']['field_user_organization']['id'] = 'field_user_organization';
   $handler->display->display_options['fields']['field_user_organization']['table'] = 'field_data_field_user_organization';
   $handler->display->display_options['fields']['field_user_organization']['field'] = 'field_user_organization';
@@ -568,8 +568,12 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['style_options']['row_class'] = 'attendee';
+  $handler->display->display_options['style_plugin'] = 'block_grid';
+  $handler->display->display_options['style_options']['grid'] = array(
+    'small' => '2',
+    'medium' => '4',
+    'large' => '4',
+  );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -617,7 +621,7 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['fields']['name']['element_class'] = 'attendee-username';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
-  /* Field: User: Organization */
+  /* Field: User: Company */
   $handler->display->display_options['fields']['field_user_organization']['id'] = 'field_user_organization';
   $handler->display->display_options['fields']['field_user_organization']['table'] = 'field_data_field_user_organization';
   $handler->display->display_options['fields']['field_user_organization']['field'] = 'field_user_organization';
