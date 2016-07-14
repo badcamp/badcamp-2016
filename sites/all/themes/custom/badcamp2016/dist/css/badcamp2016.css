@@ -4290,4 +4290,10 @@ h3 {
   text-decoration: underline;
   font-size: 18px; }
 
+@media screen and (min-width: 40em) {
+  .node.node-sponsor .field-name-field-sponsor-logo {
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px; } }
+
 /*# sourceMappingURL=maps/badcamp2016.css.map */

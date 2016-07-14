@@ -1,0 +1,11 @@
+
+
+@include breakpoint(medium) {
+  .node.node-sponsor {
+    .field-name-field-sponsor-logo {
+      float:right;
+      margin-left:20px;
+      margin-bottom:20px;
+    }
+  }
+}

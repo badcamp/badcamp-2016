@@ -121,7 +121,7 @@ function badcamp_sponsors_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image_link_formatter',
         'settings' => array(
           'image_link' => 'field_sponsor_url',
