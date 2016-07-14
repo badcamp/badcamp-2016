@@ -56,7 +56,7 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_class'] = 'attendee-photo';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['picture']['empty'] = '<img src="/sites/all/themes/badcamp2015/logo.png" class="attendee-photo" />';
+  $handler->display->display_options['fields']['picture']['empty'] = '<img src="/sites/all/themes/custom/badcamp2016/images/logo-bw.png" class="attendee-photo" />';
   $handler->display->display_options['fields']['picture']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['picture']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['picture']['image_style'] = 'borealis_large_respondmedium';
@@ -203,7 +203,7 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_class'] = 'attendee-photo';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['picture']['empty'] = '<img src="/sites/all/themes/badcamp2015/logo.png" class="attendee-photo" width="220px" height="220px" />';
+  $handler->display->display_options['fields']['picture']['empty'] = '<img src="/sites/all/themes/custom/badcamp2016/images/logo-bw.png" class="attendee-photo" width="220px" height="220px" />';
   $handler->display->display_options['fields']['picture']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['picture']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['picture']['image_style'] = 'headshot';
@@ -358,7 +358,7 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_class'] = 'attendee-photo';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['picture']['empty'] = '<img src="/sites/all/themes/badcamp2015/logo.png" class="attendee-photo" />';
+  $handler->display->display_options['fields']['picture']['empty'] = '<img src="/sites/all/themes/custom/badcamp2016/images/logo-bw.png" class="attendee-photo" />';
   $handler->display->display_options['fields']['picture']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['picture']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['picture']['image_style'] = 'headshot_thumbnail';
@@ -588,7 +588,7 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_class'] = 'attendee-photo';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['picture']['empty'] = '<a><img width="220" height="220" src="/sites/all/themes/badcamp2015/logo.png" class="attendee-photo" /></a>';
+  $handler->display->display_options['fields']['picture']['empty'] = '<a><img width="220" height="220" src="/sites/all/themes/custom/badcamp2016/images/logo-bw.png" class="attendee-photo" /></a>';
   $handler->display->display_options['fields']['picture']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['picture']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['picture']['image_style'] = 'headshot';
