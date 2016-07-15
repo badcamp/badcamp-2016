@@ -4213,16 +4213,16 @@ label, .form-required {
 .page-node-add-session form.node-session-form {
   margin-bottom: 70px; }
 
-.node-session-form .pane-title {
+.page-propose-session .pane-title {
   color: #59A8C1;
   font-weight: bold;
   text-transform: none; }
   @media screen and (min-width: 64em) {
-    .node-session-form .pane-title {
+    .page-propose-session .pane-title {
       font-size: 2.5vw; } }
-  .node-session-form .pane-title:before {
+  .page-propose-session .pane-title:before {
     display: none; }
-  .node-session-form .pane-title:after {
+  .page-propose-session .pane-title:after {
     font-weight: bold;
     color: #FEFEFE; }
 
