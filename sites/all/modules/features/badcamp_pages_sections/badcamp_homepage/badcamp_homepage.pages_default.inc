@@ -521,7 +521,7 @@ Berkeley</h2>',
       ),
     );
     $pane->configuration = array(
-      'admin_title' => 'Buttons',
+      'admin_title' => 'Buttons - NLIV',
       'title' => '',
       'body' => '<p><a class="button" href="./registration">Register for BADCamp</a></p>
 ',
@@ -539,6 +539,45 @@ Berkeley</h2>',
     $pane->uuid = 'c1d45293-0db0-4a3e-b010-80d1c51d0f4a';
     $display->content['new-c1d45293-0db0-4a3e-b010-80d1c51d0f4a'] = $pane;
     $display->panels['hero'][1] = 'new-c1d45293-0db0-4a3e-b010-80d1c51d0f4a';
+    $pane = new stdClass();
+    $pane->pid = 'new-781b2983-a4c7-4355-bd31-acb63b69aecb';
+    $pane->panel = 'hero';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 2,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'Buttons',
+      'title' => '',
+      'body' => '<a href="sessions/propose" class="button">Submit your session proposal</a>',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '781b2983-a4c7-4355-bd31-acb63b69aecb';
+    $display->content['new-781b2983-a4c7-4355-bd31-acb63b69aecb'] = $pane;
+    $display->panels['hero'][2] = 'new-781b2983-a4c7-4355-bd31-acb63b69aecb';
     $pane = new stdClass();
     $pane->pid = 'new-8229d6aa-3cab-45af-a135-3e8e7417377e';
     $pane->panel = 'news';
