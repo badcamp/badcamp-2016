@@ -149,32 +149,6 @@ function badcamp_sessions_page_default_page_manager_pages() {
     $display->content['new-7b20ba5d-87d9-4c52-a6d4-a27f76e33af0'] = $pane;
     $display->panels['column_right'][1] = 'new-7b20ba5d-87d9-4c52-a6d4-a27f76e33af0';
     $pane = new stdClass();
-    $pane->pid = 'new-b55abfa9-465a-4892-85d4-f17500e3e737';
-    $pane->panel = 'column_right';
-    $pane->type = 'entity_form_field';
-    $pane->subtype = 'node:field_session_skill_level';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => '',
-      'formatter' => '',
-      'context' => 'context_node_add_form_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'b55abfa9-465a-4892-85d4-f17500e3e737';
-    $display->content['new-b55abfa9-465a-4892-85d4-f17500e3e737'] = $pane;
-    $display->panels['column_right'][2] = 'new-b55abfa9-465a-4892-85d4-f17500e3e737';
-    $pane = new stdClass();
     $pane->pid = 'new-e33b2432-033f-4752-b25d-b6ef9d7e6f7c';
     $pane->panel = 'column_right';
     $pane->type = 'entity_form_field';
@@ -195,11 +169,37 @@ function badcamp_sessions_page_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'e33b2432-033f-4752-b25d-b6ef9d7e6f7c';
     $display->content['new-e33b2432-033f-4752-b25d-b6ef9d7e6f7c'] = $pane;
-    $display->panels['column_right'][3] = 'new-e33b2432-033f-4752-b25d-b6ef9d7e6f7c';
+    $display->panels['column_right'][2] = 'new-e33b2432-033f-4752-b25d-b6ef9d7e6f7c';
+    $pane = new stdClass();
+    $pane->pid = 'new-b55abfa9-465a-4892-85d4-f17500e3e737';
+    $pane->panel = 'column_right';
+    $pane->type = 'entity_form_field';
+    $pane->subtype = 'node:field_session_skill_level';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => '',
+      'formatter' => '',
+      'context' => 'context_node_add_form_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'b55abfa9-465a-4892-85d4-f17500e3e737';
+    $display->content['new-b55abfa9-465a-4892-85d4-f17500e3e737'] = $pane;
+    $display->panels['column_right'][3] = 'new-b55abfa9-465a-4892-85d4-f17500e3e737';
     $pane = new stdClass();
     $pane->pid = 'new-65a2506a-0976-4b9f-bb6f-0d82e0a8cb58';
     $pane->panel = 'column_right';

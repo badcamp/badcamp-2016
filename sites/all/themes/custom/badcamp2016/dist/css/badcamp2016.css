@@ -4213,6 +4213,25 @@ label, .form-required {
 .page-node-add-session form.node-session-form {
   margin-bottom: 70px; }
 
+.node-session-form .pane-title {
+  color: #59A8C1;
+  font-weight: bold;
+  text-transform: none; }
+  @media screen and (min-width: 64em) {
+    .node-session-form .pane-title {
+      font-size: 2.5vw; } }
+  .node-session-form .pane-title:before {
+    display: none; }
+  .node-session-form .pane-title:after {
+    font-weight: bold;
+    color: #FEFEFE; }
+
+#field-session-speaker-values thead, #field-session-speaker-values th, #field-session-speaker-values td, #field-session-speaker-values tr {
+  border: none;
+  border-top: none;
+  border-bottom: none;
+  background: black; }
+
 h3 {
   font-family: "Orbitron", sans-serif;
   color: #59A8C1;

@@ -165,3 +165,30 @@ label, .form-required {
 .page-node-add-session form.node-session-form {
   margin-bottom: 70px;
 }
+
+// Add Session form.
+.node-session-form {
+  .pane-title {
+    color: $badcamp-lt-blue;
+    font-weight: bold;
+    text-transform: none;
+    @include breakpoint(large up) {
+      font-size: 2.5vw;
+    }
+    &:before {
+      display: none;
+    }
+    &:after {
+      font-weight: bold;
+      color: $badcamp-off-white;
+    }
+  }
+}
+#field-session-speaker-values {
+  thead, th, td, tr {
+    border: none;
+    border-top: none;
+    border-bottom: none;
+    background: black;
+  }
+}

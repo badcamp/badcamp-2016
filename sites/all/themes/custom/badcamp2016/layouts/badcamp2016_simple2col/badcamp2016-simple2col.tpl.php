@@ -8,13 +8,13 @@
 <div class="region-content">
   <div class="row">
     <?php if ($content['column_left']) : ?>
-      <div class="medium-6  columns">
+      <div class="large-6  columns">
         <?php print $content['column_left']; ?>
       </div>
     <?php endif; ?>
 
     <?php if ($content['column_right']) : ?>
-      <div class="medium-6 columns">
+      <div class="large-6 columns">
         <?php print $content['column_right']; ?>
       </div>
     <?php endif; ?>
