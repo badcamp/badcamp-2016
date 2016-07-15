@@ -26,6 +26,7 @@ $conf['master_allow_base_scope'] = TRUE;
 $conf['master_modules'] = array();
 $conf['master_modules']['base'] = array(
   // Core modules.
+  'dblog',
   'file',
   'image',
   'list',
@@ -89,6 +90,7 @@ $conf['master_modules']['base'] = array(
   'badcamp_site_config',
   'badcamp_sponsors',
   'badcamp_sponsors_page',
+  'badcamp_summits_page',
   'badcamp_trainings_page',
   'badcamp_user_profile',
   'feature_badcamp_homepage',
@@ -99,7 +101,6 @@ $conf['master_modules']['base'] = array(
   'badcamp_theme',
 );
 $conf['master_modules']['local'] = array(
-  'dblog',
   'diff',
   'field_ui',
   'page_manager',

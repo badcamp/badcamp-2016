@@ -15,7 +15,7 @@ function badcamp_sessions_page_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Propose Session';
   $page->admin_description = '';
-  $page->path = 'propose-session';
+  $page->path = 'sessions/propose';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array();
@@ -319,18 +319,19 @@ function badcamp_sessions_page_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
+      'content' => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = 'BADCamp Sessions';
+  $display->title = 'BADCamp Proposed Sessions';
   $display->uuid = '7d79d4b8-f6bc-4b94-892c-11230fa45901';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-89ecd5c8-75cf-4310-9b2f-a5b00ddf8673';
+    $pane->pid = 'new-10003192-39c7-40c7-bb18-6ca0db75414d';
     $pane->panel = 'content';
     $pane->type = 'views_panes';
-    $pane->subtype = 'badcamp_sessions-panel_pane_3';
+    $pane->subtype = 'badcamp_sessions-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -346,9 +347,9 @@ function badcamp_sessions_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '89ecd5c8-75cf-4310-9b2f-a5b00ddf8673';
-    $display->content['new-89ecd5c8-75cf-4310-9b2f-a5b00ddf8673'] = $pane;
-    $display->panels['content'][0] = 'new-89ecd5c8-75cf-4310-9b2f-a5b00ddf8673';
+    $pane->uuid = '10003192-39c7-40c7-bb18-6ca0db75414d';
+    $display->content['new-10003192-39c7-40c7-bb18-6ca0db75414d'] = $pane;
+    $display->panels['content'][0] = 'new-10003192-39c7-40c7-bb18-6ca0db75414d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
