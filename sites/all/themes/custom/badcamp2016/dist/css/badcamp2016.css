@@ -4049,15 +4049,16 @@ ul.tabs li a:hover {
 .pane-title {
   text-align: center;
   text-transform: uppercase; }
-  .pane-title:before {
-    content: "\\\\\\\\";
-    padding-right: 18px; }
-  .pane-title:after {
-    content: "////";
-    padding-left: 18px; }
-  .pane-title:before, .pane-title:after {
-    display: inline-block;
-    color: #FF9A00; }
+  @media screen and (min-width: 40em) {
+    .pane-title:before {
+      content: "\\\\\\\\";
+      padding-right: 18px; }
+    .pane-title:after {
+      content: "////";
+      padding-left: 18px; }
+    .pane-title:before, .pane-title:after {
+      display: inline-block;
+      color: #FF9A00; } }
 
 .region-content,
 .region-about,
