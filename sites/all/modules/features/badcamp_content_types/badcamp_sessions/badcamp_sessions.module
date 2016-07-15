@@ -21,14 +21,3 @@ function badcamp_sessions_form_alter(&$form, &$form_state, $form_id) {
     }
   }
 }
-
-/**
- * Implements hook_admin_paths().
- *
- * Declare node/add/session as a non-admin path.
- */
-function badcamp_sessions_admin_paths() {
-  return array(
-    'node/add/session' => FALSE,
-  );
-}
