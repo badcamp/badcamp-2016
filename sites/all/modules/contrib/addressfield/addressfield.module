@@ -305,7 +305,14 @@ function theme_addressfield_container($variables) {
   if (strlen($element['#children']) > 0) {
     $output = '<' . $element['#tag'] . drupal_attributes($element['#attributes']) . '>';
     $output .= $element['#children'];
-    $output .= '</' . $element['#tag'] . ">";
+    $output .= '</' . $element['#tag'] . '>';
+    // Add a linebreak to the HTML after a div. This is invisible on the
+    // rendered page but improves the appearance of address field output when
+    // HTML tags are stripped, such as by Views Data Export.
+    if ($element['#tag'] == 'div') {
+      $output .= PHP_EOL;
+    }
+
     return $output;
   }
   else {
@@ -446,7 +453,7 @@ function addressfield_field_presave($entity_type, $entity, $field, $instance, $l
     // spaces to single spaces.
     foreach ($item as $key => &$value) {
       if (!in_array($key, array('data')) && is_string($value)) {
-        $value = trim(str_replace('  ', ' ', $value));
+        $value = trim(preg_replace('/[[:blank:]]{2,}/u', ' ', $value));
       }
     }
   }

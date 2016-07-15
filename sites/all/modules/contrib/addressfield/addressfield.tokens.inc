@@ -223,8 +223,10 @@ function addressfield_tokens($type, $tokens, array $data = array(), array $optio
           $format_handlers = $instance['widget']['settings']['format_handlers'];
         }
 
-        // Generate the necessary address field tokens for the entity.
-        $replacements += token_generate('address-field', $addressfield_tokens, array('address-field' => $data['entity']->$field_name, 'format_handlers' => $format_handlers), $options);
+        if (property_exists($data['entity'], $field_name)) {
+          // Generate the necessary address field tokens for the entity.
+          $replacements += token_generate('address-field', $addressfield_tokens, array('address-field' => $data['entity']->$field_name, 'format_handlers' => $format_handlers), $options);
+        }
       }
     }
   }
