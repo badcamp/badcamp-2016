@@ -4284,6 +4284,10 @@ h3 {
   text-decoration: underline;
   font-size: 18px; }
 
+.view-attendees .views-row {
+  margin-bottom: 20px;
+  text-align: center; }
+
 @media screen and (min-width: 40em) {
   .node.node-sponsor .field-name-field-sponsor-logo {
     float: right;
