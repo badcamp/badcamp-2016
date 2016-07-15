@@ -5,3 +5,13 @@
  */
 
 include_once 'badcamp_community_page.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ */
+function badcamp_community_page_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#id'] == 'views-exposed-form-attendees-page-1') {
+    $form['submit']['#prefix'] = '<div class="form-submit-wrapper button">';
+    $form['submit']['#suffix'] = '</div>';
+  }
+}

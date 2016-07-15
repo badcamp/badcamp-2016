@@ -4288,6 +4288,12 @@ h3 {
   margin-bottom: 20px;
   text-align: center; }
 
+.view-attendees .button.form-submit {
+  margin-top: 0; }
+
+.view-attendees .button.form-submit-wrapper {
+  margin-top: 1.6em; }
+
 @media screen and (min-width: 40em) {
   .node.node-sponsor .field-name-field-sponsor-logo {
     float: right;
