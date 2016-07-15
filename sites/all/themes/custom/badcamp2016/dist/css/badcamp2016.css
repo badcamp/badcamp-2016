@@ -3973,6 +3973,9 @@ svg.reg-progress {
   text-align: center;
   width: 100%; }
 
+.region-sponsors .view-header {
+  text-align: center; }
+
 .region-sponsors .view-footer .sponsor-buttons {
   text-align: center; }
 
