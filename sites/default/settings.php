@@ -11,8 +11,8 @@ if (file_exists(DRUPAL_ROOT . '/sites/default/settings.secret.php')) {
 
 // Pantheon.
 if (defined('PANTHEON_ENVIRONMENT')) {
-  if (file_exists(dirname(__FILE__) . '/pantheon.settings.php')) {
-    require_once(dirname(__FILE__) . '/pantheon.settings.php');
+  if (file_exists(DRUPAL_ROOT . '/sites/default/pantheon.settings.php')) {
+    require_once(DRUPAL_ROOT . '/sites/default/pantheon.settings.php');
   }
 }
 
