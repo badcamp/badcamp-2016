@@ -50,7 +50,7 @@ function badcamp_sessions_page_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="propose-session" class="button">Submit your session proposal</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="sessions/propose" class="button">Submit your session proposal</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -59,7 +59,7 @@ function badcamp_sessions_page_views_default_views() {
   $handler->display->display_options['empty']['area']['label'] = 'Please propose a session';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'There are currently no proposed sessions.
-<a href="node/add/session" class="button">Submit your session proposal</a>';
+<a href="sessions/propose" class="button">Submit your session proposal</a>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -142,7 +142,7 @@ function badcamp_sessions_page_views_default_views() {
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = '<a href="propose-session" class="button">Submit your session proposal</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="sessions/propose" class="button">Submit your session proposal</a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
@@ -327,10 +327,10 @@ function badcamp_sessions_page_views_default_views() {
   $handler->display->display_options['empty']['area']['label'] = 'Please propose a session';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'There are currently no accepted sessions.
-<a href="node/add/session" class="button">Submit your session proposal</a>';
+<a href="sessions/propose" class="button">Submit your session proposal</a>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Broken/missing handler */
+  /* Relationship: Flags: (Please select a flag) */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
