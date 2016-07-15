@@ -85,6 +85,7 @@ $conf['master_modules']['base'] = array(
   'badcamp_registration_page',
   'badcamp_scholarship_application',
   'badcamp_sessions',
+  'badcamp_sessions_page',
   'badcamp_site_config',
   'badcamp_sponsors',
   'badcamp_sponsors_page',
