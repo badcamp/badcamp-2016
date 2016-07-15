@@ -580,7 +580,7 @@ function badcamp_registration_page_default_page_manager_pages() {
       0 => array(
         'identifier' => 'User category edit form from user (fixed)',
         'keyword' => 'user_category_form',
-        'name' => 'user_category_edit_form_from_user',
+        'name' => 'user_category_edit_form_from_user_fixed',
         'category' => '',
         'context' => 'context_user_1',
         'id' => 1,
@@ -620,7 +620,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->configuration = array(
       'label' => '',
       'formatter' => '',
-      'context' => 'relationship_user_category_edit_form_from_user_1',
+      'context' => 'relationship_user_category_edit_form_from_user_fixed_1',
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -684,7 +684,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->configuration = array(
       'label' => '',
       'formatter' => '',
-      'context' => 'relationship_user_category_edit_form_from_user_1',
+      'context' => 'relationship_user_category_edit_form_from_user_fixed_1',
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -708,7 +708,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'context' => 'relationship_user_category_edit_form_from_user_1',
+      'context' => 'relationship_user_category_edit_form_from_user_fixed_1',
       'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -734,7 +734,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->configuration = array(
       'label' => '',
       'formatter' => '',
-      'context' => 'relationship_user_category_edit_form_from_user_1',
+      'context' => 'relationship_user_category_edit_form_from_user_fixed_1',
       'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -760,7 +760,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->configuration = array(
       'label' => '',
       'formatter' => '',
-      'context' => 'relationship_user_category_edit_form_from_user_1',
+      'context' => 'relationship_user_category_edit_form_from_user_fixed_1',
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -786,7 +786,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->configuration = array(
       'label' => '',
       'formatter' => '',
-      'context' => 'relationship_user_category_edit_form_from_user_1',
+      'context' => 'relationship_user_category_edit_form_from_user_fixed_1',
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -812,7 +812,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->configuration = array(
       'label' => '',
       'formatter' => '',
-      'context' => 'relationship_user_category_edit_form_from_user_1',
+      'context' => 'relationship_user_category_edit_form_from_user_fixed_1',
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -838,7 +838,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->configuration = array(
       'label' => '',
       'formatter' => '',
-      'context' => 'relationship_user_category_edit_form_from_user_1',
+      'context' => 'relationship_user_category_edit_form_from_user_fixed_1',
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -864,7 +864,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->configuration = array(
       'label' => '',
       'formatter' => '',
-      'context' => 'relationship_user_category_edit_form_from_user_1',
+      'context' => 'relationship_user_category_edit_form_from_user_fixed_1',
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -890,7 +890,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->configuration = array(
       'label' => '',
       'formatter' => '',
-      'context' => 'relationship_user_category_edit_form_from_user_1',
+      'context' => 'relationship_user_category_edit_form_from_user_fixed_1',
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -916,7 +916,7 @@ function badcamp_registration_page_default_page_manager_pages() {
     $pane->configuration = array(
       'label' => '',
       'formatter' => '',
-      'context' => 'relationship_user_category_edit_form_from_user_1',
+      'context' => 'relationship_user_category_edit_form_from_user_fixed_1',
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
