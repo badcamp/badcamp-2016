@@ -2,17 +2,20 @@
 .pane-title {
   text-align: center;
   text-transform: uppercase;
-  &:before {
-    content: "\\\\\\\\";
-    padding-right: 18px;
-  }
-  &:after {
-    content: "////";
-    padding-left: 18px;
-  }
-  &:before, &:after {
-    display: inline-block;
-    color:$badcamp-orange;
+
+  @include breakpoint(medium) {
+    &:before {
+      content: "\\\\\\\\";
+      padding-right: 18px;
+    }
+    &:after {
+      content: "////";
+      padding-left: 18px;
+    }
+    &:before, &:after {
+      display: inline-block;
+      color: $badcamp-orange;
+    }
   }
 }
 
