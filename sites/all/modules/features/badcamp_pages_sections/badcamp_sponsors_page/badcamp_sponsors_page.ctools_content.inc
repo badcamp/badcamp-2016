@@ -19,7 +19,7 @@ function badcamp_sponsors_page_default_ctools_custom_content() {
   $content->category = 'BADCamp';
   $content->settings = array(
     'admin_title' => 'BADCamp Sponsor packages',
-    'title' => 'Title Test xxx',
+    'title' => 'BADCamp Sponsor packages',
     'body' => '<p>Our entire Bay Area Drupal community is looking forward to our most magical BADCamp ever and hope you can join the all-star lineup of luminary developers and business leaders.</p>
 
 <h2><b>Contrib+</b> Sponsorship: $4,000 [up to 8]</h2>
