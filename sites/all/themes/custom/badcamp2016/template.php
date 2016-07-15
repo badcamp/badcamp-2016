@@ -164,3 +164,18 @@ function badcamp2016_status_messages($variables) {
 
   return $output;
 }
+
+/**
+* Implements hook_html_head_alter().
+*/
+function badcamp2016_html_head_alter(&$head_elements) {
+ // Optimize mobile viewport.
+ $head_elements['mobile_viewport'] = array(
+   '#type' => 'html_tag',
+   '#tag' => 'meta',
+   '#attributes' => array(
+     'name' => 'viewport',
+     'content' => 'width=device-width, maximum-scale = 1.0',
+   ),
+ );
+}
