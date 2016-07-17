@@ -55,6 +55,7 @@ function badcamp_sessions_user_default_permissions() {
     'name' => 'create session content',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -62,7 +63,9 @@ function badcamp_sessions_user_default_permissions() {
   // Exported permission: 'delete any session content'.
   $permissions['delete any session content'] = array(
     'name' => 'delete any session content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -71,6 +74,7 @@ function badcamp_sessions_user_default_permissions() {
     'name' => 'delete own session content',
     'roles' => array(
       'administrator' => 'administrator',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -108,6 +112,7 @@ function badcamp_sessions_user_default_permissions() {
     'name' => 'edit any session content',
     'roles' => array(
       'administrator' => 'administrator',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
