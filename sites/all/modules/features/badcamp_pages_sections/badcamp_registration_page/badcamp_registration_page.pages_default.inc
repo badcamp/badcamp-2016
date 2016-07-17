@@ -490,6 +490,32 @@ function badcamp_registration_page_default_page_manager_pages() {
     $display->content['new-9f9872b7-f2a7-4d33-89d9-43f5a51afc2f'] = $pane;
     $display->panels['content'][0] = 'new-9f9872b7-f2a7-4d33-89d9-43f5a51afc2f';
     $pane = new stdClass();
+    $pane->pid = 'new-7dc1a3e4-4775-410e-8332-7baaf14536e2';
+    $pane->panel = 'content';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Heads up!',
+      'title' => 'Heads up!',
+      'body' => '<p>Registration is not saved from year-to-year; even if you\'ve attended before, you\'ll still need to register.</p>
+',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '7dc1a3e4-4775-410e-8332-7baaf14536e2';
+    $display->content['new-7dc1a3e4-4775-410e-8332-7baaf14536e2'] = $pane;
+    $display->panels['content'][1] = 'new-7dc1a3e4-4775-410e-8332-7baaf14536e2';
+    $pane = new stdClass();
     $pane->pid = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
     $pane->panel = 'content';
     $pane->type = 'user_register_form';
@@ -510,11 +536,11 @@ function badcamp_registration_page_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
     $display->content['new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f'] = $pane;
-    $display->panels['content'][1] = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
+    $display->panels['content'][2] = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-4c1a2641-af66-4b7b-ae00-d6c3a8fa713f';
   $handler->conf['display'] = $display;
@@ -543,6 +569,8 @@ function badcamp_registration_page_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array();
   $page->arguments = array();
