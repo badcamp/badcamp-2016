@@ -4094,6 +4094,12 @@ label, .form-required {
   .page-registration .pane-user-register-form {
     margin-top: 60px; }
 
+.page-registration-sponsorship .form-actions.form-wrapper {
+  margin-top: 4em; }
+  @media screen and (min-width: 40em) {
+    .page-registration-sponsorship .form-actions.form-wrapper {
+      margin-top: 1em; } }
+
 .confirm-parent, .password-parent {
   width: auto; }
   .confirm-parent > div.password-confirm,
