@@ -9,9 +9,9 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
   // Live.
   if ($_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
     // Require SSL and/or redirect the live environment domain.
-    if (FALSE && !isset($_SERVER['HTTP_X_SSL']) ||
+    if (FALSE && (!isset($_SERVER['HTTP_X_SSL']) ||
       (isset($_SERVER['HTTP_X_SSL']) && $_SERVER['HTTP_X_SSL'] != 'ON') ||
-      $_SERVER['HTTP_HOST'] == "live-badcamp-2016-artifact.pantheonsite.io") {
+      $_SERVER['HTTP_HOST'] == "live-badcamp-2016-artifact.pantheonsite.io")) {
       header('HTTP/1.0 301 Moved Permanently');
       header('Location: https://2016.badcamp.net'. $_SERVER['REQUEST_URI']);
       exit();
