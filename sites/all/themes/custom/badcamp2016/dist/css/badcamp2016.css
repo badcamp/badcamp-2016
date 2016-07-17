@@ -4255,6 +4255,12 @@ h3 {
   .pane-sponsors-panel-pane-1 h3.pane-title:after, .pane-sponsors-panel-pane-4 h3.pane-title:after {
     content: none; }
 
+.page-sponsors .view-id-sponsors .row {
+  background-color: #fefefe;
+  padding: 2em; }
+  .page-sponsors .view-id-sponsors .row .views-field-field-sponsor-logo {
+    padding: 2em; }
+
 .pane-badcamp-news-panel-pane-1 h2.pane-title {
   margin-bottom: 40px; }
 

@@ -24,6 +24,18 @@ h3 {
   }
 }
 
+.page-sponsors {
+  .view-id-sponsors {
+    .row {
+      background-color: $white;
+      padding: 2em;
+      .views-field-field-sponsor-logo{
+        padding: 2em;
+      }
+    }
+  }
+}
+
 // news view
 .pane-badcamp-news-panel-pane-1
 h2.pane-title{
