@@ -25,7 +25,7 @@ function badcamp_mailchimp_field_default_field_bases() {
     'module' => 'mailchimp_lists',
     'settings' => array(
       'double_opt_in' => 1,
-      'mc_list_id' => '1da9db51fe',
+      'mc_list_id' => '6bd2811fef',
       'send_welcome' => 1,
       'unsubscribe_action' => 'remove',
     ),
