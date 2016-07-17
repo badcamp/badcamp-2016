@@ -1,8 +1,8 @@
 name = BADCamp Sponsors page
-description = This sets the panel page for the sites "Sponsors"and "Sponsorship packages" pages
+description = List of Sponsors
 core = 7.x
 package = BADCamp Pages/Sections
-version = 7.x-10.0
+version = 7.x-10.1
 dependencies[] = ctools
 dependencies[] = ctools_custom_content
 dependencies[] = page_manager
@@ -10,5 +10,4 @@ features[ctools][] = ctools_custom_content:ctools_content:1
 features[ctools][] = page_manager:pages_default:1
 features[ctools_custom_content][] = badcamp_sponsor_packages
 features[features_api][] = api:2
-features[page_manager_pages][] = badcamp_sponsor_packages
 features[page_manager_pages][] = sponsors
