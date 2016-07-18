@@ -77,20 +77,12 @@ function badcamp_user_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Contact',
-    'weight' => '6',
-    'children' => array(
-      0 => 'field_user_drupalorg_username',
-      1 => 'field_user_facebook_profile',
-      2 => 'field_user_flickr_profile',
-      3 => 'field_user_twitter_handle',
-    ),
-    'format_type' => 'fieldset',
+    'weight' => '8',
+    'children' => array(),
+    'format_type' => 'hidden',
     'format_settings' => array(
-      'formatter' => 'collapsible',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-contact field-group-fieldset',
-      ),
+      'formatter' => '',
+      'instance_settings' => array(),
     ),
   );
   $field_groups['group_contact|user|user|default'] = $field_group;
@@ -106,7 +98,7 @@ function badcamp_user_profile_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Participation',
-    'weight' => '8',
+    'weight' => '13',
     'children' => array(
       0 => 'field_user_featured_attendee',
       1 => 'field_user_hosting',

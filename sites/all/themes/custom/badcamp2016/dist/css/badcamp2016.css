@@ -4335,4 +4335,13 @@ h3 {
 img.sponsor.badge {
   display: none; }
 
+.profile .user-picture {
+  float: none; }
+  @media screen and (min-width: 40em) {
+    .profile .user-picture {
+      text-align: right; } }
+
+.profile .field + .field-name-field-user-bio {
+  margin-top: 2em; }
+
 /*# sourceMappingURL=maps/badcamp2016.css.map */
