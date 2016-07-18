@@ -134,6 +134,10 @@ function badcamp_sessions_page_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_session_skill_level' => 'field_session_skill_level',
+    'field_session_track' => 'field_session_track',
+  );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -202,14 +206,14 @@ function badcamp_sessions_page_views_default_views() {
   $handler->display->display_options['fields']['field_session_skill_level']['table'] = 'field_data_field_session_skill_level';
   $handler->display->display_options['fields']['field_session_skill_level']['field'] = 'field_session_skill_level';
   $handler->display->display_options['fields']['field_session_skill_level']['label'] = 'Difficulty';
-  $handler->display->display_options['fields']['field_session_skill_level']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_session_skill_level']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_session_skill_level']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Session track */
   $handler->display->display_options['fields']['field_session_track']['id'] = 'field_session_track';
   $handler->display->display_options['fields']['field_session_track']['table'] = 'field_data_field_session_track';
   $handler->display->display_options['fields']['field_session_track']['field'] = 'field_session_track';
   $handler->display->display_options['fields']['field_session_track']['label'] = 'Track';
-  $handler->display->display_options['fields']['field_session_track']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_session_track']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_session_track']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
@@ -330,7 +334,7 @@ function badcamp_sessions_page_views_default_views() {
 <a href="sessions/propose" class="button">Submit your session proposal</a>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: (Please select a flag) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
@@ -348,19 +352,19 @@ function badcamp_sessions_page_views_default_views() {
   $handler->display->display_options['fields']['field_session_track']['id'] = 'field_session_track';
   $handler->display->display_options['fields']['field_session_track']['table'] = 'field_data_field_session_track';
   $handler->display->display_options['fields']['field_session_track']['field'] = 'field_session_track';
-  $handler->display->display_options['fields']['field_session_track']['label'] = '';
+  $handler->display->display_options['fields']['field_session_track']['label'] = 'Track';
   $handler->display->display_options['fields']['field_session_track']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_session_track']['alter']['text'] = '[field_session_track] - [field_session_skill_level]';
-  $handler->display->display_options['fields']['field_session_track']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_session_track']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_session_track']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Session skill level */
   $handler->display->display_options['fields']['field_session_skill_level']['id'] = 'field_session_skill_level';
   $handler->display->display_options['fields']['field_session_skill_level']['table'] = 'field_data_field_session_skill_level';
   $handler->display->display_options['fields']['field_session_skill_level']['field'] = 'field_session_skill_level';
-  $handler->display->display_options['fields']['field_session_skill_level']['label'] = '';
+  $handler->display->display_options['fields']['field_session_skill_level']['label'] = 'Difficulty';
   $handler->display->display_options['fields']['field_session_skill_level']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_session_skill_level']['alter']['text'] = '[field_session_track] ([field_session_skill_level])';
-  $handler->display->display_options['fields']['field_session_skill_level']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_session_skill_level']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_session_skill_level']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Session room */
   $handler->display->display_options['fields']['field_session_room']['id'] = 'field_session_room';
