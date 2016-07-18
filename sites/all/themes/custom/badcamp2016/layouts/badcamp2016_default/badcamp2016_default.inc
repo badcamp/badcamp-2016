@@ -17,6 +17,7 @@ function badcamp2016_badcamp2016_default_panels_layouts() {
     'regions' => array(
       'title' => t('Title'),
       'content' => t('Content'),
+      'sponsors' => t('Sponsors'),
     ),
   );
   return $items;

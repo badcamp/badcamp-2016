@@ -107,6 +107,7 @@ function badcamp2016_styleguide_alter(&$guide) {
  * Implements hook_preprocess_node().
  */
 function badcamp2016_preprocess_node(&$variables) {
+  $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
 }
 
 /**
