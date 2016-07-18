@@ -3993,8 +3993,7 @@ svg.reg-progress {
 .region-sponsors .field-content > a > img {
   padding-bottom: 40px;
   margin: auto;
-  text-align: center;
-  width: 100%; }
+  display: block; }
 
 .region-sponsors .view-header {
   text-align: center; }
