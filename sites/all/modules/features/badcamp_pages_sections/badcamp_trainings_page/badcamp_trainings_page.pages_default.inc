@@ -69,6 +69,7 @@ function badcamp_trainings_page_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
+      'content' => NULL,
     ),
   );
   $display->cache = array();
@@ -86,7 +87,8 @@ function badcamp_trainings_page_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Training Description',
       'title' => '',
-      'body' => '<p>For two full days on Thursday and Friday, BADCamp offers world-class training from some of the best Drupal teachers in the world. Whether you are looking to level up your front end, back end, devops, marketing automation or CRM skills, we have classes for you.</p>',
+      'body' => '<p>For two full days on Thursday and Friday, BADCamp offers world-class training from some of the best Drupal teachers in the world. Whether you are looking to level up your front end, back end, devops, project management or multilingual skills, we have classes for you. Registration for classes will be open early August. Subscribe to the newsletter for more information.</p>
+',
       'format' => 'full_html',
       'substitute' => TRUE,
     );

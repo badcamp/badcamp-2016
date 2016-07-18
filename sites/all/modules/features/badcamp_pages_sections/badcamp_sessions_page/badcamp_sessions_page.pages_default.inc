@@ -80,9 +80,26 @@ function badcamp_sessions_page_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Session Proposal Info Pane',
       'title' => 'Submit a session',
-      'body' => '<p>Post-ironic gluten-free plaid flexitarian. Pork belly jean shorts synth DIY art party, flannel artisan sustainable messenger bag gentrify pickled keffiyeh irony trust fund freegan. Deep v ramps chillwave, ennui post-ironic sriracha health goth normcore kombucha jean shorts locavore. Narwhal ramps tofu banh mi quinoa scenester. Bushwick migas salvia chillwave affogato try-hard poutine. Biodiesel 3 wolf moon tote bag bespoke, bitters typewriter brooklyn mixtape pop-up microdosing twee hella lomo. Try-hard kitsch humblebrag hella flexitarian, raw denim celiac godard single-origin coffee mumblecore heirloom 8-bit fixie.</p>
+      'body' => '<p>Here are some tips about how to maximise the potential for your session acceptance.</p>
 
-<p>Ugh tumblr franzen, fanny pack you probably haven\'t heard of them forage small batch pour-over heirloom knausgaard readymade. Street art 90\'s banjo four loko bitters twee flannel, distillery tilde venmo lomo. Hammock venmo pinterest, dreamcatcher forage meh polaroid sustainable organic bitters waistcoat bushwick art party butcher. Craft beer aesthetic next level, health goth echo park mustache raw denim ennui dreamcatcher truffaut brunch banjo. You probably haven\'t heard of them chartreuse seitan lo-fi austin. Chartreuse slow-carb plaid, chicharrones heirloom echo park bitters. You probably haven\'t heard of them tattooed yuccie, brunch pitchfork pabst seitan asymmetrical.</p>
+<ul>
+	<li><strong>Tell a Story</strong>
+
+	<ul>
+		<li>A high quality speaking proposal isn’t just about what information you are going to share, it’s about how you plan to share it. Telling a story can make a conference proposal very powerful as it changes the perspective from “I’m an expert telling you how to do your job” to “I’ve been where you are and have felt your pain. Let me share what I learned.”</li>
+	</ul>
+	</li>
+	<li><strong>Share the Takeaways You Will Be Presenting</strong>
+	<ul>
+		<li>Often, talks answer questions that start with “how”, “why”, “when” and so on. Make sure that you demonstrate what your audience will walk away having learned.</li>
+	</ul>
+	</li>
+	<li><strong>Proofread your Proposal</strong>
+	<ul>
+		<li>This may sound like an easy and silly thing to call out, but it is in fact a very important step that many don\'t pay too much attention to. Double-check your spelling, your links, your grammar - you\'re presenting yourself with these words, so make sure you put your best foot forward.</li>
+	</ul>
+	</li>
+</ul>
 ',
       'format' => 'full_html',
       'substitute' => 1,

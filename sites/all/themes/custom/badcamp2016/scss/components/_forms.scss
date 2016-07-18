@@ -26,7 +26,14 @@ label, .form-required {
     margin-top: 60px;
   }
 }
-
+.page-registration-sponsorship {
+  .form-actions.form-wrapper {
+    margin-top: 4em;
+    @include breakpoint(medium) {
+      margin-top: 1em;
+    }
+  }
+}
 .confirm-parent, .password-parent {
   //clear:none;
   width:auto;

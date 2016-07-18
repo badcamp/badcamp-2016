@@ -334,7 +334,7 @@ function badcamp_homepage_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'What is BadCamp?',
       'title' => 'What is BadCamp?',
-      'body' => '<p class="p1"><span class="s1">BADCamp is a technology conference for the people, an annual celebration of the web, open-source software, and the creators who make it all possible. Join us this fall for four days of talks, trainings, summits, sprints and socials with some of the brightest minds from all over the world.</span></p>
+      'body' => '<p class="p1">BADCamp is a Drupal conference for the people. It’s an annual celebration of open-source software in Berkeley CA. Join us this October 20-23 for four days of talks, trainings, summits, sprints and socials with some of the brightest minds from all over the world, all for FREE!</p>
 ',
       'format' => 'full_html',
       'substitute' => TRUE,

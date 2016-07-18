@@ -11,8 +11,8 @@ if (file_exists(DRUPAL_ROOT . '/sites/default/settings.secret.php')) {
 
 // Pantheon.
 if (defined('PANTHEON_ENVIRONMENT')) {
-  if (file_exists(dirname(__FILE__) . '/pantheon.settings.php')) {
-    require_once(dirname(__FILE__) . '/pantheon.settings.php');
+  if (file_exists(DRUPAL_ROOT . '/sites/default/pantheon.settings.php')) {
+    require_once(DRUPAL_ROOT . '/sites/default/pantheon.settings.php');
   }
 }
 
@@ -78,7 +78,6 @@ $conf['master_modules']['base'] = array(
   'badcamp_contact_form',
   'badcamp_environment',
   'badcamp_events',
-  'badcamp_feature_page_volunteer',
   'badcamp_feature_credits_page',
   'badcamp_homepage',
   'badcamp_mailchimp',

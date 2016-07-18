@@ -4116,6 +4116,12 @@ label, .form-required {
   .page-registration .pane-user-register-form {
     margin-top: 60px; }
 
+.page-registration-sponsorship .form-actions.form-wrapper {
+  margin-top: 4em; }
+  @media screen and (min-width: 40em) {
+    .page-registration-sponsorship .form-actions.form-wrapper {
+      margin-top: 1em; } }
+
 .confirm-parent, .password-parent {
   width: auto; }
   .confirm-parent > div.password-confirm,
@@ -4271,6 +4277,12 @@ h3 {
   .pane-sponsors-panel-pane-1 h3.pane-title:after, .pane-sponsors-panel-pane-4 h3.pane-title:after {
     content: none; }
 
+.page-sponsors .view-id-sponsors .row {
+  background-color: #fefefe;
+  padding: 2em; }
+  .page-sponsors .view-id-sponsors .row .views-field-field-sponsor-logo {
+    padding: 2em; }
+
 .pane-badcamp-news-panel-pane-1 h2.pane-title {
   margin-bottom: 40px; }
 
@@ -4316,5 +4328,8 @@ h3 {
     float: right;
     margin-left: 20px;
     margin-bottom: 20px; } }
+
+img.sponsor.badge {
+  display: none; }
 
 /*# sourceMappingURL=maps/badcamp2016.css.map */

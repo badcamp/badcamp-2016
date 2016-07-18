@@ -48,12 +48,12 @@ function addressfield_set_target($source, $entity, $target, $values) {
 
   // If the field is already set on the given entity, update the existing value
   // array. Otherwise start with a fresh field value array.
-  $field = isset($entity->$field_name) ? $entity->$field_name : array();
+  $field = isset($entity->{$field_name}) ? $entity->{$field_name} : array();
 
   // Loop over the field values array...
   foreach ($values as $delta => $value) {
     $field[LANGUAGE_NONE][$delta][$sub_field] = $value;
   }
 
-  $entity->$field_name = $field;
+  $entity->{$field_name} = $field;
 }
