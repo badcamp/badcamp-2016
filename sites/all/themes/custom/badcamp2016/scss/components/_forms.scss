@@ -88,10 +88,14 @@ label, .form-required {
     text-align: center;
   }
 
-  .field-name-field-user-interest-volunteering, .field-name-field-user-mailchimp {
-    display: inline-block;
-    width: 49%;
+  @include breakpoint(medium up) {
+    .field-name-field-user-interest-volunteering, .field-name-field-user-mailchimp {
+      display: inline-block;
+      overflow:hidden;
+      width: 49%;
+    }
   }
+
   .form-type-checkbox {
     .form-checkbox {
       margin-top: 12px;

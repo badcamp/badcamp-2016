@@ -3750,7 +3750,8 @@ svg.reg-progress {
   @media screen and (min-width: 40em) {
     .pane-system-user-menu {
       float: right;
-      margin-right: 60px; } }
+      margin-right: 60px;
+      margin-top: 34px; } }
   @media screen and (max-width: 39.9375em) {
     .pane-system-user-menu {
       margin-right: 0; } }
@@ -4160,9 +4161,11 @@ label, .form-required {
 #user-register-form .form-actions.form-wrapper {
   text-align: center; }
 
-#user-register-form .field-name-field-user-interest-volunteering, #user-register-form .field-name-field-user-mailchimp {
-  display: inline-block;
-  width: 49%; }
+@media screen and (min-width: 40em) {
+  #user-register-form .field-name-field-user-interest-volunteering, #user-register-form .field-name-field-user-mailchimp {
+    display: inline-block;
+    overflow: hidden;
+    width: 49%; } }
 
 #user-register-form .form-type-checkbox .form-checkbox {
   margin-top: 12px; }
