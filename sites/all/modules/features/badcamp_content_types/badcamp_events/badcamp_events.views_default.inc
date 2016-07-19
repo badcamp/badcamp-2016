@@ -132,7 +132,6 @@ Registration is first come, first served and part of the BADCamp registration pr
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Event date and time */
   $handler->display->display_options['fields']['field_event_date_and_time']['id'] = 'field_event_date_and_time';
   $handler->display->display_options['fields']['field_event_date_and_time']['table'] = 'field_data_field_event_date_and_time';
@@ -201,49 +200,6 @@ Registration is first come, first served and part of the BADCamp registration pr
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['fields_override'] = 0;
-
-  /* Display: Summits links content pane */
-  $handler = $view->new_display('panel_pane', 'Summits links content pane', 'panel_pane_3');
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'event' => 'event',
-  );
-  /* Filter criterion: Content: Event type (field_event_type) */
-  $handler->display->display_options['filters']['field_event_type_tid']['id'] = 'field_event_type_tid';
-  $handler->display->display_options['filters']['field_event_type_tid']['table'] = 'field_data_field_event_type';
-  $handler->display->display_options['filters']['field_event_type_tid']['field'] = 'field_event_type_tid';
-  $handler->display->display_options['filters']['field_event_type_tid']['value'] = array(
-    12 => '12',
-  );
-  $handler->display->display_options['filters']['field_event_type_tid']['expose']['operator_id'] = 'field_event_type_tid_op';
-  $handler->display->display_options['filters']['field_event_type_tid']['expose']['label'] = 'Event type';
-  $handler->display->display_options['filters']['field_event_type_tid']['expose']['operator'] = 'field_event_type_tid_op';
-  $handler->display->display_options['filters']['field_event_type_tid']['expose']['identifier'] = 'field_event_type_tid';
-  $handler->display->display_options['filters']['field_event_type_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_event_type_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-  );
-  $handler->display->display_options['filters']['field_event_type_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_event_type_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_event_type_tid']['vocabulary'] = 'event_type';
-  $handler->display->display_options['filters']['field_event_type_tid']['error_message'] = FALSE;
   $export['events_view'] = $view;
 
   return $export;
