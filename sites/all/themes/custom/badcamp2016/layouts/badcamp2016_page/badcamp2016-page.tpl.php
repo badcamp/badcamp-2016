@@ -20,7 +20,7 @@
       <div class="small-12  medium-6 medium-push-3 columns">
         <?php print $content['branding']; ?>
       </div>
-      <div class="small-12 large-3 columns">
+      <div class="small-12 medium-3 columns">
         <?php print $content['user_nav']; ?>
       </div>
     </div>

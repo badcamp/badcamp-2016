@@ -1,0 +1,12 @@
+
+.profile {
+  .user-picture {
+    float:none;
+    @include breakpoint(medium up) {
+      text-align:right;
+    }
+  }
+  .field + .field-name-field-user-bio {
+    margin-top:2em;
+  }
+}
