@@ -374,7 +374,7 @@ function badcamp_summits_page_default_page_manager_handlers() {
     $display->panels['content'][4] = 'new-2f148a75-3c61-49f6-83ff-f1661552e228';
     $pane = new stdClass();
     $pane->pid = 'new-8b9875db-1549-4980-98a8-d9ab9353daca';
-    $pane->panel = 'sponsors';
+    $pane->panel = 'content';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_event_sponsor';
     $pane->shown = TRUE;
@@ -400,11 +400,11 @@ function badcamp_summits_page_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = '8b9875db-1549-4980-98a8-d9ab9353daca';
     $display->content['new-8b9875db-1549-4980-98a8-d9ab9353daca'] = $pane;
-    $display->panels['sponsors'][0] = 'new-8b9875db-1549-4980-98a8-d9ab9353daca';
+    $display->panels['content'][5] = 'new-8b9875db-1549-4980-98a8-d9ab9353daca';
     $pane = new stdClass();
     $pane->pid = 'new-2ee96ce6-008e-4460-ba06-120a4b15f314';
     $pane->panel = 'title';
