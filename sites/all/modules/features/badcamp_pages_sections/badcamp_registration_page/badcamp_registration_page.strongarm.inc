@@ -165,7 +165,7 @@ This link can only be used once to log in and will lead you to a page where you 
 
 After setting your password, you will be able to log in at [site:login-url] in the future using:
 
-username: [user:name]
+username: [user:name-raw]
 password: Your password
 
 --  [site:name] team';
@@ -182,7 +182,7 @@ password: Your password
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_mail_register_no_approval_required_body';
-  $strongarm->value = '[user:name],
+  $strongarm->value = '[user:name-raw],
 
 Thank you for registering for [site:name]. You may now log in by clicking this link or copying and pasting it to your browser:
 
@@ -204,7 +204,7 @@ Thank you for registering for [site:name]. You may now log in by clicking this l
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_mail_register_pending_approval_body';
-  $strongarm->value = '[user:name],
+  $strongarm->value = '[user:name-raw],
 
 Thank you for registering at [site:name]. Your application for an account is currently pending approval. Once it has been approved, you will receive another e-mail containing information about how to log in, set your password, and other details.
 
@@ -223,7 +223,7 @@ Thank you for registering at [site:name]. Your application for an account is cur
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_mail_status_activated_body';
-  $strongarm->value = '[user:name],
+  $strongarm->value = '[user:name-raw],
 
 Your account at [site:name] has been activated.
 
