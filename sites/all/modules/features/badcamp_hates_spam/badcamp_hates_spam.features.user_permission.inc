@@ -28,5 +28,25 @@ function badcamp_hates_spam_user_default_permissions() {
     'module' => 'honeypot',
   );
 
+  // Exported permission: 'bypass user restriction rules'.
+  $permissions['bypass user restriction rules'] = array(
+    'name' => 'bypass user restriction rules',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'user_restrictions',
+  );
+
+  // Exported permission: 'edit user restriction rules'.
+  $permissions['edit user restriction rules'] = array(
+    'name' => 'edit user restriction rules',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'user_restrictions',
+  );
+
   return $permissions;
 }

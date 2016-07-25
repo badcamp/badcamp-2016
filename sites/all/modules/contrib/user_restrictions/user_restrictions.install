@@ -1,0 +1,136 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function user_restrictions_schema() {
+  $schema['user_restrictions'] = array(
+    'description' => 'Stores user restrictions.',
+    'fields' => array(
+      'urid' => array(
+        'description' => 'Primary Key: Unique user restriction ID.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'mask' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Text mask used for filtering restrictions.',
+      ),
+      'type' => array(
+        'description' => 'Type of access rule: name, mail, or any value defined from a third-party module.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'subtype' => array(
+        'description' => 'Sub-type of access rule.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'status' => array(
+        'description' => 'Whether the restriction is to allow (1), or deny access (0).',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'expire' => array(
+        'description' => 'A Unix timestamp indicating when the restriction expires.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'indexes' => array(
+      'subtype' => array(array('subtype', 32)),
+      'type' => array(array('type', 32)),
+      'status' => array('status'),
+      'expire' => array('expire'),
+    ),
+    'primary key' => array('urid'),
+  );
+
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function user_restrictions_install() {
+  db_query("UPDATE {system} SET weight = 10 WHERE name = 'user_restrictions' AND type = 'module'");
+}
+
+/**
+ * Adds the sub-type field to the database table.
+ */
+function user_restrictions_update_7100(&$sandbox) {
+  if (!db_field_exists('user_restrictions', 'subtype')) {
+    db_add_field('user_restrictions', 'subtype',
+      array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      array('indexes' => array(
+        'subtype' => array(array('subtype', 32)),
+      ))
+    );
+  }
+}
+
+/**
+ * Updates the Drupal registry.
+ */
+function user_restrictions_update_7101(&$sandbox) {
+  registry_update();
+
+  db_update('system')
+    ->fields(array('weight' => 10))
+    ->condition('name', 'user_restrictions')
+    ->execute();
+}
+
+/**
+ * Imports username and e-mail masks from the {access} table.
+ */
+/*
+function user_restrictions_update_7102(&$sandbox) {
+  if (!isset($sandbox['progress']) && db_table_exists('access')) {
+    $sandbox['progress'] = 0;
+    $sandbox['current_aid'] = 0;
+    $sandbox['max'] = db_query('SELECT COUNT(DISTINCT aid) FROM {access} WHERE type IN :type')->fetchField();
+  }
+
+  drupal_load('module', 'user_restrictions');
+
+  if (!empty($sandbox['max'])) {
+    $rules = db_select('access')
+      ->condition('aid', $sandbox['current_aid'], '>')
+      ->orderBy('aid', 'ASC')
+      ->execute();
+
+    foreach ($rules as $rule) {
+      db_merge('user_restrictions')
+        ->key(array(
+          'type' => $rule->type,
+          'mask' => $rule->mask,
+        ))
+        ->fields(array('status' => $rule->status))
+        ->execute();
+
+      $sandbox['progress']++;
+      $sandbox['current_aid'] = $rule->aid;
+    }
+  }
+  $sandbox['#finished'] = (
+    empty($sandbox['max']) ? 1 : ($sandbox['progress'] / $sandbox['max'])
+  );
+}
+*/
