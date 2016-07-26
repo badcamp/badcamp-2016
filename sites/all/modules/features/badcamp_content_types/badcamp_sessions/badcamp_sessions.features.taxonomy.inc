@@ -15,7 +15,7 @@ function badcamp_sessions_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -7,
     ),
     'skill_level' => array(
       'name' => 'Skill level',
@@ -23,7 +23,7 @@ function badcamp_sessions_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -6,
     ),
     'time_slot' => array(
       'name' => 'Time slot',
@@ -31,7 +31,7 @@ function badcamp_sessions_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -4,
     ),
     'tracks' => array(
       'name' => 'Tracks',
@@ -39,7 +39,7 @@ function badcamp_sessions_taxonomy_default_vocabularies() {
       'description' => 'Terms for categorizing sessions',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -3,
     ),
   );
 }

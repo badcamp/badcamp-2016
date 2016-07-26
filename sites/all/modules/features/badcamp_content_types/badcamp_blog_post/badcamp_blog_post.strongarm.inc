@@ -76,5 +76,19 @@ function badcamp_blog_post_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_blog_post'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_blog_post_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_blog_post_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_blog_tags_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_blog_tags_pattern'] = $strongarm;
+
   return $export;
 }
