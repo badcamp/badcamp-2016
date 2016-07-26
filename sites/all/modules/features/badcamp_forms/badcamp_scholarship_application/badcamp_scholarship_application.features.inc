@@ -33,11 +33,11 @@ function badcamp_scholarship_application_default_entityform_type() {
       "submissions_view" : "default",
       "user_submissions_view" : "default",
       "form_status" : "ENTITYFORM_OPEN",
-      "roles" : { "2" : "2", "3" : "3", "1" : 0, "5" : 0, "4" : 0, "6" : 0 },
+      "roles" : { "2" : "2", "3" : "3", "1" : 0, "5" : 0, "4" : 0 },
       "resubmit_action" : "old",
       "redirect_path" : "",
       "instruction_pre" : {
-        "value" : "\\u003Cp\\u003EWe realize that many members\\u0026nbsp;of our community may not have the resources to attend BADCamp. For those facing significant hardship, we are proud to offer scholarships to reward those who contribute to the Drupal project. Whether you\\u0027ve contributed code, documentation, community organization\\u0026nbsp;or are an active member of your local users group, we\\u0027re interested in hearing your story.\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003EBADCamp scholarships will cover expenses towards airfare and lodgings.\\u0026nbsp;\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003EIf you\\u0027d like to contribute to our scholarship fund, please consider becoming an \\u003Ca href=\\u0022https:\\/\\/2015.badcamp.net\\/registration\\/sponsorship\\u0022 target=\\u0022_self\\u0022\\u003Eindividual sponsor\\u003C\\/a\\u003E as part of your registration.\\u003C\\/p\\u003E",
+        "value" : "\\u003Cp\\u003EWe realize that many members\\u0026nbsp;of our community may not have the resources to attend BADCamp. For those facing significant hardship, we are proud to offer scholarships to reward those who contribute to the Drupal project. Whether you\\u0027ve contributed code, documentation, community organization\\u0026nbsp;or are an active member of your local users group, we\\u0027re interested in hearing your story.\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003EBADCamp scholarships will cover expenses towards airfare and lodgings.\\u0026nbsp;\\u003C\\/p\\u003E\\r\\n\\r\\n\\u003Cp\\u003EIf you\\u0027d like to contribute to our scholarship fund, please consider becoming an \\u003Ca href=\\u0022https:\\/\\/2015.badcamp.net\\/registration\\/sponsorship\\u0022 target=\\u0022_self\\u0022\\u003Eindividual sponsor\\u003C\\/a\\u003E as part of your registration.\\u003C\\/p\\u003E\\r\\n",
         "format" : "filtered_html"
       }
     },
@@ -45,12 +45,12 @@ function badcamp_scholarship_application_default_entityform_type() {
     "paths" : {
       "submit" : {
         "source" : "eform\\/submit\\/scholarship-application",
-        "alias" : "scholarship-application",
+        "alias" : "community\\/scholarship-application",
         "language" : "und"
       },
       "confirm" : {
         "source" : "eform\\/scholarship-application\\/confirm",
-        "alias" : "scholarship-application-confirm",
+        "alias" : "community\\/scholarship-application-confirm",
         "language" : "und"
       }
     }
