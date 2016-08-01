@@ -423,6 +423,45 @@ function badcamp_sessions_page_default_page_manager_pages() {
     $pane->uuid = 'cca4c59d-b825-420c-937d-cc7c28c17771';
     $display->content['new-cca4c59d-b825-420c-937d-cc7c28c17771'] = $pane;
     $display->panels['column_right'][5] = 'new-cca4c59d-b825-420c-937d-cc7c28c17771';
+    $pane = new stdClass();
+    $pane->pid = 'new-5b8c5563-cd8d-4248-b2bd-2748ca770128';
+    $pane->panel = 'column_right';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'NLIV Call to Action',
+      'title' => '',
+      'body' => '<p><a class="button" href="user/login?destination=sessions/propose">Login to proceed »</a></p>
+',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '5b8c5563-cd8d-4248-b2bd-2748ca770128';
+    $display->content['new-5b8c5563-cd8d-4248-b2bd-2748ca770128'] = $pane;
+    $display->panels['column_right'][6] = 'new-5b8c5563-cd8d-4248-b2bd-2748ca770128';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-20107545-c7ee-40b2-83c0-7fb4f48afcbc';
   $handler->conf['display'] = $display;
