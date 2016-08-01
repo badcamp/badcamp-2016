@@ -87,3 +87,26 @@ h2.pane-title{
     margin-top: 1.6em;
   }
 }
+
+.view-id-badcamp_sessions {
+  .button {
+    float: right;
+  }
+  .view-content {
+    p, th {
+      color: black;
+    }
+
+    .views-field-title {
+      width: 30%;
+    }
+
+    .views-field-field-session-speaker {
+      width: 15%;
+    }
+
+    .even {
+      background-color: #e6e6e6;
+    }
+  }
+}
