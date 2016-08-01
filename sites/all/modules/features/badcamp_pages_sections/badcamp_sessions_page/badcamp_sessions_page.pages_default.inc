@@ -201,7 +201,9 @@ function badcamp_sessions_page_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Session Proposal Info Pane',
       'title' => 'Submit a session',
-      'body' => '<p>Here are some tips about how to maximise the potential for your session acceptance.</p>
+      'body' => '<p>Submissions for sessions close on Thursday, August 25th, 2016 at 11:59pm PT.</p>
+
+<p>Here are some tips about how to maximise the potential for your session acceptance.</p>
 
 <ul>
 	<li><strong>Tell a Story</strong>
