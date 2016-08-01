@@ -5,6 +5,124 @@
  */
 
 /**
+ * Implements hook_default_page_manager_handlers().
+ */
+function badcamp_sessions_page_default_page_manager_handlers() {
+  $export = array();
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'term_view__panel_context_cb42f235-97ab-42af-abee-893edf635845';
+  $handler->task = 'term_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Tracks',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'term_vocabulary',
+          'settings' => array(
+            'machine_name' => array(
+              'tracks' => 'tracks',
+            ),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'badcamp2016_default';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'title' => NULL,
+      'content' => NULL,
+      'sponsors' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%term:name';
+  $display->uuid = '11cfa47d-90ac-412c-8a4f-69e0278f730a';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-c978563a-161b-4dd0-8a4d-56b0496a6229';
+    $pane->panel = 'content';
+    $pane->type = 'entity_field_extra';
+    $pane->subtype = 'taxonomy_term:description';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+      'context' => 'argument_term_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c978563a-161b-4dd0-8a4d-56b0496a6229';
+    $display->content['new-c978563a-161b-4dd0-8a4d-56b0496a6229'] = $pane;
+    $display->panels['content'][0] = 'new-c978563a-161b-4dd0-8a4d-56b0496a6229';
+    $pane = new stdClass();
+    $pane->pid = 'new-3131ca06-83fc-4f1f-b790-ce286cc8c043';
+    $pane->panel = 'title';
+    $pane->type = 'term_name';
+    $pane->subtype = 'term_name';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'link' => 0,
+      'markup' => 'h2',
+      'id' => '',
+      'class' => '',
+      'context' => 'argument_term_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '3131ca06-83fc-4f1f-b790-ce286cc8c043';
+    $display->content['new-3131ca06-83fc-4f1f-b790-ce286cc8c043'] = $pane;
+    $display->panels['title'][0] = 'new-3131ca06-83fc-4f1f-b790-ce286cc8c043';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-c978563a-161b-4dd0-8a4d-56b0496a6229';
+  $handler->conf['display'] = $display;
+  $export['term_view__panel_context_cb42f235-97ab-42af-abee-893edf635845'] = $handler;
+
+  return $export;
+}
+
+/**
  * Implements hook_default_page_manager_pages().
  */
 function badcamp_sessions_page_default_page_manager_pages() {
@@ -118,6 +236,41 @@ function badcamp_sessions_page_default_page_manager_pages() {
     $pane->uuid = '540b4687-e7fc-4a81-9d22-21163e547a8f';
     $display->content['new-540b4687-e7fc-4a81-9d22-21163e547a8f'] = $pane;
     $display->panels['column_left'][0] = 'new-540b4687-e7fc-4a81-9d22-21163e547a8f';
+    $pane = new stdClass();
+    $pane->pid = 'new-632abf06-6ee5-4955-8179-72510271ac49';
+    $pane->panel = 'column_left';
+    $pane->type = 'views';
+    $pane->subtype = 'tracks';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'default',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '632abf06-6ee5-4955-8179-72510271ac49';
+    $display->content['new-632abf06-6ee5-4955-8179-72510271ac49'] = $pane;
+    $display->panels['column_left'][1] = 'new-632abf06-6ee5-4955-8179-72510271ac49';
     $pane = new stdClass();
     $pane->pid = 'new-20107545-c7ee-40b2-83c0-7fb4f48afcbc';
     $pane->panel = 'column_right';
