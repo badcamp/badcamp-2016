@@ -145,20 +145,27 @@
   .menu {
     text-align: center;
     li {
-      display: inline-block;
-      a {
-        font-family: $font-family-orbitron;
-        font-size: 18px;
-        font-weight: bold;
-        color: $badcamp-turquoise;
-        position: relative;
-        &:after {
-          @include css-triangle(9px, $badcamp-off-white, right);
-          position: absolute;
-          right: -2px;
-          top: 9px;
-        }
+      display:block;
+      margin:0 auto;
+    }
+    a {
+      font-family: $font-family-orbitron;
+      font-size: 18px;
+      font-weight: bold;
+      color: $badcamp-turquoise;
+      position: relative;
+      &:after {
+        @include css-triangle(9px, $badcamp-off-white, right);
+        display: inline-block;
+        vertical-align: middle;
+        margin-left:6px;
       }
     }
+    @include breakpoint(medium) {
+      li {
+        display:inline-block;
+      }
+    }
+
   }
 }

@@ -9,15 +9,28 @@
     background-position: center bottom;
     background-size: 100% auto;
     background-repeat: no-repeat;
-    height:150px;
+    height: 58px;
     width:100%;
+    @include breakpoint(medium) {
+      height:95px;
+    }
+    @include breakpoint(large) {
+      height:125px;
+    }
+    @include breakpoint(xlarge) {
+      height:150px;
+    }
   }
   .footer-hud-bottom {
     background: linear-gradient(-180deg, rgba(32, 66, 79, 0.8) 0%, rgba(24, 42, 50, 0.8) 100%);
   }
   .footer-pane-copyright, .footer-pane-social {
-    margin-top: 24px;
-    margin-bottom: 144px;
+    @include breakpoint(medium) {
+      min-height:9em;
+      margin-top: 24px;
+      margin-bottom:rem-calc(50);
+    }
+
     line-height: 1rem;
     a:hover {
       color: $badcamp-dk-orange;
