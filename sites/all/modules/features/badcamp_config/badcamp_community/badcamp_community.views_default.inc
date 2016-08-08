@@ -685,6 +685,77 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Individual Sponsors */
+  $handler = $view->new_display('page', 'Individual Sponsors', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Individual Sponsors';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_donation_type',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: User: Donation */
+  $handler->display->display_options['relationships']['eck_donation']['id'] = 'eck_donation';
+  $handler->display->display_options['relationships']['eck_donation']['table'] = 'users';
+  $handler->display->display_options['relationships']['eck_donation']['field'] = 'eck_donation';
+  $handler->display->display_options['relationships']['eck_donation']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_type'] = 'div';
+  $handler->display->display_options['fields']['name']['element_class'] = 'attendee-username';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  /* Field: Donation: Donation Type */
+  $handler->display->display_options['fields']['field_donation_type']['id'] = 'field_donation_type';
+  $handler->display->display_options['fields']['field_donation_type']['table'] = 'field_data_field_donation_type';
+  $handler->display->display_options['fields']['field_donation_type']['field'] = 'field_donation_type';
+  $handler->display->display_options['fields']['field_donation_type']['relationship'] = 'eck_donation';
+  $handler->display->display_options['fields']['field_donation_type']['label'] = '';
+  $handler->display->display_options['fields']['field_donation_type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_donation_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_donation_type']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: User: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'users';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $handler->display->display_options['path'] = 'sponsors/individuals';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Individual';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['attendees'] = $view;
 
   return $export;
