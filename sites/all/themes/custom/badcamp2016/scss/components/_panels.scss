@@ -1,5 +1,5 @@
 
-.pane-title {
+.pane-title, .views-header-title {
   text-align: center;
   text-transform: uppercase;
 
@@ -17,6 +17,10 @@
       color: $badcamp-orange;
     }
   }
+}
+
+.views-header-title {
+  margin-top: 76px;
 }
 
 .region-content,
