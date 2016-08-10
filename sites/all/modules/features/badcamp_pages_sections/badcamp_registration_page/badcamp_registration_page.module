@@ -103,6 +103,17 @@ function badcamp_registration_page_form_alter(&$form, &$form_state, $form_id) {
     $form['actions']['preview']['#prefix'] = '<div class="form-submit-wrapper button">';
     $form['actions']['preview']['#suffix'] = '</div>';
   }
+
+  if ($form_id == 'user_profile_form') {
+    $form['#submit'][] = 'badcamp_registration_page_form_submit_handler';
+  }
+}
+
+/**
+ * User profile form submit callback function.
+ */
+function badcamp_registration_page_form_submit_handler($form, &$form_state) {
+  $form_state['redirect']  = drupal_get_path_alias('user/' . $form['#user']->uid);
 }
 
 /**
