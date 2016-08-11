@@ -57,7 +57,15 @@ function badcamp_registration_page_form_user_profile_form_alter(&$form, &$form_s
   if ($menu_item['page_callback'] === 'page_manager_page_execute' && $menu_item['page_arguments'][0] === 'profile_edit_page') {
     $form['actions']['submit']['#value'] = t('Skip/Finish');
     $form['account']['#access'] = FALSE;
+    $form['#submit'][] = 'badcamp_registration_page_redirect_to_profile_submit_handler';
   }
+}
+
+/**
+ * User profile form submit callback function.
+ */
+function badcamp_registration_page_redirect_to_profile_submit_handler($form, &$form_state) {
+  $form_state['redirect']  = 'user/' . $form['#user']->uid;
 }
 
 /**
@@ -103,17 +111,6 @@ function badcamp_registration_page_form_alter(&$form, &$form_state, $form_id) {
     $form['actions']['preview']['#prefix'] = '<div class="form-submit-wrapper button">';
     $form['actions']['preview']['#suffix'] = '</div>';
   }
-
-  if ($form_id == 'user_profile_form') {
-    $form['#submit'][] = 'badcamp_registration_page_form_submit_handler';
-  }
-}
-
-/**
- * User profile form submit callback function.
- */
-function badcamp_registration_page_form_submit_handler($form, &$form_state) {
-  $form_state['redirect']  = drupal_get_path_alias('user/' . $form['#user']->uid);
 }
 
 /**
