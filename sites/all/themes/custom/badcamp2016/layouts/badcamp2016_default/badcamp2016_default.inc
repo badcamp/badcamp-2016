@@ -33,7 +33,7 @@ function badcamp2016_badcamp2016_default_settings_form($display, $plugin, $setti
   $form = array();
   $form['suppress_page_title'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Supress outer page title'),
+    '#title' => t('Suppress outer page title'),
     '#default_value' => $settings['suppress_page_title'],
   );
   return $form;
