@@ -4059,22 +4059,19 @@ ul.tabs li a:hover {
   color: #FEFEFE;
   letter-spacing: 1.16px; }
 
-.pane-title, .views-header-title {
+.pane-title {
   text-align: center;
   text-transform: uppercase; }
   @media screen and (min-width: 40em) {
-    .pane-title:before, .views-header-title:before {
+    .pane-title:before {
       content: "\\\\\\\\";
       padding-right: 18px; }
-    .pane-title:after, .views-header-title:after {
+    .pane-title:after {
       content: "////";
       padding-left: 18px; }
-    .pane-title:before, .pane-title:after, .views-header-title:before, .views-header-title:after {
+    .pane-title:before, .pane-title:after {
       display: inline-block;
       color: #FF9A00; } }
-
-.views-header-title {
-  margin-top: 76px; }
 
 .region-content,
 .region-about,
