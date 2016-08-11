@@ -72,12 +72,15 @@ function feature_badcamp_reports_default_page_manager_pages() {
     'name' => 'panel',
   );
   $display = new panels_display();
-  $display->layout = 'flexible';
-  $display->layout_settings = array();
+  $display->layout = 'badcamp2016_1col';
+  $display->layout_settings = array(
+    'suppress_page_title' => 1,
+  );
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
+      'content' => NULL,
     ),
   );
   $display->cache = array();
@@ -87,7 +90,7 @@ function feature_badcamp_reports_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-65a1b788-c306-4562-a0a3-ffb86f359e72';
-    $pane->panel = 'center';
+    $pane->panel = 'content';
     $pane->type = 'views_panes';
     $pane->subtype = 'registration-panel_pane_1';
     $pane->shown = TRUE;
@@ -103,8 +106,8 @@ function feature_badcamp_reports_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '65a1b788-c306-4562-a0a3-ffb86f359e72';
     $display->content['new-65a1b788-c306-4562-a0a3-ffb86f359e72'] = $pane;
-    $display->panels['center'][0] = 'new-65a1b788-c306-4562-a0a3-ffb86f359e72';
-  $display->hide_title = PANELS_TITLE_FIXED;
+    $display->panels['content'][0] = 'new-65a1b788-c306-4562-a0a3-ffb86f359e72';
+  $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
