@@ -29,3 +29,15 @@
 .opaque {
   background: linear-gradient(0deg, rgba(51, 117, 138, 0.60) 24%, rgba(32, 56, 66, 0.60) 89%);
 }
+
+.pane-page-title {
+  @include grid-row();
+  .pane-content {
+     @include grid-col();
+  }
+}
+.pane-page-content {
+  .pane-content > .view, .pane-content > form {
+    margin-top: 3.125rem;
+  }
+}

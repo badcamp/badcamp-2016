@@ -3643,6 +3643,21 @@ svg.reg-progress {
   margin-left: 5%;
   margin-right: 5%; }
 
+.outer-page-title {
+  margin-top: 3.125rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: bold;
+  color: #59A8C1;
+  letter-spacing: 0.1875rem;
+  line-height: 2.5rem;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); }
+  @media screen and (min-width: 40em) {
+    .outer-page-title:after {
+      content: "////";
+      padding-left: .4em;
+      display: inline-block;
+      color: #FFFFFF; } }
+
 #site-header {
   background: url(../../images/hud_top.svg) bottom center no-repeat;
   padding-bottom: 90px; }
@@ -4081,6 +4096,30 @@ ul.tabs li a:hover {
 
 .opaque {
   background: linear-gradient(0deg, rgba(51, 117, 138, 0.6) 24%, rgba(32, 56, 66, 0.6) 89%); }
+
+.pane-page-title {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .pane-page-title::before, .pane-page-title::after {
+    content: ' ';
+    display: table; }
+  .pane-page-title::after {
+    clear: both; }
+  .pane-page-title .pane-content {
+    width: 100%;
+    float: left;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem; }
+    @media screen and (min-width: 40em) {
+      .pane-page-title .pane-content {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+    .pane-page-title .pane-content:last-child:not(:first-child) {
+      float: right; }
+
+.pane-page-content .pane-content > .view, .pane-page-content .pane-content > form {
+  margin-top: 3.125rem; }
 
 .region-hero {
   padding-top: 3.625rem;
