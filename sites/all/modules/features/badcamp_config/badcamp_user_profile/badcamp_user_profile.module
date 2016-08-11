@@ -18,7 +18,11 @@ function badcamp_user_profile_field_formatter_info() {
     'drupalorg_username' => array(
       'label' => t('Drupal.org Username link'),
       'field types' => array('text'),
-    )
+    ),
+    'twitter_handle' => array(
+      'label' => t('Twitter Handle'),
+      'field types' => array('text'),
+    ),
   );
 }
 
@@ -27,8 +31,7 @@ function badcamp_user_profile_field_formatter_info() {
  */
 function badcamp_user_profile_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
   $element = array();
-  $settings = $display['settings'];
-  switch($display['type']) {
+  switch ($display['type']) {
     case 'boolean':
       $allowed_values = list_allowed_values($field, $instance, $entity_type, $entity);
       foreach ($items as $delta => $item) {
@@ -44,8 +47,9 @@ function badcamp_user_profile_field_formatter_view($entity_type, $entity, $field
         }
       }
       break;
+
     case 'drupalorg_username':
-      foreach($items as $delta => $item) {
+      foreach ($items as $delta => $item) {
         $username = $item['safe_value'];
         $element[$delta] = array(
           '#theme' => 'link',
@@ -54,12 +58,26 @@ function badcamp_user_profile_field_formatter_view($entity_type, $entity, $field
           '#options' => array(
             'attributes' => array(),
             'html' => FALSE,
-          )
+          ),
         );
       }
+      break;
 
+    case 'twitter_handle':
+      foreach ($items as $delta => $item) {
+        $twitter_name = $item['safe_value'];
+        $element[$delta] = array(
+          '#theme' => 'link',
+          '#path' => 'https://twitter.com/' . $twitter_name,
+          '#text' => $twitter_name,
+          '#options' => array(
+            'attributes' => array(),
+            'html' => FALSE,
+          ),
+        );
+      }
+      break;
   }
-  
   return $element;
 }
 

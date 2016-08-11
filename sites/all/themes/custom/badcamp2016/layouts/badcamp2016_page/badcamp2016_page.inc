@@ -28,12 +28,15 @@ function badcamp2016_badcamp2016_page_panels_layouts() {
   return $items;
 }
 
+/**
+ * Implements template preprocess page().
+ */
 function template_preprocess_badcamp2016_page(&$variables) {
-  if($page = page_manager_get_current_page()) {
-    if($page['handler']->handler === 'panel_context') {
+  if ($page = page_manager_get_current_page()) {
+    if ($page['handler']->handler === 'panel_context') {
       $display = $page['handler']->conf['display'];
 
-      if(!empty($display->layout_settings['suppress_page_title'])) {
+      if (!empty($display->layout_settings['suppress_page_title'])) {
         $variables['content']['title'] = NULL;
       }
     }

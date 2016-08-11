@@ -25,7 +25,9 @@ function badcamp2016_badcamp2016_1col_panels_layouts() {
   return $items;
 }
 
-
+/**
+ * Implements settings form.
+ */
 function badcamp2016_badcamp2016_1col_settings_form($display, $plugin, $settings) {
   $form = array();
   $form['suppress_page_title'] = array(
