@@ -508,6 +508,7 @@ function badcamp_summits_page_default_page_manager_pages() {
   $display->layout_settings = array(
     'background' => '%theme/images/Hero/Summits-Hero.png',
     'opaque' => 1,
+    'suppress_page_title' => 1,
     'height' => 552,
     'width' => 1440,
   );

@@ -707,14 +707,6 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['label'] = 'Page Title';
-  $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<h2 class="views-header-title">Individual Sponsors</h2>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: User: Donation */
   $handler->display->display_options['relationships']['eck_donation']['id'] = 'eck_donation';

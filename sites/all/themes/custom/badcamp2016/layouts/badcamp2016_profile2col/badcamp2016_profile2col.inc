@@ -14,6 +14,10 @@ function badcamp2016_badcamp2016_profile2col_panels_layouts() {
     'icon' => 'badcamp2016_profile2col.png',
     'theme' => 'badcamp2016_profile2col',
     'admin css' => '../../dist/css/panels-admin.css',
+    'settings form' => 'badcamp2016_badcamp2016_profile2col_settings_form',
+    'settings' => array(
+      'suppress_page_title' => FALSE,
+    ),
     'regions' => array(
       'header' => t('Header area'),
       'image' => t('Profile Image'),
@@ -27,4 +31,14 @@ function badcamp2016_badcamp2016_profile2col_panels_layouts() {
     ),
   );
   return $items;
+}
+
+function badcamp2016_badcamp2016_profile2col_settings_form($display, $plugin, $settings) {
+  $form = array();
+  $form['suppress_page_title'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Supress outer page title'),
+    '#default_value' => $settings['suppress_page_title'],
+  );
+  return $form;
 }

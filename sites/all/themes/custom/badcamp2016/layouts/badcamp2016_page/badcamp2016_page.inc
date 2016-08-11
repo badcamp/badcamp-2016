@@ -18,6 +18,7 @@ function badcamp2016_badcamp2016_page_panels_layouts() {
       'branding' => t('Branding'),
       'user_nav' => t('User navigation'),
       'main_nav' => t('Main Navigation'),
+      'title' => t('Page Title'),
       'main' => t('Main content region'),
       'footer_nav' => t('Footer Navigation'),
       'footer_left' => t('Footer Left'),
@@ -25,4 +26,16 @@ function badcamp2016_badcamp2016_page_panels_layouts() {
     ),
   );
   return $items;
+}
+
+function template_preprocess_badcamp2016_page(&$variables) {
+  if($page = page_manager_get_current_page()) {
+    if($page['handler']->handler === 'panel_context') {
+      $display = $page['handler']->conf['display'];
+
+      if(!empty($display->layout_settings['suppress_page_title'])) {
+        $variables['content']['title'] = NULL;
+      }
+    }
+  }
 }

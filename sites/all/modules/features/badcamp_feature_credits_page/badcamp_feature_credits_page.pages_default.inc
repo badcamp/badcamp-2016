@@ -45,7 +45,9 @@ function badcamp_feature_credits_page_default_page_manager_pages() {
   );
   $display = new panels_display();
   $display->layout = 'badcamp2016_1col';
-  $display->layout_settings = array();
+  $display->layout_settings = array(
+    'suppress_page_title' => 1,
+  );
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,

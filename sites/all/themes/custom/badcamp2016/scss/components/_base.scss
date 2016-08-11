@@ -161,3 +161,21 @@ svg.reg-progress {
   margin-left:5%;
   margin-right:5%;
 }
+
+.outer-page-title {
+  margin-top: 3.125rem;
+  font-family: $font-family-orbitron;
+  font-weight: bold;
+  color: #59A8C1;
+  letter-spacing: rem-calc(3);
+  line-height: rem-calc(40);
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.50);
+  @include breakpoint(medium) {
+    &:after {
+      content: "////";
+      padding-left: .4em;
+      display: inline-block;
+      color:$badcamp-header-white;
+    }
+  }
+}

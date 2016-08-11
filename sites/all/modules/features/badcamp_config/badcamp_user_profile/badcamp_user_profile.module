@@ -15,6 +15,10 @@ function badcamp_user_profile_field_formatter_info() {
       'label' => t('Hide if Boolean FALSE'),
       'field types' => array('list_boolean'),
     ),
+    'drupalorg_username' => array(
+      'label' => t('Drupal.org Username link'),
+      'field types' => array('text'),
+    )
   );
 }
 
@@ -24,21 +28,38 @@ function badcamp_user_profile_field_formatter_info() {
 function badcamp_user_profile_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
   $element = array();
   $settings = $display['settings'];
-  if ($display['type'] == 'boolean') {
-    $allowed_values = list_allowed_values($field, $instance, $entity_type, $entity);
-    foreach ($items as $delta => $item) {
-      if ($item['value']) {
-        if (isset($allowed_values[$item['value']])) {
-          $output = field_filter_xss($allowed_values[$item['value']]);
+  switch($display['type']) {
+    case 'boolean':
+      $allowed_values = list_allowed_values($field, $instance, $entity_type, $entity);
+      foreach ($items as $delta => $item) {
+        if ($item['value']) {
+          if (isset($allowed_values[$item['value']])) {
+            $output = field_filter_xss($allowed_values[$item['value']]);
+          }
+          else {
+            // If no match was found in allowed values, fall back to the key.
+            $output = field_filter_xss($item['value']);
+          }
+          $element[$delta] = array('#markup' => $output);
         }
-        else {
-          // If no match was found in allowed values, fall back to the key.
-          $output = field_filter_xss($item['value']);
-        }
-        $element[$delta] = array('#markup' => $output);
       }
-    }
+      break;
+    case 'drupalorg_username':
+      foreach($items as $delta => $item) {
+        $username = $item['safe_value'];
+        $element[$delta] = array(
+          '#theme' => 'link',
+          '#path' => 'http://drupal.org/u/' . $username,
+          '#text' => $username,
+          '#options' => array(
+            'attributes' => array(),
+            'html' => FALSE,
+          )
+        );
+      }
+
   }
+  
   return $element;
 }
 

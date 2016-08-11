@@ -18,6 +18,21 @@ function badcamp2016_badcamp2016_simple2col_panels_layouts() {
       'column_left' => t('Left Column'),
       'column_right' => t('Right Column'),
     ),
+    'settings form' => 'badcamp2016_badcamp2016_simple2col_settings_form',
+    'settings' => array(
+      'suppress_page_title' => FALSE,
+    ),
   );
   return $items;
+}
+
+
+function badcamp2016_badcamp2016_simple2col_settings_form($display, $plugin, $settings) {
+  $form = array();
+  $form['suppress_page_title'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Supress outer page title'),
+    '#default_value' => $settings['suppress_page_title'],
+  );
+  return $form;
 }
