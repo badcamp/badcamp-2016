@@ -37,8 +37,9 @@
     </div>
   </header>
 
-  <?php if ($content['main']) : ?>
+  <?php if ($content['main'] || $content['tilte']) : ?>
     <main id="site-main">
+      <?php print $content['title']; ?>
       <?php print $content['main']; ?>
     </main>
   <?php endif; ?>

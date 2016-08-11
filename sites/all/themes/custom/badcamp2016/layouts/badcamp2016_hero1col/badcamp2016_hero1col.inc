@@ -19,6 +19,7 @@ function badcamp2016_badcamp2016_hero1col_panels_layouts() {
     'settings' => array(
       'background' => NULL,
       'opaque' => FALSE,
+      'suppress_page_title' => FALSE,
     ),
     'regions' => array(
       'hero' => t('Hero'),
@@ -43,6 +44,11 @@ function badcamp2016_layouts_hero1col_settings_form($display, $plugin, $settings
       '#title' => t('Opaque background'),
       '#type' => 'checkbox',
       '#default_value' => $settings['opaque'],
+    ),
+    'suppress_page_title' => array(
+      '#type' => 'checkbox',
+      '#title' => t('Supress outer page title'),
+      '#default_value' => $settings['suppress_page_title'],
     ),
   );
 }
