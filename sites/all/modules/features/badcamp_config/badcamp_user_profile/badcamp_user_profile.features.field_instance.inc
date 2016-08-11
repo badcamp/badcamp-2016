@@ -53,9 +53,9 @@ function badcamp_user_profile_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'module' => 'text',
+        'module' => 'badcamp_user_profile',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'drupalorg_username',
         'weight' => 2,
       ),
     ),
@@ -628,9 +628,9 @@ function badcamp_user_profile_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'module' => 'text',
+        'module' => 'badcamp_user_profile',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'twitter_handle',
         'weight' => 3,
       ),
     ),

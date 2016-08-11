@@ -3,6 +3,7 @@ description = Main settings and config for the User profile including related "I
 core = 7.x
 package = BADCamp Config
 version = 7.x-10.1
+dependencies[] = badcamp_user_profile
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = field_group
