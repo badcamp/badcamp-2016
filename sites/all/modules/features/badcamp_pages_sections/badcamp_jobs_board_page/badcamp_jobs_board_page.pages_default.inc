@@ -67,6 +67,7 @@ function badcamp_jobs_board_page_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
+      'content' => NULL,
     ),
   );
   $display->cache = array();
@@ -75,33 +76,18 @@ function badcamp_jobs_board_page_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-efef48e2-e619-4790-9306-011b87781c5f';
+    $pane->pid = 'new-dbcbde96-2a7d-4d8e-a027-0f0ef3ed33a8';
     $pane->panel = 'content';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-jobs-admin-menu';
     $pane->shown = TRUE;
     $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'role',
-          'settings' => array(
-            'rids' => array(
-              0 => 3,
-              1 => 6,
-            ),
-          ),
-          'context' => 'logged-in-user',
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
     );
     $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-      'name' => 'add_job_posting_button',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'span',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -111,9 +97,9 @@ function badcamp_jobs_board_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'efef48e2-e619-4790-9306-011b87781c5f';
-    $display->content['new-efef48e2-e619-4790-9306-011b87781c5f'] = $pane;
-    $display->panels['content'][0] = 'new-efef48e2-e619-4790-9306-011b87781c5f';
+    $pane->uuid = 'dbcbde96-2a7d-4d8e-a027-0f0ef3ed33a8';
+    $display->content['new-dbcbde96-2a7d-4d8e-a027-0f0ef3ed33a8'] = $pane;
+    $display->panels['content'][0] = 'new-dbcbde96-2a7d-4d8e-a027-0f0ef3ed33a8';
     $pane = new stdClass();
     $pane->pid = 'new-d5db0382-84b3-4ae1-a22c-0dfd17876e6a';
     $pane->panel = 'content';
