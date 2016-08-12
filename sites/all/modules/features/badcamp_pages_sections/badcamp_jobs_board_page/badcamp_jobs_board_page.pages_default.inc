@@ -62,7 +62,9 @@ function badcamp_jobs_board_page_default_page_manager_pages() {
   );
   $display = new panels_display();
   $display->layout = 'badcamp2016_1col';
-  $display->layout_settings = array();
+  $display->layout_settings = array(
+    'suppress_page_title' => 1,
+  );
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
@@ -112,7 +114,10 @@ function badcamp_jobs_board_page_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'badcamp-default',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
