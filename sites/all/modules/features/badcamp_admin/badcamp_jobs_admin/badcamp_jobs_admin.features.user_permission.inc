@@ -26,7 +26,6 @@ function badcamp_jobs_admin_user_default_permissions() {
     'name' => 'delete any job_posting content',
     'roles' => array(
       'administrator' => 'administrator',
-      'job posting editor' => 'job posting editor',
       'site editor' => 'site editor',
     ),
     'module' => 'node',
@@ -48,7 +47,6 @@ function badcamp_jobs_admin_user_default_permissions() {
     'name' => 'edit any job_posting content',
     'roles' => array(
       'administrator' => 'administrator',
-      'job posting editor' => 'job posting editor',
       'site editor' => 'site editor',
     ),
     'module' => 'node',
