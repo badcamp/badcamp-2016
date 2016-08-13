@@ -65,6 +65,7 @@ $conf['master_modules']['base'] = array(
   'pathauto',
   'realname',
   'r4032login',
+  'rules',
   'smtp',
   'strongarm',
   'styleguide',
