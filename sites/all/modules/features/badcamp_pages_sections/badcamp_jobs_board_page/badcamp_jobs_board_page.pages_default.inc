@@ -78,18 +78,19 @@ function badcamp_jobs_board_page_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-dbcbde96-2a7d-4d8e-a027-0f0ef3ed33a8';
+    $pane->pid = 'new-d793ccd7-0ed9-4ef0-b779-63e6f794c1fe';
     $pane->panel = 'content';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-jobs-admin-menu';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(),
-    );
+    $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'span',
+      'admin_title' => 'Add Job Link',
+      'title' => '',
+      'body' => '<p><a href="/node/add/job-posting" class="secondary button">Add Job --</a></p>
+',
+      'format' => 'filtered_html',
+      'substitute' => TRUE,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -99,9 +100,9 @@ function badcamp_jobs_board_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'dbcbde96-2a7d-4d8e-a027-0f0ef3ed33a8';
-    $display->content['new-dbcbde96-2a7d-4d8e-a027-0f0ef3ed33a8'] = $pane;
-    $display->panels['content'][0] = 'new-dbcbde96-2a7d-4d8e-a027-0f0ef3ed33a8';
+    $pane->uuid = 'd793ccd7-0ed9-4ef0-b779-63e6f794c1fe';
+    $display->content['new-d793ccd7-0ed9-4ef0-b779-63e6f794c1fe'] = $pane;
+    $display->panels['content'][0] = 'new-d793ccd7-0ed9-4ef0-b779-63e6f794c1fe';
     $pane = new stdClass();
     $pane->pid = 'new-d5db0382-84b3-4ae1-a22c-0dfd17876e6a';
     $pane->panel = 'content';
