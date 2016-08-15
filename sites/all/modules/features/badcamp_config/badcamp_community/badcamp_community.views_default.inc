@@ -567,6 +567,12 @@ function badcamp_community_views_default_views() {
   $handler = $view->new_display('page', 'All Attendees Page', 'page_1');
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '48';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'block_grid';
   $handler->display->display_options['style_options']['grid'] = array(
@@ -631,6 +637,11 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['fields']['field_user_organization']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_organization']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: File Usage: Use count */
+  $handler->display->display_options['sorts']['count']['id'] = 'count';
+  $handler->display->display_options['sorts']['count']['table'] = 'file_usage';
+  $handler->display->display_options['sorts']['count']['field'] = 'count';
+  $handler->display->display_options['sorts']['count']['order'] = 'DESC';
   /* Sort criterion: User: Last name (field_user_last_name) */
   $handler->display->display_options['sorts']['field_user_last_name_value']['id'] = 'field_user_last_name_value';
   $handler->display->display_options['sorts']['field_user_last_name_value']['table'] = 'field_data_field_user_last_name';
