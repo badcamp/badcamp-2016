@@ -68,6 +68,7 @@ function stripe_donation_donation_options_content_type_render($subtype, $conf, $
   global $user;
   // Redirect if they already have a donation.
   if (_donation_options_check_existing_donation($user)) {
+    drupal_set_message(t("You've already donated, thank you!"));
     drupal_goto('/user');
   }
 
