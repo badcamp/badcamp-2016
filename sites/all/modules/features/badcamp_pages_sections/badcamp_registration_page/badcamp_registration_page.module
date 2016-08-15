@@ -31,8 +31,8 @@ function badcamp_registration_page_form_user_pass_alter(&$form, &$form_state) {
  */
 function badcamp_registration_page_form_user_register_form_alter(&$form, &$form_state, $form_id) {
   $form['#pre_render'][] = '_badcamp_registration_page_form_pre_render_element';
-  $form['field_user_mailchimp']['und'][0]['#title'] = '';
-  $form['field_user_mailchimp']['und'][0]['subscribe']['#title'] = t('Subscribe to newsletter');
+  $form['field_user_mailchimp'][LANGUAGE_NONE][0]['#title'] = '';
+  $form['field_user_mailchimp'][LANGUAGE_NONE][0]['subscribe']['#title'] = t('Subscribe to newsletter');
   $form['actions']['submit']['#value'] = t('Next');
 }
 
