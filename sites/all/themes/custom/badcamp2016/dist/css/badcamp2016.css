@@ -2563,7 +2563,8 @@ select {
 
 .media-object-section {
   display: table-cell;
-  vertical-align: top; }
+  vertical-align: top;
+  vertical-align: baseline; }
   .media-object-section:first-child {
     padding-right: 1rem; }
   .media-object-section:last-child:not(:nth-child(2)) {
@@ -2583,7 +2584,6 @@ body {
   width: 100%;
   overflow-x: hidden;
   position: relative;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-overflow-scrolling: auto; }
 
@@ -2602,7 +2602,6 @@ body {
   min-height: 100%;
   background: black;
   transition: transform 0.5s ease;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   z-index: 1;
   padding-bottom: 0.1px;
@@ -4378,6 +4377,9 @@ h3 {
 
 img.sponsor.badge {
   display: none; }
+
+.media-object .media-object-section {
+  vertical-align: middle; }
 
 .profile .user-picture {
   float: none; }
