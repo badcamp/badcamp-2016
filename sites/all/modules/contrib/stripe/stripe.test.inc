@@ -33,7 +33,7 @@ function stripe_admin_test($form, $form_state) {
   );
   $form['amount'] = array(
     '#type' => 'textfield',
-    '#title' => t('Amount:'),
+    '#title' => t('Amount'),
     '#description' => '<em>cents</em>',
     '#default_value' => 99,
     '#size' => 6,
@@ -69,10 +69,10 @@ function stripe_admin_test_submit($form, &$form_state) {
         "amount" => $form_state['values']['amount'],
         "currency" => "usd",
         "card" => $form_state['values']['stripe']['stripe_token'],
-        "description" => "Test Charge from " . variable_get('site_name', 'My Drupal Site'),
+        "description" => t('Test Charge from :site', array(':site' => variable_get('site_name', 'My Drupal Site'))),
       )
       );
-      drupal_set_message("Success! Card was successfully charged for the amount of " . check_plain($form_state['values']['amount']));
+      drupal_set_message(t('Success! Card was successfully charged for the amount of :amount', array(':amount' => $form_state['values']['amount'])));
     }
     catch (Exception $e) {
       form_set_error('', $e->getMessage());

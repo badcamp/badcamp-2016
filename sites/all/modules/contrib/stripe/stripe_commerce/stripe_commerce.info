@@ -7,9 +7,9 @@ dependencies[] = stripe_commerce
 core = 7.x
 
 
-; Information added by Drupal.org packaging script on 2016-03-14
+; Information added by Drupal.org packaging script on 2016-07-29
 version = "7.x-1.x-dev"
 core = "7.x"
 project = "stripe"
-datestamp = "1457973149"
+datestamp = "1469778066"
 
