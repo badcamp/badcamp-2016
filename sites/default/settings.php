@@ -76,6 +76,10 @@ $conf['master_modules']['base'] = array(
   'views',
   'views_bulk_operations',
   'views_content',
+  'xmlsitemap',
+  'xmlsitemap_menu',
+  'xmlsitemap_node',
+  'xmlsitemap_engines',
 
   // BADCamp features.
   'badcamp_attendees_admin',
