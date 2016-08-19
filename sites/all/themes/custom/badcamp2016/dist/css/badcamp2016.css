@@ -4381,6 +4381,9 @@ img.sponsor.badge {
 .media-object .media-object-section {
   vertical-align: middle; }
 
+body.page-summits .region-hero {
+  background-size: cover; }
+
 .profile .user-picture {
   float: none; }
   @media screen and (min-width: 40em) {
