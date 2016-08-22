@@ -90,7 +90,6 @@ $conf['master_modules']['base'] = array(
   'badcamp_contact_form',
   'badcamp_environment',
   'badcamp_events',
-  'badcamp_feature_credits_page',
   'badcamp_hates_spam',
   'badcamp_homepage',
   'badcamp_job_opportunitiies',
