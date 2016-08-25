@@ -234,6 +234,16 @@ function badcamp_sessions_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'use text format filtered_html'.
+  $permissions['use text format filtered_html'] = array(
+    'name' => 'use text format filtered_html',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'filter',
+  );
+
   // Exported permission: 'view field_session_date_and_time'.
   $permissions['view field_session_date_and_time'] = array(
     'name' => 'view field_session_date_and_time',
