@@ -76,7 +76,7 @@ function badcamp_sessions_page_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<a href="sessions/propose" class="button">Submit your session proposal &raquo;</a>';
+  $handler->display->display_options['header']['area']['content'] = 'Session submission is now closed! Selection will be taking place in the near future.';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -174,7 +174,7 @@ function badcamp_sessions_page_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Submissions for sessions close on Thursday, August 25th, 2016 at 11:59pm PT. <a href="sessions/propose" class="button">Submit your session proposal &raquo;</a>';
+  $handler->display->display_options['header']['area']['content'] = 'Session submission is now closed! Thank you to everyone who submitted. Session selection will be complete in early September.';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
