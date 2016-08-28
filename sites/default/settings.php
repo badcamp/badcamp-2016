@@ -76,6 +76,7 @@ $conf['master_modules']['base'] = array(
   'views',
   'views_bulk_operations',
   'views_content',
+  'views_data_export',
   'xmlsitemap',
   'xmlsitemap_menu',
   'xmlsitemap_node',

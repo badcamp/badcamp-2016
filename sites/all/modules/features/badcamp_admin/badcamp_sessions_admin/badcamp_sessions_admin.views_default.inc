@@ -195,6 +195,121 @@ function badcamp_sessions_admin_views_default_views() {
   $handler = $view->new_display('page', 'Proposed admin', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Proposed Sessions';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'edit_node' => 'edit_node',
+    'field_session_skill_level' => 'field_session_skill_level',
+    'field_session_track' => 'field_session_track',
+    'field_session_speaker' => 'field_session_speaker',
+    'field_user_organization' => 'field_user_organization',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_session_skill_level' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_session_track' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_session_speaker' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_organization' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_session_speaker_target_id']['id'] = 'field_session_speaker_target_id';
+  $handler->display->display_options['relationships']['field_session_speaker_target_id']['table'] = 'field_data_field_session_speaker';
+  $handler->display->display_options['relationships']['field_session_speaker_target_id']['field'] = 'field_session_speaker_target_id';
+  $handler->display->display_options['relationships']['field_session_speaker_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'edit';
+  /* Field: Content: Session skill level */
+  $handler->display->display_options['fields']['field_session_skill_level']['id'] = 'field_session_skill_level';
+  $handler->display->display_options['fields']['field_session_skill_level']['table'] = 'field_data_field_session_skill_level';
+  $handler->display->display_options['fields']['field_session_skill_level']['field'] = 'field_session_skill_level';
+  /* Field: Content: Session track */
+  $handler->display->display_options['fields']['field_session_track']['id'] = 'field_session_track';
+  $handler->display->display_options['fields']['field_session_track']['table'] = 'field_data_field_session_track';
+  $handler->display->display_options['fields']['field_session_track']['field'] = 'field_session_track';
+  /* Field: Content: Session speaker(s) */
+  $handler->display->display_options['fields']['field_session_speaker']['id'] = 'field_session_speaker';
+  $handler->display->display_options['fields']['field_session_speaker']['table'] = 'field_data_field_session_speaker';
+  $handler->display->display_options['fields']['field_session_speaker']['field'] = 'field_session_speaker';
+  $handler->display->display_options['fields']['field_session_speaker']['label'] = 'Speaker(s)';
+  $handler->display->display_options['fields']['field_session_speaker']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['field_session_speaker']['delta_offset'] = '0';
+  /* Field: User: Company */
+  $handler->display->display_options['fields']['field_user_organization']['id'] = 'field_user_organization';
+  $handler->display->display_options['fields']['field_user_organization']['table'] = 'field_data_field_user_organization';
+  $handler->display->display_options['fields']['field_user_organization']['field'] = 'field_user_organization';
+  $handler->display->display_options['fields']['field_user_organization']['relationship'] = 'field_session_speaker_target_id';
+  $handler->display->display_options['fields']['field_user_organization']['label'] = 'Organization';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Session track (field_session_track) */
+  $handler->display->display_options['sorts']['field_session_track_tid']['id'] = 'field_session_track_tid';
+  $handler->display->display_options['sorts']['field_session_track_tid']['table'] = 'field_data_field_session_track';
+  $handler->display->display_options['sorts']['field_session_track_tid']['field'] = 'field_session_track_tid';
+  /* Sort criterion: Content: Skill level (field_skill_level) */
+  $handler->display->display_options['sorts']['field_skill_level_tid']['id'] = 'field_skill_level_tid';
+  $handler->display->display_options['sorts']['field_skill_level_tid']['table'] = 'field_data_field_skill_level';
+  $handler->display->display_options['sorts']['field_skill_level_tid']['field'] = 'field_skill_level_tid';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -368,12 +483,11 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: session_vote counter */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_count_rel']['field'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['label'] = 'vote counter';
-  $handler->display->display_options['relationships']['flag_count_rel']['flag'] = 'session_vote';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Session date and time */
   $handler->display->display_options['fields']['field_session_date_and_time']['id'] = 'field_session_date_and_time';
@@ -396,7 +510,7 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Flags: Flag counter */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['count']['id'] = 'count';
   $handler->display->display_options['fields']['count']['table'] = 'flag_counts';
   $handler->display->display_options['fields']['count']['field'] = 'count';
@@ -502,12 +616,11 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: my_schedule counter */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_count_rel']['field'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['label'] = 'registered counter';
-  $handler->display->display_options['relationships']['flag_count_rel']['flag'] = 'my_schedule';
   /* Relationship: Content: Session room (field_session_room) */
   $handler->display->display_options['relationships']['field_session_room_tid']['id'] = 'field_session_room_tid';
   $handler->display->display_options['relationships']['field_session_room_tid']['table'] = 'field_data_field_session_room';
@@ -535,7 +648,7 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Flags: Flag counter */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['count']['id'] = 'count';
   $handler->display->display_options['fields']['count']['table'] = 'flag_counts';
   $handler->display->display_options['fields']['count']['field'] = 'count';
@@ -654,11 +767,10 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: my_schedule counter */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_count_rel']['field'] = 'flag_count_rel';
-  $handler->display->display_options['relationships']['flag_count_rel']['flag'] = 'my_schedule';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Session skill level */
   $handler->display->display_options['fields']['field_session_skill_level']['id'] = 'field_session_skill_level';
@@ -668,7 +780,7 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['fields']['field_session_track']['id'] = 'field_session_track';
   $handler->display->display_options['fields']['field_session_track']['table'] = 'field_data_field_session_track';
   $handler->display->display_options['fields']['field_session_track']['field'] = 'field_session_track';
-  /* Field: Flags: Flag counter */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['count']['id'] = 'count';
   $handler->display->display_options['fields']['count']['table'] = 'flag_counts';
   $handler->display->display_options['fields']['count']['field'] = 'count';
@@ -787,11 +899,10 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: my_schedule counter */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_count_rel']['field'] = 'flag_count_rel';
-  $handler->display->display_options['relationships']['flag_count_rel']['flag'] = 'my_schedule';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Session track */
   $handler->display->display_options['fields']['field_session_track']['id'] = 'field_session_track';
@@ -823,7 +934,7 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['fields']['field_session_time_slot']['field'] = 'field_session_time_slot';
   $handler->display->display_options['fields']['field_session_time_slot']['label'] = 'Time';
   $handler->display->display_options['fields']['field_session_time_slot']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Flags: Flag counter */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['count']['id'] = 'count';
   $handler->display->display_options['fields']['count']['table'] = 'flag_counts';
   $handler->display->display_options['fields']['count']['field'] = 'count';
@@ -850,7 +961,7 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['sorts']['field_session_track_tid']['id'] = 'field_session_track_tid';
   $handler->display->display_options['sorts']['field_session_track_tid']['table'] = 'field_data_field_session_track';
   $handler->display->display_options['sorts']['field_session_track_tid']['field'] = 'field_session_track_tid';
-  /* Sort criterion: Flags: Flag counter */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['count']['id'] = 'count';
   $handler->display->display_options['sorts']['count']['table'] = 'flag_counts';
   $handler->display->display_options['sorts']['count']['field'] = 'count';
@@ -967,11 +1078,10 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: my_schedule counter */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_count_rel']['field'] = 'flag_count_rel';
-  $handler->display->display_options['relationships']['flag_count_rel']['flag'] = 'my_schedule';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Session track */
   $handler->display->display_options['fields']['field_session_track']['id'] = 'field_session_track';
@@ -1003,7 +1113,7 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['fields']['field_session_time_slot']['field'] = 'field_session_time_slot';
   $handler->display->display_options['fields']['field_session_time_slot']['label'] = 'Time';
   $handler->display->display_options['fields']['field_session_time_slot']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Flags: Flag counter */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['count']['id'] = 'count';
   $handler->display->display_options['fields']['count']['table'] = 'flag_counts';
   $handler->display->display_options['fields']['count']['field'] = 'count';
@@ -1030,7 +1140,7 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['sorts']['field_session_skill_level_tid']['id'] = 'field_session_skill_level_tid';
   $handler->display->display_options['sorts']['field_session_skill_level_tid']['table'] = 'field_data_field_session_skill_level';
   $handler->display->display_options['sorts']['field_session_skill_level_tid']['field'] = 'field_session_skill_level_tid';
-  /* Sort criterion: Flags: Flag counter */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['count']['id'] = 'count';
   $handler->display->display_options['sorts']['count']['table'] = 'flag_counts';
   $handler->display->display_options['sorts']['count']['field'] = 'count';
@@ -1061,11 +1171,10 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: my_schedule counter */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_count_rel']['field'] = 'flag_count_rel';
-  $handler->display->display_options['relationships']['flag_count_rel']['flag'] = 'my_schedule';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Session track */
   $handler->display->display_options['fields']['field_session_track']['id'] = 'field_session_track';
@@ -1075,7 +1184,7 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['fields']['field_session_skill_level']['id'] = 'field_session_skill_level';
   $handler->display->display_options['fields']['field_session_skill_level']['table'] = 'field_data_field_session_skill_level';
   $handler->display->display_options['fields']['field_session_skill_level']['field'] = 'field_session_skill_level';
-  /* Field: Flags: Flag counter */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['count']['id'] = 'count';
   $handler->display->display_options['fields']['count']['table'] = 'flag_counts';
   $handler->display->display_options['fields']['count']['field'] = 'count';
@@ -1707,12 +1816,11 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: session_vote counter */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_count_rel']['field'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['label'] = 'vote counter';
-  $handler->display->display_options['relationships']['flag_count_rel']['flag'] = 'session_vote';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1738,7 +1846,7 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['fields']['field_session_status']['table'] = 'field_data_field_session_status';
   $handler->display->display_options['fields']['field_session_status']['field'] = 'field_session_status';
   $handler->display->display_options['fields']['field_session_status']['label'] = 'Status';
-  /* Field: Flags: Flag counter */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['count']['id'] = 'count';
   $handler->display->display_options['fields']['count']['table'] = 'flag_counts';
   $handler->display->display_options['fields']['count']['field'] = 'count';
