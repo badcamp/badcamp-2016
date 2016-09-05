@@ -1,7 +1,7 @@
 name = BADCamp Hates Spam
 core = 7.x
 package = BADCamp Config
-version = 7.x-1.0-beta2
+version = 7.x-10.0
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = honeypot

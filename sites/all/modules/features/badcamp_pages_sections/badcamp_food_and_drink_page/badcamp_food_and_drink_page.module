@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the BADCamp Food and Drink Page feature.
- */
-
-include_once 'badcamp_food_and_drink_page.features.inc';
