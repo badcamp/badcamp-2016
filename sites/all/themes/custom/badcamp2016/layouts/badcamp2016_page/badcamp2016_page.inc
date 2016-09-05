@@ -36,7 +36,7 @@ function template_preprocess_badcamp2016_page(&$variables) {
     if ($page['handler']->handler === 'panel_context') {
       $display = $page['handler']->conf['display'];
 
-      if (!empty($display->layout_settings['suppress_page_title'])) {
+      if (!empty($display->layout_settings['suppress_page_title']) && $display->layout_settings['suppress_page_title']) {
         $variables['content']['title'] = NULL;
       }
     }

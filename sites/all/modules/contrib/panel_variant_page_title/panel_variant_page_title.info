@@ -1,0 +1,14 @@
+name = Panel Variant Page Title
+description = Adds ability to set page title directly from Panels and takes advantage of arguments and contexts as placeholder tokens
+package = "Panels"
+core = 7.x
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = panels
+
+; Information added by Drupal.org packaging script on 2016-05-11
+version = "7.x-1.4"
+core = "7.x"
+project = "panel_variant_page_title"
+datestamp = "1463001374"
+

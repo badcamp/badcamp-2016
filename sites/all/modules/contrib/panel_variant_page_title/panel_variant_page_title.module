@@ -1,0 +1,125 @@
+<?php
+
+/**
+ * @file
+ * Module file for the Panels Variant Page Title module which allows you to set
+ * your page title directly from Panels configuration, and also allows you to
+ * take advantage from Panels Arguments and Contexts as Placeholder tokens.
+ */
+
+/**
+ * Implements hook_page_manager_variant_operations_alter().
+ *
+ * Shameful rip off from panels_everywhere module.
+ *
+ * @see panels_everywhere_page_manager_variant_operations_alter()
+ * @see http://groups.drupal.org/node/110719#comment-356094
+ */
+function panel_variant_page_title_page_manager_variant_operations_alter(&$operations, $handler) {
+
+  // Use this obnoxious construct to safely insert our item.
+  reset($operations['children']);
+  $children_operations = array();
+  while (list($key, $value) = each($operations['children'])) {
+    $children_operations[$key] = $value;
+    if ($key == 'context') {
+      $children_operations['page_title'] = array(
+        'title' => t('Page Title'),
+        'description' => t('Edit Page Titles.'),
+        'form' => 'panel_variant_page_title_variant_form',
+      );
+    }
+  }
+  $operations['children'] = $children_operations;
+}
+
+/**
+ * Panels page title form.
+ */
+function panel_variant_page_title_variant_form($form, &$form_state) {
+
+  ctools_include('context-task-handler');
+
+  $handler = &$form_state['handler'];
+  $contexts = ctools_context_handler_get_all_contexts($form_state['task'], $form_state['subtask'], $handler);
+
+  if (empty($handler->conf['panels_page_title_state'])) {
+    $handler->conf['panels_page_title_state'] = '0';
+  }
+
+  if (empty($handler->conf['panels_page_title'])) {
+    $handler->conf['panels_page_title'] = '';
+  }
+
+  $form['settings']['panels_page_title_state'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable Page Title for this Variant'),
+    '#default_value' => $handler->conf['panels_page_title_state'],
+  );
+  $form['settings']['panels_page_title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Panel Page Title'),
+    '#default_value' => $handler->conf['panels_page_title'],
+    '#maxlength' => 2000,
+  );
+
+  $rows = array();
+  foreach ($contexts as $context) {
+    foreach (ctools_context_get_converters('%' . check_plain($context->keyword) . ':', $context) as $keyword => $title) {
+      $rows[] = array(
+        check_plain($keyword),
+        format_string('@identifier: @title', array('@title' => $title, '@identifier' => $context->identifier)),
+      );
+    }
+  }
+
+  $header = array(t('Keyword'), t('Value'));
+  $form['contexts'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Substitutions'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#value' => theme('table', array('header' => $header, 'rows' => $rows)),
+  );
+
+  return $form;
+}
+
+/**
+ * Handles Panel Page Title submission.
+ */
+function panel_variant_page_title_variant_form_submit($form, &$form_state) {
+  $form_state['handler']->conf['panels_page_title_state'] = $form_state['values']['panels_page_title_state'];
+  $form_state['handler']->conf['panels_page_title'] = $form_state['values']['panels_page_title'];
+}
+
+/**
+ * Implements hook_theme().
+ */
+function panel_variant_page_title_theme() {
+  return array(
+    'panel_variant_page_title_preprocess_html' => array(
+      'arguments' => array('vars' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function panel_variant_page_title_preprocess_html(&$vars) {
+  $tasks = page_manager_get_current_page();
+  if (isset($tasks['handler']) && !empty($tasks['handler']->conf['panels_page_title_state'])) {
+    $types = array('global' => NULL);
+    $page_title = $tasks['handler']->conf['panels_page_title'];
+    if (isset($tasks['handler']->conf['display']->context)) {
+      $display_context = $tasks['handler']->conf['display']->context;
+    }
+    elseif (isset($tasks['contexts'])) {
+      $display_context = $tasks['contexts'];
+    }
+    // Look for Placeholder Tokens in Titles and Convert them for this Display.
+    $title = ctools_context_keyword_substitute($page_title, array(), $display_context);
+    $vars['head_title'] = $title;
+  }
+}
