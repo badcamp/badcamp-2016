@@ -24,6 +24,7 @@ function training_reg_feature_user_default_permissions() {
     'name' => 'register for training',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'training_reg',
   );
