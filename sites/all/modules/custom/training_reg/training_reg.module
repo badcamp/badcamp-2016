@@ -165,11 +165,10 @@ function training_reg_remaining_field($training) {
   $msg = ($remaining == 0) ? t('None; the training is full.') : $remaining;
 
   return array(
-    '#type' => 'item',
-    '#title' => t('Registrations Remaining:'),
-    '#markup' => $msg,
-    '#prefix' => '<div id="registrations-remaining">',
-    '#suffix' => '</div>',
+    '#type' => 'markup',
+    '#markup' => '<div id="registrations-remaining" class="field field-label-inline">' .
+      '<div class="field-label">' . t('Registrations Remaining:') . '&nbsp;</div>' .
+      '<div class="field-item">' . $msg . '</div>' . '</div>',
   );
 }
 
