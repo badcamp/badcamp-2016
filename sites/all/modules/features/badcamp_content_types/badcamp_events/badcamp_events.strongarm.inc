@@ -67,6 +67,18 @@ function badcamp_events_strongarm() {
             'visible' => FALSE,
           ),
         ),
+        'register_link' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+        'register_remaining' => array(
+          'default' => array(
+            'weight' => '9',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );

@@ -78,21 +78,24 @@ function training_reg_field_extra_fields() {
  */
 function training_reg_node_view($node, $view_mode, $langcode) {
   $extrafields = field_extra_fields_get_display('node', $node->type, $view_mode);
+  // Only add these fields if this is a training content type
+  if ($node->type == "training") {
+    $extrafield_name = 'register_link';
+    if (isset($extrafields[$extrafield_name])
+      && isset($extrafields[$extrafield_name]['visible'])
+      && $extrafields[$extrafield_name]['visible']
+    ) {
+      $node->content[$extrafield_name] = training_reg_link_field($node);
+    }
+    $extrafield_name = 'register_remaining';
+    if (isset($extrafields[$extrafield_name])
+      && isset($extrafields[$extrafield_name]['visible'])
+      && $extrafields[$extrafield_name]['visible']
+    ) {
+      $node->content[$extrafield_name] = training_reg_remaining_field($node);
+    }
+  }
 
-  $extrafield_name = 'register_link';
-  if (isset($extrafields[$extrafield_name])
-    && isset($extrafields[$extrafield_name]['visible'])
-    && $extrafields[$extrafield_name]['visible']
-  ) {
-    $node->content[$extrafield_name] = training_reg_link_field($node);
-  }
-  $extrafield_name = 'register_remaining';
-  if (isset($extrafields[$extrafield_name])
-    && isset($extrafields[$extrafield_name]['visible'])
-    && $extrafields[$extrafield_name]['visible']
-  ) {
-    $node->content[$extrafield_name] = training_reg_remaining_field($node);
-  }
 }
 
 /**

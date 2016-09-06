@@ -1,0 +1,8 @@
+name = BADCamp Event Registration
+description = Event Registration forms
+package = BADCamp
+core = 7.x
+version = 7.x-1.1
+configure = admin/config/event_reg
+
+dependencies[] = event_reg_feature

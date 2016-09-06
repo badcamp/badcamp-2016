@@ -164,7 +164,6 @@ function badcamp_events_field_default_field_instances() {
           'multiple_number' => '',
           'multiple_to' => '',
           'show_remaining_days' => FALSE,
-          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -281,7 +280,7 @@ function badcamp_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -439,7 +438,7 @@ function badcamp_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -475,7 +474,7 @@ function badcamp_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -503,7 +502,11 @@ function badcamp_events_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_maximum_registration'.
   $field_instances['node-event-field_maximum_registration'] = array(
     'bundle' => 'event',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -531,8 +534,8 @@ function badcamp_events_field_default_field_instances() {
     'label' => 'Maximum registration',
     'required' => 0,
     'settings' => array(
-      'max' => '',
-      'min' => '',
+      'max' => 10000,
+      'min' => 0,
       'prefix' => '',
       'suffix' => '',
       'user_register_form' => FALSE,

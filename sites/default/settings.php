@@ -91,6 +91,7 @@ $conf['master_modules']['base'] = array(
   'badcamp_contact_form',
   'badcamp_environment',
   'badcamp_events',
+  'badcamp_events_admin',
   'badcamp_hates_spam',
   'badcamp_homepage',
   'badcamp_individual_sponsors_admin',
@@ -111,10 +112,12 @@ $conf['master_modules']['base'] = array(
   'badcamp_summits_page',
   'badcamp_trainings_page',
   'badcamp_user_profile',
+  'event_reg_feature',
   'feature_badcamp_homepage',
   'feature_badcamp_reports',
   'training_reg_feature',
   // BADCamp custom modules.
+  'event_reg',
   'training_reg',
   'badcamp_theme',
 );

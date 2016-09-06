@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ * Event Registration installation.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function event_reg_uninstall() {
+  variable_del('event_reg_message');
+}
