@@ -35,12 +35,15 @@ function badcamp_basic_page_default_page_manager_handlers() {
   );
   $display = new panels_display();
   $display->layout = 'badcamp2016_default';
-  $display->layout_settings = array();
+  $display->layout_settings = array(
+    'suppress_page_title' => 0,
+  );
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'content' => NULL,
       'title' => NULL,
+      'sponsors' => NULL,
     ),
     'content' => array(
       'style' => '-1',
@@ -53,6 +56,31 @@ function badcamp_basic_page_default_page_manager_handlers() {
   $display->storage_id = 'node_view__panel_context_59090335-f05d-42ec-ac35-f4b1918461e9';
   $display->content = array();
   $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-1b0fadba-104b-4bb3-a5e1-95e9a2893e63';
+  $pane->panel = 'content';
+  $pane->type = 'entity_field_extra';
+  $pane->subtype = 'node:flag_my_schedule';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '1b0fadba-104b-4bb3-a5e1-95e9a2893e63';
+  $display->content['new-1b0fadba-104b-4bb3-a5e1-95e9a2893e63'] = $pane;
+  $display->panels['content'][0] = 'new-1b0fadba-104b-4bb3-a5e1-95e9a2893e63';
   $pane = new stdClass();
   $pane->pid = 'new-7e0ef841-6953-47d8-b4c7-adf058ba4138';
   $pane->panel = 'content';
@@ -78,11 +106,11 @@ function badcamp_basic_page_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 0;
+  $pane->position = 1;
   $pane->locks = array();
   $pane->uuid = '7e0ef841-6953-47d8-b4c7-adf058ba4138';
   $display->content['new-7e0ef841-6953-47d8-b4c7-adf058ba4138'] = $pane;
-  $display->panels['content'][0] = 'new-7e0ef841-6953-47d8-b4c7-adf058ba4138';
+  $display->panels['content'][1] = 'new-7e0ef841-6953-47d8-b4c7-adf058ba4138';
   $pane = new stdClass();
   $pane->pid = 'new-ec9a3784-fc72-4e52-a4a8-51b2176bb1f3';
   $pane->panel = 'title';

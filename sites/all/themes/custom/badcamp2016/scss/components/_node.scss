@@ -1,14 +1,13 @@
-
-
 @include breakpoint(medium) {
   .node.node-sponsor {
     .field-name-field-sponsor-logo {
-      float:right;
-      margin-left:20px;
-      margin-bottom:20px;
+      float: right;
+      margin-left: 20px;
+      margin-bottom: 20px;
     }
   }
 }
+
 //hides user badge until it can be replaced
 img.sponsor.badge {
   display: none;
@@ -22,4 +21,16 @@ img.sponsor.badge {
 
 body.page-summits .region-hero {
   background-size: cover;
+}
+
+.flag-my-schedule a {
+  appearance: button;
+  -moz-appearance: button;
+  -webkit-appearance: button;
+  text-decoration: none;
+  font: menu;
+  color: ButtonText;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 1em;
 }
