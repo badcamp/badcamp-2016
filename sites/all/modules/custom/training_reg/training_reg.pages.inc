@@ -24,6 +24,12 @@ function training_reg_registration_form($form, &$form_state, $node) {
 
   $form_state['training'] = $node;
 
+  $message = variable_get('training_payment_message');
+
+  $form['message'] = array(
+    '#markup' => '<div class="callout messages success status">' . $message . '</div>',
+  );
+
   $form['stripe'] = array(
     '#type' => 'stripe_payment',
     '#prefix' => '<div id="stripe-wrapper">',
