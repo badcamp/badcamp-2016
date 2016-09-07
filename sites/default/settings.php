@@ -99,6 +99,7 @@ $conf['master_modules']['base'] = array(
   'badcamp_jobs_admin',
   'badcamp_jobs_board_page',
   'badcamp_mailchimp',
+  'badcamp_my_schedule',
   'badcamp_news_feature',
   'badcamp_registration_page',
   'badcamp_scholarship_application',
