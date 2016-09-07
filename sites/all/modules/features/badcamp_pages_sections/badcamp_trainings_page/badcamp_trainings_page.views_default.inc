@@ -173,7 +173,7 @@ function badcamp_trainings_page_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['label'] = '';
   $handler->display->display_options['fields']['rendered_entity']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['rendered_entity']['alter']['preserve_tags'] = '<li><ul><p><br><b><strong><i><div><h2><h3><h4><ol>';
+  $handler->display->display_options['fields']['rendered_entity']['alter']['preserve_tags'] = '<li><ul><p><br><b><strong><i><div><h2><h3><h4><ol><a>';
   $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
