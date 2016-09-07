@@ -290,6 +290,64 @@ function badcamp_summits_page_default_page_manager_handlers() {
   $display->content['new-2f148a75-3c61-49f6-83ff-f1661552e228'] = $pane;
   $display->panels['content'][4] = 'new-2f148a75-3c61-49f6-83ff-f1661552e228';
   $pane = new stdClass();
+  $pane->pid = 'new-92dbde88-f7b7-43f5-b89b-6b29913e1f0a';
+  $pane->panel = 'content';
+  $pane->type = 'entity_field';
+  $pane->subtype = 'node:field_maximum_registration';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'label' => 'inline',
+    'formatter' => 'number_integer',
+    'delta_limit' => 0,
+    'delta_offset' => '0',
+    'delta_reversed' => FALSE,
+    'formatter_settings' => array(
+      'thousand_separator' => '',
+      'prefix_suffix' => 0,
+    ),
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 0,
+    'override_title_text' => 'Maximum Registrations',
+    'override_title_heading' => 'div',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 5;
+  $pane->locks = array();
+  $pane->uuid = '92dbde88-f7b7-43f5-b89b-6b29913e1f0a';
+  $display->content['new-92dbde88-f7b7-43f5-b89b-6b29913e1f0a'] = $pane;
+  $display->panels['content'][5] = 'new-92dbde88-f7b7-43f5-b89b-6b29913e1f0a';
+  $pane = new stdClass();
+  $pane->pid = 'new-c6b5fbcd-cc0e-47ae-b800-a1fd77a07fc8';
+  $pane->panel = 'content';
+  $pane->type = 'entity_field_extra';
+  $pane->subtype = 'node:register_remaining';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_mode' => 'teaser',
+    'context' => 'argument_entity_id:node_1',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 6;
+  $pane->locks = array();
+  $pane->uuid = 'c6b5fbcd-cc0e-47ae-b800-a1fd77a07fc8';
+  $display->content['new-c6b5fbcd-cc0e-47ae-b800-a1fd77a07fc8'] = $pane;
+  $display->panels['content'][6] = 'new-c6b5fbcd-cc0e-47ae-b800-a1fd77a07fc8';
+  $pane = new stdClass();
   $pane->pid = 'new-e01b9bc9-7c65-4bf2-bf59-40322a7f63be';
   $pane->panel = 'content';
   $pane->type = 'entity_field_extra';
@@ -309,11 +367,11 @@ function badcamp_summits_page_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 7;
   $pane->locks = array();
   $pane->uuid = 'e01b9bc9-7c65-4bf2-bf59-40322a7f63be';
   $display->content['new-e01b9bc9-7c65-4bf2-bf59-40322a7f63be'] = $pane;
-  $display->panels['content'][5] = 'new-e01b9bc9-7c65-4bf2-bf59-40322a7f63be';
+  $display->panels['content'][7] = 'new-e01b9bc9-7c65-4bf2-bf59-40322a7f63be';
   $pane = new stdClass();
   $pane->pid = 'new-8b9875db-1549-4980-98a8-d9ab9353daca';
   $pane->panel = 'content';
@@ -342,11 +400,11 @@ function badcamp_summits_page_default_page_manager_handlers() {
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 6;
+  $pane->position = 8;
   $pane->locks = array();
   $pane->uuid = '8b9875db-1549-4980-98a8-d9ab9353daca';
   $display->content['new-8b9875db-1549-4980-98a8-d9ab9353daca'] = $pane;
-  $display->panels['content'][6] = 'new-8b9875db-1549-4980-98a8-d9ab9353daca';
+  $display->panels['content'][8] = 'new-8b9875db-1549-4980-98a8-d9ab9353daca';
   $pane = new stdClass();
   $pane->pid = 'new-2ee96ce6-008e-4460-ba06-120a4b15f314';
   $pane->panel = 'title';
