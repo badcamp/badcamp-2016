@@ -32,8 +32,8 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
@@ -483,53 +483,6 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: session_vote counter */
-  $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
-  $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['flag_count_rel']['field'] = 'flag_count_rel';
-  $handler->display->display_options['relationships']['flag_count_rel']['label'] = 'vote counter';
-  $handler->display->display_options['relationships']['flag_count_rel']['flag'] = 'session_vote';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Session date and time */
-  $handler->display->display_options['fields']['field_session_date_and_time']['id'] = 'field_session_date_and_time';
-  $handler->display->display_options['fields']['field_session_date_and_time']['table'] = 'field_data_field_session_date_and_time';
-  $handler->display->display_options['fields']['field_session_date_and_time']['field'] = 'field_session_date_and_time';
-  $handler->display->display_options['fields']['field_session_date_and_time']['label'] = '';
-  $handler->display->display_options['fields']['field_session_date_and_time']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_session_date_and_time']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_session_date_and_time']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'value',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'show',
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Flags: Flag counter */
-  $handler->display->display_options['fields']['count']['id'] = 'count';
-  $handler->display->display_options['fields']['count']['table'] = 'flag_counts';
-  $handler->display->display_options['fields']['count']['field'] = 'count';
-  $handler->display->display_options['fields']['count']['relationship'] = 'flag_count_rel';
-  $handler->display->display_options['fields']['count']['label'] = 'Vote count';
-  /* Field: Content: Link */
-  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['label'] = 'Operations';
-  $handler->display->display_options['fields']['view_node']['text'] = 'view';
-  /* Field: Content: Edit link */
-  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['label'] = '';
-  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['edit_node']['text'] = 'edit';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */

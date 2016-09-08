@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the BADCamp Summit Speaker Application feature.
- */
-
-include_once 'badcamp_summit_contact_form.features.inc';

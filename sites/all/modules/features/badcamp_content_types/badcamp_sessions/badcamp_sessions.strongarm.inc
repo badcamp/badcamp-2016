@@ -57,16 +57,6 @@ function badcamp_sessions_strongarm() {
         ),
       ),
       'display' => array(
-        'flag_session_vote' => array(
-          'default' => array(
-            'weight' => '10',
-            'visible' => FALSE,
-          ),
-          'teaser' => array(
-            'weight' => '2',
-            'visible' => FALSE,
-          ),
-        ),
         'flag_my_schedule' => array(
           'default' => array(
             'weight' => '11',
