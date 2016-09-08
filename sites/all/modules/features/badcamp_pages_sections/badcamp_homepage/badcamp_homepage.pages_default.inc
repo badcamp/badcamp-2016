@@ -388,12 +388,13 @@ function badcamp_homepage_default_page_manager_pages() {
   $pane->configuration = array(
     'admin_title' => 'Placeholder About Row 2: Attendee testimonial/quote',
     'title' => '',
-    'body' => '<p>“The magic of BADCamp is real. Not only are many of the same inspiring sessions at DrupalCon presented at BADCamp for free; but the atmosphere, events and community are so warm, open, fun and exciting. I’ve even moved to California to join the ranks of BADCamp volunteers. There’s literally no other event like it in the galaxy.”</p>
+    'body' => '<p>“The magic of BADCamp is real! The events and community are so warm, fun, and exciting - and many of the same inspiring DrupalCon sessions are presented for free at BADCamp. I even moved to California to join the ranks of BADCamp volunteers. There’s literally no other event like it in the galaxy!”</p>
 
 <p class="orange">- Heather Rodriguez</p>
 ',
     'format' => 'full_html',
     'substitute' => TRUE,
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
