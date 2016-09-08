@@ -720,6 +720,12 @@ function badcamp_community_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<p>Thank you to all our individual sponsors! Without your continued and dedicated support, this camp wouldn\'t exist.</p><p><strong>It\'s not too late to contribute!</strong> <a href="/registration/sponsorship">Donate today!</a></p>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: User: Donation */
   $handler->display->display_options['relationships']['eck_donation']['id'] = 'eck_donation';
