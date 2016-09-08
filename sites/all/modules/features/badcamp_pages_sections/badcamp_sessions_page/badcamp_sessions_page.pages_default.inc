@@ -543,7 +543,7 @@ function badcamp_sessions_page_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'BADCamp Proposed Sessions';
+  $display->title = 'BADCamp Accepted Sessions';
   $display->uuid = '7d79d4b8-f6bc-4b94-892c-11230fa45901';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_sessions__panel_context_6d277625-4609-4549-a81c-7ea674e743b4';
@@ -572,33 +572,6 @@ function badcamp_sessions_page_default_page_manager_pages() {
   $pane->uuid = 'a098a854-4cb4-4192-b32d-a9d65107c180';
   $display->content['new-a098a854-4cb4-4192-b32d-a9d65107c180'] = $pane;
   $display->panels['content'][0] = 'new-a098a854-4cb4-4192-b32d-a9d65107c180';
-  $pane = new stdClass();
-  $pane->pid = 'new-fabbf080-4915-47a6-b097-3cd567d08a67';
-  $pane->panel = 'content';
-  $pane->type = 'custom';
-  $pane->subtype = 'custom';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'admin_title' => '',
-    'title' => '',
-    'title_heading' => 'h2',
-    'body' => '<p>A sincere thank you for all the session submissions, we\'ve reviewed every single one of them and carefuly curated the results into the following program. A formal schedule will be following in the near future.</p>
-',
-    'format' => 'full_html',
-    'substitute' => TRUE,
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = 'fabbf080-4915-47a6-b097-3cd567d08a67';
-  $display->content['new-fabbf080-4915-47a6-b097-3cd567d08a67'] = $pane;
-  $display->panels['content'][1] = 'new-fabbf080-4915-47a6-b097-3cd567d08a67';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
