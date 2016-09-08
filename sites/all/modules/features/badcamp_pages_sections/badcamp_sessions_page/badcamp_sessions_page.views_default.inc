@@ -549,43 +549,6 @@ function badcamp_sessions_page_views_default_views() {
   );
   $handler->display->display_options['filters']['field_session_track_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_session_track_tid']['vocabulary'] = 'tracks';
-  /* Filter criterion: Content: Session date and time (field_session_date_and_time) */
-  $handler->display->display_options['filters']['field_session_date_and_time_value']['id'] = 'field_session_date_and_time_value';
-  $handler->display->display_options['filters']['field_session_date_and_time_value']['table'] = 'field_data_field_session_date_and_time';
-  $handler->display->display_options['filters']['field_session_date_and_time_value']['field'] = 'field_session_date_and_time_value';
-  $handler->display->display_options['filters']['field_session_date_and_time_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_session_date_and_time_value']['expose']['operator_id'] = 'field_session_date_and_time_value_op';
-  $handler->display->display_options['filters']['field_session_date_and_time_value']['expose']['label'] = 'Date';
-  $handler->display->display_options['filters']['field_session_date_and_time_value']['expose']['operator'] = 'field_session_date_and_time_value_op';
-  $handler->display->display_options['filters']['field_session_date_and_time_value']['expose']['identifier'] = 'field_session_date_and_time_value';
-  $handler->display->display_options['filters']['field_session_date_and_time_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    5 => 0,
-    4 => 0,
-    6 => 0,
-  );
-  /* Filter criterion: Content: Session time slot (field_session_time_slot) */
-  $handler->display->display_options['filters']['field_session_time_slot_tid']['id'] = 'field_session_time_slot_tid';
-  $handler->display->display_options['filters']['field_session_time_slot_tid']['table'] = 'field_data_field_session_time_slot';
-  $handler->display->display_options['filters']['field_session_time_slot_tid']['field'] = 'field_session_time_slot_tid';
-  $handler->display->display_options['filters']['field_session_time_slot_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_session_time_slot_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_session_time_slot_tid']['expose']['operator_id'] = 'field_session_time_slot_tid_op';
-  $handler->display->display_options['filters']['field_session_time_slot_tid']['expose']['label'] = 'Time';
-  $handler->display->display_options['filters']['field_session_time_slot_tid']['expose']['operator'] = 'field_session_time_slot_tid_op';
-  $handler->display->display_options['filters']['field_session_time_slot_tid']['expose']['identifier'] = 'field_session_time_slot_tid';
-  $handler->display->display_options['filters']['field_session_time_slot_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    5 => 0,
-    4 => 0,
-    6 => 0,
-  );
-  $handler->display->display_options['filters']['field_session_time_slot_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_session_time_slot_tid']['vocabulary'] = 'time_slot';
   $handler->display->display_options['pane_category']['name'] = 'BADCamp';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
