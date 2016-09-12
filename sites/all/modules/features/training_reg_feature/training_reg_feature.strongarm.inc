@@ -62,10 +62,18 @@ function training_reg_feature_strongarm() {
             'weight' => '6',
             'visible' => TRUE,
           ),
+          'teaser' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
         ),
         'register_remaining' => array(
           'default' => array(
             'weight' => '5',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '2',
             'visible' => TRUE,
           ),
         ),
