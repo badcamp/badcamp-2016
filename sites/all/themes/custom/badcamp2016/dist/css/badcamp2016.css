@@ -2563,8 +2563,7 @@ select {
 
 .media-object-section {
   display: table-cell;
-  vertical-align: top;
-  vertical-align: baseline; }
+  vertical-align: top; }
   .media-object-section:first-child {
     padding-right: 1rem; }
   .media-object-section:last-child:not(:nth-child(2)) {
@@ -2584,6 +2583,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   position: relative;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-overflow-scrolling: auto; }
 
@@ -2602,6 +2602,7 @@ body {
   min-height: 100%;
   background: black;
   transition: transform 0.5s ease;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   z-index: 1;
   padding-bottom: 0.1px;
@@ -3563,11 +3564,6 @@ table.hover tr:nth-of-type(even):hover {
   text-transform: uppercase;
   font-weight: bold; }
 
-.page-summits .hero {
-  background: url(../../images/Hero/Summits-Hero.png);
-  background-size: cover;
-  padding: 50px 0 100px 0; }
-
 .digit-hero, .pane-donation-options .form-item {
   text-align: center;
   background: rgba(53, 119, 141, 0.2); }
@@ -4317,7 +4313,7 @@ h3 {
 .pane-badcamp-news-panel-pane-1 h2.pane-title {
   margin-bottom: 40px; }
 
-.view-badcamp-news h3.field-content, .view-events-view h3.field-content {
+.view-badcamp-news h3.field-content, .view-events-view h3.field-content, .view-badcamp-trainings h3.field-content {
   text-align: left;
   font-family: "Play", sans-serif;
   font-weight: bold;
@@ -4325,21 +4321,21 @@ h3 {
   letter-spacing: 1.82px;
   padding-bottom: 0.5rem; }
 
-.view-badcamp-news .date-display-single, .view-events-view .date-display-single {
+.view-badcamp-news .date-display-single, .view-events-view .date-display-single, .view-badcamp-trainings .date-display-single {
   color: #FF9A00;
   font-size: 1.125rem; }
 
-.view-badcamp-news a, .view-events-view a {
+.view-badcamp-news a, .view-events-view a, .view-badcamp-trainings a {
   color: #59A8C1; }
 
-.view-badcamp-news p, .view-events-view p {
+.view-badcamp-news p, .view-events-view p, .view-badcamp-trainings p {
   font-family: "Open Sans", sans-serif;
   font-size: 1.125rem; }
 
-.view-badcamp-news .views-row, .view-events-view .views-row {
+.view-badcamp-news .views-row, .view-events-view .views-row, .view-badcamp-trainings .views-row {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
 
-.view-badcamp-news .learn-more, .view-events-view .learn-more {
+.view-badcamp-news .learn-more, .view-events-view .learn-more, .view-badcamp-trainings .learn-more {
   color: #FF9A00;
   text-decoration: underline;
   font-size: 18px; }
@@ -4380,9 +4376,6 @@ img.sponsor.badge {
 
 .media-object .media-object-section {
   vertical-align: middle; }
-
-body.page-summits .region-hero {
-  background-size: cover; }
 
 .flag-my-schedule a {
   appearance: button;

@@ -37,7 +37,6 @@ function badcamp_trainings_page_views_default_views() {
       'rendered_strip' => 0,
     ),
   );
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Path */
@@ -139,11 +138,11 @@ function badcamp_trainings_page_views_default_views() {
       'rendered_strip' => 0,
     ),
   );
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['uses_fields'] = TRUE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Date and Time */
@@ -152,7 +151,6 @@ function badcamp_trainings_page_views_default_views() {
   $handler->display->display_options['fields']['field_training_date_time']['field'] = 'field_training_date_time';
   $handler->display->display_options['fields']['field_training_date_time']['label'] = '';
   $handler->display->display_options['fields']['field_training_date_time']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_training_date_time']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_training_date_time']['alter']['text'] = '<h3>[field_training_date_time]</h3>';
   $handler->display->display_options['fields']['field_training_date_time']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_training_date_time']['element_class'] = 'panel';
@@ -165,20 +163,13 @@ function badcamp_trainings_page_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
     'show_remaining_days' => 0,
-    'show_repeat_rule' => 'show',
   );
-  /* Field: Content: Rendered Content */
-  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
-  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
-  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
-  $handler->display->display_options['fields']['rendered_entity']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['rendered_entity']['alter']['preserve_tags'] = '<li><ul><p><br><b><strong><i><div><h2><h3><h4><ol><a>';
-  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
-  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
-  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $export['badcamp_trainings'] = $view;
 
   return $export;

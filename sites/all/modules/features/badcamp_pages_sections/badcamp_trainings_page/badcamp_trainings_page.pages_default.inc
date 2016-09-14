@@ -63,15 +63,20 @@ function badcamp_trainings_page_default_page_manager_pages() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'badcamp2016_1col';
+  $display->layout = 'badcamp2016_hero1col';
   $display->layout_settings = array(
-    'suppress_page_title' => 0,
+    'background' => '%theme/images/Hero/Summits-Hero.png',
+    'opaque' => 1,
+    'suppress_page_title' => 1,
+    'height' => 552,
+    'width' => 1440,
   );
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
       'content' => NULL,
+      'hero' => NULL,
     ),
   );
   $display->cache = array();
@@ -82,16 +87,45 @@ function badcamp_trainings_page_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-aff1eaaf-bfe0-4fa6-a66e-cbedb1cc920d';
+  $pane->pid = 'new-08063e8c-b31f-44f2-b9cb-187bf907ec23';
   $pane->panel = 'content';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'badcamp_trainings-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'small' => '',
+      'medium' => '8',
+      'large' => '',
+      'small-push' => '',
+      'medium-push' => '2',
+      'large-push' => '',
+      'row' => 0,
+    ),
+    'style' => 'grid',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '08063e8c-b31f-44f2-b9cb-187bf907ec23';
+  $display->content['new-08063e8c-b31f-44f2-b9cb-187bf907ec23'] = $pane;
+  $display->panels['content'][0] = 'new-08063e8c-b31f-44f2-b9cb-187bf907ec23';
+  $pane = new stdClass();
+  $pane->pid = 'new-aff1eaaf-bfe0-4fa6-a66e-cbedb1cc920d';
+  $pane->panel = 'hero';
   $pane->type = 'custom';
   $pane->subtype = 'custom';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Training Description',
-    'title' => '',
+    'title' => 'Free Drupal Trainings',
     'body' => '<p>For two full days on Thursday and Friday, BADCamp offers world-class training from some of the best Drupal teachers in the world. Whether you are looking to level up your front end, back end, DevOps, project management or multilingual skills, we have classes for you.</p>
+
 <p><strong>Secure your seat today with a $20 fully-refundable deposit - openings go quickly, and classes will fill up fast.</strong></p>
 ',
     'format' => 'full_html',
@@ -108,26 +142,7 @@ function badcamp_trainings_page_default_page_manager_pages() {
   $pane->locks = array();
   $pane->uuid = 'aff1eaaf-bfe0-4fa6-a66e-cbedb1cc920d';
   $display->content['new-aff1eaaf-bfe0-4fa6-a66e-cbedb1cc920d'] = $pane;
-  $display->panels['content'][0] = 'new-aff1eaaf-bfe0-4fa6-a66e-cbedb1cc920d';
-  $pane = new stdClass();
-  $pane->pid = 'new-08063e8c-b31f-44f2-b9cb-187bf907ec23';
-  $pane->panel = 'content';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'badcamp_trainings-panel_pane_1';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 1;
-  $pane->locks = array();
-  $pane->uuid = '08063e8c-b31f-44f2-b9cb-187bf907ec23';
-  $display->content['new-08063e8c-b31f-44f2-b9cb-187bf907ec23'] = $pane;
-  $display->panels['content'][1] = 'new-08063e8c-b31f-44f2-b9cb-187bf907ec23';
+  $display->panels['hero'][0] = 'new-aff1eaaf-bfe0-4fa6-a66e-cbedb1cc920d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
