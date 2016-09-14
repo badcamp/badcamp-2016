@@ -108,6 +108,11 @@ function badcamp2016_styleguide_alter(&$guide) {
  */
 function badcamp2016_preprocess_node(&$variables) {
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
+  if($variables['type'] === 'training' && $variables['teaser']) {
+    if(isset($variables['content']['links'], $variables['content']['links']['node'])) {
+      $variables['content']['links']['node']['#access'] = FALSE;
+    }
+  }
 }
 
 /**
