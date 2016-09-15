@@ -574,10 +574,11 @@ function badcamp_summits_page_default_page_manager_pages() {
   $pane->configuration = array(
     'admin_title' => 'Summits Intro',
     'title' => 'Summits',
-    'body' => '<p>Summits allow people in specific industries or with specific skills to dive deep into the issues that matter and collaborate freely. Registration is first come, first served and part of the BADCamp registration process, so sign up today!</p>
+    'body' => '<p style="font-size: 18px;">Summits allow people in specific industries or with specific skills to dive deep into the issues that matter and collaborate freely. Registration is first come, first served and part of the BADCamp registration process, so sign up today!</p>
 ',
     'format' => 'full_html',
     'substitute' => TRUE,
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
