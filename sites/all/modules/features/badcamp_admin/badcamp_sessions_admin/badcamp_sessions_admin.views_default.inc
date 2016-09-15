@@ -347,13 +347,6 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'field_session_track',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['columns'] = array(
     'edit_node' => 'edit_node',
@@ -1612,6 +1605,144 @@ function badcamp_sessions_admin_views_default_views() {
   $handler->display->display_options['tab_options']['weight'] = '0';
   $handler->display->display_options['tab_options']['name'] = 'management';
   $export['sessions_admin'] = $view;
+
+  $view = new view();
+  $view->name = 'speakers';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'users';
+  $view->human_name = 'Speakers';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Speakers';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'name' => 'name',
+    'field_session_status' => 'field_session_status',
+    'mail' => 'mail',
+    'field_user_mailchimp' => 'field_user_mailchimp',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_session_status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'mail' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_mailchimp' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_session_speaker_node']['id'] = 'reverse_field_session_speaker_node';
+  $handler->display->display_options['relationships']['reverse_field_session_speaker_node']['table'] = 'users';
+  $handler->display->display_options['relationships']['reverse_field_session_speaker_node']['field'] = 'reverse_field_session_speaker_node';
+  $handler->display->display_options['relationships']['reverse_field_session_speaker_node']['required'] = TRUE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Session status */
+  $handler->display->display_options['fields']['field_session_status']['id'] = 'field_session_status';
+  $handler->display->display_options['fields']['field_session_status']['table'] = 'field_data_field_session_status';
+  $handler->display->display_options['fields']['field_session_status']['field'] = 'field_session_status';
+  $handler->display->display_options['fields']['field_session_status']['relationship'] = 'reverse_field_session_speaker_node';
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'reverse_field_session_speaker_node';
+  $handler->display->display_options['fields']['title']['label'] = 'Session';
+  /* Sort criterion: User: Created date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: User: First name (field_user_first_name) */
+  $handler->display->display_options['sorts']['field_user_first_name_value']['id'] = 'field_user_first_name_value';
+  $handler->display->display_options['sorts']['field_user_first_name_value']['table'] = 'field_data_field_user_first_name';
+  $handler->display->display_options['sorts']['field_user_first_name_value']['field'] = 'field_user_first_name_value';
+  /* Sort criterion: User: Last name (field_user_last_name) */
+  $handler->display->display_options['sorts']['field_user_last_name_value']['id'] = 'field_user_last_name_value';
+  $handler->display->display_options['sorts']['field_user_last_name_value']['table'] = 'field_data_field_user_last_name';
+  $handler->display->display_options['sorts']['field_user_last_name_value']['field'] = 'field_user_last_name_value';
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Session status (field_session_status) */
+  $handler->display->display_options['filters']['field_session_status_value']['id'] = 'field_session_status_value';
+  $handler->display->display_options['filters']['field_session_status_value']['table'] = 'field_data_field_session_status';
+  $handler->display->display_options['filters']['field_session_status_value']['field'] = 'field_session_status_value';
+  $handler->display->display_options['filters']['field_session_status_value']['relationship'] = 'reverse_field_session_speaker_node';
+  $handler->display->display_options['filters']['field_session_status_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_session_status_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_session_status_value']['expose']['operator_id'] = 'field_session_status_value_op';
+  $handler->display->display_options['filters']['field_session_status_value']['expose']['label'] = 'Session status (field_session_status)';
+  $handler->display->display_options['filters']['field_session_status_value']['expose']['operator'] = 'field_session_status_value_op';
+  $handler->display->display_options['filters']['field_session_status_value']['expose']['identifier'] = 'field_session_status_value';
+  $handler->display->display_options['filters']['field_session_status_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+    6 => 0,
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'http://badcamp2016.dev/admin/badcamp/speakers';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Speakers';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $export['speakers'] = $view;
 
   $view = new view();
   $view->name = 'votes_admin';
