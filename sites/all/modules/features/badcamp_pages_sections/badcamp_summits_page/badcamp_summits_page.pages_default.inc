@@ -90,7 +90,7 @@ function badcamp_summits_page_default_page_manager_handlers() {
   $display = new panels_display();
   $display->layout = 'badcamp2016_default';
   $display->layout_settings = array(
-    'suppress_page_title' => 0,
+    'suppress_page_title' => 1,
   );
   $display->panel_settings = array(
     'style_settings' => array(
