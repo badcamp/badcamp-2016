@@ -1,7 +1,5 @@
 # Bay Area Drupal Camp 2016
 
-Build status: ![CircleCI](https://circleci.com/gh/badcamp/badcamp-2016-artifact.png)
-
 ## Development
 
 BADCamp continues its commitment to open-source development by open-sourcing
@@ -67,14 +65,6 @@ Configure Drush to use the site:
 
 ```bash
 drush site-set @badcamp2016.local
-```
-
-#### Testing
-
-Uses the [Drupal Extension](http://behat-drupal-extension.readthedocs.org/en/3.1/index.html) to Behat and Mink.
-
-```bash
-./scripts/behat.sh
 ```
 
 #### Turning it off
