@@ -165,7 +165,7 @@ function training_reg_link_field($training) {
  */
 function training_reg_remaining_field($training) {
   $remaining = training_reg_registration_remaining($training);
-  $msg = ($remaining == 0) ? t('None; the training is full.') : $remaining;
+  $msg = ($remaining > 0) ? $remaining : t('None; the training is full.');
 
   return array(
     '#type' => 'markup',

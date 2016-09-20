@@ -10,7 +10,7 @@
 function training_reg_registration_form($form, &$form_state, $node) {
   global $user;
 
-  if (training_reg_registration_remaining($node) == 0) {
+  if (training_reg_registration_remaining($node) >= 0) {
     drupal_set_message(t('Sorry, the training is full.'), 'error');
     drupal_goto('node/' . $node->nid);
     return;
