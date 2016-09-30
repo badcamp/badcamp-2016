@@ -5,3 +5,38 @@
  */
 
 include_once 'badcamp_trainings_page.features.inc';
+
+/**
+ * Implements hook_views_post_execute
+ */
+function badcamp_trainings_page_views_post_execute(&$view) {
+  if ($view->name === 'badcamp_trainings') {
+    $results = $view->result;
+    foreach ($results as $result) {
+      $nid = $result->nid;
+      $node = node_load($nid);
+      $open_seats = training_reg_registration_remaining($node);
+      $result->open_seats = $open_seats;
+    }
+    $sorted = custom_sort($results);
+    $view->result = $sorted;
+  }
+}
+
+function custom_sort($results) {
+  // Sort by number of open seats.
+  usort($results, function($c, $d) {
+    return ($c->open_seats <= $d->open_seats) ? +1 : -1;
+  });
+  // Sort the ordered trainings into day arrays
+  $sorted  = array();
+  foreach ($results as $result) {
+    $date = $result->field_data_field_training_date_time_field_training_date_time;
+    $sorted[$date][] = $result;
+  }
+  // Sort by date.
+  sort($sorted);
+  // Merge the arrays to one array.
+  $results = call_user_func_array('array_merge', $sorted);
+  return $results ;
+}
