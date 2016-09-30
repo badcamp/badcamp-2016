@@ -1119,6 +1119,11 @@ function mailchimp_process_webhook() {
   $data = $_POST['data'];
   $type = $_POST['type'];
   switch ($type) {
+    case 'subscribe':
+      if (!variable_get('mailchimp_cron', FALSE)) {
+        mailchimp_cache_clear_member($data['list_id'], $data['email']);
+      }
+      break;
     case 'unsubscribe':
     case 'profile':
     case 'cleaned':
