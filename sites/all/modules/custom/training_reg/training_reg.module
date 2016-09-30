@@ -243,24 +243,3 @@ function training_reg_registration_remaining($training) {
   }
   return $remaining[$training->nid];
 }
-
-/**
- * Implements hook_views_post_execute
- */
-function training_reg_views_post_execute(&$view) {
-  if ($view->name === 'badcamp_trainings') {
-    $results = $view->result;
-    foreach ($results as $result) {
-      $nid = $result->nid;
-      $node = node_load($nid);
-      $open_seats = training_reg_registration_remaining($node);
-      $result->open_seats = $open_seats;
-    }
-    usort($results, 'custom_sort');
-    $view->result = $results;
-  }
-}
-
-function custom_sort($a, $b) {
-  return( ($a->open_seats <= $b->open_seats) ? +1 : -1 );
-}
