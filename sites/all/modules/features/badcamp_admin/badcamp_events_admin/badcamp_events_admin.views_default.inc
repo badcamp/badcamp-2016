@@ -136,6 +136,11 @@ function badcamp_events_admin_views_default_views() {
   $handler->display->display_options['fields']['edit_link']['id'] = 'edit_link';
   $handler->display->display_options['fields']['edit_link']['table'] = 'eck_event_reg';
   $handler->display->display_options['fields']['edit_link']['field'] = 'edit_link';
+  /* Field: User: Company */
+  $handler->display->display_options['fields']['field_user_organization']['id'] = 'field_user_organization';
+  $handler->display->display_options['fields']['field_user_organization']['table'] = 'field_data_field_user_organization';
+  $handler->display->display_options['fields']['field_user_organization']['field'] = 'field_user_organization';
+  $handler->display->display_options['fields']['field_user_organization']['relationship'] = 'field_event_reg_attendee_target_id';
   /* Sort criterion: User: Last name (field_user_last_name) */
   $handler->display->display_options['sorts']['field_user_last_name_value']['id'] = 'field_user_last_name_value';
   $handler->display->display_options['sorts']['field_user_last_name_value']['table'] = 'field_data_field_user_last_name';
@@ -165,60 +170,6 @@ function badcamp_events_admin_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['relationship'] = 'field_event_reg_event_target_id';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['relationship'] = 'field_event_reg_event_target_id';
-  $handler->display->display_options['fields']['title']['label'] = 'Event';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['path'] = '/admin/badcamp/event/registrations/[nid]';
-  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h2';
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: User: Last name */
-  $handler->display->display_options['fields']['field_user_last_name']['id'] = 'field_user_last_name';
-  $handler->display->display_options['fields']['field_user_last_name']['table'] = 'field_data_field_user_last_name';
-  $handler->display->display_options['fields']['field_user_last_name']['field'] = 'field_user_last_name';
-  $handler->display->display_options['fields']['field_user_last_name']['relationship'] = 'field_event_reg_attendee_target_id';
-  $handler->display->display_options['fields']['field_user_last_name']['label'] = 'Last Name';
-  /* Field: User: First name */
-  $handler->display->display_options['fields']['field_user_first_name']['id'] = 'field_user_first_name';
-  $handler->display->display_options['fields']['field_user_first_name']['table'] = 'field_data_field_user_first_name';
-  $handler->display->display_options['fields']['field_user_first_name']['field'] = 'field_user_first_name';
-  $handler->display->display_options['fields']['field_user_first_name']['relationship'] = 'field_event_reg_attendee_target_id';
-  /* Field: User: E-mail */
-  $handler->display->display_options['fields']['mail']['id'] = 'mail';
-  $handler->display->display_options['fields']['mail']['table'] = 'users';
-  $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  $handler->display->display_options['fields']['mail']['relationship'] = 'field_event_reg_attendee_target_id';
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_event_reg_attendee_target_id';
-  $handler->display->display_options['fields']['name']['label'] = 'Username';
-  /* Field: Event Registration: Edit link */
-  $handler->display->display_options['fields']['edit_link']['id'] = 'edit_link';
-  $handler->display->display_options['fields']['edit_link']['table'] = 'eck_event_reg';
-  $handler->display->display_options['fields']['edit_link']['field'] = 'edit_link';
-  $handler->display->display_options['fields']['edit_link']['label'] = 'Edit';
-  $handler->display->display_options['fields']['edit_link']['text'] = 'Edit';
-  /* Field: Event Registration: Delete link */
-  $handler->display->display_options['fields']['delete_link']['id'] = 'delete_link';
-  $handler->display->display_options['fields']['delete_link']['table'] = 'eck_event_reg';
-  $handler->display->display_options['fields']['delete_link']['field'] = 'delete_link';
-  $handler->display->display_options['fields']['delete_link']['label'] = 'Delete';
-  $handler->display->display_options['fields']['delete_link']['text'] = 'Delete';
   $handler->display->display_options['path'] = 'admin/badcamp/event/registrations/all';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'All Event Registrations';
@@ -297,6 +248,11 @@ function badcamp_events_admin_views_default_views() {
   $handler->display->display_options['fields']['edit_link']['field'] = 'edit_link';
   $handler->display->display_options['fields']['edit_link']['label'] = 'Edit';
   $handler->display->display_options['fields']['edit_link']['text'] = 'Edit';
+  /* Field: User: Company */
+  $handler->display->display_options['fields']['field_user_organization']['id'] = 'field_user_organization';
+  $handler->display->display_options['fields']['field_user_organization']['table'] = 'field_data_field_user_organization';
+  $handler->display->display_options['fields']['field_user_organization']['field'] = 'field_user_organization';
+  $handler->display->display_options['fields']['field_user_organization']['relationship'] = 'field_event_reg_attendee_target_id';
   $handler->display->display_options['path'] = 'admin/badcamp/event/registrations/%';
   $export['event_registration_admin'] = $view;
 

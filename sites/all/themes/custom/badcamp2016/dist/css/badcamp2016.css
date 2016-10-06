@@ -2563,7 +2563,8 @@ select {
 
 .media-object-section {
   display: table-cell;
-  vertical-align: top; }
+  vertical-align: top;
+  vertical-align: baseline; }
   .media-object-section:first-child {
     padding-right: 1rem; }
   .media-object-section:last-child:not(:nth-child(2)) {
@@ -4356,8 +4357,15 @@ h3 {
 .view-id-badcamp_sessions .view-content p, .view-id-badcamp_sessions .view-content th {
   color: black; }
 
+.view-id-badcamp_sessions .view-content td {
+  font-size: 13px; }
+
 .view-id-badcamp_sessions .view-content .views-field-title {
-  width: 80%; }
+  width: 40%; }
+
+.view-id-badcamp_sessions .view-content .views-field-field-session-time-slot, .view-id-badcamp_sessions .view-content .views-field-field-session-room {
+  width: 20%;
+  color: black; }
 
 .view-id-badcamp_sessions .view-content .views-field-field-session-speaker {
   width: 20%; }

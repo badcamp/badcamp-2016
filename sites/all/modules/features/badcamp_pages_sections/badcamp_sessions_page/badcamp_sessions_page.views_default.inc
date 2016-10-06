@@ -430,23 +430,21 @@ function badcamp_sessions_page_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Session room */
-  $handler->display->display_options['fields']['field_session_room']['id'] = 'field_session_room';
-  $handler->display->display_options['fields']['field_session_room']['table'] = 'field_data_field_session_room';
-  $handler->display->display_options['fields']['field_session_room']['field'] = 'field_session_room';
-  $handler->display->display_options['fields']['field_session_room']['label'] = '';
-  $handler->display->display_options['fields']['field_session_room']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_session_room']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_session_room']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Session time slot */
   $handler->display->display_options['fields']['field_session_time_slot']['id'] = 'field_session_time_slot';
   $handler->display->display_options['fields']['field_session_time_slot']['table'] = 'field_data_field_session_time_slot';
   $handler->display->display_options['fields']['field_session_time_slot']['field'] = 'field_session_time_slot';
   $handler->display->display_options['fields']['field_session_time_slot']['label'] = '';
-  $handler->display->display_options['fields']['field_session_time_slot']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_session_time_slot']['alter']['text'] = '[field_session_room] - [field_session_time_slot]';
   $handler->display->display_options['fields']['field_session_time_slot']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_session_time_slot']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Session room */
+  $handler->display->display_options['fields']['field_session_room']['id'] = 'field_session_room';
+  $handler->display->display_options['fields']['field_session_room']['table'] = 'field_data_field_session_room';
+  $handler->display->display_options['fields']['field_session_room']['field'] = 'field_session_room';
+  $handler->display->display_options['fields']['field_session_room']['label'] = '';
+  $handler->display->display_options['fields']['field_session_room']['alter']['text'] = '[field_session_room] - [field_session_time_slot]';
+  $handler->display->display_options['fields']['field_session_room']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_session_room']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Session speaker(s) */
   $handler->display->display_options['fields']['field_session_speaker']['id'] = 'field_session_speaker';
   $handler->display->display_options['fields']['field_session_speaker']['table'] = 'field_data_field_session_speaker';
@@ -474,18 +472,10 @@ function badcamp_sessions_page_views_default_views() {
     'show_repeat_rule' => 'show',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Session date and time (field_session_date_and_time) */
-  $handler->display->display_options['sorts']['field_session_date_and_time_value']['id'] = 'field_session_date_and_time_value';
-  $handler->display->display_options['sorts']['field_session_date_and_time_value']['table'] = 'field_data_field_session_date_and_time';
-  $handler->display->display_options['sorts']['field_session_date_and_time_value']['field'] = 'field_session_date_and_time_value';
-  /* Sort criterion: Content: Session skill level (field_session_skill_level) */
-  $handler->display->display_options['sorts']['field_session_skill_level_tid']['id'] = 'field_session_skill_level_tid';
-  $handler->display->display_options['sorts']['field_session_skill_level_tid']['table'] = 'field_data_field_session_skill_level';
-  $handler->display->display_options['sorts']['field_session_skill_level_tid']['field'] = 'field_session_skill_level_tid';
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Sort criterion: Content: Session time slot (field_session_time_slot) */
+  $handler->display->display_options['sorts']['field_session_time_slot_tid']['id'] = 'field_session_time_slot_tid';
+  $handler->display->display_options['sorts']['field_session_time_slot_tid']['table'] = 'field_data_field_session_time_slot';
+  $handler->display->display_options['sorts']['field_session_time_slot_tid']['field'] = 'field_session_time_slot_tid';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

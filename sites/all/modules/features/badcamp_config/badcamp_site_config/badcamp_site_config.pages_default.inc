@@ -143,238 +143,240 @@ function badcamp_site_config_default_page_manager_handlers() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = '4cf303f7-f9a6-4c5a-b587-cb8fac79eaed';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'site_template__panel_context_bc72b232-eb61-4e5e-97c7-c557c416dacf';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-b038817b-9b31-4545-8a2b-0f35e336fce3';
-    $pane->panel = 'branding';
-    $pane->type = 'page_site_name';
-    $pane->subtype = 'page_site_name';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'linked' => 1,
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'b038817b-9b31-4545-8a2b-0f35e336fce3';
-    $display->content['new-b038817b-9b31-4545-8a2b-0f35e336fce3'] = $pane;
-    $display->panels['branding'][0] = 'new-b038817b-9b31-4545-8a2b-0f35e336fce3';
-    $pane = new stdClass();
-    $pane->pid = 'new-7a46309d-d3ad-4d06-9265-69fa8fe1698a';
-    $pane->panel = 'footer_left';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Copyrights',
-      'title' => '',
-      'body' => '<p class="p1">© Images &amp; Layout <a class="dk-orange" href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a> 2016 BADCamp, some rights reserved. <a class="dk-orange" href="/credits">Credits!</a><br />
+  $pane = new stdClass();
+  $pane->pid = 'new-b038817b-9b31-4545-8a2b-0f35e336fce3';
+  $pane->panel = 'branding';
+  $pane->type = 'page_site_name';
+  $pane->subtype = 'page_site_name';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'linked' => 1,
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'b038817b-9b31-4545-8a2b-0f35e336fce3';
+  $display->content['new-b038817b-9b31-4545-8a2b-0f35e336fce3'] = $pane;
+  $display->panels['branding'][0] = 'new-b038817b-9b31-4545-8a2b-0f35e336fce3';
+  $pane = new stdClass();
+  $pane->pid = 'new-7a46309d-d3ad-4d06-9265-69fa8fe1698a';
+  $pane->panel = 'footer_left';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Copyrights',
+    'title' => '',
+    'body' => '<p class="p1">© Images &amp; Layout <a class="dk-orange" href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a> 2016 BADCamp, some rights reserved. <a class="dk-orange" href="/credits">Credits!</a><br />
 © Code <a class="dk-orange" href="http://www.gnu.org/licenses/gpl-2.0.en.html">GNU General Public License</a> 2016 BADCamp, some rights reserved.<br/>
 <a class="dk-orange" href="https://github.com/badcamp/badcamp-2016">Fork us on GitHub!</a></p>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'footer-pane-copyright',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '7a46309d-d3ad-4d06-9265-69fa8fe1698a';
-    $display->content['new-7a46309d-d3ad-4d06-9265-69fa8fe1698a'] = $pane;
-    $display->panels['footer_left'][0] = 'new-7a46309d-d3ad-4d06-9265-69fa8fe1698a';
-    $pane = new stdClass();
-    $pane->pid = 'new-50b7222d-85f5-4057-8427-4cec6010e707';
-    $pane->panel = 'footer_nav';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-footer-menu';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '50b7222d-85f5-4057-8427-4cec6010e707';
-    $display->content['new-50b7222d-85f5-4057-8427-4cec6010e707'] = $pane;
-    $display->panels['footer_nav'][0] = 'new-50b7222d-85f5-4057-8427-4cec6010e707';
-    $pane = new stdClass();
-    $pane->pid = 'new-b19b80d5-7e71-4e0b-bfd5-119f5eec8bf0';
-    $pane->panel = 'footer_right';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Social Links',
-      'title' => '',
-      'body' => '<p><a class="footer-social dk-orange" href="/contact">Contact Us</a><a class="footer-social fb-icon" href="https://www.facebook.com/BayAreaDrupalCamp/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><a class="footer-social twitter-icon" href="https://twitter.com/badcamp"><i class="fa fa-twitter-square" aria-hidden="true"></i></a> </p>
+    'format' => 'full_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'footer-pane-copyright',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '7a46309d-d3ad-4d06-9265-69fa8fe1698a';
+  $display->content['new-7a46309d-d3ad-4d06-9265-69fa8fe1698a'] = $pane;
+  $display->panels['footer_left'][0] = 'new-7a46309d-d3ad-4d06-9265-69fa8fe1698a';
+  $pane = new stdClass();
+  $pane->pid = 'new-50b7222d-85f5-4057-8427-4cec6010e707';
+  $pane->panel = 'footer_nav';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-footer-menu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '50b7222d-85f5-4057-8427-4cec6010e707';
+  $display->content['new-50b7222d-85f5-4057-8427-4cec6010e707'] = $pane;
+  $display->panels['footer_nav'][0] = 'new-50b7222d-85f5-4057-8427-4cec6010e707';
+  $pane = new stdClass();
+  $pane->pid = 'new-b19b80d5-7e71-4e0b-bfd5-119f5eec8bf0';
+  $pane->panel = 'footer_right';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Social Links',
+    'title' => '',
+    'body' => '<p><a class="footer-social dk-orange" href="/contact">Contact Us</a><a class="footer-social fb-icon" href="https://www.facebook.com/BayAreaDrupalCamp/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><a class="footer-social twitter-icon" href="https://twitter.com/badcamp"><i class="fa fa-twitter-square" aria-hidden="true"></i></a> </p>
 ',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'footer-pane-social',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'b19b80d5-7e71-4e0b-bfd5-119f5eec8bf0';
-    $display->content['new-b19b80d5-7e71-4e0b-bfd5-119f5eec8bf0'] = $pane;
-    $display->panels['footer_right'][0] = 'new-b19b80d5-7e71-4e0b-bfd5-119f5eec8bf0';
-    $pane = new stdClass();
-    $pane->pid = 'new-fb0097c1-7ac7-4777-aec5-3bc51e64b6f8';
-    $pane->panel = 'main';
-    $pane->type = 'pane_messages';
-    $pane->subtype = 'pane_messages';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'small' => '12',
-        'medium' => '',
-        'large' => '',
-        'small-push' => '',
-        'medium-push' => '',
-        'large-push' => '',
-        'row' => 1,
-      ),
-      'style' => 'grid',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'fb0097c1-7ac7-4777-aec5-3bc51e64b6f8';
-    $display->content['new-fb0097c1-7ac7-4777-aec5-3bc51e64b6f8'] = $pane;
-    $display->panels['main'][0] = 'new-fb0097c1-7ac7-4777-aec5-3bc51e64b6f8';
-    $pane = new stdClass();
-    $pane->pid = 'new-e770b52e-e2c7-469c-a58e-b23535482bdb';
-    $pane->panel = 'main';
-    $pane->type = 'page_content';
-    $pane->subtype = 'page_content';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'argument_page_content_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'e770b52e-e2c7-469c-a58e-b23535482bdb';
-    $display->content['new-e770b52e-e2c7-469c-a58e-b23535482bdb'] = $pane;
-    $display->panels['main'][1] = 'new-e770b52e-e2c7-469c-a58e-b23535482bdb';
-    $pane = new stdClass();
-    $pane->pid = 'new-c4c17bcd-eb8d-4818-a598-f0418aa7cbeb';
-    $pane->panel = 'main_nav';
-    $pane->type = 'block';
-    $pane->subtype = 'system-main-menu';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'c4c17bcd-eb8d-4818-a598-f0418aa7cbeb';
-    $display->content['new-c4c17bcd-eb8d-4818-a598-f0418aa7cbeb'] = $pane;
-    $display->panels['main_nav'][0] = 'new-c4c17bcd-eb8d-4818-a598-f0418aa7cbeb';
-    $pane = new stdClass();
-    $pane->pid = 'new-5be67b91-1b55-44ca-ba35-89650657afe0';
-    $pane->panel = 'title';
-    $pane->type = 'page_title';
-    $pane->subtype = 'page_title';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'markup' => 'h1',
-      'class' => 'outer-page-title',
-      'id' => '',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '5be67b91-1b55-44ca-ba35-89650657afe0';
-    $display->content['new-5be67b91-1b55-44ca-ba35-89650657afe0'] = $pane;
-    $display->panels['title'][0] = 'new-5be67b91-1b55-44ca-ba35-89650657afe0';
-    $pane = new stdClass();
-    $pane->pid = 'new-41e1e054-5337-4cf1-b2f4-598ca8597475';
-    $pane->panel = 'user_nav';
-    $pane->type = 'block';
-    $pane->subtype = 'system-user-menu';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '41e1e054-5337-4cf1-b2f4-598ca8597475';
-    $display->content['new-41e1e054-5337-4cf1-b2f4-598ca8597475'] = $pane;
-    $display->panels['user_nav'][0] = 'new-41e1e054-5337-4cf1-b2f4-598ca8597475';
+    'format' => 'full_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'footer-pane-social',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'b19b80d5-7e71-4e0b-bfd5-119f5eec8bf0';
+  $display->content['new-b19b80d5-7e71-4e0b-bfd5-119f5eec8bf0'] = $pane;
+  $display->panels['footer_right'][0] = 'new-b19b80d5-7e71-4e0b-bfd5-119f5eec8bf0';
+  $pane = new stdClass();
+  $pane->pid = 'new-fb0097c1-7ac7-4777-aec5-3bc51e64b6f8';
+  $pane->panel = 'main';
+  $pane->type = 'pane_messages';
+  $pane->subtype = 'pane_messages';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'small' => '12',
+      'medium' => '',
+      'large' => '',
+      'small-push' => '',
+      'medium-push' => '',
+      'large-push' => '',
+      'row' => 1,
+    ),
+    'style' => 'grid',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'fb0097c1-7ac7-4777-aec5-3bc51e64b6f8';
+  $display->content['new-fb0097c1-7ac7-4777-aec5-3bc51e64b6f8'] = $pane;
+  $display->panels['main'][0] = 'new-fb0097c1-7ac7-4777-aec5-3bc51e64b6f8';
+  $pane = new stdClass();
+  $pane->pid = 'new-e770b52e-e2c7-469c-a58e-b23535482bdb';
+  $pane->panel = 'main';
+  $pane->type = 'page_content';
+  $pane->subtype = 'page_content';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => 'argument_page_content_1',
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'e770b52e-e2c7-469c-a58e-b23535482bdb';
+  $display->content['new-e770b52e-e2c7-469c-a58e-b23535482bdb'] = $pane;
+  $display->panels['main'][1] = 'new-e770b52e-e2c7-469c-a58e-b23535482bdb';
+  $pane = new stdClass();
+  $pane->pid = 'new-c4c17bcd-eb8d-4818-a598-f0418aa7cbeb';
+  $pane->panel = 'main_nav';
+  $pane->type = 'block';
+  $pane->subtype = 'system-main-menu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c4c17bcd-eb8d-4818-a598-f0418aa7cbeb';
+  $display->content['new-c4c17bcd-eb8d-4818-a598-f0418aa7cbeb'] = $pane;
+  $display->panels['main_nav'][0] = 'new-c4c17bcd-eb8d-4818-a598-f0418aa7cbeb';
+  $pane = new stdClass();
+  $pane->pid = 'new-5be67b91-1b55-44ca-ba35-89650657afe0';
+  $pane->panel = 'title';
+  $pane->type = 'page_title';
+  $pane->subtype = 'page_title';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'markup' => 'h1',
+    'class' => 'outer-page-title',
+    'id' => '',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '5be67b91-1b55-44ca-ba35-89650657afe0';
+  $display->content['new-5be67b91-1b55-44ca-ba35-89650657afe0'] = $pane;
+  $display->panels['title'][0] = 'new-5be67b91-1b55-44ca-ba35-89650657afe0';
+  $pane = new stdClass();
+  $pane->pid = 'new-41e1e054-5337-4cf1-b2f4-598ca8597475';
+  $pane->panel = 'user_nav';
+  $pane->type = 'block';
+  $pane->subtype = 'system-user-menu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '41e1e054-5337-4cf1-b2f4-598ca8597475';
+  $display->content['new-41e1e054-5337-4cf1-b2f4-598ca8597475'] = $pane;
+  $display->panels['user_nav'][0] = 'new-41e1e054-5337-4cf1-b2f4-598ca8597475';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

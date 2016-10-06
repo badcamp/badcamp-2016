@@ -98,8 +98,17 @@ h2.pane-title{
       color: black;
     }
 
+    td {
+      font-size: 13px;
+    }
+
     .views-field-title {
-      width: 80%;
+      width: 40%;
+    }
+
+    .views-field-field-session-time-slot, .views-field-field-session-room {
+      width: 20%;
+      color: black;
     }
 
     .views-field-field-session-speaker {
