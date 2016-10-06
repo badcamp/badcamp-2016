@@ -59,7 +59,7 @@ function badcamp_sessions_strongarm() {
       'display' => array(
         'flag_my_schedule' => array(
           'default' => array(
-            'weight' => '11',
+            'weight' => '10',
             'visible' => FALSE,
           ),
           'teaser' => array(
