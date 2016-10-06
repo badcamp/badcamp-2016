@@ -4358,17 +4358,11 @@ h3 {
   color: black; }
 
 .view-id-badcamp_sessions .view-content td {
+  width: 14.2%;
   font-size: 13px; }
 
-.view-id-badcamp_sessions .view-content .views-field-title {
-  width: 40%; }
-
 .view-id-badcamp_sessions .view-content .views-field-field-session-time-slot, .view-id-badcamp_sessions .view-content .views-field-field-session-room {
-  width: 20%;
   color: black; }
-
-.view-id-badcamp_sessions .view-content .views-field-field-session-speaker {
-  width: 20%; }
 
 .view-id-badcamp_sessions .view-content .even {
   background-color: #e6e6e6; }

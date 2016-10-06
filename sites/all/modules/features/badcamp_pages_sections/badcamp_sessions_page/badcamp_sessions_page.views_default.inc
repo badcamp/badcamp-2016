@@ -322,75 +322,18 @@ function badcamp_sessions_page_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
-      'field' => 'field_session_track',
+      'field' => 'field_session_time_slot',
       'rendered' => 1,
       'rendered_strip' => 0,
     ),
   );
-  $handler->display->display_options['style_options']['columns'] = array(
-    'title' => 'title',
-    'field_session_track' => 'field_session_track',
-    'field_session_skill_level' => 'field_session_skill_level',
-    'field_session_room' => 'field_session_room',
-    'field_session_time_slot' => 'field_session_time_slot',
-    'field_session_speaker' => 'field_session_speaker',
-    'field_session_date_and_time' => 'field_session_date_and_time',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_session_track' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_session_skill_level' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_session_room' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_session_time_slot' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_session_speaker' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_session_date_and_time' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+  $handler->display->display_options['style_options']['columns'] = '7';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
@@ -398,7 +341,7 @@ function badcamp_sessions_page_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'A sincere thank you for all the session submissions, we\'ve reviewed every single one of them and carefully curated the results into the following program. A formal schedule will be following in the near future.';
+  $handler->display->display_options['header']['area']['content'] = 'A sincere thank you for all the session submissions, we\'ve reviewed every single one of them and carefully curated the results into the following program.';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -476,6 +419,10 @@ function badcamp_sessions_page_views_default_views() {
   $handler->display->display_options['sorts']['field_session_time_slot_tid']['id'] = 'field_session_time_slot_tid';
   $handler->display->display_options['sorts']['field_session_time_slot_tid']['table'] = 'field_data_field_session_time_slot';
   $handler->display->display_options['sorts']['field_session_time_slot_tid']['field'] = 'field_session_time_slot_tid';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -539,6 +486,26 @@ function badcamp_sessions_page_views_default_views() {
   );
   $handler->display->display_options['filters']['field_session_track_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_session_track_tid']['vocabulary'] = 'tracks';
+  /* Filter criterion: Content: Session room (field_session_room) */
+  $handler->display->display_options['filters']['field_session_room_tid']['id'] = 'field_session_room_tid';
+  $handler->display->display_options['filters']['field_session_room_tid']['table'] = 'field_data_field_session_room';
+  $handler->display->display_options['filters']['field_session_room_tid']['field'] = 'field_session_room_tid';
+  $handler->display->display_options['filters']['field_session_room_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_session_room_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_session_room_tid']['expose']['operator_id'] = 'field_session_room_tid_op';
+  $handler->display->display_options['filters']['field_session_room_tid']['expose']['label'] = 'Location';
+  $handler->display->display_options['filters']['field_session_room_tid']['expose']['operator'] = 'field_session_room_tid_op';
+  $handler->display->display_options['filters']['field_session_room_tid']['expose']['identifier'] = 'field_session_room_tid';
+  $handler->display->display_options['filters']['field_session_room_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    4 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_session_room_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_session_room_tid']['vocabulary'] = 'rooms';
   $handler->display->display_options['pane_category']['name'] = 'BADCamp';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
